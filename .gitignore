@@ -1,0 +1,22 @@
+*.pyc
+*.log
+node_modules
+coverage/
+catalina/logs
+catalina/export_deliverables
+catalina/cantaloupe/*
+catalina/staticfiles
+catalina/media/packages
+catalina/media/build/
+catalina/uploadedfiles/*
+catalina/settings_local.py
+webpack-stats.json
+.vscode/
+*.egg-info
+.DS_STORE
+CACHE
+frontend_configuration
+
+# Packaging
+build/
+dist/

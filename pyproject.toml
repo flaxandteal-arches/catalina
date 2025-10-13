@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catalina"
+readme = "README.md"
+authors = []
+license = "AGPL-3.0-or-later"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "arches>=8.1.0,<8.3.0",
+    "arches_controlled_lists",
+    "arches_her @ git+https://github.com/archesproject/arches-her.git@dev/2.0.x",
+    "python-dotenv>=1.0.0",
+    "django-azure-auth>=1.4.2",
+    "uvicorn[standard]",
+    "redis",
+]
+
+version = "0.0.1"
+
+[dependency-groups]
+dev = [
+    "black==24.4.2",
+    "coverage",
+    "django-silk==5.1.0",
+    "livereload",
+    "pre-commit==3.8.0",
+    "sst",
+]
+
+[tool.setuptools]
+packages = ["catalina"]

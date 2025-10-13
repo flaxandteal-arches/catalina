@@ -1,0 +1,32 @@
+{% extends "views/components/map-popup.htm" %}
+{% comment %}
+    Popup for external (non-resource) vector overlay features.
+
+    Reuses the core map popup's title bar (bound to `displayname`) and footer
+    (whose Report/Edit/Filter links are gated on `resourceinstanceid`, so they
+    are empty here) and overrides only the body with a key/value attribute
+    table. `displayname` and `attributes` are populated per feature by the
+    project map popup provider's processData()
+    (catalina/media/js/utils/map-popup-provider.js).
+{% endcomment %}
+
+{% block body %}
+<table class="overlay-popup-table">
+    <tbody data-bind="foreach: attributes">
+        <tr>
+            <th class="overlay-popup-key" data-bind="text: label"></th>
+            <td class="overlay-popup-value" data-bind="text: value"></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock body %}
+
+{% block footer %}
+{% comment %}
+    Overlay features have no resource report/edit/filter actions, so we drop the
+    parent footer's resource-only bindings (showEditButton, reportURL, etc.).
+    The parent opens the footer's action <div> before this block and closes it
+    inside the block, so we emit the matching </div> to keep the markup balanced.
+{% endcomment %}
+</div>
+{% endblock footer %}
