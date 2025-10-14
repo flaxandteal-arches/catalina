@@ -3,7 +3,7 @@ run-name: Build Arches project
 on: [push]
 env:
   ARCHES_BASE: ghcr.io/flaxandteal/arches-base:docker-8.1
-  ARCHES_PROJECT: quartz
+  ARCHES_PROJECT: catalina
 jobs:
   Build-Arches:
     runs-on: [self-hosted]
