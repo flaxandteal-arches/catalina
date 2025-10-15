@@ -153,6 +153,7 @@ INSTALLED_APPS = (
 INSTALLED_APPS += (
     "arches.app",
     "django.contrib.admin",
+    "arches_her"
 )
 
 MIDDLEWARE = [

@@ -24,6 +24,7 @@ classifiers = [
 requires-python = ">=3.11"
 dependencies = [
     "arches>=8.0.0,<8.2.0",
+    "arches_her @ git+https://github.com/flaxandteal/arches-her-app"
 ]
 version = "0.0.1"
 
