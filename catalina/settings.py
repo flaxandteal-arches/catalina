@@ -428,6 +428,7 @@ LANGUAGE_CODE = "en"
 LANGUAGES = [
     #   ('de', _('German')),
     ("en", _("English")),
+    ("mi", _("Māori")),
     #   ('en-gb', _('British English')),
     #   ('es', _('Spanish')),
 ]
