@@ -474,7 +474,7 @@ AZURE_AUTH = {
     'REDIRECT_URI': 'http://localhost:8000/azure_auth/callback',
     
     'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
-    
+    "PROMPT": "select_account",
     # PUBLIC_URLS: Only URL pattern names, not raw paths
     'PUBLIC_URLS': [
         'azure_auth:login', 
