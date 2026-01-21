@@ -177,6 +177,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "arches.app.utils.middleware.SetAnonymousUser",
+    "oauth2_provider.middleware.OAuth2TokenMiddleware",
     # "azure_auth.middleware.AzureMiddleware",  # Commented out - authentication is opt-in via decorators/permissions
     # "silk.middleware.SilkyMiddleware",
 ]
@@ -493,7 +494,7 @@ LOGIN_REDIRECT_URL = "/"    # Or any other endpoint
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'azure_auth.backends.AzureAuthBackend',
+    'azure_auth.backends.AzureBackend',
 ]
 
 try:

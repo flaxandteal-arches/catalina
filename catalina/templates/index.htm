@@ -138,7 +138,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
                         <li>
                             <a 
                                 class="application-login"
-                                href="{% url 'oidc_logout' %}"
+                                href="{% url 'auth' %}?next={% url 'home' %}{% if user.username != 'anonymous' %}&logout=true{% endif %}"
                             >
                                 {% trans 'Log off' %}
                             </a>
