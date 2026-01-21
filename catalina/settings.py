@@ -453,21 +453,23 @@ SHOW_LANGUAGE_SWITCH = len(LANGUAGES) > 1
 # ============================================================================
 # Azure AD Configuration (django-azure-auth)
 # ============================================================================
-# Microsoft Entra ID (Azure AD) authentication configuration
 
 # Login/Logout redirect URLs
 LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
 LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
 
 AZURE_AUTH = {
-    'CLIENT_ID': '61ae24cc-e0f5-473a-901d-9bf3fae07af1',
-    'CLIENT_SECRET': 'YdK8Qo-3T11gcXN.WOVZS.PbC7baDS7E7Yba4o',
-    'TENANT_ID': 'c96bb5bc-ccef-481c-b886-6aa10e107810',
+    # Change with actual values needed
+    'CLIENT_ID': '',
+    # 'CLIENT_SECRET': '',
+    "CLIENT_TYPE": "public_client",
+    # 'TENANT_ID': '',
     
     'AUTHORITY': f'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810',
     
     # Full URL required for redirect - adjust for your domain
     # Must match the redirect URI configured in Azure Portal
+    # Change in production as needed
     'REDIRECT_URI': 'http://localhost:8000/azure_auth/callback',
     
     'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
@@ -479,7 +481,7 @@ AZURE_AUTH = {
     ],
     
     # User management
-    'USERNAME_ATTRIBUTE': 'email',  # Use email as Django username (can also be 'preferred_username' or 'sub')
+    'USERNAME_ATTRIBUTE': 'mail',  
     'SAVE_ID_TOKEN_CLAIMS': True,  # Store user claims in session
     'AUTO_CREATE_USERS': True,  # Create Django users from Azure AD accounts
     'AUTO_CREATE_UNKNOWN_USERS': True,  # Create users even if not in directory
@@ -487,10 +489,6 @@ AZURE_AUTH = {
 
 LOGIN_URL = "/azure_auth/login"
 LOGIN_REDIRECT_URL = "/"    # Or any other endpoint
-
-# ============================================================================
-# End Azure AD Configuration
-# ============================================================================
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
