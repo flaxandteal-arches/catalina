@@ -2,6 +2,14 @@
 Django settings for catalina project.
 """
 
+# Load environment variables from .env file if python-dotenv is available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # python-dotenv not installed, environment variables should be set externally
+    pass
+
 import os
 import inspect
 import semantic_version
@@ -144,6 +152,7 @@ INSTALLED_APPS = (
     "django_celery_results",
     "django_migrate_sql",
     "pgtrigger",
+    "azure_auth",  # Django Azure Auth for Microsoft Entra ID
     # "silk",
     "catalina",  # Ensure the project is listed before any other arches applications
 )
@@ -160,16 +169,15 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    #'arches.app.utils.middleware.TokenMiddleware',
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "arches.app.utils.middleware.ModifyAuthorizationHeader",
-    "oauth2_provider.middleware.OAuth2TokenMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "arches.app.utils.middleware.SetAnonymousUser",
+    # "azure_auth.middleware.AzureMiddleware",  # Commented out - authentication is opt-in via decorators/permissions
     # "silk.middleware.SilkyMiddleware",
 ]
 
@@ -268,11 +276,15 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 15728640
 
 # Unique session cookie ensures that logins are treated separately for each app
 SESSION_COOKIE_NAME = "catalina"
+SESSION_COOKIE_SAMESITE = 'Lax'  # Allow cookies to be sent with OAuth redirects
+SESSION_COOKIE_HTTPONLY = True   # Prevent JavaScript access to session cookie
+SESSION_COOKIE_SECURE = False    # Set to True in production with HTTPS
 
 # For more info on configuring your cache: https://docs.djangoproject.com/en/2.2/topics/cache/
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "default-cache",
     },
     "user_permission": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
@@ -300,8 +312,6 @@ CACHE_BY_USER = {"default": 3600 * 24, "anonymous": 3600 * 24}  # 24hrs  # 24hrs
 TILE_CACHE_TIMEOUT = 600  # seconds
 CLUSTER_DISTANCE_MAX = 5000  # meters
 GRAPH_MODEL_CACHE_TIMEOUT = None
-
-OAUTH_CLIENT_ID = ""  #'9JCibwrWQ4hwuGn5fu2u1oRZSs9V6gK8Vu8hpRC4'
 
 APP_TITLE = "Arches | Heritage Data Management"
 COPYRIGHT_TEXT = "All Rights Reserved."
@@ -439,6 +449,53 @@ SHOW_LANGUAGE_SWITCH = len(LANGUAGES) > 1
 # Implement this class to associate custom documents to the ES resource index
 # See tests.views.search_tests.TestEsMappingModifier class for example
 # ES_MAPPING_MODIFIER_CLASSES = ["catalina.search.es_mapping_modifier.EsMappingModifier"]
+
+# ============================================================================
+# Azure AD Configuration (django-azure-auth)
+# ============================================================================
+# Microsoft Entra ID (Azure AD) authentication configuration
+
+# Login/Logout redirect URLs
+LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
+LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
+
+AZURE_AUTH = {
+    'CLIENT_ID': '61ae24cc-e0f5-473a-901d-9bf3fae07af1',
+    'CLIENT_SECRET': 'YdK8Qo-3T11gcXN.WOVZS.PbC7baDS7E7Yba4o',
+    'TENANT_ID': 'c96bb5bc-ccef-481c-b886-6aa10e107810',
+    
+    'AUTHORITY': f'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810',
+    
+    # Full URL required for redirect - adjust for your domain
+    # Must match the redirect URI configured in Azure Portal
+    'REDIRECT_URI': 'http://localhost:8000/azure_auth/callback',
+    
+    'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
+    
+    # PUBLIC_URLS: Only URL pattern names, not raw paths
+    'PUBLIC_URLS': [
+        'azure_auth:login', 
+        'azure_auth:callback',
+    ],
+    
+    # User management
+    'USERNAME_ATTRIBUTE': 'email',  # Use email as Django username (can also be 'preferred_username' or 'sub')
+    'SAVE_ID_TOKEN_CLAIMS': True,  # Store user claims in session
+    'AUTO_CREATE_USERS': True,  # Create Django users from Azure AD accounts
+    'AUTO_CREATE_UNKNOWN_USERS': True,  # Create users even if not in directory
+}
+
+LOGIN_URL = "/azure_auth/login"
+LOGIN_REDIRECT_URL = "/"    # Or any other endpoint
+
+# ============================================================================
+# End Azure AD Configuration
+# ============================================================================
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'azure_auth.backends.AzureAuthBackend',
+]
 
 try:
     from .package_settings import *
