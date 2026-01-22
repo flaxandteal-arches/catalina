@@ -3,11 +3,11 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
 
+from . import views_azure
+
 urlpatterns = [
-    # Azure AD authentication endpoints (django-azure-auth)
+    path("azure_auth/callback", views_azure.azure_auth_callback),
     path("azure_auth/", include("azure_auth.urls")),
-    
-    # project-level urls
 ]
 
 handler400 = "arches.app.views.main.custom_400"

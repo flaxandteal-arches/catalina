@@ -468,14 +468,11 @@ AZURE_AUTH = {
     
     'AUTHORITY': f'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810',
     
-    # Full URL required for redirect - adjust for your domain
-    # Must match the redirect URI configured in Azure Portal
-    # Change in production as needed
     'REDIRECT_URI': 'http://localhost:8000/azure_auth/callback',
     
     'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
     "PROMPT": "select_account",
-    # PUBLIC_URLS: Only URL pattern names, not raw paths
+    
     'PUBLIC_URLS': [
         'azure_auth:login', 
         'azure_auth:callback',
