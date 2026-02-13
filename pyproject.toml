@@ -27,6 +27,8 @@ dependencies = [
     "arches_her @ git+https://github.com/flaxandteal/arches-her-app",
     "python-dotenv>=1.0.0",
     "django-azure-auth>=1.4.2",
+    "arches_her @ git+https://github.com/flaxandteal/arches-her-app",
+    "uvicorn[standard]",
 ]
 version = "0.0.1"
 
