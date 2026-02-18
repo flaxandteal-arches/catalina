@@ -461,14 +461,14 @@ LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
 
 AZURE_AUTH = {
     # Change with actual values needed
-    'CLIENT_ID': '',
+    'CLIENT_ID': os.environ.get('CLIENT_ID', ''),
     # 'CLIENT_SECRET': '',
     "CLIENT_TYPE": "public_client",
     # 'TENANT_ID': '',
     
-    'AUTHORITY': f'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810',
+    'AUTHORITY': os.environ.get('AZURE_AUTHORITY', 'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810'),
     
-    'REDIRECT_URI': 'http://localhost:8000/azure_auth/callback',
+    'REDIRECT_URI': os.environ.get('AZURE_REDIRECT_URI', 'http://localhost:8000/azure_auth/callback'),
     
     'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
     "PROMPT": "select_account",
