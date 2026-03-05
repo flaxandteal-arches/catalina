@@ -461,9 +461,9 @@ LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
 AZURE_AUTH = {
     # Change with actual values needed
     'CLIENT_ID': os.environ.get('CLIENT_ID', ''),
-    # 'CLIENT_SECRET': '',
-    "CLIENT_TYPE": "public_client",
-    # 'TENANT_ID': '',
+    'CLIENT_SECRET': os.environ.get('AZURE_CLIENT_SECRET', ''),
+    "CLIENT_TYPE": os.environ.get('AZURE_CLIENT_TYPE', "public_client"),
+    'TENANT_ID': os.environ.get('AZURE_TENANT_ID', ''),
     
     'AUTHORITY': os.environ.get('AZURE_AUTHORITY', 'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810'),
     
