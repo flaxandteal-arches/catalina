@@ -20,7 +20,9 @@
         "vitest": "vitest --run --coverage"
     },
     "dependencies": {
-        "arches": "archesproject/arches#dev/8.1.x"
+        "arches": "archesproject/arches#dev/8.1.x",
+        "arches_her": "archesproject/arches-her#dev/2.0.x",
+        "arches_controlled_lists": "archesproject/arches-controlled-lists#dev/1.1.x"
     },
     "devDependencies": {
         "arches-dev-dependencies": "archesproject/arches-dev-dependencies#dev/8.1.x"
