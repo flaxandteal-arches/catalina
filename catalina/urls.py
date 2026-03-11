@@ -10,7 +10,7 @@ urlpatterns = [
     path("azure_auth/", include("azure_auth.urls")),
     path("", include("arches_controlled_lists.urls")),
     path("", include("arches_component_lab.urls")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 handler400 = "arches.app.views.main.custom_400"
 handler403 = "arches.app.views.main.custom_403"

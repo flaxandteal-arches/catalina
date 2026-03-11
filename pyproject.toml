@@ -24,7 +24,7 @@ classifiers = [
 requires-python = ">=3.11"
 dependencies = [
     "arches>=8.0.0,<8.2.0",
-    "arches_her @ git+https://github.com/flaxandteal/arches-her-app",
+    "arches-her @ git+https://github.com/archesproject/arches-her.git@dev/2.0.x",
     "arches-controlled-lists",
     "python-dotenv>=1.0.0",
     "django-azure-auth>=1.4.2",

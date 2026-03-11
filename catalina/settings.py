@@ -32,9 +32,12 @@ WEBPACK_LOADER = {
 }
 
 DATATYPE_LOCATIONS.append("catalina.datatypes")
+DATATYPE_LOCATIONS.append("arches_her.datatypes")
 FUNCTION_LOCATIONS.append("catalina.functions")
+FUNCTION_LOCATIONS.append("arches_her.functions")
 ETL_MODULE_LOCATIONS.append("catalina.etl_modules")
 SEARCH_COMPONENT_LOCATIONS.append("catalina.search_components")
+SEARCH_COMPONENT_LOCATIONS.append("arches_her.search.components")
 
 LOCALE_PATHS.insert(0, os.path.join(APP_ROOT, "locale"))
 
@@ -157,8 +160,8 @@ INSTALLED_APPS = (
     "catalina",  # Ensure the project is listed before any other arches applications
 )
 
-# Placing this last ensures any templates provided by Arches Applications
-# take precedence over core arches templates in arches/app/templates.
+ARCHES_APPLICATIONS = ("arches_controlled_lists", "arches_her")
+
 INSTALLED_APPS += (
     "arches.app",
     "django.contrib.admin",
