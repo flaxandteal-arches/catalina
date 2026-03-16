@@ -29,7 +29,9 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "django-azure-auth>=1.4.2",
     "uvicorn[standard]",
+    "arches_controlled_lists"
 ]
+
 version = "0.0.1"
 
 [dependency-groups]
