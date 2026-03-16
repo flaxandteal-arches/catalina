@@ -160,8 +160,6 @@ INSTALLED_APPS = (
     "catalina",  # Ensure the project is listed before any other arches applications
 )
 
-ARCHES_APPLICATIONS = ("arches_controlled_lists", "arches_her")
-
 INSTALLED_APPS += (
     "arches.app",
     "django.contrib.admin",
