@@ -145,9 +145,9 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.gis",
     "django_hosts",
-    "arches_component_lab",
     "arches_controlled_lists",
     "arches_querysets",
+    "arches_component_lab",
     "arches",
     "arches.app.models",
     "arches.management",
@@ -168,6 +168,9 @@ INSTALLED_APPS += (
     "django.contrib.admin",
     "django.contrib.postgres",
     "arches_her",
+    "arches_controlled_lists",
+    "arches_querysets",
+    "arches_component_lab",
 )
 
 REFERENCES_INDEX_NAME = "references"
