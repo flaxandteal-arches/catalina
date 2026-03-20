@@ -136,6 +136,7 @@ DATABASES = {
 SEARCH_THUMBNAILS = False
 
 INSTALLED_APPS = (
+    "catalina",
     "webpack_loader",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -144,6 +145,9 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.gis",
     "django_hosts",
+    "arches_component_lab",
+    "arches_controlled_lists",
+    "arches_querysets",
     "arches",
     "arches.app.models",
     "arches.management",
@@ -157,17 +161,13 @@ INSTALLED_APPS = (
     "pgtrigger",
     "azure_auth",  # Django Azure Auth for Microsoft Entra ID
     # "silk",
-    "catalina",  # Ensure the project is listed before any other arches applications
 )
 
 INSTALLED_APPS += (
     "arches.app",
     "django.contrib.admin",
-    "arches_controlled_lists",
-    "arches_querysets",
-    "arches_component_lab",
-    "arches_her",
     "django.contrib.postgres",
+    "arches_her",
 )
 
 REFERENCES_INDEX_NAME = "references"
