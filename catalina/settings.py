@@ -496,6 +496,7 @@ SHOW_LANGUAGE_SWITCH = len(LANGUAGES) > 1
 # Login/Logout redirect URLs
 LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
 LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
+OAUTH_CLIENT_ID = os.environ.get('OAUTH_CLIENT_ID', '')
 
 AZURE_AUTH = {
     # Change with actual values needed
