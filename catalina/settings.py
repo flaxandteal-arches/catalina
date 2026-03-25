@@ -2,6 +2,14 @@
 Django settings for catalina project.
 """
 
+# Load environment variables from .env file if python-dotenv is available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # python-dotenv not installed, environment variables should be set externally
+    pass
+
 import os
 import inspect
 import semantic_version
@@ -24,9 +32,12 @@ WEBPACK_LOADER = {
 }
 
 DATATYPE_LOCATIONS.append("catalina.datatypes")
+DATATYPE_LOCATIONS.append("arches_her.datatypes")
 FUNCTION_LOCATIONS.append("catalina.functions")
+FUNCTION_LOCATIONS.append("arches_her.functions")
 ETL_MODULE_LOCATIONS.append("catalina.etl_modules")
 SEARCH_COMPONENT_LOCATIONS.append("catalina.search_components")
+SEARCH_COMPONENT_LOCATIONS.append("arches_her.search.components")
 
 LOCALE_PATHS.insert(0, os.path.join(APP_ROOT, "locale"))
 
@@ -125,6 +136,7 @@ DATABASES = {
 SEARCH_THUMBNAILS = False
 
 INSTALLED_APPS = (
+    "catalina",
     "webpack_loader",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -133,6 +145,9 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.gis",
     "django_hosts",
+    "arches_controlled_lists",
+    "arches_querysets",
+    "arches_component_lab",
     "arches",
     "arches.app.models",
     "arches.management",
@@ -144,32 +159,64 @@ INSTALLED_APPS = (
     "django_celery_results",
     "django_migrate_sql",
     "pgtrigger",
+    "azure_auth",  # Django Azure Auth for Microsoft Entra ID
     # "silk",
-    "catalina",  # Ensure the project is listed before any other arches applications
 )
 
-# Placing this last ensures any templates provided by Arches Applications
-# take precedence over core arches templates in arches/app/templates.
 INSTALLED_APPS += (
     "arches.app",
     "django.contrib.admin",
-    "arches_her"
+    "django.contrib.postgres",
+    "arches_her",
 )
+
+REFERENCES_INDEX_NAME = "references"
+ELASTICSEARCH_CUSTOM_INDEXES = [
+    {
+        "module": "arches_controlled_lists.search_indexes.reference_index.ReferenceIndex",
+        "name": REFERENCES_INDEX_NAME,
+        "should_update_asynchronously": True,
+    }
+]
+TERM_SEARCH_TYPES = [
+    {
+        "type": "term",
+        "label": _("Term Matches"),
+        "key": "terms",
+        "module": "arches.app.search.search_term.TermSearch",
+    },
+    {
+        "type": "concept",
+        "label": _("Concepts"),
+        "key": "concepts",
+        "module": "arches.app.search.concept_search.ConceptSearch",
+    },
+    {
+        "type": "reference",
+        "label": _("References"),
+        "key": REFERENCES_INDEX_NAME,
+        "module": "arches_controlled_lists.search_indexes.reference_index.ReferenceIndex",
+    },
+]
+
+ES_MAPPING_MODIFIER_CLASSES = [
+    "arches_controlled_lists.search.references_es_mapping_modifier.ReferencesEsMappingModifier"
+]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    #'arches.app.utils.middleware.TokenMiddleware',
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "arches.app.utils.middleware.ModifyAuthorizationHeader",
-    "oauth2_provider.middleware.OAuth2TokenMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "arches.app.utils.middleware.SetAnonymousUser",
+    "oauth2_provider.middleware.OAuth2TokenMiddleware",
+    # "azure_auth.middleware.AzureMiddleware",  # Commented out - authentication is opt-in via decorators/permissions
     # "silk.middleware.SilkyMiddleware",
 ]
 
@@ -268,11 +315,15 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 15728640
 
 # Unique session cookie ensures that logins are treated separately for each app
 SESSION_COOKIE_NAME = "catalina"
+SESSION_COOKIE_SAMESITE = 'Lax'  # Allow cookies to be sent with OAuth redirects
+SESSION_COOKIE_HTTPONLY = True   # Prevent JavaScript access to session cookie
+SESSION_COOKIE_SECURE = False    # Set to True in production with HTTPS
 
 # For more info on configuring your cache: https://docs.djangoproject.com/en/2.2/topics/cache/
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "default-cache",
     },
     "user_permission": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
@@ -300,8 +351,6 @@ CACHE_BY_USER = {"default": 3600 * 24, "anonymous": 3600 * 24}  # 24hrs  # 24hrs
 TILE_CACHE_TIMEOUT = 600  # seconds
 CLUSTER_DISTANCE_MAX = 5000  # meters
 GRAPH_MODEL_CACHE_TIMEOUT = None
-
-OAUTH_CLIENT_ID = ""  #'9JCibwrWQ4hwuGn5fu2u1oRZSs9V6gK8Vu8hpRC4'
 
 APP_TITLE = "Arches | Heritage Data Management"
 COPYRIGHT_TEXT = "All Rights Reserved."
@@ -438,6 +487,49 @@ SHOW_LANGUAGE_SWITCH = len(LANGUAGES) > 1
 # Implement this class to associate custom documents to the ES resource index
 # See tests.views.search_tests.TestEsMappingModifier class for example
 # ES_MAPPING_MODIFIER_CLASSES = ["catalina.search.es_mapping_modifier.EsMappingModifier"]
+
+# ============================================================================
+# Azure AD Configuration (django-azure-auth)
+# ============================================================================
+
+# Login/Logout redirect URLs
+LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
+LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
+OAUTH_CLIENT_ID = os.environ.get('OAUTH_CLIENT_ID', '')
+
+AZURE_AUTH = {
+    # Change with actual values needed
+    'CLIENT_ID': os.environ.get('CLIENT_ID', ''),
+    'CLIENT_SECRET': os.environ.get('AZURE_CLIENT_SECRET', ''),
+    "CLIENT_TYPE": os.environ.get('AZURE_CLIENT_TYPE', "public_client"),
+    'TENANT_ID': os.environ.get('AZURE_TENANT_ID', ''),
+    
+    'AUTHORITY': os.environ.get('AZURE_AUTHORITY', 'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810'),
+    
+    'REDIRECT_URI': os.environ.get('AZURE_REDIRECT_URI', 'http://localhost:8000/azure_auth/callback'),
+    
+    'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
+    "PROMPT": "select_account",
+    
+    'PUBLIC_URLS': [
+        'azure_auth:login', 
+        'azure_auth:callback',
+    ],
+    
+    # User management
+    'USERNAME_ATTRIBUTE': 'mail',  
+    'SAVE_ID_TOKEN_CLAIMS': True,  # Store user claims in session
+    'AUTO_CREATE_USERS': True,  # Create Django users from Azure AD accounts
+    'AUTO_CREATE_UNKNOWN_USERS': True,  # Create users even if not in directory
+}
+
+LOGIN_URL = "/azure_auth/login"
+LOGIN_REDIRECT_URL = "/"    # Or any other endpoint
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'azure_auth.backends.AzureBackend',
+]
 
 try:
     from .package_settings import *
