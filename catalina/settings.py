@@ -21,6 +21,14 @@ try:
 except ImportError:
     pass
 
+from django.conf.locale import LANG_INFO
+LANG_INFO["mi"] = {
+    "bidi": False,
+    "code": "mi",
+    "name": "Maori",
+    "name_local": "te reo Māori",
+}
+
 APP_NAME = "catalina"
 APP_VERSION = semantic_version.Version(major=0, minor=0, patch=0)
 APP_ROOT = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
