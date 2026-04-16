@@ -330,8 +330,8 @@ SESSION_COOKIE_SECURE = False    # Set to True in production with HTTPS
 # For more info on configuring your cache: https://docs.djangoproject.com/en/2.2/topics/cache/
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "default-cache",
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": os.environ.get("REDIS_URL", "redis://redis:6379"),
     },
     "user_permission": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
