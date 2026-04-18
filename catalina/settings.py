@@ -536,8 +536,11 @@ LOGIN_URL = "/azure_auth/login"
 LOGIN_REDIRECT_URL = "/"    # Or any other endpoint
 
 AUTHENTICATION_BACKENDS = [
+    # Do we need this? "arches.app.utils.email_auth_backend.EmailAuthenticationBackend",
     'django.contrib.auth.backends.ModelBackend',
     'oauth2_provider.backends.OAuth2Backend',
+    "arches.app.permissions.arches_permission_base.PermissionBackend",
+    "arches.app.utils.external_oauth_backend.ExternalOauthAuthenticationBackend",
     'azure_auth.backends.AzureBackend',
 ]
 
