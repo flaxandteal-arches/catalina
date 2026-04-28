@@ -29,6 +29,7 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "django-azure-auth>=1.4.2",
     "uvicorn[standard]",
+    "redis",
 ]
 
 version = "0.0.1"
