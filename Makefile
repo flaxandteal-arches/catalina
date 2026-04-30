@@ -11,9 +11,9 @@ else
 	ARCHES_ROOT=
 endif
 ifneq ($(ARCHES_ROOT),)
-  DOCKER_COMPOSE_FILES = -f docker/docker-compose.yml -f docker/docker-compose.volumes.yml
+  DOCKER_COMPOSE_FILES = -f docker/docker-compose.yml -f docker/docker-compose.volumes.yml -f docker-compose.redis.yml
 else
-  DOCKER_COMPOSE_FILES = -f docker/docker-compose.yml
+  DOCKER_COMPOSE_FILES = -f docker/docker-compose.yml -f docker-compose.redis.yml
 endif
 ARCHES_BASE = ghcr.io/flaxandteal/arches-base:docker-8.1.0-release
 ARCHES_PROJECT_ROOT = $(shell pwd)/
