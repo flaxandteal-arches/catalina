@@ -11,20 +11,30 @@ def create_spatial_views(apps, schema_editor):
     Node = apps.get_model("models", "Node")
     Language = apps.get_model("models", "Language")
 
-    language = Language.objects.get(isdefault=True)
+    try:
+        language = Language.objects.get(isdefault=True)
+    except Language.DoesNotExist:
+        return
 
     for path in SPATIAL_VIEWS_DIR.glob("*.json"):
         view = json.loads(path.read_text())
-        SpatialView.objects.create(
+        try:
+            node = Node.objects.get(pk=uuid.UUID(view["geometry_node_id"]))
+        except Node.DoesNotExist:
+            print(f"Geometry node with ID {view['geometry_node_id']} does not exist for spatial view {view['slug']}")
+            continue
+        SpatialView.objects.update_or_create(
             spatialviewid=uuid.UUID(view["spatialviewid"]),
-            slug=view["slug"],
-            schema="public",
-            description=view["description"],
-            geometrynode=Node.objects.get(pk=uuid.UUID(view["geometry_node_id"])),
-            language=language,
-            ismixedgeometrytypes=view.get("ismixedgeometrytypes", False),
-            isactive=True,
-            attributenodes=view["attributenodes"],
+            defaults=dict(
+                slug=view["slug"],
+                schema="public",
+                description=view["description"],
+                geometrynode=node,
+                language=language,
+                ismixedgeometrytypes=view.get("ismixedgeometrytypes", False),
+                isactive=True,
+                attributenodes=view["attributenodes"],
+            ),
         )
 
 
@@ -38,7 +48,7 @@ def delete_spatial_views(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("models", "10705_spatialviews_internationalisation_support"),
+        ("catalina", "0001_load_her_pkg"),
     ]
 
     operations = [
