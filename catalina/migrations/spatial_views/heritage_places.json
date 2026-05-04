@@ -39,6 +39,10 @@
         {
             "description": "resource_id",
             "nodeid": "325a430a-efe4-11eb-810b-a87eeabdefba"
+        },
+        {
+            "description": "global_id",
+            "nodeid": "f17f6584-efc7-11eb-81f1-a87eeabdefba"
         }
     ],
     "description": "Heritage sites",
