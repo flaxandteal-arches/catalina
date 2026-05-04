@@ -1,0 +1,20 @@
+services:
+    redis:
+      image: redis:7
+      healthcheck:
+        test: ["CMD", "redis-cli", "ping"]
+        interval: 2s
+        timeout: 2s
+        retries: 10
+
+    arches:
+      depends_on:
+        - redis
+
+    arches_worker:
+      depends_on:
+        - redis
+
+    arches_api:
+      depends_on:
+        - redis
