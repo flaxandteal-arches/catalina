@@ -544,6 +544,30 @@ AUTHENTICATION_BACKENDS = [
     'azure_auth.backends.AzureBackend',
 ]
 
+# Portal host, with trailing /hosting suffix.
+ARCGIS_PORTAL_URL = os.environ.get("ARCGIS_PORTAL_URL", "")
+ARCGIS_PORTAL_USERNAME = os.environ.get("ARCGIS_PORTAL_USERNAME", "")
+ARCGIS_PORTAL_PASSWORD = os.environ.get("ARCGIS_PORTAL_PASSWORD", "")
+
+# Optional. Defaults to <ARCGIS_PORTAL_URL>/portal/sharing/rest/generateToken.
+# Set this if the portal uses a non-standard web context name.
+ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get("ARCGIS_PORTAL_TOKEN_GENERATE_URL", "")
+
+# Slug -> service path from the portal host root (no leading slash).
+ARCGIS_PORTAL_SERVICES = {
+    "nzaa": "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
+    "cons_land": "NAPALIS_ProtectedArea_PublicConservationLand/FeatureServer",
+    "ops_regions": "DOC_OperationsRegions_HFLr/FeatureServer",
+    "ops_districts": "DOC_OperationsDistricts_HFLr/FeatureServer",
+}
+
+# Referer-restricted public key for LINZ Basemaps (aerial photo overlay).
+LINZ_BASEMAPS_API_KEY = os.environ.get("LINZ_BASEMAPS_API_KEY", "")
+
+# nzaa is only available on the prod ArcGIS portal; defaults off and is
+# opted in via env in the prod values.yaml.
+OVERLAYS_NZAA_AVAILABLE = os.environ.get("OVERLAYS_NZAA_AVAILABLE", "false").lower() == "true"
+
 try:
     from .package_settings import *
 except ImportError:

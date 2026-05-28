@@ -1,9 +1,10 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
-from django.urls import include, path
+from django.urls import include, path, re_path
 
 from . import views_azure
+from .overlays.proxy import ArcGISPortalProxyView
 
 urlpatterns = [
 ]
@@ -15,6 +16,11 @@ handler500 = "arches.app.views.main.custom_500"
 
 # Ensure Arches core urls are superseded by project-level urls
 urlpatterns = [
+    re_path(
+        r"^overlays/(?P<slug>[\w-]+)/(?P<path>.*)$",
+        ArcGISPortalProxyView.as_view(),
+        name="arcgis_portal_proxy",
+    ),
     path("", include("arches.urls")),
     path("azure_auth/callback", views_azure.azure_auth_callback),
     path("azure_auth/", include("azure_auth.urls")),
