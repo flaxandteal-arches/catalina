@@ -70,14 +70,19 @@ def load_overlays(apps, schema_editor):
     if not portal_configured:
         logger.warning(
             "ArcGIS portal env (ARCGIS_PORTAL_URL/USERNAME/PASSWORD) is "
-            "incomplete; skipping portal-backed overlays (nzaa, cons_land, "
-            "ops_regions, ops_districts)."
+            "incomplete; skipping all portal-backed overlays."
         )
 
+    # Only register portal-backed overlays this env declares available
+    # (PORTAL_OVERLAYS_AVAILABLE). DOC reshuffles services between envs, so
+    # each env's values.yaml lists what its portal actually has.
+    portal_available = (
+        settings.PORTAL_OVERLAYS_AVAILABLE if portal_configured else set()
+    )
+
     # NZAA archaeological site buffers (2,550 features) — small enough for a
-    # single GeoJSON fetch via the login-gated proxy. Only available on the
-    # prod ArcGIS portal; dev/stg envs skip registration.
-    if portal_configured and settings.OVERLAYS_NZAA_AVAILABLE:
+    # single GeoJSON fetch via the login-gated proxy.
+    if "nzaa" in portal_available:
         upsert(
             slug="nzaa",
             layer_id=NZAA_LAYER_ID,
@@ -96,9 +101,9 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-    if portal_configured:
-        # Conservation Land (~21k features) — too large for one-shot GeoJSON.
-        # Source URL is provisional; client-side dynamic fetcher TBD.
+    # Conservation Land (~21k features) — too large for one-shot GeoJSON.
+    # Source URL is provisional; client-side dynamic fetcher TBD.
+    if "cons_land" in portal_available:
         upsert(
             slug="cons_land",
             layer_id=CONS_LAND_LAYER_ID,
@@ -117,7 +122,8 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-        # DOC Operations Regions (~20k features) — same dynamic-fetcher caveat.
+    # DOC Operations Regions (~20k features) — same dynamic-fetcher caveat.
+    if "ops_regions" in portal_available:
         upsert(
             slug="ops_regions",
             layer_id=OPS_REGIONS_LAYER_ID,
@@ -136,7 +142,8 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-        # DOC Operations Districts (~19k features) — same dynamic-fetcher caveat.
+    # DOC Operations Districts (~19k features) — same dynamic-fetcher caveat.
+    if "ops_districts" in portal_available:
         upsert(
             slug="ops_districts",
             layer_id=OPS_DISTRICTS_LAYER_ID,
