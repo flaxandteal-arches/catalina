@@ -564,9 +564,18 @@ ARCGIS_PORTAL_SERVICES = {
 # Referer-restricted public key for LINZ Basemaps (aerial photo overlay).
 LINZ_BASEMAPS_API_KEY = os.environ.get("LINZ_BASEMAPS_API_KEY", "")
 
-# nzaa is only available on the prod ArcGIS portal; defaults off and is
-# opted in via env in the prod values.yaml.
-OVERLAYS_NZAA_AVAILABLE = os.environ.get("OVERLAYS_NZAA_AVAILABLE", "false").lower() == "true"
+# Slugs of portal-backed overlays this env should register. DOC's portals
+# get reshuffled occasionally, so each env declares its own availability.
+# Defaults to the three layers stably present everywhere except nzaa, which
+# is prod-only and must be added explicitly.
+_DEFAULT_PORTAL_OVERLAYS = "cons_land,ops_regions,ops_districts"
+PORTAL_OVERLAYS_AVAILABLE = {
+    s.strip()
+    for s in os.environ.get(
+        "PORTAL_OVERLAYS_AVAILABLE", _DEFAULT_PORTAL_OVERLAYS
+    ).split(",")
+    if s.strip()
+}
 
 try:
     from .package_settings import *
