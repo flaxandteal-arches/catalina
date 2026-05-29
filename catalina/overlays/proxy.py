@@ -12,9 +12,10 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.http import Http404, JsonResponse
 from django.utils.decorators import method_decorator
+from requests.exceptions import RequestException
 from revproxy.views import ProxyView
 
-from catalina.overlays.portal_token import get_token, invalidate_token
+from catalina.overlays.portal_token import PortalTokenError, get_token, invalidate_token
 
 logger = logging.getLogger(__name__)
 
@@ -58,16 +59,29 @@ class ArcGISPortalProxyView(ProxyView):
                 status=503,
             )
 
-        self._token = get_token()
-        response = super().dispatch(request, path=path)
+        response = None
+        for attempt in range(2):
+            try:
+                self._token = get_token()
+            except (RequestException, PortalTokenError) as e:
+                logger.warning(
+                    "ArcGIS token mint failed for slug=%s: %s", slug, e,
+                )
+                return JsonResponse(
+                    {"error": "ArcGIS portal unreachable"},
+                    status=503,
+                )
 
-        if response.status_code in TOKEN_REJECTED_STATUSES:
-            logger.warning(
-                "ArcGIS proxy got %s for slug=%s; refreshing token and retrying",
-                response.status_code, slug,
-            )
-            invalidate_token()
-            self._token = get_token()
             response = super().dispatch(request, path=path)
+
+            if response.status_code not in TOKEN_REJECTED_STATUSES:
+                break
+
+            if attempt == 0:
+                logger.warning(
+                    "ArcGIS proxy got %s for slug=%s; refreshing token and retrying",
+                    response.status_code, slug,
+                )
+                invalidate_token()
 
         return response
