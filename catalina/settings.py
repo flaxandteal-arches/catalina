@@ -544,6 +544,39 @@ AUTHENTICATION_BACKENDS = [
     'azure_auth.backends.AzureBackend',
 ]
 
+# Portal host, with trailing /hosting suffix.
+ARCGIS_PORTAL_URL = os.environ.get("ARCGIS_PORTAL_URL", "")
+ARCGIS_PORTAL_USERNAME = os.environ.get("ARCGIS_PORTAL_USERNAME", "")
+ARCGIS_PORTAL_PASSWORD = os.environ.get("ARCGIS_PORTAL_PASSWORD", "")
+
+# Optional. Defaults to <ARCGIS_PORTAL_URL>/portal/sharing/rest/generateToken.
+# Set this if the portal uses a non-standard web context name.
+ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get("ARCGIS_PORTAL_TOKEN_GENERATE_URL", "")
+
+# Slug -> service path from the portal host root (no leading slash).
+ARCGIS_PORTAL_SERVICES = {
+    "nzaa": "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
+    "cons_land": "NAPALIS_ProtectedArea_PublicConservationLand/FeatureServer",
+    "ops_regions": "DOC_OperationsRegions_HFLr/FeatureServer",
+    "ops_districts": "DOC_OperationsDistricts_HFLr/FeatureServer",
+}
+
+# Referer-restricted public key for LINZ Basemaps (aerial photo overlay).
+LINZ_BASEMAPS_API_KEY = os.environ.get("LINZ_BASEMAPS_API_KEY", "")
+
+# Slugs of portal-backed overlays this env should register. DOC's portals
+# get reshuffled occasionally, so each env declares its own availability.
+# Defaults to the three layers stably present everywhere except nzaa, which
+# is prod-only and must be added explicitly.
+_DEFAULT_PORTAL_OVERLAYS = "cons_land,ops_regions,ops_districts"
+PORTAL_OVERLAYS_AVAILABLE = {
+    s.strip()
+    for s in os.environ.get(
+        "PORTAL_OVERLAYS_AVAILABLE", _DEFAULT_PORTAL_OVERLAYS
+    ).split(",")
+    if s.strip()
+}
+
 try:
     from .package_settings import *
 except ImportError:
