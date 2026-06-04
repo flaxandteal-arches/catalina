@@ -1,0 +1,21 @@
+{
+    "attributenodes": [
+        {
+            "description": "name",
+            "nodeid": "f45dbbe8-80b7-11ea-b325-f875a44e0e11"
+        },
+        {
+            "description": "legacy_id",
+            "nodeid": "8dca12bd-edeb-11eb-a6c6-a87eeabdefba"
+        },
+        {
+            "description": "resource_instance_id",
+            "nodeid": "8dca12b7-edeb-11eb-a58d-a87eeabdefba"
+        }
+    ],
+    "description": "Areas",
+    "geometry_node_id": "64be56e3-3ee5-11eb-b1f0-f875a44e0e11",
+    "ismixedgeometrytypes": false,
+    "slug": "area",
+    "spatialviewid": "bdbd2722-70dd-4c2b-ad56-a0622c6acff7"
+}
