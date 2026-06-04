@@ -554,11 +554,25 @@ ARCGIS_PORTAL_PASSWORD = os.environ.get("ARCGIS_PORTAL_PASSWORD", "")
 ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get("ARCGIS_PORTAL_TOKEN_GENERATE_URL", "")
 
 # Slug -> service path from the portal host root (no leading slash).
+# Defaults match prod portal naming; override per-env via ARCGIS_PORTAL_SERVICE_<SLUG>
+# where dev/staging portals expose the same data under different service names.
 ARCGIS_PORTAL_SERVICES = {
-    "nzaa": "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
-    "cons_land": "NAPALIS_ProtectedArea_PublicConservationLand/FeatureServer",
-    "ops_regions": "DOC_OperationsRegions_HFLr/FeatureServer",
-    "ops_districts": "DOC_OperationsDistricts_HFLr/FeatureServer",
+    "nzaa": os.environ.get(
+        "ARCGIS_PORTAL_SERVICE_NZAA",
+        "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
+    ),
+    "cons_land": os.environ.get(
+        "ARCGIS_PORTAL_SERVICE_CONS_LAND",
+        "NAPALIS_ProtectedArea_PublicConservationLand/FeatureServer",
+    ),
+    "ops_regions": os.environ.get(
+        "ARCGIS_PORTAL_SERVICE_OPS_REGIONS",
+        "DOC_OperationsRegions_HFLr/FeatureServer",
+    ),
+    "ops_districts": os.environ.get(
+        "ARCGIS_PORTAL_SERVICE_OPS_DISTRICTS",
+        "DOC_OperationsDistricts_HFLr/FeatureServer",
+    ),
 }
 
 # Referer-restricted public key for LINZ Basemaps (aerial photo overlay).
