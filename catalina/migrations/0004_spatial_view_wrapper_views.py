@@ -12,19 +12,26 @@ EDIT ``WRAPPER_VIEWS`` below. The *left* side of each ``columns`` mapping must
 match the real column name in the generated object — i.e. the slugified node
 alias, NOT the ``description`` from the spatial_views JSON. Confirm with
 ``\\d public.<slug>_point`` in dbshell before relying on this.
+
+Each entry reads from the Arches object keyed by its ``slug`` but is published
+under ``export_name`` (the client-facing name, e.g. monument -> heritage_places),
+so the downstream layer name is decoupled from the internal Arches slug.
 """
 
 from django.db import migrations
 
-# Wrapper view name = "<slug>_<geom>" + WRAPPER_SUFFIX, e.g. "monument_point_export".
-WRAPPER_SUFFIX = "_export"
+# Wrapper view name = "<export_name>_<geom>" + WRAPPER_SUFFIX, e.g.
+# "heritage_places_point".
+WRAPPER_SUFFIX = ""
 
 PASSTHROUGH_LEADING = ["resourceinstanceid", "gid", "tileid", "nodeid"]
 PASSTHROUGH_TRAILING = ["geom"]
 
-# slug -> { geometry_types: [...], columns: { source_column: exported_name } }
+# slug -> { export_name, geometry_types: [...], columns: { source_column: exported_name } }
+# slug keys the Arches source object; export_name is the published (client-facing) name.
 WRAPPER_VIEWS = {
     "monument": {
+        "export_name": "heritage_places",
         "geometry_types": ["point", "linestring", "polygon"],
         "columns": {
             "monument_name": "monument_name",
@@ -34,6 +41,7 @@ WRAPPER_VIEWS = {
         },
     },
     "area": {
+        "export_name": "heritage_areas",
         "geometry_types": ["polygon"],
         "columns": {
             "area_name_n1": "area_name",
@@ -41,6 +49,7 @@ WRAPPER_VIEWS = {
         },
     },
     "activity": {
+        "export_name": "gap_analysis",
         "geometry_types": ["polygon"],
         "columns": {
             "activity_name": "name",
@@ -50,6 +59,7 @@ WRAPPER_VIEWS = {
         },
     },
     "consultation": {
+        "export_name": "condition_assessment",
         "geometry_types": ["point", "linestring", "polygon"],
         "columns": {
             "consultation_name": "asset_name",
@@ -62,15 +72,16 @@ WRAPPER_VIEWS = {
 }
 
 
-def _wrapper_names(slug, geom):
-    return f"public.{slug}_{geom}", f"public.{slug}_{geom}{WRAPPER_SUFFIX}"
+def _wrapper_names(slug, cfg, geom):
+    export = cfg.get("export_name", slug)
+    return f"public.{slug}_{geom}", f"public.{export}_{geom}{WRAPPER_SUFFIX}"
 
 
 def create_wrappers(apps, schema_editor):
     with schema_editor.connection.cursor() as cursor:
         for slug, cfg in WRAPPER_VIEWS.items():
             for geom in cfg["geometry_types"]:
-                source, target = _wrapper_names(slug, geom)
+                source, target = _wrapper_names(slug, cfg, geom)
 
                 cursor.execute("select to_regclass(%s)", [source])
                 if cursor.fetchone()[0] is None:
@@ -92,7 +103,7 @@ def drop_wrappers(apps, schema_editor):
     with schema_editor.connection.cursor() as cursor:
         for slug, cfg in WRAPPER_VIEWS.items():
             for geom in cfg["geometry_types"]:
-                _, target = _wrapper_names(slug, geom)
+                _, target = _wrapper_names(slug, cfg, geom)
                 cursor.execute(f"drop view if exists {target};")
 
 
