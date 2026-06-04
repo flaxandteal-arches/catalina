@@ -1,10 +1,6 @@
 {
     "attributenodes": [
         {
-            "description": "primary_reference_number",
-            "nodeid": "325a2f33-efe4-11eb-b0bb-a87eeabdefba"
-        },
-        {
             "description": "monument_name",
             "nodeid": "676d47ff-9c1c-11ea-b07f-f875a44e0e11"
         },
