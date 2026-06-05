@@ -3,51 +3,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: dev@fargeo.com\n"
-"POT-Creation-Date: 2026-05-12 05:19:16\n"
-"PO-Revision-Date: 2026-05-12 05:19:16\n"
+"POT-Creation-Date: 2026-06-05 10:36:20\n"
+"PO-Revision-Date: 2026-06-05 10:36:20\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: cards_x_nodes_x_widgets:1
-msgid "Google Analytics Key"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter key"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Cross Reference"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter text"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Planning Outcome"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Select an option"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Source Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Associated Construction Phase"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Updater Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Attendees"
-msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Primary Reference Number"
@@ -58,27 +18,11 @@ msgid "Enter number"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Geospatial Coordinates"
+msgid "Voyage Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Owner"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Publisher"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Resource Model Type"
+msgid "Select an option"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -86,171 +30,15 @@ msgid "Creator Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Full Address"
+msgid "Enter text"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Area Name"
+msgid "External Cross Reference Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "ResourceID"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Latitude Hemisphere"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Images"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "File"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Letter Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Development Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Status"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Monument, Area or Artefact"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compiler Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Parent Monument"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Search Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Associated Monument, Area or Artefact"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Dimension Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Location Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Ownership"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Street Pattern"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Log Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Object Title"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter the name of the publisher"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Thesaurus SPARQL Endpoint"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Digital File"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Search for or create a new Digital File"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Number of search results per page"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Number of Pages"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Designation Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Reference Number"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Audit Note"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Application Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "e.g. Arches"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Spatial Metadata Notes"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Person or Organization"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorizer Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Color Ramp"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Geometry"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Current Base Map Name"
+msgid "Voyage Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -258,7 +46,301 @@ msgid "Description"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Activity Type"
+msgid "Flight Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "External Cross Reference Source"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Associated Monument, Area or Artefact"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "External Cross Reference Number"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Approved Date Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compiler Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Audit Note"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contested Heritage?"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Latitude Hemisphere"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Display Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Status Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Status Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Input Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Approved By Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Recommendation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Whakapapa Status Ascribed Ancestor"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Promissory Subject"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Promise Upon"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Approved By Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Approved By Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Select a resource"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Name For Correspondence"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Project map extent"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "MapBox API Key (Optional)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Input Date Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Land Use Classification"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid ""
+"Use to record a particular status associated with the "
+"Area/Artefact/Aircraft/Monument/Vessel."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Promise to"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Statement"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Input Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Reference Number Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Number of search results per page"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Default Zoom"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Reference Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Reference Number"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Input By Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Input By Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Input By Role Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Terminating Act"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Approved Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Approved Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Bibliographic Source"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Digital File(s)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Reference Mātauranga"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "URL"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter URL label"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter URL"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Ownership"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Geometry"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Full Address"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Location Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Initiating Act"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Context Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Authorizer Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Monument or Area"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Event Context"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "declarative custody transfer object transferred"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "declarative custody transfer generic actor receiving"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "declarative custody transfer generic actor surrendering"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Map"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Person or Organization"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use to record a particular status associated with the Monument."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Association Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Time-span"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Family Status Holds For"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Status"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Images"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -270,33 +352,63 @@ msgid "e.g.: 2"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Digital File(s)"
+msgid "Google Analytics Key"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Application Area"
+msgid "Enter key"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Page(s)"
+msgid "Archive Object Title"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contact point"
+msgid "Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Land Use Classification"
+msgid "Updater Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid ""
-"Use to record a particular status associated with the findspot where the "
-"artefact was discovered."
+msgid "Action Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contact Name For Correspondence"
+msgid "Advice Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Threats"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Cross Reference"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "ResourceID"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Planning Outcome"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Archive Source Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Aircraft Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter the type of the aircraft, eg. Mosquito"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -304,27 +416,169 @@ msgid "Activity Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Period"
+msgid "Attendee"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Planning Officer"
+msgid "Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Copyright Type"
+msgid "Geospatial Coordinates"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Named Location Longitude"
+msgid "Associated Construction Phase"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Association Type"
+msgid "Associated Monument Construction Phase"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Statement of Responsibility"
+msgid "Achive Object Title"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Attendees"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Nationality"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Associated Consultations"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Owner"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "External Cross Reference Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Resource Model Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Current Base Map Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Crew Member Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "External Cross Reference Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Record Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use Phase Period"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Source"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid ""
+"Select the Bibliographic Source from the library. If the source doesn't "
+"exist create a new bibliographic source."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Letter Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Development Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Number of Pages"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Publisher"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Placename"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Temporal Coverage"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Application Area"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Log Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Digital File"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Search for or create a new Digital File"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "File"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter the name of the publisher"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Monument, Area or Artefact"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Parent Monument"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Period Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Aerial Photograph"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Search Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Dimension Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Metadata Notes"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Finder Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -336,7 +590,7 @@ msgid "Enter date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Monument Type"
+msgid "Copyright Holder"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -344,43 +598,169 @@ msgid "Crew member"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Display Date"
+msgid "Site Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Date of Death"
+msgid "Activity Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contested Heritage?"
+msgid "Thesaurus SPARQL Endpoint"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Language"
+msgid "Period Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Currency"
+msgid "Bibliographic Source Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Placename"
+msgid "Condition"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Validation"
+msgid "Add new Relationship"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Use Phase Period"
+msgid "Parent Area"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Author Name"
+msgid "Page(s)"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "API Key"
+msgid "Observation Notes"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use to record a particular status associated with the Asset."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Designation Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Notes"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Maritime Vessel Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter the type of the craft, as identified."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Bibliographic Source Citation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Visit"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Capture Scale"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Application Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "e.g. Arches"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Monument Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Planning Officer"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Cargo Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Proposal Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Statement of Responsibility"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Color Ramp"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Location Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Associated Area Phase"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "File Format Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Parent Story"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Extent Measurement Unit"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Parent Organization"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Audience Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid ""
+"Use to record a particular status associated with the findspot where the "
+"artefact was discovered."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Artefact Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Named Location Longitude"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Source Reference Work"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -388,43 +768,29 @@ msgid "Cache Seed Max Zoom"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Default Zoom"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "HEX_BIN_PRECISION"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "DEFAULT_BOUNDS"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Map"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Provider Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Record Type"
+msgid "Organization Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Associated Person or Organization"
+msgid "Date of Death"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Associated Consultations"
+msgid "Creator"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Nationality"
+msgid "Repository owner"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "MapBox API Key (Optional)"
+msgid ""
+"Select the Organization or Person that is the current keeper of the "
+"resource."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -440,7 +806,31 @@ msgid "Artefact Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Place of Departure"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Organization Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Organization Currency Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Earliest Possible Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Copyright Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Period"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact point"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -448,25 +838,11 @@ msgid "Full Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Repository owner"
+msgid "DEFAULT_BOUNDS"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid ""
-"Select the Organization or Person that is the current keeper of the "
-"resource."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Proposal Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Departure"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Organization Name"
+msgid "API Key"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -475,101 +851,15 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Achive Object Title"
+msgid "HEX_BIN_PRECISION"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Artefact Type"
+msgid "Author Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Condition"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Threats"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Finder Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Flight Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid ""
-"Use to record a particular status associated with the "
-"Area/Artefact/Aircraft/Monument/Vessel."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Copyright Holder"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Extent Measurement Unit"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Cargo Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Aircraft Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter the type of the aircraft, eg. Mosquito"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Associated Monument Construction Phase"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Add new Relationship"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Site Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Use to record a particular status associated with the Monument."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Voyage Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Subjects"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creator"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Temporal Coverage"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Aerial Photograph"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Voyage Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Parent Story"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Audience Type"
+msgid "Application Area Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -581,43 +871,7 @@ msgid "Mitigation"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Project map extent"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "GoogleAnalyticsKey"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Parent Organization"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Observation Notes"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Crew Member Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Associated Area Phase"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Recommendation"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "File Format Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Location Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -625,7 +879,11 @@ msgid "Component Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Use to record a particular status associated with the Area."
+msgid "Subjects"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Validation"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -633,15 +891,15 @@ msgid "Alternative Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Earliest Possible Start Date"
+msgid "Associated Person or Organization"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use to record a particular status associated with the Area."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Subject"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Organization Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -657,213 +915,11 @@ msgid "Photographs"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Parent Area"
+msgid "Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Consultation Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Source"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid ""
-"Select the Bibliographic Source from the library. If the source doesn't "
-"exist create a new bibliographic source."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Period Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Capture Scale"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date of Visit"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Citation"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Period Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Application Area Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Monument or Area"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Maritime Vessel Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter the type of the craft, as identified."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Action Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Advice Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Notes"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Use to record a particular status associated with the Asset."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Attendee"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Reference Number Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Development Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "ResourceID Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Full Address Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Object Reference Number"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Application Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Source Number"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Aircraft Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contact Point Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Placename Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Feature Shape"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Last Flight Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Resource Model Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compiler Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Association Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contact Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Mapbox Sprites"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Recommended by"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Monument Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Crew Role"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Cross Reference Source"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorizer Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Updater Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creator Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Ownership Start Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Planning Officer Role Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Land Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Period Name Type"
+msgid "Street Pattern"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -871,55 +927,11 @@ msgid "LegacyID"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Editor Name"
+msgid "Cross Reference Source"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Audit Notes Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Capture Scale Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Audience Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Current Base Map Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Dating Method"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Attendee Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Object Title Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Source Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contested Heritage Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Designation Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Nationality Metatype"
+msgid "Feature Shape"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -927,15 +939,15 @@ msgid "Use Phase Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Application Area Name Type"
+msgid "Crew Role"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Period Metatype"
+msgid "Nationality Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Maritime Vessel Metatype"
+msgid "Publisher Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -943,11 +955,19 @@ msgid "Planning Outcome Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Flight Metatype"
+msgid "Start Date of Assessment"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Caption"
+msgid "DIscovery Method"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Death"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Source Number"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -955,99 +975,19 @@ msgid "Birthplace"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Caption Note"
+msgid "Inscription Note"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Dimension Metatype"
+msgid "Inscription Language"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Sprites"
+msgid "Artefact Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Reference Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Tile Cache Config"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Max Zoom"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Spatial Metadata Notes Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Page Reference Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Action Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Advice Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "HEX_BIN_SIZE"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Provider Key"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Observation Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "FIle Format Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Note Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Role"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Number of search hints per dropdown"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Start Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Related Condition"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Publisher Name Type"
+msgid "Communication Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1062,61 +1002,19 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Periods"
+msgid "Dating Method"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Organization Metatype"
+msgid "ResourceID Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Inscription Note"
+msgid "Audit Notes Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Letter Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Latitude Degrees"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Inscription Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Organization Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Artefact Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Ownership Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Latest Possible Start Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid ""
-"Hexagon Grid Precision (Integer, larger numbers ensuer more precise counts "
-"at a performanace cost)"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "e.g.: 4"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Communication Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Historic Map"
+msgid "Area Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1124,29 +1022,35 @@ msgid "Min Zoom"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Feature Shape Metatype"
+msgid "Full Address Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Target Date Qualifier"
+msgid "Resource Model Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Full Name Type"
+msgid "FIle Format Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Language Metatype"
+msgid "Activity End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid ""
-"Hexagon Grid Precision (Integer, larger numbers ensure more precise counts "
-"at a performance cost)"
+msgid "Activity Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Consultation Date Qualifier"
+msgid "Contact Point Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Archive Object Reference Number"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1154,31 +1058,99 @@ msgid "Nationailty Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Component Metatype"
+msgid "Monument Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Time wheel configuration"
+msgid "Placename Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Activity Metatype"
+msgid "Editor Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Search URL"
+msgid "Named Location Latitude"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "(copy and paste from your browser address bar)"
+msgid "Authorizer Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Death"
+msgid "Land Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Measurement Unit"
+msgid "Creator Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Last Flight Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Periods"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compiler Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Metadata Notes Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Updater Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Sprites"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Caption Note"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Audience Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Caption"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "HEX_BIN_SIZE"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Provider Key"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Language Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Tile Cache Config"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Creation Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Organization Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Organization Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1190,71 +1162,35 @@ msgid "Place of Departure Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Creation Date"
+msgid "Latitude Degrees"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Communication Date"
+msgid "Latest Possible Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Surveyor"
+msgid "Archive Source Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Default Data Import/Export Name"
+msgid "Current Base Map Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Activity Name Type"
+msgid "Designation Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Artefact Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Alternative Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Organization Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Storage Building Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "DIscovery Method"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Extent Measurement Unit Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date of Departure"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Named Location Latitude"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Start Date of Assessment"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Finder Name Type"
+msgid "Contested Heritage Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Statement of Responsibility Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Max Zoom"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1266,7 +1202,19 @@ msgid "Street Pattern Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Status Metatype"
+msgid "Finder Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Planning Officer Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Ownership Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Extent Measurement Unit Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1274,27 +1222,227 @@ msgid "Description of Voyage"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Language Type"
+msgid "Dimension Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Archive Object Title Metatype"
+msgid "Note Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "ResourceID Metatype"
+msgid "Mapbox Sprites"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Description Metatype"
+msgid "Related Condition"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Source Number Type"
+msgid "Storage Building Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contact Name Use Metatype"
+msgid "Observation Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Archive Object Title Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Attendee Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Organization Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Alternative Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Artefact Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Departure"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Historic Map"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Page Reference Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Development Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Recommended by"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Search URL"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "(copy and paste from your browser address bar)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Role"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Number of search hints per dropdown"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid ""
+"Hexagon Grid Precision (Integer, larger numbers ensure more precise counts "
+"at a performance cost)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "e.g.: 4"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Component Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Association Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Reference Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Time wheel configuration"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Default Data Import/Export Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Full Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Flight Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid ""
+"Hexagon Grid Precision (Integer, larger numbers ensuer more precise counts "
+"at a performanace cost)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Advice Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Letter Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Ownership Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Measurement Unit"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Communication Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Feature Shape Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Target Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Action Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Period Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Maritime Vessel Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Application Area Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Language Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Capture Scale Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Bibliographic Source Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Period Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Aircraft Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Application Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Surveyor"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1302,67 +1450,19 @@ msgid "Cross Reference Note"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Measurement Unit Metatype"
+msgid "Caption Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Page Reference  Metatype"
+msgid "Compiler Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Copyright Metatype"
+msgid "Full Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contributor Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creator Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Audit Notes Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Publisher Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Storage Building Name Currency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Crew Role Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Search Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Last Flight Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Location Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Reference Number Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Application Area Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Land Use Note"
+msgid "ResourceID Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1370,11 +1470,19 @@ msgid "Latitude Minutes"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Phase Evidence Type"
+msgid "Area Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Full Address Metatype"
+msgid "Land Use Note"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Death Place Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Location Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1386,23 +1494,19 @@ msgid "Use to record a particular status associated with the Area"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Max number of search results to export"
+msgid "Construction Phase Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Dating Method Metatype"
+msgid "Source Number Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Designation Name Metatype"
+msgid "Archive Object Title Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Area Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compiler Name Metatype"
+msgid "Full Address Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1414,115 +1518,19 @@ msgid "Authorizer Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Spatial Metadata Notes Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Name Metatype"
+msgid "Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contact Point Metatype"
+msgid "Bibliographic Source Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contact Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Planning Officer Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Statement of Responsibility Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Named Location Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Construction Phase Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Mapbox Glyphs"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Placename Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Caption Note Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Glyphs"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Display Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Dimension Value"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Flight Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Proposal Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Departure Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Quantity"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Caption Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Note Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Period Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date of Arrival"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Use Phase End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Observation Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Photograph Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Recommendation Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Alternative Name Metatype"
+msgid "Copyright Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1530,11 +1538,153 @@ msgid "Earliest Possible End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Reference Metatype"
+msgid "Phase Evidence Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Construction Technique"
+msgid "Page Reference  Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Audit Notes Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Publisher Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Note Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Max number of search results to export"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Dating Method Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Alternative Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Placename Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Planning Officer Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Named Location Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Creator Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Birthplace Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Description Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "AP Source Number Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid ""
+"Max number of search results to export (see help for limitations on this "
+"value)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Registration"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Caption Note Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Period Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Photograph Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Statement of Responsibility Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Observation Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Metadata Notes Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Designation Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Flight Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Display Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Point Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Proposal Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Crew Role Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Departure Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Measurement Unit Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Search Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Dimension Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Mapbox Glyphs"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use Phase End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Reference Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1543,6 +1693,14 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Arrival"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Recommendation Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1562,33 +1720,15 @@ msgid "Audit Outcome"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Registration"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Dimension Type Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid ""
-"Max number of search results to export (see help for limitations on this "
-"value)"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Target Date "
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "AP Source Number Type"
+msgid "Inscription Language Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Voyage Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Ownership End Date"
+msgid "Survey Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1600,23 +1740,11 @@ msgid "End Date of Assessment"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Inscription Language Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Discovery Method Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Description Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Death Place Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Full Name Metatype"
+msgid "Storage Building Name Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1624,19 +1752,15 @@ msgid "Artefact Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Survey Type"
+msgid "Construction Technique"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Birthplace Type"
+msgid "Contact Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Broad  Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Street Frontage"
+msgid "Application Area Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1644,23 +1768,47 @@ msgid "Organization Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Glyphs"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Last Flight Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Activity Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Scientific Date Start Date"
+msgid "Quantity"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Legacy ID"
+msgid "Street Frontage"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Creator Name Use Type"
+msgid "Dimension Type Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Cross Reference Note Type"
+msgid "Contributor Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Broad  Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Voyage Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Ownership End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1668,23 +1816,19 @@ msgid "Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Alternative Name Use Type"
+msgid "Archive Object Reference"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Building Name"
+msgid "Recommendation Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Dimension Measurement Unit Metatype"
+msgid "Observed by"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Source Number Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compiler Name Use Type"
+msgid "Cross Reference Note Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1692,59 +1836,7 @@ msgid "Organization Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Use Phase Display Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Object Reference"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Placename Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Application Area Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Caption Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Updater Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Role Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Agency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Title"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Flight Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Current Base Map Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Construction Phase Metatype"
+msgid "Building Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1752,27 +1844,15 @@ msgid "Caption Note Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Birthplace Metatype"
+msgid "Legacy ID"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Street Frontage Metatype"
+msgid "Place of Registration Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Designation Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Spatial Accuracy Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Audit Outcome metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorizer Name Use Type"
+msgid "Flight Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1780,87 +1860,19 @@ msgid "Contributor"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Copyright Note Text"
+msgid "Creator Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Latest Possible End Date"
+msgid "Use Phase Display Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Casework Officer"
+msgid "Application Area Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Area Status Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Broad Type Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Land Use Notes Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Publication Placename"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Finder Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contact Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Phase Evidence Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Translation Text"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Spatial Metadata Notes Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Communication Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Description Language "
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Last Flight Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Target Date End"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "AP Source Number Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Related Application Area"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Participants"
+msgid "Port of Departure Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1868,27 +1880,11 @@ msgid "Copyright Note Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Recovery Technique"
+msgid "Designation Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Dimension Type Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Expected Date of Arrival"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Level of Risk to Site"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Description Language Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Registration Metatype"
+msgid "Area Status Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1900,39 +1896,55 @@ msgid "Proposal File(s)"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Observed by"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Port of Departure Name"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Recommendation Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Photograph Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Related Advice"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Artefact Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Image"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Dimension Measurement Unit"
+msgid "Scientific Date Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Inscription Translation"
+msgid "Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Dimension Type Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Death Place Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Last Flight Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Source Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Authorizer Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compiler Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Accuracy Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Metadata Notes Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Current Base Map Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Updater Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1940,7 +1952,7 @@ msgid "Voyage Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Storage Building Name Type"
+msgid "Phase Evidence Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1948,27 +1960,7 @@ msgid "Period Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Ownership Display Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Finder"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Latitude Seconds"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Production Date: From"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Construction Technique Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Name Use Type"
+msgid "Dimension Measurement Unit Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1980,7 +1972,131 @@ msgid "Enter the number of the Frame associated with the Aerial Photograph"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Advice Description Type"
+msgid "Placename Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Casework Officer"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Broad Type Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Land Use Notes Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Dimension Measurement Unit"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Storage Building Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Construction Phase Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Construction Technique Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Caption Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "AP Source Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Title"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Street Frontage Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Bibliographic Source Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Publication Placename"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Alternative Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Latest Possible End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Ownership Display Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Latitude Seconds"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Birthplace Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Communication Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Production Date: From"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Finder"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Inscription Translation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Artefact Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Description Language Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Description Language "
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Recovery Technique"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Translation Text"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Finder Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Copyright Note Text"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -1988,103 +2104,59 @@ msgid "Area Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Level of Risk to Site"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Agency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Audit Outcome metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Related Application Area"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Target Date End"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Participants"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Expected Date of Arrival"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Related Advice"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Photograph Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Associated Proposal File(s)"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Death Place Metatype"
+msgid "Advice Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Validation Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Flight Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Building Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Use Phase Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Coordinate System"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Editor"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Status Start Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Publication Placename Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Author Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Land Use Notes Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Application Area Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Publication"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Role Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Language Metatype "
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creator Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Designation Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Spatial Accuracy Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Cultural Period"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Alternative Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Scientific Date End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Cross Reference Note Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Period Name Use Metatype"
+msgid "Advice Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2092,7 +2164,27 @@ msgid "Legacy ID Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Compiler Name Use Metatype"
+msgid "Creator Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Validation Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Status Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Artefact Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Casework Officer Role Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2104,131 +2196,23 @@ msgid "Archive Object Reference Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Port of Destination Name"
+msgid "Compiler Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Updater Name Use Metatype"
+msgid "Building Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Name Use Metatype"
+msgid "Cross Reference Note Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Authorizer Name Use Metatype"
+msgid "Scientific Date End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Spatial Metadata Notes Language Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Organization Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Finder Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Last Flight Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Caption Note Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Translation Text Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Recovery Technique Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Measurement Value"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter value"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Departure Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date of Loss"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Proportion of Site at Risk"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Storage Building Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Production Date: To"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Artefact Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Father"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Placename Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "HLC Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Title Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Condition Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Casework Officer Role Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Name Use Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Completion Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Select the unit of measurement."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity Date Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Film No."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Location Description"
+msgid "Consultation Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2240,15 +2224,79 @@ msgid "Where known, enter the primary type of propulsion."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Advice Description Metatype"
+msgid "Designation Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Average Height"
+msgid "Coordinate System"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Component Material"
+msgid "Period Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Flight Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Title Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Caption Note Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Land Use Notes Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Authorizer Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Port of Destination Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Editor"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Accuracy Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Application Area Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Publication Placename Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Alternative Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use Phase Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Role Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Updater Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Departure Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Proportion of Site at Risk"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2256,7 +2304,67 @@ msgid "Activity Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Component Material"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Father"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Cultural Period"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "HLC Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Voyage Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Metadata Notes Language Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Author Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Completion Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Location Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Select the unit of measurement."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Condition Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Production Date: To"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Storage Building Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Longitude Hemisphere"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Publication"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2264,15 +2372,67 @@ msgid "Phase Certainty"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Language Metatype "
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Placename Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Average Height"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Ownership Date Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Consultation Name Use Metatype"
+msgid "Bibliographic Source Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Longitude Hemisphere"
+msgid "Measurement Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Recovery Technique Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Translation Text Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Organization Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Finder Name Use Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Film No."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Loss"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Last Flight Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Building Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2288,15 +2448,63 @@ msgid "Caption Note Language Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Component Material Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Type of Access"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Current Base Map Name Currency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Authorizer Name Currency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compiler Name Currency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Manner of Loss"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Updater Name Currency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Creator Name Currency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Scientific Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Longitude Degrees"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Target Date End "
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter URL Label... "
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Enter URL... "
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Name Currency"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Film Number Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Placename Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2309,54 +2517,6 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Storage Building Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Manner of Loss"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Crash Description Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Land Use Notes Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Scientific Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Publication Placename Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Longitude Degrees"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Target Date End "
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Status End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Subject Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creator Name Currency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contact Name Currency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Casework Officer Role Metatype"
 msgstr ""
 
@@ -2365,27 +2525,7 @@ msgid "Author Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Construction Phase Start Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Pages Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compiler Name Currency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Updater Name Currency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Current Base Map Name Currency"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorizer Name Currency"
+msgid "Area Status End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2393,35 +2533,11 @@ msgid "Place of Departure Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "URL"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter URL Label... "
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter URL... "
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Archive Object Reference Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Building Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Copyright Note Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Use Phase Date Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Designation or Protection Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2437,7 +2553,27 @@ msgid "Advice Applied Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Pages Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Designation or Protection Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Construction Phase Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Land Use Notes Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Association Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Copyright Note Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2445,7 +2581,11 @@ msgid "Finder Name Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Translation Text Metatype"
+msgid "Subject Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Component Material Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2453,11 +2593,7 @@ msgid "Discovery Note"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Volume Number"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "URl"
+msgid "Crash Description Language"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2473,10 +2609,6 @@ msgid "Mother"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Title Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Ownership Date Qualifier Metatype"
 msgstr ""
 
@@ -2489,7 +2621,27 @@ msgid "Place of Departure Name"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Placename Currency"
+msgid "Publication Placename Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Storage Building Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Translation Text Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Title Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Volume Number"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "URl"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2497,11 +2649,7 @@ msgid "Name Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Construction Phase End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Storage Building Name Use Metatype"
+msgid "Scientific Date Qualifier Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2509,35 +2657,7 @@ msgid "Creator Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Designation or Protection Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Date of Publication"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compiler Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Pages Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Reference"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Placename Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Building Number Sub-Street"
+msgid "Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2545,103 +2665,7 @@ msgid "Land Use Notes Language Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Current Base Map Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorizer Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Updater Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Scientific Date Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Functional Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Longitude Minutes"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Archive Holder"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Flight Description Language Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "From Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Forename(s)"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Confidence of Interpretation"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Discovery Note Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Translation Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Type of Rigging"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Volume Number Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Agent"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Consultation Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Advice Applied End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Capture Scale "
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorship Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Building Number"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Activity Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Craft Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Crash Description Language Metatype"
+msgid "Storage Building Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2649,35 +2673,27 @@ msgid "Subject Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Rear Gardens"
+msgid "Area Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Evidence Type"
+msgid "Authorizer Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contact Name Currency Metatype"
+msgid "Designation or Protection Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Phase Description"
+msgid "Type of Rigging"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Association End Date"
+msgid "Updater Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Consultation Location Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Film Number Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Finder Name Currency Metatype"
+msgid "Agent"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2685,7 +2701,67 @@ msgid "Consultation Data Qualifier Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Consultation Location Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Reference"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Volume Number Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Publication"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Building Number"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Crash Description Language Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compiler Name Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Construction Phase End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Confidence of Interpretation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Building Number Sub-Street"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Forename(s)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Placename Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Current Base Map Name Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Pages Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Contact Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2693,51 +2769,79 @@ msgid "Production Time Span Date Qualifier Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Figs."
+msgid "Translation Language"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Date of Last Update"
+msgid "Discovery Note Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Standard Deviation Value"
+msgid "Archive Holder"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Functional Craft Metatype"
+msgid "Association End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Building Number Type"
+msgid "Finder Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Land Use Assessment Start Date"
+msgid "Evidence Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Grade"
+msgid "Functional Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Volume Number Metatype"
+msgid "Longitude Minutes"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Primary Reference Number Type"
+msgid "Authorship Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Area Reference Type"
+msgid "Flight Description Language Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Date of Compilation"
+msgid "Phase Description"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Evidence Metatype"
+msgid "From Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Rear Gardens"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Capture Scale "
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Advice Applied End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Film Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Activity Name Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Consultation Name Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Craft Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2745,19 +2849,7 @@ msgid "Date of Authorization"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Agent Role Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorship Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Longitude Seconds"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Construction Phase Date Qualifier"
+msgid "Land Use Assessment Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2765,35 +2857,11 @@ msgid "Building Number Sub-Street Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Frame No."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compilation Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Rear Gardens Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Discovery Note Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Confidence of Interpretation Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Forename  Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Translation Language Metatype"
+msgid "Building Number Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2801,11 +2869,23 @@ msgid "Functional Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Destination Name"
+msgid "Volume Number Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Authorization Type"
+msgid "Construction Phase Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Grade"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Figs."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Reference Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2813,15 +2893,15 @@ msgid "Standard Deviation Value (Madatory)"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Primary Reference Number Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Image Rights Holder"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Used by"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Phase Description Type"
+msgid "Authorship Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2829,11 +2909,47 @@ msgid "Update Start Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Agent Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Functional Craft Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Frame No."
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Longitude Seconds"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Forename  Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Advice given by"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "To Date"
+msgid "Place of Destination Name"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Last Update"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Date of Compilation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Standard Deviation Value"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Rear Gardens Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2841,27 +2957,39 @@ msgid "Type of Rigging Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Update End Date"
+msgid "Used by"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Construction Phase Date Qualifier Metatype"
+msgid "To Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Figures Type"
+msgid "Evidence Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Land Use Assessment End Date"
+msgid "Authorization Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Forename Metatype"
+msgid "Compilation Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Compilation End Date"
+msgid "Confidence of Interpretation Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Translation Language Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Discovery Note Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Phase Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2870,6 +2998,70 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Primary Reference Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Figures Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compilation End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Height"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Building Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Reference Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Standard Deviation Note"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Authorization End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Creation End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Update End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Grade Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Earliest Date of Use"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Land Use Assessment End Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Record Compilation Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Agent Role Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Departure Name Use Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Construction Phase Date Qualifier Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2883,47 +3075,11 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Authorization End Date"
+msgid "Forename Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Authorization Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Reference Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creation End Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Grade Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Phase Desctiption Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Building Number Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Agent Role Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Communication Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Authorization Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Standard Deviation Note"
+msgid "HLC Phase Description"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2936,14 +3092,6 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Final Place of Departure Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Earliest Date of Use"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Volume Part"
 msgstr ""
 
@@ -2952,7 +3100,7 @@ msgid "Use to record the part number if a volume has more than one part"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "HLC Phase Description"
+msgid "Authorization Date Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2960,11 +3108,15 @@ msgid "Condition on Survey"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Height"
+msgid "Phase Desctiption Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Spatial Record Compilation Metatype"
+msgid "Authorization Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Final Place of Departure Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -2972,39 +3124,7 @@ msgid "Frame Number Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Departure Name Use Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Standard Deviation Note Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Construction Phase Display Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Initial(s)"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Update Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Level of Occupancy"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Ordnance Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Compilation Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Local Heritage List Criteria Type"
+msgid "Communication Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3012,7 +3132,35 @@ msgid "Creation Date Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Height Qualifier"
+msgid "Standard Deviation Note Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Update Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Figures Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Sub-Street"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Communication Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Area Reference Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Geology"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Local Heritage List Criteria Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3020,11 +3168,35 @@ msgid "Inscription Note Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Final Place of Departure Name Metatype"
+msgid "Construction Phase Display Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Geology"
+msgid "Storage Area Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Frame Number Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Compilation Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Ordnance Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Level of Occupancy"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Initial(s)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Final Place of Departure Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3036,19 +3208,11 @@ msgid "Latest Date of Use"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Figures Metatype"
+msgid "HLC Phase Description Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Area Reference Language"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Sub-Street"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Storage Area Name Type"
+msgid "Height Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3060,75 +3224,7 @@ msgid "Volume Part Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "HLC Phase Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Frame Number Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Communication Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Creation Date Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Storage Area Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Update Date Qualifier Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Plate(s)"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Geology Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Area Reference Language Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Initial(s) Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Sub-Street Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Local Heritage List Criteria Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "HLC Phase Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Manufacture"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Standard Deviation Note Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Use Phase Description"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Inscription Note Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Owner Role Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3136,15 +3232,31 @@ msgid "Compilation Date Qualifier Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Editor Name Metatype"
+msgid "Update Date Qualifier Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Volume Part Metatype"
+msgid "Sub-Street Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Site Survey Condition"
+msgid "Plate(s)"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Creation Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use Phase Description"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Flight Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Initial(s) Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3156,7 +3268,19 @@ msgid "Use to record any fixtures or fittings identified from the craft."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Departure Name Currency"
+msgid "Owner Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Geology Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Standard Deviation Note Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "HLC Phase Description Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3164,7 +3288,7 @@ msgid "Confidence of Dating"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Flight Date Qualifier Metatype"
+msgid "Place of Departure Name Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3172,31 +3296,31 @@ msgid "Date Taken"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "SHINE - Significance"
+msgid "Area Reference Language Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Sub-Soil"
+msgid "Volume Part Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Sub-Street Metatype"
+msgid "Inscription Note Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Spatial Record Update Type"
+msgid "Storage Area Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Spatial Record Compilation Type"
+msgid "Site Survey Condition"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "HLC Phase Start Date"
+msgid "Editor Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Plates Type"
+msgid "Place of Manufacture"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3204,39 +3328,11 @@ msgid "Standard Deviation Note Language"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Inscription Note Language"
+msgid "Sub-Soil"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Initial(s) Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Use Phase Description Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Confidence of Dating Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Fixtures and Fittings Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Designation Start Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Owner Role Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Follow-On Actions"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Final Place of Departure Name Use Metatype"
+msgid "SHINE - Significance"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3244,7 +3340,35 @@ msgid "Date Qualifier Metatype "
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Designation Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Plates Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Inscription Note Language"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Spatial Record Update Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Editorship Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Fixtures and Fittings Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use Phase Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Owner Role Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3252,19 +3376,31 @@ msgid "Manufacturer"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Sub-Soil Metatype"
+msgid "Spatial Record Compilation Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Spatial Record Update Metatype"
+msgid "Follow-On Actions"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Follow-On Action Description Type"
+msgid "Initial(s) Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Standard Deviation Note Language Metatype"
+msgid "Sub-Street Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Confidence of Dating Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "HLC Phase Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Final Place of Departure Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3272,7 +3408,11 @@ msgid "Plates metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Use Phase Desctiption Metatype"
+msgid "Spatial Record Update Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Sub-Soil Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3280,19 +3420,19 @@ msgid "SHINE Significance Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Surname"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Use Phase Desctiption Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Designation End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Manufacturer Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Inscription Note Language Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Surname"
+msgid "Standard Deviation Note Language Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3300,47 +3440,23 @@ msgid "HLC Phase End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Manufacturer Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Applicant"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Inscription Note Language Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Follow-On Action Description Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Editorship Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Update Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Comment"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Follow-On Action Description Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Destination"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place of Destination Name Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "SHINE - Form"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "HLC Phase Display Date"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Laboratory Reference"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Applicant Role Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3354,7 +3470,43 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Laboratory Reference"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "SHINE - Form"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Comment"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Surname Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Applicant Role Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Follow-On Action Description Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Update Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "HLC Phase Display Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Destination Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Destination"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3362,19 +3514,15 @@ msgid "Source Comment Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Aircraft Function Metatype"
+msgid "Designation Amendment Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "SHINE Form Metatype"
+msgid "HLC Phase Date Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Final Place of Departure Name Currency Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Contributor Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3386,7 +3534,11 @@ msgid "Surname Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Designation Amendment Date"
+msgid "Aircraft Function Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "SHINE Form Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3394,7 +3546,7 @@ msgid "Place of Destination Name Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "HLC Phase Date Qualifier"
+msgid "Applicant Role Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3402,7 +3554,11 @@ msgid "Producer"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Applicant Role Metatype"
+msgid "Contributor Name Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Source Comment Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3414,19 +3570,15 @@ msgid "Laboratory Reference Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Source Comment Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Production Technique"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Destination Name Use Type"
+msgid "Aircraft Form"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contributor Name Metatype"
+msgid "Enter the form of the aircraft, eg. Airship, Biplane, Seaplane etc."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3434,7 +3586,11 @@ msgid "Cargo Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Epithet"
+msgid "Contributor Name Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place of Destination Name Use Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3450,15 +3606,7 @@ msgid "Related Digital File(s)"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Aircraft Form"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Enter the form of the aircraft, eg. Airship, Biplane, Seaplane etc."
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "When Determined Start Date"
+msgid "Epithet"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3470,11 +3618,19 @@ msgid "Construction Phase Evidence Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Contribution Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Use Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Contribution Type"
+msgid "When Determined Start Date"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Epithet Name Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3486,15 +3642,11 @@ msgid "Aircraft Form Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Epithet Name Type"
+msgid "When Determined End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Risk Status"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "When Determined End Date"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3503,14 +3655,6 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Epithet Name Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Aircraft Mark"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Where known enter the specific Mark, or variant, of the aircraft."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3526,23 +3670,11 @@ msgid "Place of Destination Name Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Locality"
+msgid "Aircraft Mark"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "When Determined Date Qualifier"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Risk Status Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Aircraft Mark Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Town or City"
+msgid "Where known enter the specific Mark, or variant, of the aircraft."
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3550,7 +3682,19 @@ msgid "Place of Destination Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Place of Destination Name Currency Metatype"
+msgid "Town or City"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Risk Status Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "When Determined Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Locality"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3558,11 +3702,27 @@ msgid "Production Method Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Place of Destination Name Currency Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Aircraft Mark Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Locality Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Town or City Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "When Determined Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Material"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3574,15 +3734,11 @@ msgid "Main Construction Material"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Town or City Type"
+msgid "Locality Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Material"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Town or City Metatype"
+msgid "Main Construction Material Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3590,11 +3746,7 @@ msgid "Place of Destination Currency"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Locality Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Main Construction Material Metatype"
+msgid "Town or City Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3606,15 +3758,11 @@ msgid "Covering Material"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Expected Date Start"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Covering Material Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Construction Method"
+msgid "Expected Date Start"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3622,11 +3770,15 @@ msgid "Note Language"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Expected Date End "
+msgid "Construction Method"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Expected Date End"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Expected Date End "
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3638,10 +3790,6 @@ msgid "Expected Date Qualifier"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Postcode"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Note Language Metatype"
 msgstr ""
 
@@ -3650,11 +3798,11 @@ msgid "Construction Method Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "County Type"
+msgid "Postcode"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Manner of Loss Metatype"
+msgid "County Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3663,6 +3811,14 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Postcode Type"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Last Flight Date Qualifier"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Manner of Loss Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3676,7 +3832,11 @@ msgid ""
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Last Flight Date Qualifier"
+msgid "Last Flight Date Qualifier Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Postcode Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3688,19 +3848,11 @@ msgid "Date of Loss Start"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Postcode Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Last Flight Date Qualifier Metatype"
+msgid "County"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Loss End"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "County"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3740,11 +3892,11 @@ msgid "Address Currency Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Address Type"
+msgid "Last Cargo Metatype"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Last Cargo Metatype"
+msgid "Address Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3760,6 +3912,14 @@ msgid "Current Base Map"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
+msgid "Translation"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Parent Monument or Area"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
 msgid "Named Location"
 msgstr ""
 
@@ -3768,7 +3928,7 @@ msgid "National Grid Reference"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Consulting Contact"
+msgid "Digital Files"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3776,23 +3936,7 @@ msgid "Associated Resource"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Translation"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place Type"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Place Metatype"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
-msgid "Digital Files"
+msgid "Bibliographic Source Type"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
@@ -3800,19 +3944,27 @@ msgid "Planning Body"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Parent Monument or Area"
-msgstr ""
-
-#: cards_x_nodes_x_widgets:1
 msgid "Letter"
 msgstr ""
 
 #: cards_x_nodes_x_widgets:1
-msgid "Bibliographic Source Type"
+msgid "Consulting Contact"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Bibliographic Source Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place Metatype"
+msgstr ""
+
+#: cards_x_nodes_x_widgets:1
+msgid "Place Type"
 msgstr ""
 
 #: cards:1
-msgid "Spatial Record Compilation"
+msgid "Morf 20 1"
 msgstr ""
 
 #: cards:1
@@ -3831,7 +3983,43 @@ msgid "Enter the resource name and its respective type."
 msgstr ""
 
 #: cards:1
-msgid "Default Application Names"
+msgid "Morf 17 1"
+msgstr ""
+
+#: cards:1
+msgid "Srdf 373 1"
+msgstr ""
+
+#: cards:1
+msgid "External Cross References"
+msgstr ""
+
+#: cards:1
+msgid "Spatial Record Compilation"
+msgstr ""
+
+#: cards:1
+msgid "Sign Off"
+msgstr ""
+
+#: cards:1
+msgid "Dhif 40 1"
+msgstr ""
+
+#: cards:1
+msgid "Period of Membership"
+msgstr ""
+
+#: cards:1
+msgid "Area Names"
+msgstr ""
+
+#: cards:1
+msgid "Placenames"
+msgstr ""
+
+#: cards:1
+msgid "Mapbox API"
 msgstr ""
 
 #: cards:1
@@ -3840,11 +4028,12 @@ msgstr ""
 
 #: cards:1
 msgid ""
-"Names used to identify your application and the system data import personna"
+"Arches uses the Mapbox mapping library for map display and data creation.  "
+"Arches also supports Mapbox basemaps and other services"
 msgstr ""
 
 #: cards:1
-msgid "Bibliographic Source Names"
+msgid "Monument Names"
 msgstr ""
 
 #: cards:1
@@ -3855,15 +4044,11 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Map API"
+msgid "App Names"
 msgstr ""
 
 #: cards:1
-msgid "Application Area Names"
-msgstr ""
-
-#: cards:1
-msgid "Enter the name of the application area."
+msgid "Observations"
 msgstr ""
 
 #: cards:1
@@ -3875,33 +4060,7 @@ msgid "Enter the preferred name for the period."
 msgstr ""
 
 #: cards:1
-msgid "Artefact Names"
-msgstr ""
-
-#: cards:1
-msgid "Consultation Names"
-msgstr ""
-
-#: cards:1
-msgid "Activity Names"
-msgstr ""
-
-#: cards:1
-msgid "Observations"
-msgstr ""
-
-#: cards:1
-msgid "App Names"
-msgstr ""
-
-#: cards:1
-msgid "Mapbox API"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Arches uses the Mapbox mapping library for map display and data creation.  "
-"Arches also supports Mapbox basemaps and other services"
+msgid "Bibliographic Source Names"
 msgstr ""
 
 #: cards:1
@@ -3948,15 +4107,58 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Area Names"
+msgid "Application Area Names"
 msgstr ""
 
 #: cards:1
-msgid "Placenames"
+msgid "Enter the name of the application area."
 msgstr ""
 
 #: cards:1
-msgid "Monument Names"
+msgid "Descriptions"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Used to record text descriptions associated with a resource. Where "
+"appropriate different types of description may be recorded."
+msgstr ""
+
+#: cards:1
+msgid "Associated Actors"
+msgstr ""
+
+#: cards:1
+msgid "Timespan (date)"
+msgstr ""
+
+#: cards:1
+msgid "Morf 4 1"
+msgstr ""
+
+#: cards:1
+msgid "Activity Names"
+msgstr ""
+
+#: cards:1
+msgid "Artefact Names"
+msgstr ""
+
+#: cards:1
+msgid "Consultation Names"
+msgstr ""
+
+#: cards:1
+msgid "Default Application Names"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Names used to identify your application and the system data import personna"
+msgstr ""
+
+#: cards:1
+msgid "Map API"
 msgstr ""
 
 #: cards:1
@@ -3979,13 +4181,42 @@ msgid "Spatial Record Update"
 msgstr ""
 
 #: cards:1
-msgid "Descriptions"
+msgid "Spatial Record Authorization"
+msgstr ""
+
+#: cards:1
+msgid "Activity Descriptions"
 msgstr ""
 
 #: cards:1
 msgid ""
 "Used to record text descriptions associated with an application area. Where "
 "appropriate different types of description may be recorded."
+msgstr ""
+
+#: cards:1
+msgid ""
+"Used to record text descriptions associated with an artefact. Where "
+"appropriate different types of description may be recorded."
+msgstr ""
+
+#: cards:1
+msgid "Tile Cache"
+msgstr ""
+
+#: cards:1
+msgid "Project Extent"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Draw a polygon representing your project's extent. These bounds will serve "
+"as the default for the cache seed bounds, search result grid bounds, and map"
+" bounds in search, cards, and reports"
+msgstr ""
+
+#: cards:1
+msgid "Recommendations"
 msgstr ""
 
 #: cards:1
@@ -4005,74 +4236,7 @@ msgid "Used to record alternative names and the dates the name was in use"
 msgstr ""
 
 #: cards:1
-msgid "Tile Cache"
-msgstr ""
-
-#: cards:1
-msgid "Spatial Record Authorization"
-msgstr ""
-
-#: cards:1
-msgid "Project Extent"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Draw a polygon representing your project's extent. These bounds will serve "
-"as the default for the cache seed bounds, search result grid bounds, and map"
-" bounds in search, cards, and reports"
-msgstr ""
-
-#: cards:1
-msgid "Activity Descriptions"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Used to record text descriptions associated with a resource. Where "
-"appropriate different types of description may be recorded."
-msgstr ""
-
-#: cards:1
-msgid "Recommendations"
-msgstr ""
-
-#: cards:1
 msgid "Consultation Descriptions"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Used to record text descriptions associated with an artefact. Where "
-"appropriate different types of description may be recorded."
-msgstr ""
-
-#: cards:1
-msgid "Construction Phase(s)"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Used to record the type, manufacturer, builders and techniques and methods "
-"associated with a Historic Aircraft.Dependencies:Concept collections based "
-"on facets within Historic Aircraft Type Thesaurus> Aircraft Type> AIrcraft "
-"Manufacturer"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Use to record details associated with the production or modification of the "
-"aircraft, including type, function, manufacturer and materials."
-msgstr ""
-
-#: cards:1
-msgid "Thesaurus Service Providers"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Arches can access Thesaurus services, such as the Getty AAT, to acquire "
-"thesaurus entries using the Reference Data Manager (RDM)"
 msgstr ""
 
 #: cards:1
@@ -4086,19 +4250,7 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Parent Monuments"
-msgstr ""
-
-#: cards:1
-msgid "Location"
-msgstr ""
-
-#: cards:1
-msgid "Journal or Series"
-msgstr ""
-
-#: cards:1
-msgid "Consultation Dates"
+msgid "Location Data"
 msgstr ""
 
 #: cards:1
@@ -4113,25 +4265,7 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Artefact Production"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Where known use to record details of the date of production of the artefact "
-"and the techniques and methods used."
-msgstr ""
-
-#: cards:1
-msgid "SPARQL Providers"
-msgstr ""
-
-#: cards:1
-msgid "Period Descriptions"
-msgstr ""
-
-#: cards:1
-msgid "References"
+msgid "Consultation Dates"
 msgstr ""
 
 #: cards:1
@@ -4154,11 +4288,69 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Person Currency"
+msgid "References"
 msgstr ""
 
 #: cards:1
-msgid "Location Data"
+msgid "Location"
+msgstr ""
+
+#: cards:1
+msgid "Construction Phase(s)"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Used to record the type, manufacturer, builders and techniques and methods "
+"associated with a Historic Aircraft.Dependencies:Concept collections based "
+"on facets within Historic Aircraft Type Thesaurus> Aircraft Type> AIrcraft "
+"Manufacturer"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Use to record details associated with the production or modification of the "
+"aircraft, including type, function, manufacturer and materials."
+msgstr ""
+
+#: cards:1
+msgid "SPARQL Providers"
+msgstr ""
+
+#: cards:1
+msgid "Parent Monuments"
+msgstr ""
+
+#: cards:1
+msgid "Thesaurus Service Providers"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Arches can access Thesaurus services, such as the Getty AAT, to acquire "
+"thesaurus entries using the Reference Data Manager (RDM)"
+msgstr ""
+
+#: cards:1
+msgid "Artefact Production"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Where known use to record details of the date of production of the artefact "
+"and the techniques and methods used."
+msgstr ""
+
+#: cards:1
+msgid "Journal or Series"
+msgstr ""
+
+#: cards:1
+msgid "Period Descriptions"
+msgstr ""
+
+#: cards:1
+msgid "Person Currency"
 msgstr ""
 
 #: cards:1
@@ -4166,29 +4358,21 @@ msgid "Location Descriptions"
 msgstr ""
 
 #: cards:1
-msgid "Organization Currency"
+msgid "Publication"
 msgstr ""
 
 #: cards:1
-msgid "Allows a concept collection to be typed. Useful for data sharing."
+msgid "Mapped Location"
 msgstr ""
 
 #: cards:1
-msgid "Aircraft Dimensions"
+msgid "Search Results Grid"
 msgstr ""
 
 #: cards:1
 msgid ""
-"Used to record the original dimensions of the aircraft and the actual "
-"dimensions of the associated wreck site for comparative purposes."
-msgstr ""
-
-#: cards:1
-msgid "Artefact Dimensions"
-msgstr ""
-
-#: cards:1
-msgid "Capture the measurements associated with this resource."
+"Arches aggregates search results and displays them as hexagons.  You will "
+"need to set default parameters for the hexagon size  and its precision."
 msgstr ""
 
 #: cards:1
@@ -4214,21 +4398,7 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Search Results Grid"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Arches aggregates search results and displays them as hexagons.  You will "
-"need to set default parameters for the hexagon size  and its precision."
-msgstr ""
-
-#: cards:1
-msgid "Mapped Location"
-msgstr ""
-
-#: cards:1
-msgid "Creation"
+msgid "Parent Period"
 msgstr ""
 
 #: cards:1
@@ -4236,15 +4406,57 @@ msgid "Proposal"
 msgstr ""
 
 #: cards:1
-msgid "Parent Period"
+msgid "Aircraft Dimensions"
 msgstr ""
 
 #: cards:1
-msgid "Publication"
+msgid ""
+"Used to record the original dimensions of the aircraft and the actual "
+"dimensions of the associated wreck site for comparative purposes."
+msgstr ""
+
+#: cards:1
+msgid "Organization Currency"
+msgstr ""
+
+#: cards:1
+msgid "Allows a concept collection to be typed. Useful for data sharing."
+msgstr ""
+
+#: cards:1
+msgid "Creation"
+msgstr ""
+
+#: cards:1
+msgid "Artefact Dimensions"
+msgstr ""
+
+#: cards:1
+msgid "Capture the measurements associated with this resource."
 msgstr ""
 
 #: cards:1
 msgid "Construction Phases"
+msgstr ""
+
+#: cards:1
+msgid "Death"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Used to record the date and place of death of an actor.Relates to an actor "
+"resource via P100."
+msgstr ""
+
+#: cards:1
+msgid "Designation and Protection Assignment"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Use to record any designation or protection regimes directly associated with"
+" the application area."
 msgstr ""
 
 #: cards:1
@@ -4258,7 +4470,11 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Contact Details"
+msgid "Inscriptions"
+msgstr ""
+
+#: cards:1
+msgid "Pages"
 msgstr ""
 
 #: cards:1
@@ -4293,39 +4509,13 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Contacts"
-msgstr ""
-
-#: cards:1
-msgid "Use to record details of applicants, owners and casework officers"
-msgstr ""
-
-#: cards:1
-msgid "Designation and Protection Assignment"
+msgid "File Format"
 msgstr ""
 
 #: cards:1
 msgid ""
-"Use to record any designation or protection regimes directly associated with"
-" the application area."
-msgstr ""
-
-#: cards:1
-msgid "Inscriptions"
-msgstr ""
-
-#: cards:1
-msgid "Pages"
-msgstr ""
-
-#: cards:1
-msgid "Death"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Used to record the date and place of death of an actor.Relates to an actor "
-"resource via P100."
+"Used to record a description of the location associated with an application "
+"area. "
 msgstr ""
 
 #: cards:1
@@ -4407,6 +4597,14 @@ msgid ""
 msgstr ""
 
 #: cards:1
+msgid "Contact Details"
+msgstr ""
+
+#: cards:1
+msgid "Used to record the broad status of the site. "
+msgstr ""
+
+#: cards:1
 msgid "Period Types"
 msgstr ""
 
@@ -4416,25 +4614,35 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Used to record the broad status of the site. "
-msgstr ""
-
-#: cards:1
 msgid "Localities/Administrative Area Types"
 msgstr ""
 
 #: cards:1
-msgid ""
-"Used to record a description of the location associated with an application "
-"area. "
+msgid "Contacts"
 msgstr ""
 
 #: cards:1
-msgid "File Format"
+msgid "Use to record details of applicants, owners and casework officers"
+msgstr ""
+
+#: cards:1
+msgid "Dates"
+msgstr ""
+
+#: cards:1
+msgid "Bibliographic Source Creation"
+msgstr ""
+
+#: cards:1
+msgid "Discovery"
 msgstr ""
 
 #: cards:1
 msgid "Parent Activities"
+msgstr ""
+
+#: cards:1
+msgid "Area Assignments"
 msgstr ""
 
 #: cards:1
@@ -4451,23 +4659,7 @@ msgid "Record the Latitude and Longitude of the position of the wreck"
 msgstr ""
 
 #: cards:1
-msgid "Copyright"
-msgstr ""
-
-#: cards:1
-msgid "Area Assignments"
-msgstr ""
-
-#: cards:1
 msgid "Providers"
-msgstr ""
-
-#: cards:1
-msgid "Organization Formation"
-msgstr ""
-
-#: cards:1
-msgid "Dates"
 msgstr ""
 
 #: cards:1
@@ -4481,15 +4673,15 @@ msgid ""
 msgstr ""
 
 #: cards:1
+msgid "Organization Formation"
+msgstr ""
+
+#: cards:1
+msgid "Copyright"
+msgstr ""
+
+#: cards:1
 msgid "Page Reference"
-msgstr ""
-
-#: cards:1
-msgid "Discovery"
-msgstr ""
-
-#: cards:1
-msgid "Bibliographic Source Creation"
 msgstr ""
 
 #: cards:1
@@ -4497,7 +4689,7 @@ msgid "Archive Source Creation"
 msgstr ""
 
 #: cards:1
-msgid "External Cross References"
+msgid "Activity Archive Material"
 msgstr ""
 
 #: cards:1
@@ -4512,38 +4704,15 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid ""
-"Links an E13_Attribute_Assignment to an E!8_Physical_Thing. Used to record "
-"the Land Use Classification associated with a vessel. Included for migration"
-" purposes.Dependencies:> Land Use concept collection available in the RDM"
+msgid "External System References"
 msgstr ""
 
 #: cards:1
-msgid ""
-"Links an E13_Attribute_Assignment to an E!8_Physical_Thing. Used to record "
-"the Land Use Classification associated with a findspot where the artefact "
-"was discovered. Included for migration purposes.Dependencies:> Land Use "
-"concept collection available in the RDM"
-msgstr ""
-
-#: cards:1
-msgid "Activity Archive Material"
-msgstr ""
-
-#: cards:1
-msgid "HLC Phase"
+msgid "Used to record reference numbers associated with the consultation."
 msgstr ""
 
 #: cards:1
 msgid "Use Phase"
-msgstr ""
-
-#: cards:1
-msgid "Used to record the postal address relating to an Application Area."
-msgstr ""
-
-#: cards:1
-msgid "Spatial Extent"
 msgstr ""
 
 #: cards:1
@@ -4555,15 +4724,22 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "External System References"
+msgid "Spatial Extent"
 msgstr ""
 
 #: cards:1
-msgid "Used to record reference numbers associated with the consultation."
+msgid "HLC Phase"
 msgstr ""
 
 #: cards:1
 msgid "Components"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Links an E13_Attribute_Assignment to an E!8_Physical_Thing. Used to record "
+"the Land Use Classification associated with a vessel. Included for migration"
+" purposes.Dependencies:> Land Use concept collection available in the RDM"
 msgstr ""
 
 #: cards:1
@@ -4575,15 +4751,23 @@ msgid ""
 msgstr ""
 
 #: cards:1
+msgid ""
+"Links an E13_Attribute_Assignment to an E!8_Physical_Thing. Used to record "
+"the Land Use Classification associated with a findspot where the artefact "
+"was discovered. Included for migration purposes.Dependencies:> Land Use "
+"concept collection available in the RDM"
+msgstr ""
+
+#: cards:1
+msgid "Used to record the postal address relating to an Application Area."
+msgstr ""
+
+#: cards:1
 msgid "Spatial Metadata Descriptions"
 msgstr ""
 
 #: cards:1
-msgid "Artefact Condition Assessment "
-msgstr ""
-
-#: cards:1
-msgid "One assessment of condition at a particular point in time. "
+msgid "Activity Timespan"
 msgstr ""
 
 #: cards:1
@@ -4595,11 +4779,27 @@ msgid "Used to record offshore areas where an activity took place."
 msgstr ""
 
 #: cards:1
+msgid "Bibliographic Source Types"
+msgstr ""
+
+#: cards:1
+msgid "Geographic coverage"
+msgstr ""
+
+#: cards:1
+msgid "System Reference Numbers"
+msgstr ""
+
+#: cards:1
 msgid "Use to record the nationality of the aircraft"
 msgstr ""
 
 #: cards:1
-msgid "Bibliographic Source Types"
+msgid "Artefact Condition Assessment "
+msgstr ""
+
+#: cards:1
+msgid "One assessment of condition at a particular point in time. "
 msgstr ""
 
 #: cards:1
@@ -4613,19 +4813,18 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Activity Timespan"
-msgstr ""
-
-#: cards:1
-msgid "System Reference Numbers"
-msgstr ""
-
-#: cards:1
 msgid "Historic Land Use Character Attributes"
 msgstr ""
 
 #: cards:1
-msgid "Geographic coverage"
+msgid "Flights"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Used to record the details of the flights of an aircraft. Where the flight "
+"is the last known flight record the manner and date of loss and, where know,"
+" the associated crash site."
 msgstr ""
 
 #: cards:1
@@ -4646,6 +4845,10 @@ msgid ""
 msgstr ""
 
 #: cards:1
+msgid "File(s)"
+msgstr ""
+
+#: cards:1
 msgid "Associated Archive Objects"
 msgstr ""
 
@@ -4653,21 +4856,6 @@ msgstr ""
 msgid ""
 "Use to record details of Archive Items which relate to or reference the "
 "activity, eg. historic photographs of excavations."
-msgstr ""
-
-#: cards:1
-msgid "File(s)"
-msgstr ""
-
-#: cards:1
-msgid "Flights"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Used to record the details of the flights of an aircraft. Where the flight "
-"is the last known flight record the manner and date of loss and, where know,"
-" the associated crash site."
 msgstr ""
 
 #: cards:1
@@ -4687,11 +4875,17 @@ msgid "Use Phases"
 msgstr ""
 
 #: cards:1
-msgid "Associated Archive Material"
+msgid "Associated Application Areas"
 msgstr ""
 
 #: cards:1
-msgid "arc"
+msgid "Used to record the details of any associated application areas."
+msgstr ""
+
+#: cards:1
+msgid ""
+"Use to record changes of use for the Craft, eg. where a Liner has been "
+"requisitioned as a Troopship."
 msgstr ""
 
 #: cards:1
@@ -4699,11 +4893,8 @@ msgid "Scientific Date Assignment"
 msgstr ""
 
 #: cards:1
-msgid "Associated Application Areas"
-msgstr ""
-
-#: cards:1
-msgid "Used to record the details of any associated application areas."
+msgid ""
+"Records the type of the resource model for interoperability purposes only."
 msgstr ""
 
 #: cards:1
@@ -4715,18 +4906,11 @@ msgid "Consultation Location"
 msgstr ""
 
 #: cards:1
-msgid ""
-"Records the type of the resource model for interoperability purposes only."
+msgid "Associated Archive Material"
 msgstr ""
 
 #: cards:1
-msgid ""
-"Use to record changes of use for the Craft, eg. where a Liner has been "
-"requisitioned as a Troopship."
-msgstr ""
-
-#: cards:1
-msgid "Used to record any consultations associated with an application area."
+msgid "arc"
 msgstr ""
 
 #: cards:1
@@ -4734,7 +4918,7 @@ msgid "Associated People and Organizations"
 msgstr ""
 
 #: cards:1
-msgid "Associated Digital Files"
+msgid "Used to record any consultations associated with an application area."
 msgstr ""
 
 #: cards:1
@@ -4743,6 +4927,26 @@ msgstr ""
 
 #: cards:1
 msgid "Used to record the details of the last known flight of an aircraft."
+msgstr ""
+
+#: cards:1
+msgid "Associated Digital Files"
+msgstr ""
+
+#: cards:1
+msgid "Associated Bibliographic Sources"
+msgstr ""
+
+#: cards:1
+msgid "Voyages"
+msgstr ""
+
+#: cards:1
+msgid "Record the voyages undertaken by the vessel."
+msgstr ""
+
+#: cards:1
+msgid "Application Area References"
 msgstr ""
 
 #: cards:1
@@ -4756,25 +4960,9 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Voyages"
-msgstr ""
-
-#: cards:1
-msgid "Record the voyages undertaken by the vessel."
-msgstr ""
-
-#: cards:1
-msgid "Associated Bibliographic Sources"
-msgstr ""
-
-#: cards:1
 msgid ""
 "Use to record People and other Organizations associated with the "
 "Organization"
-msgstr ""
-
-#: cards:1
-msgid "Application Area References"
 msgstr ""
 
 #: cards:1
@@ -4792,11 +4980,11 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Associated Digital File(s)"
+msgid "Dimensions"
 msgstr ""
 
 #: cards:1
-msgid "Site Visits"
+msgid "Associated Digital File(s)"
 msgstr ""
 
 #: cards:1
@@ -4804,15 +4992,15 @@ msgid "Actions"
 msgstr ""
 
 #: cards:1
-msgid "Dimensions"
-msgstr ""
-
-#: cards:1
-msgid "Correspondence"
+msgid "Site Visits"
 msgstr ""
 
 #: cards:1
 msgid "Associated Archives"
+msgstr ""
+
+#: cards:1
+msgid "Correspondence"
 msgstr ""
 
 #: cards:1
@@ -4827,10 +5015,6 @@ msgid "Outcomes"
 msgstr ""
 
 #: cards:1
-msgid "Consultation Status"
-msgstr ""
-
-#: cards:1
 msgid "Additional Notes"
 msgstr ""
 
@@ -4839,105 +5023,27 @@ msgid "Used to record any additional notes associated with a resource. "
 msgstr ""
 
 #: cards:1
+msgid "Consultation Status"
+msgstr ""
+
+#: cards:1
 msgid "Contested Heritage Assignment"
 msgstr ""
 
 #: cards:1
-msgid "Aerial Photograph Source"
+msgid "Settings Basic Search"
 msgstr ""
 
 #: cards:1
-msgid "Details of the specific citation relating a source to a Monument"
+msgid "Configuration settings for search returns"
 msgstr ""
 
 #: cards:1
-msgid "Spatial Metadata"
-msgstr ""
-
-#: cards:1
-msgid "Extent"
-msgstr ""
-
-#: cards:1
-msgid "Settings Time Search"
-msgstr ""
-
-#: cards:1
-msgid "Configuration Settings for temporal search"
-msgstr ""
-
-#: cards:1
-msgid "Time Settings"
-msgstr ""
-
-#: cards:1
-msgid ""
-"<p>You can see the color ramps at:</p><p><a "
-"href='https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-"
-"Scales.md'><font color='#f7f7f7'>https://github.com/d3/d3-3.x-api-"
-"reference/blob/master/Ordinal-Scales.md</font></a><br></p>"
-msgstr ""
-
-#: cards:1
-msgid "Crew"
-msgstr ""
-
-#: cards:1
-msgid "Radiocarbon Calendar Age Assignment"
-msgstr ""
-
-#: cards:1
-msgid "Subjects and Periods"
-msgstr ""
-
-#: cards:1
-msgid "Cargo"
-msgstr ""
-
-#: cards:1
-msgid "Wreck_Event"
-msgstr ""
-
-#: cards:1
-msgid "Used to record the details of the last known Voyage of a vessel."
-msgstr ""
-
-#: cards:1
-msgid "Voyage Details"
-msgstr ""
-
-#: cards:1
-msgid "Mitigations"
-msgstr ""
-
-#: cards:1
-msgid "Saved Searches"
-msgstr ""
-
-#: cards:1
-msgid "System configuration for saving searches"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Arches allows you save a search and present it as convenience for your "
-"users."
-msgstr ""
-
-#: cards:1
-msgid "Mitigation Type"
-msgstr ""
-
-#: cards:1
-msgid "Map Settings"
+msgid "Crew Members"
 msgstr ""
 
 #: cards:1
 msgid "Settings System Defaults"
-msgstr ""
-
-#: cards:1
-msgid "Settings Saved Searches"
 msgstr ""
 
 #: cards:1
@@ -4955,15 +5061,25 @@ msgid "Record the nationality of the vessel or aircraft"
 msgstr ""
 
 #: cards:1
-msgid "Timespan (edtf)"
+msgid "Settings Time Search"
 msgstr ""
 
 #: cards:1
-msgid "Type"
+msgid "Configuration Settings for temporal search"
 msgstr ""
 
 #: cards:1
-msgid "Curated Holding"
+msgid ""
+"Arches supports temporal binning.  Define the configuration and colors to "
+"use in your time wheel"
+msgstr ""
+
+#: cards:1
+msgid ""
+"<p>You can see the color ramps at:</p><p><a "
+"href=\"https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-"
+"Scales.md\"><font color=\"#f7f7f7\">https://github.com/d3/d3-3.x-api-"
+"reference/blob/master/Ordinal-Scales.md</font></a><br></p>"
 msgstr ""
 
 #: cards:1
@@ -4983,36 +5099,7 @@ msgid ""
 msgstr ""
 
 #: cards:1
-msgid "Settings Basic Search"
-msgstr ""
-
-#: cards:1
-msgid "Configuration settings for search returns"
-msgstr ""
-
-#: cards:1
-msgid "Used to record the details of any flights undertaken by the aircraft"
-msgstr ""
-
-#: cards:1
-msgid "Crew Members"
-msgstr ""
-
-#: cards:1
-msgid "Area"
-msgstr ""
-
-#: cards:1
-msgid "Set the default search results behavior"
-msgstr ""
-
-#: cards:1
-msgid "Settings Map"
-msgstr ""
-
-#: cards:1
-msgid ""
-"Initial settings for Arches maps displayed in reports, cards, and search"
+msgid "Contact Names"
 msgstr ""
 
 #: cards:1
@@ -5020,15 +5107,73 @@ msgid "BASIC_SEARCH_SETTINGS"
 msgstr ""
 
 #: cards:1
-msgid "Details of the crew members on the flight."
+msgid "Set the default search results behavior"
 msgstr ""
 
 #: cards:1
-msgid "Associated Actors"
+msgid "Extent"
 msgstr ""
 
 #: cards:1
-msgid "Coordinate Systems"
+msgid "Crew"
+msgstr ""
+
+#: cards:1
+msgid "Cargo"
+msgstr ""
+
+#: cards:1
+msgid "Wreck_Event"
+msgstr ""
+
+#: cards:1
+msgid "Used to record the details of the last known Voyage of a vessel."
+msgstr ""
+
+#: cards:1
+msgid "Subjects and Periods"
+msgstr ""
+
+#: cards:1
+msgid "Radiocarbon Calendar Age Assignment"
+msgstr ""
+
+#: cards:1
+msgid "Phase Classification"
+msgstr ""
+
+#: cards:1
+msgid "System Data Settings"
+msgstr ""
+
+#: cards:1
+msgid "Aerial Photograph Source"
+msgstr ""
+
+#: cards:1
+msgid "Details of the specific citation relating a source to a Monument"
+msgstr ""
+
+#: cards:1
+msgid "Voyage Details"
+msgstr ""
+
+#: cards:1
+msgid "Saved Searches"
+msgstr ""
+
+#: cards:1
+msgid "System configuration for saving searches"
+msgstr ""
+
+#: cards:1
+msgid ""
+"Arches allows you save a search and present it as convenience for your "
+"users."
+msgstr ""
+
+#: cards:1
+msgid "Spatial Metadata"
 msgstr ""
 
 #: cards:1
@@ -5040,31 +5185,54 @@ msgid "Default Map Settings"
 msgstr ""
 
 #: cards:1
-msgid "Contact Names"
-msgstr ""
-
-#: cards:1
-msgid "Timespan (date)"
-msgstr ""
-
-#: cards:1
-msgid "Phase Classification"
-msgstr ""
-
-#: cards:1
 msgid ""
-"Arches supports temporal binning.  Define the configuration and colors to "
-"use in your time wheel"
+"Initial settings for Arches maps displayed in reports, cards, and search"
 msgstr ""
 
 #: cards:1
-msgid ""
-"<p>You can see the color ramps at:</p><p><a "
-"href=\"https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-"
-"Scales.md\"><font color=\"#f7f7f7\">https://github.com/d3/d3-3.x-api-"
-"reference/blob/master/Ordinal-Scales.md</font></a><br></p>"
+msgid "Details of the crew members on the flight."
 msgstr ""
 
 #: cards:1
-msgid "System Data Settings"
+msgid "Timespan (edtf)"
+msgstr ""
+
+#: cards:1
+msgid "Mitigation Type"
+msgstr ""
+
+#: cards:1
+msgid "Mitigations"
+msgstr ""
+
+#: cards:1
+msgid "Settings Map"
+msgstr ""
+
+#: cards:1
+msgid "Coordinate Systems"
+msgstr ""
+
+#: cards:1
+msgid "Curated Holding"
+msgstr ""
+
+#: cards:1
+msgid "Area"
+msgstr ""
+
+#: cards:1
+msgid "Settings Saved Searches"
+msgstr ""
+
+#: cards:1
+msgid "Used to record the details of any flights undertaken by the aircraft"
+msgstr ""
+
+#: cards:1
+msgid "Type"
+msgstr ""
+
+#: cards:1
+msgid "Map Settings"
 msgstr ""
