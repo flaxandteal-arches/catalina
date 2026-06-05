@@ -555,7 +555,7 @@ ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get("ARCGIS_PORTAL_TOKEN_GENERATE_
 
 # Slug -> service path from the portal host root (no leading slash).
 # Defaults match prod portal naming; override per-env via ARCGIS_PORTAL_SERVICE_<SLUG>
-# where dev/staging portals expose the same data under different service names.
+# enable dev portals that expose a corresponding service under different names.
 ARCGIS_PORTAL_SERVICES = {
     "nzaa": os.environ.get(
         "ARCGIS_PORTAL_SERVICE_NZAA",
@@ -580,8 +580,6 @@ LINZ_BASEMAPS_API_KEY = os.environ.get("LINZ_BASEMAPS_API_KEY", "")
 
 # Slugs of portal-backed overlays this env should register. DOC's portals
 # get reshuffled occasionally, so each env declares its own availability.
-# Defaults to the three layers stably present everywhere except nzaa, which
-# is prod-only and must be added explicitly.
 _DEFAULT_PORTAL_OVERLAYS = "cons_land,ops_regions,ops_districts"
 PORTAL_OVERLAYS_AVAILABLE = {
     s.strip()
