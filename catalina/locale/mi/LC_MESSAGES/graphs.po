@@ -137,6 +137,14 @@ msgid ""
 " biological father. For step or adoptive parent relaitonship see HER "
 "Parentage.</p>"
 msgstr ""
+"<p><strong>Rā Whānau</strong></p><p>Ina mōhiotia hoatu te rā whānau "
+"katoa</p><p><strong>Wāhi whānau</strong></p><p>Whakamahia hei hopu i te wā i"
+" whānau mai te tangata, e whakaponotia ana rānei i whānau mai i "
+"reira.</p><p><strong>Whaea</strong></p><p>Whakamahia hei tuhi i te ingoa o "
+"te whaea whānau ake. Mō ngā hononga whakaangi, whāngai rānei tirohia ŌNĀ "
+"(HER) Mātua</p><p><strong>Matua Tāne</strong></p><p>Whakamahia hei hopu i te"
+" ingoa o te matua tāne ake. Mō ngā hononga whakaangi, whāngai rānei tirohia "
+"ŌNA (HER) Mātua.</p>"
 
 #: cards:1
 msgid ""
@@ -179,42 +187,45 @@ msgid ""
 "Scales.md'><font color='#f7f7f7'>https://github.com/d3/d3-3.x-api-"
 "reference/blob/master/Ordinal-Scales.md</font></a><br></p>"
 msgstr ""
+"<p>Ka taea e koe ngā rōnaki tae te kite ki:</p><p><a href=\"https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md'>'><font color='#f7f7f7'>https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md</font></a><br></p> \n"
+"https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md \n"
+"https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md%3C/font%3E%3C/a%3E%3Cbr%3E%3C/p%3E"
 
 #: cards_x_nodes_x_widgets:1
 msgid "AP Source Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Mātāpuna AP"
 
 #: cards_x_nodes_x_widgets:1
 msgid "AP Source Number Type"
-msgstr ""
+msgstr "Momo Tau Puna AP"
 
 #: cards_x_nodes_x_widgets:1
 msgid "API Key"
-msgstr ""
+msgstr "Kī API"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Achive Object Title"
-msgstr ""
+msgstr "Taitara Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Action"
-msgstr ""
+msgstr "Mahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Action Metatype"
-msgstr ""
+msgstr "Momometa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Action Type"
-msgstr ""
+msgstr "Momo Mahi"
 
 #: cards:1
 msgid "Actions"
-msgstr ""
+msgstr "Ngā Mahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity"
-msgstr ""
+msgstr "Hohenga"
 
 #: cards:1
 msgid "Activity Actor"
@@ -222,71 +233,71 @@ msgstr ""
 
 #: cards:1
 msgid "Activity Archive Material"
-msgstr ""
+msgstr "Rawa Pūranga Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Hohenga"
 
 #: cards:1
 msgid "Activity Descriptions"
-msgstr ""
+msgstr "Ngā Whakaahua Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity End Date"
-msgstr ""
+msgstr "Rā Mutunga Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Metatype"
-msgstr ""
+msgstr "Momometa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Name"
-msgstr ""
+msgstr "Ingoa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Name Type"
-msgstr ""
+msgstr "Momo Ingoa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Name Use Metatype"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Hohenga"
 
 #: cards:1
 msgid "Activity Names"
-msgstr ""
+msgstr "Ngā Ingoa Hohenga"
 
 #: cards:1
 msgid "Activity Record Status"
-msgstr ""
+msgstr "Tūnga Pūkete Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Activity Start Date"
-msgstr ""
+msgstr "Rā Tīmata Hohenga"
 
 #: cards:1
 msgid "Activity Timespan"
-msgstr ""
+msgstr "Rangataki Wā Hohenga"
 
 #: cards:1
 msgid "Activity Type"
-msgstr ""
+msgstr "Momo Hohenga"
 
 #: cards:1
 msgid "Actor in Activity"
@@ -294,39 +305,39 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Add new Relationship"
-msgstr ""
+msgstr "Tāpirihia he Hononga hou"
 
 #: cards:1
 msgid "Additional Notes"
-msgstr ""
+msgstr "Ngā Tuhipoka Tāpiri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Address Currency"
-msgstr ""
+msgstr "Whāinga Mana Wāhitau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Address Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Wāhi Noho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Address Metatype"
-msgstr ""
+msgstr "Momometa Wāhi Noho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Address Status"
-msgstr ""
+msgstr "Tūnga Wāhi Noho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Address Status Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Wāhi Noho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Address Type"
-msgstr ""
+msgstr "Momo Wāhitau"
 
 #: cards:1
 msgid "Addresses"
-msgstr ""
+msgstr "Ngā Wāhi Tuku Reta"
 
 #: cards:1
 msgid ""
@@ -336,127 +347,129 @@ msgstr ""
 
 #: cards:1
 msgid "Advice"
-msgstr ""
+msgstr "Ngā tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice Applied End Date"
-msgstr ""
+msgstr "Rā Tīmatanga Hoatu Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice Applied Start Date"
-msgstr ""
+msgstr "Rā Tīmatanga Hoatu Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice Metatype"
-msgstr ""
+msgstr "Momometa Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice Type"
-msgstr ""
+msgstr "Momo Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Advice given by"
-msgstr ""
+msgstr "I hoatu ngā tohutohu e"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aerial Photograph"
-msgstr ""
+msgstr "Whakaahua mai i runga"
 
 #: cards:1
 msgid "Aerial Photograph Source"
-msgstr ""
+msgstr "Puna Whakaahua mai i runga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Agency"
-msgstr ""
+msgstr "Hinonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Agent"
-msgstr ""
+msgstr "Kaikawe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Agent Role Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Kaikawe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Agent Role Type"
-msgstr ""
+msgstr "Momo Tūnga Kaikawe"
 
 #: cards:1
 msgid "Aircraft Dimensions"
-msgstr ""
+msgstr "Ngā Rahinga Rereranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Form"
-msgstr ""
+msgstr "Āhuahanga Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Form Metatype"
-msgstr ""
+msgstr "Momometa Āhuahanga Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Function"
-msgstr ""
+msgstr "Āheinga Rerengi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Function Metatype"
-msgstr ""
+msgstr "Momometa Āheinga Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Mark"
-msgstr ""
+msgstr "Tohu Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Mark Metatype"
-msgstr ""
+msgstr "Momometa Tohu Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Metatype"
-msgstr ""
+msgstr "Momometa Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Aircraft Type"
-msgstr ""
+msgstr "Momo Rererangi"
 
 #: cards:1
 msgid "Allows a concept collection to be typed. Useful for data sharing."
 msgstr ""
+"Mā tēnei ka taea te pato tētahi kohinga ariā. He whai take mō te tiri "
+"raraunga."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Alternative Name"
-msgstr ""
+msgstr "Ingoa Tuarua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Alternative Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Tuarua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Alternative Name Type"
-msgstr ""
+msgstr "Momo Ingoa Tuarua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Alternative Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Tuarua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Alternative Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Tuarua"
 
 #: cards:1
 msgid "Alternative Names"
-msgstr ""
+msgstr "Ingoa Tuarua"
 
 #: cards:1
 msgid "App Names"
-msgstr ""
+msgstr "Ngā Ingoa Taupānga"
 
 #: cards:1
 msgid "Appellation"
@@ -504,55 +517,55 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Applicant"
-msgstr ""
+msgstr "Kaitono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Applicant Role Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Kaitono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Applicant Role Type"
-msgstr ""
+msgstr "Momo Tūnga Kaitono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Area"
-msgstr ""
+msgstr "Rohe Tono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Area Name"
-msgstr ""
+msgstr "Ingoa Rohe Tono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Area Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Rohe Pānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Area Name Type"
-msgstr ""
+msgstr "Momo Ingoa Rohe Pānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Area Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Rohe Pānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Area Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Rohe Pānga"
 
 #: cards:1
 msgid "Application Area Names"
-msgstr ""
+msgstr "Ngā Ingoa Rohe Tono"
 
 #: cards:1
 msgid "Application Area References"
-msgstr ""
+msgstr "Ngā Tohutoro Rohe Tono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Application Metatype"
-msgstr ""
+msgstr "Momometa Taupānga"
 
 #: cards:1
 msgid "Application Type"
-msgstr ""
+msgstr "Momo Taupānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Approved By Metatype"
@@ -583,16 +596,22 @@ msgid ""
 "Arches aggregates search results and displays them as hexagons.  You will "
 "need to set default parameters for the hexagon size  and its precision."
 msgstr ""
+"Ko tā Arches he whakatōpū i ngā hua rapu me te whakaatu i aua hua hei "
+"tapaono. Me mātua whakarite i ngā taupā taunoa mō te rahi me te tika pū o te"
+" tapaono."
 
 #: cards:1
 msgid ""
 "Arches uses the Mapbox mapping library for map display and data creation.  "
 "Arches also supports Mapbox basemaps and other services"
 msgstr ""
+"Ka whakamahia e Arches te punakupu mapi Mapbox mō te whakaahua mapi me te "
+"hanga raraunga. Ka tautoko hoki a Arches i ngā mapitaketake Mapbox me ētahi "
+"atu ratonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Holder"
-msgstr ""
+msgstr "Kaipupuru Pūranga"
 
 #: cards:1
 msgid "Archive Holding"
@@ -600,39 +619,39 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Reference"
-msgstr ""
+msgstr "Tohutoro Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Reference Metatype"
-msgstr ""
+msgstr "Momometa Tohutoro Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Reference Number"
-msgstr ""
+msgstr "Tau Tohutoro Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Reference Type"
-msgstr ""
+msgstr "Momo Tohutoro Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Title"
-msgstr ""
+msgstr "Taitara Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Title Metatype"
-msgstr ""
+msgstr "Momometa Taitara Ahanoa Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Object Title Type"
-msgstr ""
+msgstr "Momo Taitara Ahanoa Pūranga"
 
 #: cards:1
 msgid "Archive Source Creation"
-msgstr ""
+msgstr "Te Hanga Puna Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Source Metatype"
-msgstr ""
+msgstr "Momo Puna Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Archive Source Name"
@@ -656,87 +675,87 @@ msgstr ""
 
 #: cards:1
 msgid "Archive Source Type"
-msgstr ""
+msgstr "Momo Puna Pūranga"
 
 #: cards:1
 msgid "Area"
-msgstr ""
+msgstr "Rohe"
 
 #: cards:1
 msgid "Area Assignments"
-msgstr ""
+msgstr "Ngā Tautapatanga Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Metatype"
-msgstr ""
+msgstr "Momometa Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Name"
-msgstr ""
+msgstr "Ingoa Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Name Type"
-msgstr ""
+msgstr "Momo Ingoa Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahinga Ingoa Rohe"
 
 #: cards:1
 msgid "Area Names"
-msgstr ""
+msgstr "Ngā Ingoa Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Reference"
-msgstr ""
+msgstr "Tohutoro Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Reference Language"
-msgstr ""
+msgstr "Reo Tohutoro Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Reference Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tohutoro Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Reference Metatype"
-msgstr ""
+msgstr "Momo Tohutoro Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Reference Type"
-msgstr ""
+msgstr "Momo Tohutoro Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Status"
-msgstr ""
+msgstr "Tūnga Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Status End Date"
-msgstr ""
+msgstr "Rā Mutunga Tūnga Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Status Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Status Start Date"
-msgstr ""
+msgstr "Rā Tīmatanga Tūnga Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Area Type"
-msgstr ""
+msgstr "Momo Rohe"
 
 #: cards:1
 msgid "Artefact Condition Assessment"
@@ -744,43 +763,43 @@ msgstr ""
 
 #: cards:1
 msgid "Artefact Dimensions"
-msgstr ""
+msgstr "Ngā Rahinga Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Metatype"
-msgstr ""
+msgstr "Momometa Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Name"
-msgstr ""
+msgstr "Ingoa Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Name Type"
-msgstr ""
+msgstr "Momo Ingoa Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Name Use Type"
-msgstr ""
+msgstr "Ngā Momo Whakamahi Ingoa Taonga"
 
 #: cards:1
 msgid "Artefact Names"
-msgstr ""
+msgstr "Ngā Ingoa Taonga"
 
 #: cards:1
 msgid "Artefact Production"
-msgstr ""
+msgstr "Te Hanganga Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Artefact Type"
-msgstr ""
+msgstr "Momo Taonga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ascribed Classificatory Status Relation"
@@ -804,75 +823,75 @@ msgstr ""
 
 #: cards:1
 msgid "Assessment of Significance"
-msgstr ""
+msgstr "Aromatawainga Hiranga"
 
 #: cards:1
 msgid "Asset Dimensions"
-msgstr ""
+msgstr "Ngā Rahinga Rawa"
 
 #: cards:1
 msgid "Associated Activities"
-msgstr ""
+msgstr "Ngā Hohenga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Activity"
-msgstr ""
+msgstr "Ngā Hohenga Pāhono"
 
 #: cards:1
 msgid "Associated Actors"
-msgstr ""
+msgstr "Ngā Kaimahi Pāhono"
 
 #: cards:1
 msgid "Associated Application Areas"
-msgstr ""
+msgstr "Wāhi Pānga Pāhono"
 
 #: cards:1
 msgid "Associated Archive Material"
-msgstr ""
+msgstr "Ngā Ahanoa Pūranga Pāhono"
 
 #: cards:1
 msgid "Associated Archive Objects"
-msgstr ""
+msgstr "Ngā Ahanoa Pūranga Pāhono"
 
 #: cards:1
 msgid "Associated Archives"
-msgstr ""
+msgstr "Ngā Pūrongo Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Area Phase"
-msgstr ""
+msgstr "Kaupae Rohe Pāhono"
 
 #: cards:1
 msgid "Associated Bibliographic Sources"
-msgstr ""
+msgstr "Ngā Puna Rārangi Pukapuka Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Construction Phase"
-msgstr ""
+msgstr "Kaupae Waihanga Pāhono"
 
 #: cards:1
 msgid "Associated Consultations"
-msgstr ""
+msgstr "Ngā Torotoronga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Crash Site"
-msgstr ""
+msgstr "Pae Tūtukitanga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Crash Site Metatype"
-msgstr ""
+msgstr "Momometa Pae Tūtukitanga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Crash Site Type"
-msgstr ""
+msgstr "Momo Pae Tūtukitanga Pāhono"
 
 #: cards:1
 msgid "Associated Digital File(s)"
-msgstr ""
+msgstr "Te (Ngā) Kōnae Matihiko Pāhono"
 
 #: cards:1
 msgid "Associated Digital Files"
-msgstr ""
+msgstr "Ngā Kōnae Matihiko Pāhono"
 
 #: cards:1
 msgid "Associated Heritage Place Construction Phase"
@@ -884,19 +903,19 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Monument Construction Phase"
-msgstr ""
+msgstr "Kaupae Waihanga Hanganga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Monument, Area or Artefact"
-msgstr ""
+msgstr "Hanganga Whai Pānga, Rohe, Taonga rānei"
 
 #: cards:1
 msgid "Associated Monuments and Areas"
-msgstr ""
+msgstr "Ngā Hanganga me ngā Rohe Pāhono"
 
 #: cards:1
 msgid "Associated Monuments, Areas and Artefacts"
-msgstr ""
+msgstr "Ngā Hanganga, ngā Rohe me ngā Taonga Pāhono"
 
 #: cards:1
 msgid "Associated Monuments, Whenuas and Artefacts"
@@ -904,7 +923,7 @@ msgstr ""
 
 #: cards:1
 msgid "Associated People and Organizations"
-msgstr ""
+msgstr "Ngā Tāngata me ngā Whakahaere Pāhono"
 
 #: cards:1
 msgid "Associated Periods"
@@ -912,215 +931,215 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Person or Organization"
-msgstr ""
+msgstr "Tangata Pāhono, Whakahaere rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Proposal File(s)"
-msgstr ""
+msgstr "Te(ngā) Kōnae Marohi Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Associated Resource"
-msgstr ""
+msgstr "Rauemi Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Association End Date"
-msgstr ""
+msgstr "Rā Mutunga Pāhonotanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Association Metatype"
-msgstr ""
+msgstr "Momometa Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Association Start Date"
-msgstr ""
+msgstr "Rā Tīmata Pāhonotanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Association Type"
-msgstr ""
+msgstr "Momo Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Attendee"
-msgstr ""
+msgstr "Tangata i tae ake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Attendee Metatype"
-msgstr ""
+msgstr "Momometa tangata i tae ake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Attendee Type"
-msgstr ""
+msgstr "Momo Tangata i Tae ake"
 
 #: cards:1
 msgid "Attendees"
-msgstr ""
+msgstr "Te hunga i tae ake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Audience Metatype"
-msgstr ""
+msgstr "Momometa Minenga"
 
 #: cards:1
 msgid "Audience Type"
-msgstr ""
+msgstr "Momo Minenga"
 
 #: cards:1
 msgid "Audit Metadata"
-msgstr ""
+msgstr "Raraungameta Arotake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Audit Note"
-msgstr ""
+msgstr "Tuhipoka Arotake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Audit Notes Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Arotake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Audit Notes Type"
-msgstr ""
+msgstr "Momo Tuhipoka Arotake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Audit Outcome"
-msgstr ""
+msgstr "Putanga Arotake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Audit Outcome metatype"
-msgstr ""
+msgstr "Momometa Putanga Arotake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Author Name"
-msgstr ""
+msgstr "Ingoa kaituhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Author Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaituhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Author Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaituhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorization Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Whakamanatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorization Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Whakamanatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorization End Date"
-msgstr ""
+msgstr "Rā Mutunga Whakamanatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorization Metatype"
-msgstr ""
+msgstr "Momometa Whakamanatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorization Type"
-msgstr ""
+msgstr "Momo Whakamananga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizations Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Whakamanatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name"
-msgstr ""
+msgstr "Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorizer Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Kaiwhakamana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorship Metatype"
-msgstr ""
+msgstr "Momometa Āhuatanga Kaituhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Authorship Type"
-msgstr ""
+msgstr "Momo Āhuatanga Kaituhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Average Height"
-msgstr ""
+msgstr "Roa Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Average Height Metatype"
-msgstr ""
+msgstr "Momometa Roa Toharite"
 
 #: cards:1
 msgid "BASIC_SEARCH_SETTINGS"
-msgstr ""
+msgstr "BASIC_SEARCH_SETTINGS"
 
 #: cards:1
 msgid "Bibliographic Source"
-msgstr ""
+msgstr "Ingoa Puna Rārangi Pukapuka"
 
 #: cards:1
 msgid "Bibliographic Source Citation"
-msgstr ""
+msgstr "Whakahua Puna Rārangi Pukapuka"
 
 #: cards:1
 msgid "Bibliographic Source Creation"
-msgstr ""
+msgstr "Te Hanga Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Metatype"
-msgstr ""
+msgstr "Momometa Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Name"
-msgstr ""
+msgstr "Ingoa Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Name Type"
-msgstr ""
+msgstr "Momo Ingoa Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Puna Rārangi Pukapuka"
 
 #: cards:1
 msgid "Bibliographic Source Names"
-msgstr ""
+msgstr "Ngā Ingoa Puna Rārangi Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Bibliographic Source Type"
-msgstr ""
+msgstr "Momo Puna Rārangi Pukapuka"
 
 #: cards:1
 msgid "Bibliographic Source Types"
-msgstr ""
+msgstr "Ngā Momo Puna Rārangi Pukapuka"
 
 #: cards:1
 msgid "Birth"
-msgstr ""
+msgstr "Wā Whānau"
 
 #: cards:1
 msgid "Birth_Statement"
@@ -1344,139 +1363,139 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Birthplace"
-msgstr ""
+msgstr "Te Wāhi Whānau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Birthplace Metatype"
-msgstr ""
+msgstr "Momometa Wāhiwhānau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Birthplace Type"
-msgstr ""
+msgstr "Ingoa Wāhi Whānau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Broad  Type"
-msgstr ""
+msgstr "Ingoa Whānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Broad Type Metatype"
-msgstr ""
+msgstr "Momometa Momo Whānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Builder"
-msgstr ""
+msgstr "Kaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Name"
-msgstr ""
+msgstr "Ingoa Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Name Type"
-msgstr ""
+msgstr "Momo Ingoa Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Number"
-msgstr ""
+msgstr "Tau Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Number Sub-Street"
-msgstr ""
+msgstr "Tiriti-roto Tau Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Number Sub-Street Metatype"
-msgstr ""
+msgstr "Momometa Tiriti-roto Tau Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Number Sub-Street Type"
-msgstr ""
+msgstr "Momo Tiriti-roto Tau Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Building Number Type"
-msgstr ""
+msgstr "Momo Tau Whare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cache Seed Max Zoom"
-msgstr ""
+msgstr "Topa Mōrahi Terenga Keteroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption"
-msgstr ""
+msgstr "Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Metatype"
-msgstr ""
+msgstr "Momometa Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Note"
-msgstr ""
+msgstr "Tuhipoka Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Note Language"
-msgstr ""
+msgstr "Reo Tuhipoka Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Note Language Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Note Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka Whakapūaho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Caption Type"
-msgstr ""
+msgstr "Momo Whakapūaho"
 
 #: cards:1
 msgid "Capture Scale"
-msgstr ""
+msgstr "Hopu Āwhata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Capture Scale Metatype"
-msgstr ""
+msgstr "Momometa Hopu Āwhata"
 
 #: cards:1
 msgid "Capture the measurements associated with this resource."
-msgstr ""
+msgstr "Hopukina ngā inenga e pāhono ana k tēnei rauemi"
 
 #: cards:1
 msgid "Cargo"
-msgstr ""
+msgstr "Utanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cargo Metatype"
-msgstr ""
+msgstr "Momometa Utanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cargo Type"
-msgstr ""
+msgstr "Momo Utanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Casework Officer"
-msgstr ""
+msgstr "Āpiha Mātai Āhuatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Casework Officer Role Metatype"
-msgstr ""
+msgstr "Momometa Tūranga Āpiha Mātai Āhuatanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Casework Officer Role Type"
-msgstr ""
+msgstr "Momo Tūranga Āpiha Mātai Āhuatanga"
 
 #: cards:1
 msgid "Chronological guide for recording sites and monuments (Periods List)"
-msgstr ""
+msgstr "He aratohu ā-wa mō te hopu i ngā pae me ngā hanganga )Rārangi Wā)"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Classification"
@@ -1528,103 +1547,103 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Comment"
-msgstr ""
+msgstr "Tākupu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Communication Date"
-msgstr ""
+msgstr "Rā WhitiKōrero"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Communication Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Tohutohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Communication Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Whiti Kōrero"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Communication Metatype"
-msgstr ""
+msgstr "Momometa Whitinga Kōrero"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Communication Type"
-msgstr ""
+msgstr "Momo Whiti Kōrero"
 
 #: cards:1
 msgid "Communications"
-msgstr ""
+msgstr "Ngā Whakawhiti Kōrero"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compilation Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Whakaemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compilation Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Whakaemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compilation End Date"
-msgstr ""
+msgstr "Rā Mutunga Whakaemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compilation Type"
-msgstr ""
+msgstr "Momo Whakapūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name"
-msgstr ""
+msgstr "Ingoa Kaiwhakahiato"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Kaiwhakahiato"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaiwhakahiato"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaiwhakahiato"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Compiler Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Kaiwhakahiato"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Completion Date"
-msgstr ""
+msgstr "Rā Whakaoti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Component Material"
-msgstr ""
+msgstr "Matū Wae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Component Material Metatype"
-msgstr ""
+msgstr "Momometa Matū Wae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Component Metatype"
-msgstr ""
+msgstr "Momometa Wae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Component Type"
-msgstr ""
+msgstr "Momo Wae"
 
 #: cards:1
 msgid "Components"
-msgstr ""
+msgstr "Ngā Wae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Condition"
-msgstr ""
+msgstr "Te Āhua o Te Takoto"
 
 #: cards:1
 msgid "Condition Assessment"
@@ -1632,291 +1651,291 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Condition Metatype"
-msgstr ""
+msgstr "Momometa Āhuatanga"
 
 #: cards:1
 msgid "Condition Survey"
-msgstr ""
+msgstr "Tirohanga Āhua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Condition on Survey"
-msgstr ""
+msgstr "Te Āhua i te Tirohanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Confidence of Dating"
-msgstr ""
+msgstr "Te Whakapono ki te Tawhito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Confidence of Dating Metatype"
-msgstr ""
+msgstr "Momometa Whakapono ki te Tawhito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Confidence of Interpretation"
-msgstr ""
+msgstr "Whakapono ki te Whakamārama"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Confidence of Interpretation Metatype"
-msgstr ""
+msgstr "Momometa Whakapono ki te Whakamārama"
 
 #: cards:1
 msgid "Configuration Settings for temporal search"
-msgstr ""
+msgstr "Ngā Tautuhinga Whirihora mō te rapu wā"
 
 #: cards:1
 msgid "Configuration settings for search returns"
-msgstr ""
+msgstr "Ngā tautuhinga whirihora mō ngā whakahokinga rapu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Method"
-msgstr ""
+msgstr "Tikanga Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Method Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Kaupae Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Kaupae Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Display Date"
-msgstr ""
+msgstr "Rā Whakaatu Kaupae Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase End Date"
-msgstr ""
+msgstr "Rā Mutunga Kaupae Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Evidence Metatype"
-msgstr ""
+msgstr "Momometa Taunakitanga Kaupae Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Evidence Type"
-msgstr ""
+msgstr "Momo Taunakitanga Kaupae Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Metatype"
-msgstr ""
+msgstr "Momometa Kaupae Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Start Date"
-msgstr ""
+msgstr "Rā Tīmata Kaupae Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Phase Type"
-msgstr ""
+msgstr "Momo Kaupae Hanganga"
 
 #: cards:1
 msgid "Construction Phase(s)"
-msgstr ""
+msgstr "Te(ngā) Kaupae Hanganga"
 
 #: cards:1
 msgid "Construction Phases"
-msgstr ""
+msgstr "Ngā Kaupae Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Technique"
-msgstr ""
+msgstr "Tikanga Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Construction Technique Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation"
-msgstr ""
+msgstr "Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Data Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Raraunga Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Torotoro"
 
 #: cards:1
 msgid "Consultation Dates"
-msgstr ""
+msgstr "Ngā Rā Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Description"
-msgstr ""
+msgstr "Whakaahua Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Torototoronga"
 
 #: cards:1
 msgid "Consultation Descriptions"
-msgstr ""
+msgstr "Whakaahua Torotoronga"
 
 #: cards:1
 msgid "Consultation Location"
-msgstr ""
+msgstr "Tauwāhi Torotoro Tangata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Location Description"
-msgstr ""
+msgstr "Whakaahua Tauwāhi Torotoro Tangata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Location Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Tauwāhi Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Location Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Tauwāhi Torotoro Tangata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Metatype"
-msgstr ""
+msgstr "Momometa Tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name"
-msgstr ""
+msgstr "Ingoa Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name Type"
-msgstr ""
+msgstr "Momo Ingoa Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consultation Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Torotoronga"
 
 #: cards:1
 msgid "Consultation Names"
-msgstr ""
+msgstr "Ngā Ingoa Torotoronga"
 
 #: cards:1
 msgid "Consultation Status"
-msgstr ""
+msgstr "Tūnga Torotoronga:"
 
 #: cards:1
 msgid "Consultation Type"
-msgstr ""
+msgstr "Momo Torotoronga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Consulting Contact"
-msgstr ""
+msgstr "Hoapā Kaitohutohu"
 
 #: cards:1
 msgid "Contact Details"
-msgstr ""
+msgstr "Tikanga Whakapā atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name For Correspondence"
-msgstr ""
+msgstr "Ingoa Whakapā mō ngā Reta"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name Type"
-msgstr ""
+msgstr "Momo Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Hoapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Hoapā"
 
 #: cards:1
 msgid "Contact Names"
-msgstr ""
+msgstr "Ngā Ingoa Whakapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Point Metatype"
-msgstr ""
+msgstr "Momometa Ira Whakapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact Point Type"
-msgstr ""
+msgstr "Momo Ira Whakapā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contact point"
-msgstr ""
+msgstr "Tangata Whakapā"
 
 #: cards:1
 msgid "Contacts"
-msgstr ""
+msgstr "Ngā Hoapā"
 
 #: cards:1
 msgid "Contested Heritage Assignment"
-msgstr ""
+msgstr "Tautapatanga Taonga Tuku iho e Tautohetia ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contested Heritage Metatype"
-msgstr ""
+msgstr "Momometa Taonga Tuku iho e Tautohetia ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contested Heritage?"
-msgstr ""
+msgstr "He Taonga Tuku iho e Tautohetia ana?"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contribution Metatype"
-msgstr ""
+msgstr "Momoemta Āwhina"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contribution Type"
-msgstr ""
+msgstr "Momo Āwhina"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contributor"
-msgstr ""
+msgstr "Kaiāwhina"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contributor Name"
-msgstr ""
+msgstr "Ingoa Kaituku mai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contributor Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaiāwhina"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Contributor Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaiāwhina"
 
 #: cards:1
 msgid "Coordinate System"
-msgstr ""
+msgstr "Pūnaha Tukutuku"
 
 #: cards:1
 msgid "Coordinate Systems"
-msgstr ""
+msgstr "Ruruku Pūnaha"
 
 #: cards:1
 msgid "Copyright"
-msgstr ""
+msgstr "Te Manatārua"
 
 #: cards:1
 msgid "Copyright Details"
@@ -1924,23 +1943,23 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Holder"
-msgstr ""
+msgstr "Kaipupuru Manatū"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Metatype"
-msgstr ""
+msgstr "Momometa Manatārua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Note Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Manatārua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Note Text"
-msgstr ""
+msgstr "Kuputuhi Tuhipoka Manatārua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka Manatārua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Statement"
@@ -1948,99 +1967,99 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Copyright Type"
-msgstr ""
+msgstr "Momo Manatārua"
 
 #: cards:1
 msgid "Correspondence"
-msgstr ""
+msgstr "Ngā Reta"
 
 #: cards_x_nodes_x_widgets:1
 msgid "County"
-msgstr ""
+msgstr "County"
 
 #: cards_x_nodes_x_widgets:1
 msgid "County Metatype"
-msgstr ""
+msgstr "Momometa Takiwā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "County Type"
-msgstr ""
+msgstr "Momo Takiwā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Covering Material"
-msgstr ""
+msgstr "Ngā Matū Whakakapi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Covering Material Metatype"
-msgstr ""
+msgstr "Momometa Matū Whakakapi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Craft Type"
-msgstr ""
+msgstr "Momo Waka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Crash Description Language"
-msgstr ""
+msgstr "Reo Whakaahua Tūtukinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Crash Description Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Whakaahua Tūtukinga"
 
 #: cards:1
 msgid "Crash_Event"
-msgstr ""
+msgstr "Tūponotanga_Tūtukitanga"
 
 #: cards:1
 msgid "Creation"
-msgstr ""
+msgstr "Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creation Date"
-msgstr ""
+msgstr "Rā Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creation Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creation Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Waihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creation End Date"
-msgstr ""
+msgstr "Rā Mutunga Waihanga"
 
 #: cards:1
 msgid "Creator"
-msgstr ""
+msgstr "Te Kaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name"
-msgstr ""
+msgstr "Ingoa Kaiwaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Kaiwaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Kaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaiwaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaiwaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Kaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Creator Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Kaiwaihanga"
 
 #: cards:1
 msgid "Creator Role"
@@ -2048,27 +2067,27 @@ msgstr ""
 
 #: cards:1
 msgid "Crew"
-msgstr ""
+msgstr "Tira Whakatere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Crew Member Name"
-msgstr ""
+msgstr "Ingoa Mema Tira Rererangi"
 
 #: cards:1
 msgid "Crew Members"
-msgstr ""
+msgstr "Ingoa Tira Kaiwhakatere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Crew Role"
-msgstr ""
+msgstr "Tūnga Tira"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Crew Role Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Tira"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Crew member"
-msgstr ""
+msgstr "Ingoa tira kaimahi"
 
 #: cards:1
 msgid "Critical Reading Actor"
@@ -2080,75 +2099,75 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cross Reference"
-msgstr ""
+msgstr "Tohu Whakawhiti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cross Reference Note"
-msgstr ""
+msgstr "Momo Tuhipoka Tohu Whakawhiti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cross Reference Note Metatype"
-msgstr ""
+msgstr "Momo Tuhipoka Tohu Whakawhiti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cross Reference Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka Tohu Whakawhiti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cross Reference Source"
-msgstr ""
+msgstr "Puna Tohu Whakawhiti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Cultural Period"
-msgstr ""
+msgstr "Wā Ahurea"
 
 #: cards:1
 msgid "Curated Holding"
-msgstr ""
+msgstr "Purutanga i āta Whakamahia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Currency"
-msgstr ""
+msgstr "Whāinga Mana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana"
 
 #: cards:1
 msgid "Current Base Map"
-msgstr ""
+msgstr "Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name"
-msgstr ""
+msgstr "Ingoa Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Type"
-msgstr ""
+msgstr "Momo Ingoa Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Use Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Mapi Taketake o Nāianei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Current Base Map Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Mapi Taketake o Nāianei"
 
 #: cards:1
 msgid "Currently controlled in AMIE by a reference data list"
-msgstr ""
+msgstr "E whakahaeretia ana i roto i AMIE e tētahi rārangi raraunga tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Custodial Context Type"
@@ -2196,103 +2215,103 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "DEFAULT_BOUNDS"
-msgstr ""
+msgstr "DEFAULT_BOUNDS"
 
 #: cards_x_nodes_x_widgets:1
 msgid "DIscovery Method"
-msgstr ""
+msgstr "Tikanga Kite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Ūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date Taken"
-msgstr ""
+msgstr "Te Rā i Hopukina ai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Arrival"
-msgstr ""
+msgstr "Te Rā Taenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Authorization"
-msgstr ""
+msgstr "Rā Whakamananga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Birth"
-msgstr ""
+msgstr "Rā Whānau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Compilation"
-msgstr ""
+msgstr "Rā Whakaemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Death"
-msgstr ""
+msgstr "Rā Matenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Departure"
-msgstr ""
+msgstr "Wā Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Last Update"
-msgstr ""
+msgstr "Rā o Tērā o ngā Whakahōutanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Loss"
-msgstr ""
+msgstr "Rā Ngaromanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Loss End"
-msgstr ""
+msgstr "Mutunga Rā Ngaromanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Loss Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Ngaromanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Loss Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Ngaromanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Loss Start"
-msgstr ""
+msgstr "Tīmatanga Rā Ngaromanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Publication"
-msgstr ""
+msgstr "Rā Whakaputanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Date of Visit"
-msgstr ""
+msgstr "Rā Pekanga"
 
 #: cards:1
 msgid "Dates"
-msgstr ""
+msgstr "Ngā Rā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dating Method"
-msgstr ""
+msgstr "Tikanga Inewā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dating Method Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Inewā"
 
 #: cards:1
 msgid "Death"
-msgstr ""
+msgstr "Te Mate Rawa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Death Place Metatype"
-msgstr ""
+msgstr "Momometa Wāhi Matenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Death Place Type"
-msgstr ""
+msgstr "Momo Wāhi Matenga"
 
 #: cards:1
 msgid "Death_Statement"
@@ -2520,7 +2539,7 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Default Zoom"
-msgstr ""
+msgstr "Topa Taunoa"
 
 #: cards:1
 msgid "Describes the copyright for the information resource."
@@ -2531,98 +2550,102 @@ msgid ""
 "Describes the date, place of birth and parentage of an actor.Relates to the "
 "Actor resource model E21 via P98."
 msgstr ""
+"Hei whakaahua tēnei i te wā, i te wāhi whānau me ngā mātua o tētahi kaimahi."
+" E pāhono ana tēnei ki te tauira rauemi Kaimahi E21 mā Wh 98."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Description"
-msgstr ""
+msgstr "Whakamārama"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Description Language"
-msgstr ""
+msgstr "Reo Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Description Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Description Type"
-msgstr ""
+msgstr "Momo Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Description of Voyage"
-msgstr ""
+msgstr "Whakaahua Haerenga"
 
 #: cards:1
 msgid "Descriptions"
-msgstr ""
+msgstr "Ngā Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Amendment Date"
-msgstr ""
+msgstr "Rā Whakatikanga Tūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation End Date"
-msgstr ""
+msgstr "Rā Mutunga Tūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Name"
-msgstr ""
+msgstr "Ingoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Tūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Name Type"
-msgstr ""
+msgstr "Momo Ingoa Tautuhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Tautohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Tūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation Start Date"
-msgstr ""
+msgstr "Rā Tīmata Tūranga"
 
 #: cards:1
 msgid "Designation and Protection Assignment"
-msgstr ""
+msgstr "Tautapatanga Tapanga, Wawaonga hoki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation or Protection Metatype"
-msgstr ""
+msgstr "Momometa Tautuhi, Wawao rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Designation or Protection Type"
-msgstr ""
+msgstr "Momo Ingoa Tautuhi, Wawao rānei"
 
 #: cards:1
 msgid "Details of the crew members on the flight."
-msgstr ""
+msgstr "Ngā taipitopito o ngā mema tira o te rerenga."
 
 #: cards:1
 msgid "Details of the specific citation relating a source to a Monument"
 msgstr ""
+"Ngā tipitopito o te whakahua whāiti e pā ana ki te pūtakenga mai o tētahi "
+"Hanganga"
 
 #: cards:1
 msgid "Details the current location and keeper of the resource."
-msgstr ""
+msgstr "E taki ana ki te tauwāhi o nāianei me te kaipupuru o te rawa."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Development Metatype"
-msgstr ""
+msgstr "Momometa Whanaketanga"
 
 #: cards:1
 msgid "Development Type"
-msgstr ""
+msgstr "Momo Whanaketanga"
 
 #: cards:1
 msgid "Dhif 40 1"
@@ -2630,15 +2653,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Digital File"
-msgstr ""
+msgstr "Kōnae Matihiko"
 
 #: cards:1
 msgid "Digital File(s)"
-msgstr ""
+msgstr "Te (Ngā) Kōnae Matihiko"
 
 #: cards:1
 msgid "Digital Files"
-msgstr ""
+msgstr "Ngā Kōnae Matihiko"
 
 #: cards:1
 msgid "Digital Reference"
@@ -2654,63 +2677,63 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Measurement Unit"
-msgstr ""
+msgstr "Kōwae Ine Rahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Measurement Unit Metatype"
-msgstr ""
+msgstr "Momometa Kōwae Ine Rāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Metatype"
-msgstr ""
+msgstr "Momometa Rahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Type"
-msgstr ""
+msgstr "Momo Rahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Type Qualifier"
-msgstr ""
+msgstr "Whakamārama Momo Rahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Type Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Momo Rahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Dimension Value"
-msgstr ""
+msgstr "Uara Rahi"
 
 #: cards:1
 msgid "Dimensions"
-msgstr ""
+msgstr "Te Rahi"
 
 #: cards:1
 msgid "Discovery"
-msgstr ""
+msgstr "Te Kitenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Discovery Method Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Kite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Discovery Note"
-msgstr ""
+msgstr "Tuhipoka Kitenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Discovery Note Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Kitenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Discovery Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka Kitenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Display Date"
-msgstr ""
+msgstr "Rā Whakaaturanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Display Name"
-msgstr ""
+msgstr "Ingoa Whakaaturanga"
 
 #: cards:1
 msgid ""
@@ -2718,50 +2741,53 @@ msgid ""
 "as the default for the cache seed bounds, search result grid bounds, and map"
 " bounds in search, cards, and reports"
 msgstr ""
+"Tuhia he tapamaha e waitohu ana i te whānuitanga o tō kaupapa. Hei taunoa "
+"ēnei whaitua mō ngā tapanga kākano keteroki, ngā tapanga tukutuku hua rapu, "
+"hei tapanga mapi i roto i ngā rapu, i ngā kāri me ngā pūrongo."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Earliest Date of Use"
-msgstr ""
+msgstr "Rā Tuatahi i Taea ai te Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Earliest Possible End Date"
-msgstr ""
+msgstr "Rā Mutunga Tōmua Rawa ka Taea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Earliest Possible Start Date"
-msgstr ""
+msgstr "Rā Tīmatanga Tōmua Rawa ka Taea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Editor"
-msgstr ""
+msgstr "Kaitakatā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Editor Name"
-msgstr ""
+msgstr "Ingoa Takatā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Editor Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaitakatā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Editor Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaitakatā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Editorship Metatype"
-msgstr ""
+msgstr "Momometa Āhuatanga Kaitakatā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Editorship Type"
-msgstr ""
+msgstr "Momo Āhuatanga Kaitakatā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "End Date"
-msgstr ""
+msgstr "Rā Otinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "End Date of Assessment"
-msgstr ""
+msgstr "Rā Mutunga o te Aromatawai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter URL Label..."
@@ -2773,29 +2799,33 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter date"
-msgstr ""
+msgstr "Tāurutia he rā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter number"
-msgstr ""
+msgstr "Tāuru tau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter text"
-msgstr ""
+msgstr "Tāuru kuputuhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter the form of the aircraft, eg. Airship, Biplane, Seaplane etc."
 msgstr ""
+"Tāurutia te āhuahanga o te rererangi hei tauira, Manurere, Parirau Takirua, "
+"Rererangi Moana. te aha"
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Enter the function that the aircraft fulfilled, eg. Fighter, Photo "
 "Reconnaissance etc."
 msgstr ""
+"Whakakīa te āheinga o te rererangi, hei tauira, Rererangi Kōkiri, Rereranga "
+"Hopu Whakaahua, te aha"
 
 #: cards:1
 msgid "Enter the name of the application area."
-msgstr ""
+msgstr "Tāurutia te ingoa o te rohe tono."
 
 #: cards:1
 msgid "Enter the name of the archive source."
@@ -2803,48 +2833,49 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter the name of the publisher"
-msgstr ""
+msgstr "Tāurutia te ingoa o te kaiwhakaputa"
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Enter the number of the Film Roll associated with the Aerial Photograph"
 msgstr ""
+"Tāurutia te tau o te Pōkai Kiriata e pāhono ana ki te Whakaahua mai i Runga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter the number of the Frame associated with the Aerial Photograph"
-msgstr ""
+msgstr "Tāurutia te tau o te Tāpare e pāhono ana ki te Whakaahua mai i runga"
 
 #: cards:1
 msgid "Enter the preferred name for the period."
-msgstr ""
+msgstr "Tāurutia te ingoa e paingia ana mō te wā"
 
 #: cards:1
 msgid "Enter the resource name and its respective type."
-msgstr ""
+msgstr "Tāurutia mai te ingoa rauemi me tōna momo tūturu."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter the type of the aircraft, eg. Mosquito"
-msgstr ""
+msgstr "Tāurutia te momo rererangi: hei tauira, Mosquito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter the type of the craft, as identified."
-msgstr ""
+msgstr "Tāurutia te momo waka, e ai ki te tautohu."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Enter value"
-msgstr ""
+msgstr "Tāurutia te uara"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Epithet"
-msgstr ""
+msgstr "Kupuāhua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Epithet Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kupuāhua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Epithet Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kupuāhua"
 
 #: cards:1
 msgid "Ethnicity"
@@ -2948,11 +2979,11 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Evidence Metatype"
-msgstr ""
+msgstr "Momometa Taunakitanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Evidence Type"
-msgstr ""
+msgstr "Momo Taunakitanga"
 
 #: cards:1
 msgid "ExactMatch"
@@ -2960,31 +2991,31 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Expected Date End"
-msgstr ""
+msgstr "Mutunga Rā e Tūmanakotia ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Expected Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā e Tūmanakotia ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Expected Date Start"
-msgstr ""
+msgstr "Tīmatanga Rā e Tūmanakotia ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Expected Date of Arrival"
-msgstr ""
+msgstr "Te Rā Taenga atu e Tūmanakotia ana"
 
 #: cards:1
 msgid "Extent"
-msgstr ""
+msgstr "Whānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Extent Measurement Unit"
-msgstr ""
+msgstr "Kōwae Ine Whānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Extent Measurement Unit Metatype"
-msgstr ""
+msgstr "Momometa Kōwae Ine Whānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "External Cross Reference Description"
@@ -3008,15 +3039,15 @@ msgstr ""
 
 #: cards:1
 msgid "External Cross References"
-msgstr ""
+msgstr "Ngā Tohu Whakawhiti o Waho"
 
 #: cards:1
 msgid "External System References"
-msgstr ""
+msgstr "Ngā tohutoro Pūnaha o Waho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "FIle Format Metatype"
-msgstr ""
+msgstr "Momometa Hōputu Kōnae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Family Status Context Type"
@@ -3052,15 +3083,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Father"
-msgstr ""
+msgstr "Matua Tāne"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Feature Shape"
-msgstr ""
+msgstr "Āhua Ahuahira"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Feature Shape Metatype"
-msgstr ""
+msgstr "Momometa Āhuahanga Āhuahira"
 
 #: cards:1
 msgid "Fieldworker"
@@ -3068,211 +3099,211 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Figs."
-msgstr ""
+msgstr "Ngā Pikitia."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Figures Metatype"
-msgstr ""
+msgstr "Momometa Pikitia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Figures Type"
-msgstr ""
+msgstr "Momo Pikitia"
 
 #: cards:1
 msgid "File"
-msgstr ""
+msgstr "Kōnae"
 
 #: cards:1
 msgid "File Format"
-msgstr ""
+msgstr "Hōputu kōnae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "File Format Type"
-msgstr ""
+msgstr "Momo Hōputu Kōnae"
 
 #: cards:1
 msgid "File(s)"
-msgstr ""
+msgstr "Te(ngā) Kōnae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Film No."
-msgstr ""
+msgstr "Tau Rīpeneata."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Film Number"
-msgstr ""
+msgstr "Tau Kiriata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Film Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Kiriata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Film Number Type"
-msgstr ""
+msgstr "Momo Tau Kiriata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Final Place of Departure Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Wāhi Wehenga atu Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Final Place of Departure Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi Wehenga atu Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Final Place of Departure Name Type"
-msgstr ""
+msgstr "Whakamutunga Momo Ingoa Wāhi Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Final Place of Departure Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Wāhi Wehenga atu Whakamutunga"
 
 #: cards:1
 msgid "Finder"
-msgstr ""
+msgstr "Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name"
-msgstr ""
+msgstr "Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Finder Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Kaikite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Fixtures and Fittings Metatype"
-msgstr ""
+msgstr "Momometa Wāhanga, Tāpiritanga rānei."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Fixtures and Fittings Type"
-msgstr ""
+msgstr "Momo Wāhanga Whare, Tāpiritanga rānei."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Date Qualifier"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Description"
-msgstr ""
+msgstr "Whakaahua Rerenga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Description Language"
-msgstr ""
+msgstr "Reo Whakaahua Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Description Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Whakaahua Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Metatype"
-msgstr ""
+msgstr "Momometa Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Flight Type"
-msgstr ""
+msgstr "Momo Rerenga"
 
 #: cards:1
 msgid "Flights"
-msgstr ""
+msgstr "Ngā Rerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Follow-On Action Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Mahi Whai i Muri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Follow-On Action Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Mahi Whai i Muri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Follow-On Actions"
-msgstr ""
+msgstr "Ngā Mahi e Whai ake ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Forename  Name Type"
-msgstr ""
+msgstr "Momo Ingoa Ingoa Tuatahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Forename Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Tuatahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Forename(s)"
-msgstr ""
+msgstr "Te(ngā) Ingoa Tuatahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Frame No."
-msgstr ""
+msgstr "Tau Tāpare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Frame Number"
-msgstr ""
+msgstr "Tau Tāpare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Frame Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Tāpare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Frame Number Type"
-msgstr ""
+msgstr "Momo Tau Tāpare"
 
 #: cards_x_nodes_x_widgets:1
 msgid "From Date"
-msgstr ""
+msgstr "Mai i te Rā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Full Address"
-msgstr ""
+msgstr "Wāhi Noho Katoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Full Address Metatype"
-msgstr ""
+msgstr "Momometa Tauwāhi Katoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Full Address Type"
-msgstr ""
+msgstr "Momo Tauwāhi Katoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Full Name"
-msgstr ""
+msgstr "Ingoa Katoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Full Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Katoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Full Name Type"
-msgstr ""
+msgstr "Momo Ingoa Katoa"
 
 #: cards:1
 msgid "Function Status"
@@ -3308,15 +3339,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Functional Craft Metatype"
-msgstr ""
+msgstr "Momometa Waka Whaipainga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Functional Metatype"
-msgstr ""
+msgstr "Momometa Whaipainga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Functional Type"
-msgstr ""
+msgstr "Momo Whaipainga"
 
 #: cards:1
 msgid "Gender"
@@ -3328,91 +3359,91 @@ msgstr ""
 
 #: cards:1
 msgid "Geographic coverage"
-msgstr ""
+msgstr "Kapinga Matawhenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Geology"
-msgstr ""
+msgstr "Pūtaiao ā-nuku"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Geology Metatype"
-msgstr ""
+msgstr "Momometa Aronuku"
 
 #: cards:1
 msgid "Geometry"
-msgstr ""
+msgstr "Āhuahanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Geospatial Coordinates"
-msgstr ""
+msgstr "Ngā Taunga ā-Takiwā Matawhenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Glyphs"
-msgstr ""
+msgstr "Ngā Kiriwhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "GoogleAnalyticsKey"
-msgstr ""
+msgstr "GoogleAnalyticsKey"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Grade"
-msgstr ""
+msgstr "Grade"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Grade Metatype"
-msgstr ""
+msgstr "Momometa Grade"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HEX_BIN_PRECISION"
-msgstr ""
+msgstr "HEX_BIN_PRECISION"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HEX_BIN_SIZE"
-msgstr ""
+msgstr "HEX_BIN_SIZE"
 
 #: cards:1
 msgid "HLC Phase"
-msgstr ""
+msgstr "Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Description"
-msgstr ""
+msgstr "Whakaahua Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Āwhata HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Display Date"
-msgstr ""
+msgstr "Rā Whakaatu Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase End Date"
-msgstr ""
+msgstr "Rā Mutunga Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Phase Start Date"
-msgstr ""
+msgstr "Rā Tīmata Kaupae HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Type"
-msgstr ""
+msgstr "Momo HLC"
 
 #: cards_x_nodes_x_widgets:1
 msgid "HLC Type Metatype"
-msgstr ""
+msgstr "Momometa Momo HLC"
 
 #: cards:1
 msgid "Has a Procedure Protocol"
@@ -3420,11 +3451,11 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Height"
-msgstr ""
+msgstr "Tāroaroa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Height Qualifier"
-msgstr ""
+msgstr "Whakamārama Tāroaroa"
 
 #: cards:1
 msgid "Heritage Place Metatype"
@@ -3439,18 +3470,20 @@ msgid ""
 "Hexagon Grid Precision (Integer, larger numbers ensuer more precise counts "
 "at a performanace cost)"
 msgstr ""
+"Tika Pū Tukutuku Tapaono (Tau tōpū, mā ngā tau rahi ake ka tika kē atu ngā "
+"tauanga, me te whakaheke pai mahinga)"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Hexagon Size (in km)"
-msgstr ""
+msgstr "Rahi Tapaono (ā-kiromita)"
 
 #: cards:1
 msgid "Historic Land Use Character Attributes"
-msgstr ""
+msgstr "Ngā āhuatanga Pūāhua Whakamahi Whenua Tawhito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Historic Map"
-msgstr ""
+msgstr "Mapi Tawhito"
 
 #: cards:1
 msgid "Identifier"
@@ -3724,28 +3757,30 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Image Rights Holder"
-msgstr ""
+msgstr "Kaipupuru Tika Atahanga"
 
 #: cards:1
 msgid "Images"
-msgstr ""
+msgstr "Ngā Atahanga"
 
 #: cards:1
 msgid ""
 "Initial settings for Arches maps displayed in reports, cards, and search"
 msgstr ""
+"Te tautuhitanga tuatahi mō ngā mapi Arches e whakaaturia ana i ngā pūrongo, "
+"i ngā kāri me te rapu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Initial(s)"
-msgstr ""
+msgstr "Te(ngā) Pū Tuatahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Initial(s) Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa me te(ngā) Pū Tuatahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Initial(s) Name Type"
-msgstr ""
+msgstr "Momo Ingoa Te(ngā) Pū Tuatahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Input By Role Metatype"
@@ -3773,43 +3808,43 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Content"
-msgstr ""
+msgstr "Ngā Kiko Tānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Language"
-msgstr ""
+msgstr "Reo Tānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Note"
-msgstr ""
+msgstr "Tuhipoka Tuhinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Note Language"
-msgstr ""
+msgstr "Reo Tuhipoka Tāinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Note Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tuhipoka Tāinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Note Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Tāinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka Tāinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Inscription Translation"
-msgstr ""
+msgstr "Whakamāoritanga Tānga"
 
 #: cards:1
 msgid "Inscriptions"
-msgstr ""
+msgstr "Ngā Tāinga"
 
 #: cards:1
 msgid "Instrument used in Activity"
@@ -4061,135 +4096,135 @@ msgstr ""
 
 #: cards:1
 msgid "Journal or Series"
-msgstr ""
+msgstr "Te Hautaka, te Rangatū rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Laboratory Reference"
-msgstr ""
+msgstr "Tohutoro Taiwhanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Laboratory Reference Metatype"
-msgstr ""
+msgstr "Momometa Tohutoro Taiwhanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Laboratory Reference Type"
-msgstr ""
+msgstr "Momo Tohutoro Taiwhanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Assessment End Date"
-msgstr ""
+msgstr "Rā Mutunga Aromatawai Whakamahi Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Assessment Start Date"
-msgstr ""
+msgstr "Rā Tīmatanga Aromatawai Whakamahi Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Classification"
-msgstr ""
+msgstr "Tautohu Whakamahinga Whenua"
 
 #: cards:1
 msgid "Land Use Classification Assignment"
-msgstr ""
+msgstr "Te Tautapa Tapanga Whakamahinga Whenua Tau"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahinga Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Note"
-msgstr ""
+msgstr "Tuhipoka Whakamahinga Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Notes Language"
-msgstr ""
+msgstr "Reo Tuhipoka Whakamahinga Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Notes Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tuhipoka Whakamahinga Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Notes Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Whakamahinga Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Land Use Notes Type"
-msgstr ""
+msgstr "Momo Tuhipoka Whakamahinga Whenua"
 
 #: cards:1
 msgid "Language"
-msgstr ""
+msgstr "Reo"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Language Metatype"
-msgstr ""
+msgstr "Momometa reo"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Language Type"
-msgstr ""
+msgstr "Momo Reo"
 
 #: cards:1
 msgid "Languages"
-msgstr ""
+msgstr "Ngā Reo"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Cargo Metatype"
-msgstr ""
+msgstr "Momometa Utanga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Flight Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Ūnga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Flight Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Ūnga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Flight Description"
-msgstr ""
+msgstr "Whakaahua Rerenga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Flight Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Rerenga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Flight Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Rerenga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Last Flight Metatype"
-msgstr ""
+msgstr "Momometa Rerenga Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latest Date of Use"
-msgstr ""
+msgstr "Rā Whakamutunga i Taea ai te Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latest Possible End Date"
-msgstr ""
+msgstr "Rā Mutunga Tōmuri Rawa ka Taea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latest Possible Start Date"
-msgstr ""
+msgstr "Rā Tīmatanga Tōmuri Rawa ka Taea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latitude Degrees"
-msgstr ""
+msgstr "Tākiri Ahopae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latitude Hemisphere"
-msgstr ""
+msgstr "Tuakoi Ahopae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latitude Minutes"
-msgstr ""
+msgstr "Ngā Meneti Ahopae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Latitude Seconds"
-msgstr ""
+msgstr "Ngā Hēkona Ahopae"
 
 #: cards:1
 msgid "Latitude/Longitude References"
-msgstr ""
+msgstr "Ngā Tohutoro Ahopae/Ahopou"
 
 #: cards:1
 msgid "Left Group"
@@ -4433,39 +4468,39 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Legacy ID"
-msgstr ""
+msgstr "TT Tawhito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Legacy ID Metatype"
-msgstr ""
+msgstr "Momometa TT Tawhito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Legacy ID Type"
-msgstr ""
+msgstr "Momo TT Tawhito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "LegacyID"
-msgstr ""
+msgstr "TTTukuIho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Letter"
-msgstr ""
+msgstr "He Pū (reta)"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Letter Metatype"
-msgstr ""
+msgstr "Momometa Pū"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Letter Type"
-msgstr ""
+msgstr "Momo Pū"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Level of Occupancy"
-msgstr ""
+msgstr "Taumata Nohoanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Level of Risk to Site"
-msgstr ""
+msgstr "Taumata Mōrea ki te Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Link text"
@@ -4478,6 +4513,10 @@ msgid ""
 "was discovered. Included for migration purposes.Dependencies:> Land Use "
 "concept collection available in the RDM"
 msgstr ""
+"Ka hono i tētahi E13_Attribute_Assignment ki tētahi E!8_Physical_Thing. Ka "
+"whakamahia hei hopu i tētahi tūnga motuhake e pā ana ki te tauwāhi kitenga i"
+" kitea ai te taonga. Kua whakaurua mō ngā take whakawhiti.Ōna kāwei:>kohinga"
+" ariā Whakamahinga Whenua e wātea ana i roto i te RDM"
 
 #: cards:1
 msgid ""
@@ -4486,6 +4525,10 @@ msgid ""
 "migration purposes.Dependencies:> Land Use concept collection available in "
 "the RDM"
 msgstr ""
+"Ka hono i tētahi E13_Attribute_Assignment ki tētahi E!8_Physical_Thing. Ka "
+"whakamahia hei hopu i te Tapanga Whakamahinga Whenua e pāhono ana ki tētahi "
+"hanganga. Kua whakaurua mō ngā take whakawhiti.Ōna kāwei:>kohinga ariā "
+"Whakamahinga Whenua e wātea ana i roto i te RDM"
 
 #: cards:1
 msgid ""
@@ -4493,6 +4536,10 @@ msgid ""
 "the Land Use Classification associated with a vessel. Included for migration"
 " purposes.Dependencies:> Land Use concept collection available in the RDM"
 msgstr ""
+"Ka hono i tētahi E13_Attribute_Assignment ki tētahi E!8_Physical_Thing. Ka "
+"whakamahia hei hopu i te Tautapatanga Whakamahinga Whenua e pāhono ana ki "
+"tētahi waka. Ka whakaurua ki roto mō ngā take whakawhiti.Ōna kāwei:>kohinga "
+"ariā Whakamahinga Whenua e wātea ana i roto i te RDM"
 
 #: cards:1
 msgid ""
@@ -4501,6 +4548,10 @@ msgid ""
 "aircraft. Included for migration purposes.Dependencies:> Land Use concept "
 "collection available in the RDM"
 msgstr ""
+"Ka hono i tētahi E13_Attribute_Assignment ki tētahi E!8_Physical_Thing. Ka "
+"whakamahia hei hopu i te tūnga o te whenua e pāhono ana ki te tauwāhi o te "
+"rererangi tawhito. Ōna kāwei:>kohinga ariā Whakamahinga Whenua e wātea ana i"
+" roto i te RDM"
 
 #: cards:1
 msgid ""
@@ -4508,6 +4559,10 @@ msgid ""
 " Land Use Classification associated with a monument. Included for migration "
 "purposes.Dependencies:> Land Use concept collection available in the RDM"
 msgstr ""
+"Ka hono i tētahi E13_Attribute_Assignment ki tētahi E!8_Physical_ThingUsed "
+"hei hopu i Tapanga Whakamahinga Whenua e pā ana ki tētahi hanganga. Ka "
+"whakaurua ki roto mō ngā mahi whakawhāiti.Ōna kāwei> kohinga ariā "
+"Whakamahinga Whenua e wātea ana i roto i te RDM"
 
 #: cards:1
 msgid ""
@@ -4515,12 +4570,17 @@ msgid ""
 "Area or Artefact Resource Model> Relationship Type concept collection in the"
 " RDM"
 msgstr ""
+"Ka hono i tētahi E18_Physical_Thing ki tētahi E1_CRM_Entity.Ōna kāwei:> "
+"Hanganga, Rohe, Taonga rānei, Tauira Rauemi Taonga rānei> kohinga ariā Momo "
+"Hononga i te RDM"
 
 #: cards:1
 msgid ""
 "Links an E7_Activity to an E1_CRM entity.Dependencies:> Activity Resource "
 "Model> Activity Type concept collection in the RDM"
 msgstr ""
+"Ka hono i tētahi E7_Activity ki tētahi āhuatanga E1_CRM .Dependencies:> "
+"Tauira Rauemi Hohenga> kohinga ariā Momo Hohenga i te RDM"
 
 #: cards:1
 msgid ""
@@ -4533,190 +4593,198 @@ msgid ""
 "in the RDM.> Threats concept collection in the RDM.> Risk to Site concept "
 "collection in the RDM."
 msgstr ""
+"Ka hono i ngā taipitopito o tētahi E7_Activity ki tētahi E18_Physical "
+"ThingŌna kāwei:> Warden_Actor_Organisation Resource Model> "
+"Warden_Actor_Person Resource Model> kohinga ariā Āhua Pae Tirohanga i roto i"
+" te RDM.> kohinga ariā Āhua Pae Tirohanga i roto i te RDM.> kohinga ariā "
+"Taumata Nohonga i roto i te RDM.> kohinga ariā Momo Tirohanga i roto i te "
+"RDM.> kohinga ariā Urunga Tirohanga i roto i te RDM.> kohinga aria Ōwehenga "
+"Pae Noho Mōrea i roto i te RDM.> kohinga ariā Ngā Mōrea i roto i te RDM.> "
+"kohinga ariā Mōrea ki te Pae i roto i te RDM."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Local Heritage List Criteria Metatype"
-msgstr ""
+msgstr "Momometa Paearu Rārangi Taonga ā-Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Local Heritage List Criteria Type"
-msgstr ""
+msgstr "Momo Paearu Rārangi Taonga ā-Rohe"
 
 #: cards:1
 msgid "Localities/Administrative Area Types"
-msgstr ""
+msgstr "Ngā Rohe ā-Takiwā/Ngā Momo Rohe Whakahaere"
 
 #: cards:1
 msgid "Localities/Administrative Areas"
-msgstr ""
+msgstr "Ngā Rohe ā-Takiwā/Ngā Rohe Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Locality"
-msgstr ""
+msgstr "Te Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Locality Metatype"
-msgstr ""
+msgstr "Momometa Takiwā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Locality Type"
-msgstr ""
+msgstr "Momo Takiwā"
 
 #: cards:1
 msgid "Location"
-msgstr ""
+msgstr "Te Wāhi"
 
 #: cards:1
 msgid "Location Data"
-msgstr ""
+msgstr "Raraunga Tauwāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Location Description"
-msgstr ""
+msgstr "Whakaahua Tauwāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Location Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Tauwāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Location Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Tauwāhi"
 
 #: cards:1
 msgid "Location Descriptions"
-msgstr ""
+msgstr "Ngā Whakaahua Tauwāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Log Date"
-msgstr ""
+msgstr "Rā Rangitaki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Longitude Degrees"
-msgstr ""
+msgstr "Ngā Tākiri Ahopou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Longitude Hemisphere"
-msgstr ""
+msgstr "Tuakoi Ahopou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Longitude Minutes"
-msgstr ""
+msgstr "Ngā Meneti Ahopou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Longitude Seconds"
-msgstr ""
+msgstr "Hēkona Ahopou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Main Construction Material"
-msgstr ""
+msgstr "Matū Hanganga Matua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Main Construction Material Metatype"
-msgstr ""
+msgstr "Momometa Matū Hanganga Matua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Manner of Loss"
-msgstr ""
+msgstr "Te Ara i Ngaro ai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Manner of Loss Metatype"
-msgstr ""
+msgstr "Momometa Take i Ngaro ai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Manufacturer"
-msgstr ""
+msgstr "Kaiwhakanao"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Manufacturer Metatype"
-msgstr ""
+msgstr "Momometa mō te Kaiwhakanao"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Map"
-msgstr ""
+msgstr "Mapi"
 
 #: cards:1
 msgid "Map API"
-msgstr ""
+msgstr "API Mapi"
 
 #: cards:1
 msgid "Map Settings"
-msgstr ""
+msgstr "Ngā Tautuhitanga Mahere"
 
 #: cards:1
 msgid "Map Zoom"
-msgstr ""
+msgstr "Topa Mapi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "MapBox API Key (Optional)"
-msgstr ""
+msgstr "Kī MapBox API (Kei te tangata te tikanga)"
 
 #: cards:1
 msgid "Mapbox API"
-msgstr ""
+msgstr "API Mapbox"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Mapbox Glyphs"
-msgstr ""
+msgstr "Ngā Kiriwhi Mapbox"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Mapbox Sprites"
-msgstr ""
+msgstr "Ngā Atakori Mapbox"
 
 #: cards:1
 msgid "Mapped Location"
-msgstr ""
+msgstr "Tauwāhi i Whakamaheretia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Maritime Vessel Metatype"
-msgstr ""
+msgstr "Momometa Waka Moana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Maritime Vessel Type"
-msgstr ""
+msgstr "Momo Waka Moana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Material"
-msgstr ""
+msgstr "Matū"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Material Metatype"
-msgstr ""
+msgstr "Momometa Matū"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Max Zoom"
-msgstr ""
+msgstr "Topa Mōrahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Max number of search results to export"
-msgstr ""
+msgstr "Te tau mōrahi o ngā hua hei kaweake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Measurement Unit"
-msgstr ""
+msgstr "Kōwae Ine"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Measurement Unit Metatype"
-msgstr ""
+msgstr "Momometa Kōwae Ine"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Measurement Value"
-msgstr ""
+msgstr "Uara Inenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Min Zoom"
-msgstr ""
+msgstr "Topa Mōkito"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Mitigation"
-msgstr ""
+msgstr "Te Whakamauru"
 
 #: cards:1
 msgid "Mitigation Type"
-msgstr ""
+msgstr "Momo Whakamauru"
 
 #: cards:1
 msgid "Mitigations"
-msgstr ""
+msgstr "Ngā Whakamauru"
 
 #: cards:1
 msgid "Monitoring Frequency"
@@ -4724,19 +4792,19 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Monument Metatype"
-msgstr ""
+msgstr "Momometa Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Monument Type"
-msgstr ""
+msgstr "Momo Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Monument or Area"
-msgstr ""
+msgstr "Hanganga, Rohe rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Monument, Area or Artefact"
-msgstr ""
+msgstr "Hanganga, Rohe, Taonga rānei"
 
 #: cards:1
 msgid "Morf 1 1"
@@ -4756,27 +4824,27 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Mother"
-msgstr ""
+msgstr "Whaea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name"
-msgstr ""
+msgstr "Ingoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa"
 
 #: cards:1
 msgid "Name Details"
-msgstr ""
+msgstr "Ngā Taipitopito Imgoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa"
 
 #: cards:1
 msgid "Name Standard"
@@ -4784,15 +4852,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name Type"
-msgstr ""
+msgstr "Ingoa Momo"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Name_content"
@@ -4836,61 +4904,63 @@ msgstr ""
 
 #: cards:1
 msgid "Named Location"
-msgstr ""
+msgstr "Tauwāhi kua Whakaingoatia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Named Location Latitude"
-msgstr ""
+msgstr "Ahopae Tauwāhi kua Whakaingoatia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Named Location Longitude"
-msgstr ""
+msgstr "Ahopou Tauwāhi kua Whakaingoatia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Named Location Name"
-msgstr ""
+msgstr "Ahopae Tauwāhi kua Whakaingoatia"
 
 #: cards:1
 msgid "Named Locations"
-msgstr ""
+msgstr "Ngā Tauwāhi kua Whakaingoatia"
 
 #: cards:1
 msgid "Names"
-msgstr ""
+msgstr "Ngā Ingoa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Nationailty Metatype"
-msgstr ""
+msgstr "Momometa Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "National Grid Reference"
-msgstr ""
+msgstr "Tohutoro Tukutuku ā-Motu"
 
 #: cards:1
 msgid "National Grid References"
-msgstr ""
+msgstr "Ngā Tohutoro Tukutuku ā-Motu"
 
 #: cards:1
 msgid ""
 "National Grid references, map names, and other common location identifiers "
 "for the resource"
 msgstr ""
+"ngā tohutoro Tukutuku ā-Motu, ngā ingoa mapi, me ērā atu pūtautohu e kitea "
+"nuitia ana mō te rauemi"
 
 #: cards:1
 msgid "Nationalities"
-msgstr ""
+msgstr "Ngā Piringa ā-Whenua"
 
 #: cards:1
 msgid "Nationalities and Registration Details"
-msgstr ""
+msgstr "NgāTaipitopito Piringa ā-Whenua me ngā Rēhitatanga"
 
 #: cards:1
 msgid "Nationality"
-msgstr ""
+msgstr "Piringa ā-Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Nationality Metatype"
-msgstr ""
+msgstr "Momometa Piringa ā-Whenua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Nationality_Meta Type"
@@ -4898,59 +4968,59 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Note"
-msgstr ""
+msgstr "Tuhipoka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Note Language"
-msgstr ""
+msgstr "Reo Tuhipoka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Note Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tuhipoka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Note Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Notes"
-msgstr ""
+msgstr "Ngā Tuhipoka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Number of Pages"
-msgstr ""
+msgstr "Tapeke Whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Number of search hints per dropdown"
-msgstr ""
+msgstr "Te maha o ngā tohuāki rapu mō ia takaiho"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Number of search results per page"
-msgstr ""
+msgstr "Te maha o ngā hua rapu mō ia whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Observation Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Tirohanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Observation Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Tirohanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Observation Notes"
-msgstr ""
+msgstr "Ngā Tuhipoka Tirohanga"
 
 #: cards:1
 msgid "Observations"
-msgstr ""
+msgstr "Ngā Mātakinga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Observed by"
-msgstr ""
+msgstr "Kua kitea e"
 
 #: cards:1
 msgid "One assessment of condition at a particular point in time."
@@ -4958,207 +5028,207 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ordnance Metatype"
-msgstr ""
+msgstr "Momometa Rākau Whawhai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ordnance Type"
-msgstr ""
+msgstr "Momo Rākau Whawhai"
 
 #: cards:1
 msgid "Organization Currency"
-msgstr ""
+msgstr "Whāinga Mana Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Currency Type"
-msgstr ""
+msgstr "Momo Whāinga Mana Whakahaere"
 
 #: cards:1
 msgid "Organization Formation"
-msgstr ""
+msgstr "Te Hanga Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Metatype"
-msgstr ""
+msgstr "Momometa Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Name"
-msgstr ""
+msgstr "Ingoa Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Name Type"
-msgstr ""
+msgstr "Momo Ingoa Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Organization Type"
-msgstr ""
+msgstr "Momo Whakahaere"
 
 #: cards:1
 msgid "Outcomes"
-msgstr ""
+msgstr "Ngā Putanga"
 
 #: cards:1
 msgid "Owner"
-msgstr ""
+msgstr "Kaipupuri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Owner Role Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Kaipupuri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Owner Role Type"
-msgstr ""
+msgstr "Momo Tūnga Kaipupuru"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership"
-msgstr ""
+msgstr "Rangatiratanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Rangatiratanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Rangatiratanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership Display Date"
-msgstr ""
+msgstr "Rā Whakaatu Rangatiratanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership End Date"
-msgstr ""
+msgstr "Rā Mutunga Rangatiratanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership Metatype"
-msgstr ""
+msgstr "Momometa Kaipupuru"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Ownership Start Date"
-msgstr ""
+msgstr "Rā Tīmata Rangatiratanga"
 
 #: cards:1
 msgid "Page Reference"
-msgstr ""
+msgstr "Ngā Tohutoro Whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Page Reference  Metatype"
-msgstr ""
+msgstr "Momo Tohutoro Whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Page Reference Type"
-msgstr ""
+msgstr "Momo Tohutoro Whārangi"
 
 #: cards:1
 msgid "Page References"
-msgstr ""
+msgstr "Ngā Tohutoro Whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Page(s)"
-msgstr ""
+msgstr "Te(ngā) Whārangi"
 
 #: cards:1
 msgid "Pages"
-msgstr ""
+msgstr "Ngā Whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Pages Metatype"
-msgstr ""
+msgstr "Momometa Whārangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Pages Type"
-msgstr ""
+msgstr "Momo Whārangi"
 
 #: cards:1
 msgid "Parent Activities"
-msgstr ""
+msgstr "Ngā Hohenga Mātua"
 
 #: cards:1
 msgid "Parent Area"
-msgstr ""
+msgstr "Rohe Matua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Parent Monument"
-msgstr ""
+msgstr "Hanganga Matua"
 
 #: cards:1
 msgid "Parent Monument or Area"
-msgstr ""
+msgstr "Hanganga Matua, Rohe rānei"
 
 #: cards:1
 msgid "Parent Monuments"
-msgstr ""
+msgstr "Ngā Hanganga Matua"
 
 #: cards:1
 msgid "Parent Organization"
-msgstr ""
+msgstr "Whakahaere Matua"
 
 #: cards:1
 msgid "Parent Period"
-msgstr ""
+msgstr "Wā Matua"
 
 #: cards:1
 msgid "Parent Story"
-msgstr ""
+msgstr "Pakiwaitara Matua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Participants"
-msgstr ""
+msgstr "Te hunga whai wāhi mai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period"
-msgstr ""
+msgstr "Takiwā"
 
 #: cards:1
 msgid "Period Descriptions"
-msgstr ""
+msgstr "Ngā Whakaahua Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Metatype"
-msgstr ""
+msgstr "Momometa Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Name"
-msgstr ""
+msgstr "Ingoa Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Name Type"
-msgstr ""
+msgstr "Momo Ingoa Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Takiwā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahinga Ingoa Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Period Type"
-msgstr ""
+msgstr "Momo Wā"
 
 #: cards:1
 msgid "Period Types"
-msgstr ""
+msgstr "Ngā Momo Wā"
 
 #: cards:1
 msgid "Period of Membership"
@@ -5166,63 +5236,63 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Periods"
-msgstr ""
+msgstr "Ngā Wā"
 
 #: cards:1
 msgid "Person Currency"
-msgstr ""
+msgstr "Whāinga Mana Tangata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Person or Organization"
-msgstr ""
+msgstr "Tangata, Whakahaere rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Certainty"
-msgstr ""
+msgstr "Mōhiotanga Pūmau Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Certainty Metatype"
-msgstr ""
+msgstr "Momometa Pūmau Kaupae"
 
 #: cards:1
 msgid "Phase Classification"
-msgstr ""
+msgstr "Tautohutanga Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Description"
-msgstr ""
+msgstr "Whakaahua Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Desctiption Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Evidence Metatype"
-msgstr ""
+msgstr "Momometa Taunakitanga Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Phase Evidence Type"
-msgstr ""
+msgstr "Momo Taunakitanga Kaupae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Photograph Name"
-msgstr ""
+msgstr "Ingoa Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Photograph Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Photograph Name Type"
-msgstr ""
+msgstr "Momo Ingoa Whakaahua"
 
 #: cards:1
 msgid "Photographs"
-msgstr ""
+msgstr "Ngā Whakaahua"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Physical Locative Status Context Type"
@@ -5254,247 +5324,247 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place Metatype"
-msgstr ""
+msgstr "Momometa Wāhi Matenga"
 
 #: cards:1
 msgid "Place Type"
-msgstr ""
+msgstr "Momo Wāhi Matenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Death"
-msgstr ""
+msgstr "Wāhi Matenga"
 
 #: cards:1
 msgid "Place of Departure"
-msgstr ""
+msgstr "Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Currency"
-msgstr ""
+msgstr "Whāinga Mana Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name"
-msgstr ""
+msgstr "Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Type"
-msgstr ""
+msgstr "Momo Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Use Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Departure Type"
-msgstr ""
+msgstr "Momo Wāhi Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination"
-msgstr ""
+msgstr "Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Currency"
-msgstr ""
+msgstr "Whāinga Mana Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name"
-msgstr ""
+msgstr "Ingoa Wāhi Ūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Type"
-msgstr ""
+msgstr "Momo Ingoa Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Destination Type"
-msgstr ""
+msgstr "Momo Wāhi Ūnga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Manufacture"
-msgstr ""
+msgstr "Wāhi Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Publication"
-msgstr ""
+msgstr "Wāhi Whakaputa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Registration"
-msgstr ""
+msgstr "Wāhi Rēhita"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Place of Registration Metatype"
-msgstr ""
+msgstr "Momometa Wāhi Rēhita"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename"
-msgstr ""
+msgstr "Ingoa Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoawāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename Type"
-msgstr ""
+msgstr "Momo Ingoawāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Placename Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Wāhi"
 
 #: cards:1
 msgid "Placenames"
-msgstr ""
+msgstr "Ngā Ingoa Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Planning Body"
-msgstr ""
+msgstr "Rōpū Whakamahere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Planning Officer"
-msgstr ""
+msgstr "Āpiha Whakamahere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Planning Officer Metatype"
-msgstr ""
+msgstr "Momometa Āpiha Whakamahere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Planning Officer Role Type"
-msgstr ""
+msgstr "Momo Rūranga Āpiha Whakamahere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Planning Outcome"
-msgstr ""
+msgstr "Huaputa Whakamahere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Planning Outcome Metatype"
-msgstr ""
+msgstr "Huaputa Huaputa Whakamahere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Plate(s)"
-msgstr ""
+msgstr "Te(ngā) Papa Pānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Plates Type"
-msgstr ""
+msgstr "Momo Papa Pānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Plates metatype"
-msgstr ""
+msgstr "Momometa papa pānui"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Port of Departure Name"
-msgstr ""
+msgstr "Ingoa Whanga Kaipuke Wehenga atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Port of Destination Name"
-msgstr ""
+msgstr "Ingoa Whanga Kaipuke Ūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Postcode"
-msgstr ""
+msgstr "Nama mēra"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Postcode Metatype"
-msgstr ""
+msgstr "Momometa Nama Mēra"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Postcode Type"
-msgstr ""
+msgstr "Momo Nama Mēra"
 
 #: cards:1
 msgid "Preferred Period Names"
-msgstr ""
+msgstr "Ngā Ingoa Wā e Paingia ana"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Primary Reference Number"
-msgstr ""
+msgstr "Tau Tohutoro Taketake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Primary Reference Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Tohutoro Taketake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Primary Reference Number Type"
-msgstr ""
+msgstr "Momo Tau Tohutoro Taketake"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Producer"
-msgstr ""
+msgstr "Kaiwaihanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Date: From"
-msgstr ""
+msgstr "Rā Hanganga: Mai i"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Date: To"
-msgstr ""
+msgstr "Rā Hanganga: Ki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Method"
-msgstr ""
+msgstr "Tikanga Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Method Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Technique"
-msgstr ""
+msgstr "Tikanga Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Technique Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Hanganga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Production Time Span Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Rārangi Wā Hanganga"
 
 #: cards:1
 msgid "Profession Activity"
@@ -5734,11 +5804,11 @@ msgstr ""
 
 #: cards:1
 msgid "Project Extent"
-msgstr ""
+msgstr "Te Whānuitanga Kaupapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Project map extent"
-msgstr ""
+msgstr "Whānuitanga mapi kaupapa"
 
 #: cards:1
 msgid "Promise Upon"
@@ -5794,115 +5864,115 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Proportion of Site at Risk"
-msgstr ""
+msgstr "Ōwehenga o te Wāhi e Noho Mōrea ana"
 
 #: cards:1
 msgid "Proposal"
-msgstr ""
+msgstr "Marohitanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Proposal Description"
-msgstr ""
+msgstr "Whakaahua Marohi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Proposal Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Marohitanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Proposal Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Marohi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Proposal File(s)"
-msgstr ""
+msgstr "Te (Ngā) Kōnae Marohi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Propulsion Metatype"
-msgstr ""
+msgstr "Momometa Tōkiri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Propulsion Type"
-msgstr ""
+msgstr "Momo Tōkiri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Provider Key"
-msgstr ""
+msgstr "Kī Kaiwhakahora"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Provider Name"
-msgstr ""
+msgstr "Ingoa Kaiwhakarato"
 
 #: cards:1
 msgid "Providers"
-msgstr ""
+msgstr "Ngā Kaihora"
 
 #: cards:1
 msgid "Publication"
-msgstr ""
+msgstr "Whakaputanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Publication Placename"
-msgstr ""
+msgstr "Momo Ingoawāhi Whakaputanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Publication Placename Metatype"
-msgstr ""
+msgstr "Momometa Ingoawāhi Whakaputanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Publication Placename Type"
-msgstr ""
+msgstr "Momo Ingoawāhi Whakaputanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Publisher"
-msgstr ""
+msgstr "Kaiwhakaputa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Publisher Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaiwhakaputa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Publisher Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaiwhakaputa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Quantity"
-msgstr ""
+msgstr "Maha"
 
 #: cards:1
 msgid "Radiocarbon Calendar Age Assignment"
-msgstr ""
+msgstr "Tohutanga Pakeke Maramataka Horowaro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Rear Gardens"
-msgstr ""
+msgstr "Momometa Kāri Whakamuri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Rear Gardens Metatype"
-msgstr ""
+msgstr "Momometa Kāri Whakamuri"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Recommendation"
-msgstr ""
+msgstr "Tūtohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Recommendation Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Tūtohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Recommendation Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Tūtohu"
 
 #: cards:1
 msgid "Recommendations"
-msgstr ""
+msgstr "Ngā Tūtohu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Recommended by"
-msgstr ""
+msgstr "E manakotia ana e"
 
 #: cards:1
 msgid "Record Status"
-msgstr ""
+msgstr "Tūnga Pūkete"
 
 #: cards:1
 msgid "Record Status Assignment"
@@ -5910,11 +5980,12 @@ msgstr ""
 
 #: cards:1
 msgid "Record Type"
-msgstr ""
+msgstr "Momo Pūkete"
 
 #: cards:1
 msgid "Record the Latitude and Longitude of the position of the wreck"
 msgstr ""
+"Ka kopukina te Ahopae me te Ahopou o te nohonga o te waka i pūawhetia."
 
 #: cards:1
 msgid "Record the nationality and Port of Registration of the vessel"
@@ -5922,28 +5993,28 @@ msgstr ""
 
 #: cards:1
 msgid "Record the nationality of the vessel or aircraft"
-msgstr ""
+msgstr "Hopu i te piringa ā-whenua o te waka o te rererangi rānei"
 
 #: cards:1
 msgid "Record the voyages undertaken by the vessel."
-msgstr ""
+msgstr "Ka tuhia ngā haerenga o tētahi poti"
 
 #: cards:1
 msgid ""
 "Records the type of the resource model for interoperability purposes only."
-msgstr ""
+msgstr "Ka hopu i te momo tauira rauemi mō ngā take taupāhekoheko anake."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Recovery Technique"
-msgstr ""
+msgstr "Tikanga Tiki atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Recovery Technique Metatype"
-msgstr ""
+msgstr "Momometa Tikanga Tiki atu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference"
-msgstr ""
+msgstr "Tohutoro"
 
 #: cards:1
 msgid "Reference Document"
@@ -5951,7 +6022,7 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference Metatype"
-msgstr ""
+msgstr "Momometa Tohutoro"
 
 #: cards:1
 msgid "Reference Mātauranga"
@@ -5959,55 +6030,55 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference Number"
-msgstr ""
+msgstr "Tau Tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference Number Type"
-msgstr ""
+msgstr "Momo Tau Tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference Type"
-msgstr ""
+msgstr "Momo Tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Reference URL"
-msgstr ""
+msgstr "Tohutoro URL"
 
 #: cards:1
 msgid "References"
-msgstr ""
+msgstr "Ngā Tohutoro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Related Advice"
-msgstr ""
+msgstr "Ngā Tūtohu Whai Pānga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Related Application Area"
-msgstr ""
+msgstr "Wāhi Pānga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Related Condition"
-msgstr ""
+msgstr "Āhuatanga Pāhono"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Related Digital File(s)"
-msgstr ""
+msgstr "Te (Ngā) Kōnae Matihiko Whai Pānga"
 
 #: cards:1
 msgid "Repository Storage Location"
-msgstr ""
+msgstr "Tauwāhi Rokiroki Pūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Repository owner"
-msgstr ""
+msgstr "Kaipupuru Whare Pupuru"
 
 #: cards:1
 msgid "Represents a single node in a graph"
-msgstr ""
+msgstr "Hei waitohu tēnei i tētahi tīpona kotahi i tētahi kauwhata"
 
 #: cards:1
 msgid "Resource"
@@ -6015,91 +6086,91 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Resource Model Metatype"
-msgstr ""
+msgstr "Momometa Tauira Rauemi"
 
 #: cards:1
 msgid "Resource Model Type"
-msgstr ""
+msgstr "Momo Tauira Rauemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "ResourceID"
-msgstr ""
+msgstr "TTRauemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "ResourceID Metatype"
-msgstr ""
+msgstr "Momometa TTRauemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "ResourceID Type"
-msgstr ""
+msgstr "Momo TTRauemi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Risk Status"
-msgstr ""
+msgstr "Tūnga Mōrea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Risk Status Metatype"
-msgstr ""
+msgstr "Momometa Tūnga Mōrea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Role"
-msgstr ""
+msgstr "Tūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Role Metatype"
-msgstr ""
+msgstr "Momometa Tūranga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Role Type"
-msgstr ""
+msgstr "Momo Tūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "SHINE - Form"
-msgstr ""
+msgstr "Āhuahanga - SHINE"
 
 #: cards_x_nodes_x_widgets:1
 msgid "SHINE - Significance"
-msgstr ""
+msgstr "Hira - SHINE"
 
 #: cards_x_nodes_x_widgets:1
 msgid "SHINE Form Metatype"
-msgstr ""
+msgstr "Momometa Āhuahanga SHINE"
 
 #: cards_x_nodes_x_widgets:1
 msgid "SHINE Significance Metatype"
-msgstr ""
+msgstr "Momometa Hira SHINE"
 
 #: cards:1
 msgid "SPARQL Providers"
-msgstr ""
+msgstr "Ngā Kaihora SPARQL"
 
 #: cards:1
 msgid "Scientific Date Assignment"
-msgstr ""
+msgstr "Tautapatanga Rā Pūtaiao"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Scientific Date End Date"
-msgstr ""
+msgstr "Rā Mutunga Rā Pūtaiao"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Scientific Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Pūtaiao"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Scientific Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Hohenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Scientific Date Start Date"
-msgstr ""
+msgstr "Rā Tīmatanga Rā Pūtaiao"
 
 #: cards:1
 msgid "Search Results Grid"
-msgstr ""
+msgstr "Tukutuku Hua Rapu"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Search for or create a new Digital File"
-msgstr ""
+msgstr "Rapua, hangaia rānei he Kōnae Matihiko hou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Select a resource"
@@ -6107,47 +6178,51 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Select an option"
-msgstr ""
+msgstr "Tīpakona tētahi kōwhiringa"
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Select the Bibliographic Source from the library. If the source doesn't "
 "exist create a new bibliographic source."
 msgstr ""
+"Tīpakona te Puna Rārangi Pukapuka mai i te puna pukapuka Mehemea kāore he "
+"puna hangaia he puna rārangi pukapuka hou."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Select the Organization or Person that is the current keeper of the "
 "resource."
 msgstr ""
+"Tīpakona te ingoa o te Whakahaere o te Tangata rānei koia te kaitiaki o te "
+"rawa ināianei."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Select the unit of measurement."
-msgstr ""
+msgstr "Tīpakona te wae inenga"
 
 #: cards:1
 msgid "Set the default search results behavior"
-msgstr ""
+msgstr "Tautuhitia te whanonga hua rapu taunoa"
 
 #: cards:1
 msgid "Settings Basic Search"
-msgstr ""
+msgstr "Ngā Tautuhinga Rapu Taketake"
 
 #: cards:1
 msgid "Settings Map"
-msgstr ""
+msgstr "Te Mapi Tautuhinga"
 
 #: cards:1
 msgid "Settings Saved Searches"
-msgstr ""
+msgstr "Ngā Tautuhinga Rapu I Tiakina"
 
 #: cards:1
 msgid "Settings System Defaults"
-msgstr ""
+msgstr "Ngā Taunoa Pūnaha Tautuhinga"
 
 #: cards:1
 msgid "Settings Time Search"
-msgstr ""
+msgstr "Ngā Tautuhinga Wā Rapu"
 
 #: cards:1
 msgid "Sign Off"
@@ -6159,15 +6234,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Site Survey Condition"
-msgstr ""
+msgstr "Āhua Tirotiro Wāhi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Site Type"
-msgstr ""
+msgstr "Momo Wāhi"
 
 #: cards:1
 msgid "Site Visits"
-msgstr ""
+msgstr "Ngā Toronga Pae"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sites Present"
@@ -6175,15 +6250,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Source"
-msgstr ""
+msgstr "Puna"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Source Comment Metatype"
-msgstr ""
+msgstr "Momometa Tākupu Puna"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Source Comment Type"
-msgstr ""
+msgstr "Momo Tākupu Puna"
 
 #: cards:1
 msgid "Source ID"
@@ -6199,15 +6274,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Source Number"
-msgstr ""
+msgstr "Tau Puna"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Source Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Mātāpuna"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Source Number Type"
-msgstr ""
+msgstr "Momometa Tau Puna"
 
 #: cards:1
 msgid "Source Reference Work"
@@ -6215,71 +6290,71 @@ msgstr ""
 
 #: cards:1
 msgid "Spatial Accuracy Qualifier"
-msgstr ""
+msgstr "Whakamārama Tika Pū Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Accuracy Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Tika Pū"
 
 #: cards:1
 msgid "Spatial Extent"
-msgstr ""
+msgstr "Te Whānui Mokowā"
 
 #: cards:1
 msgid "Spatial Metadata"
-msgstr ""
+msgstr "Ngā Raraungameta Wāhi"
 
 #: cards:1
 msgid "Spatial Metadata Descriptions"
-msgstr ""
+msgstr "Ngā Whakaahua Raraungameta Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Metadata Notes"
-msgstr ""
+msgstr "Ngā Tuhipoka Raraungameta Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Metadata Notes Language"
-msgstr ""
+msgstr "Reo Tuhipoka Raraungameta Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Metadata Notes Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tuhipoka Raraungameta Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Metadata Notes Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Raraungameta Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Metadata Notes Type"
-msgstr ""
+msgstr "Momo Tuhipoka Raraungameta Mokowā"
 
 #: cards:1
 msgid "Spatial Record Authorization"
-msgstr ""
+msgstr "Whakamanatanga Pūkete Mokowā"
 
 #: cards:1
 msgid "Spatial Record Compilation"
-msgstr ""
+msgstr "Whakaemitanga Pūkete Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Record Compilation Metatype"
-msgstr ""
+msgstr "Momometa Whakaemi Pūkete Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Record Compilation Type"
-msgstr ""
+msgstr "Momo Whakaemi Pūkete Mokowā"
 
 #: cards:1
 msgid "Spatial Record Update"
-msgstr ""
+msgstr "Whakahou Pūkete Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Record Update Metatype"
-msgstr ""
+msgstr "Momometa Whakahou Pūkete Mokowā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Spatial Record Update Type"
-msgstr ""
+msgstr "Momo Whakahou Pūkete Mokowā"
 
 #: cards:1
 msgid "Specific Object Used"
@@ -6287,7 +6362,7 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sprites"
-msgstr ""
+msgstr "Ngā Atakori"
 
 #: cards:1
 msgid "Srdf 298 1"
@@ -6327,39 +6402,39 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Note"
-msgstr ""
+msgstr "Tuhipoka Mahora Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Note Language"
-msgstr ""
+msgstr "Reo Tuhipoka Mahora Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Note Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Tuhipoka Ine Mahora Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Note Metatype"
-msgstr ""
+msgstr "Momometa Tuhipoka Mahora Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Note Type"
-msgstr ""
+msgstr "Momo Tuhipoka Mahora Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Value"
-msgstr ""
+msgstr "Uara Mahora Toharite"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Standard Deviation Value (Madatory)"
-msgstr ""
+msgstr "Uara Ine Mahora Toharite (Me whakauru)"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Start Date"
-msgstr ""
+msgstr "Rā Tīmata"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Start Date of Assessment"
-msgstr ""
+msgstr "Rā Tīmatanga o te Aromatawai"
 
 #: cards:1
 msgid "Statement"
@@ -6367,15 +6442,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Statement of Responsibility"
-msgstr ""
+msgstr "Tauākī Noho Haepapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Statement of Responsibility Metatype"
-msgstr ""
+msgstr "Momometa Tauākī Noho Haepapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Statement of Responsibility Type"
-msgstr ""
+msgstr "Momo Tauākī Noho Haepapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Statement_content"
@@ -6459,11 +6534,11 @@ msgstr ""
 
 #: cards:1
 msgid "Status"
-msgstr ""
+msgstr "Tūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Status Metatype"
-msgstr ""
+msgstr "Momometa Tūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Status Type"
@@ -6471,107 +6546,107 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Area Name"
-msgstr ""
+msgstr "Ingoa Wähanga Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Area Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Area Name Type"
-msgstr ""
+msgstr "Momometa Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name"
-msgstr ""
+msgstr "Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Type"
-msgstr ""
+msgstr "Momo Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Use Metatype"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Storage Building Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Whare Rokiroki"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street"
-msgstr ""
+msgstr "Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street Frontage"
-msgstr ""
+msgstr "Aroākapa Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street Frontage Metatype"
-msgstr ""
+msgstr "Momometa Aroākapa Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street Metatype"
-msgstr ""
+msgstr "Momometa Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street Pattern"
-msgstr ""
+msgstr "Tauira Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street Pattern Metatype"
-msgstr ""
+msgstr "Momometa Tauira Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Street Type"
-msgstr ""
+msgstr "Momo Tiriti"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sub-Soil"
-msgstr ""
+msgstr "Oneone o raro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sub-Soil Metatype"
-msgstr ""
+msgstr "Momometa Oneone o raro"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sub-Street"
-msgstr ""
+msgstr "Tiriti-roto"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sub-Street Metatype"
-msgstr ""
+msgstr "Momometa Tiriti-roto"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Sub-Street Type"
-msgstr ""
+msgstr "Momo Tiriti-roto"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Subject"
-msgstr ""
+msgstr "Kaupapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Subject Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Kaupapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Subject Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Kaupapa"
 
 #: cards:1
 msgid "Subjects"
-msgstr ""
+msgstr "Ngā Kaupapa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Subjects Metatype"
@@ -6579,7 +6654,7 @@ msgstr ""
 
 #: cards:1
 msgid "Subjects and Periods"
-msgstr ""
+msgstr "Ngā Kaupapa me ngā Wā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Summary"
@@ -6593,18 +6668,20 @@ msgstr ""
 msgid ""
 "Summary of the data relating to the creation and amendment of the record."
 msgstr ""
+"Whakarāpopototanga o ngā raraunga e pā ana ki te hanganga me te "
+"menemanatanga o te pūkete."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Surname"
-msgstr ""
+msgstr "Te Ingoa Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Surname Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Ingoa Whakamutunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Surname Name Type"
-msgstr ""
+msgstr "Momo Ingoa Ingoa Whakamutunga"
 
 #: cards:1
 msgid "Survey Purpose"
@@ -6612,19 +6689,19 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Survey Type"
-msgstr ""
+msgstr "Ingoa Tirohanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Surveyor"
-msgstr ""
+msgstr "Kairūri"
 
 #: cards:1
 msgid "System Reference Numbers"
-msgstr ""
+msgstr "Ngā Tau Tohutoro"
 
 #: cards:1
 msgid "System configuration for saving searches"
-msgstr ""
+msgstr "Te whirihoratanga pūnaha mō te tiaki rapunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Target Date"
@@ -6632,15 +6709,15 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Target Date End"
-msgstr ""
+msgstr "Mutunga Rā Ūnga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Target Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Ūnga"
 
 #: cards:1
 msgid "Temporal Coverage"
-msgstr ""
+msgstr "Kapinga ā-Wā"
 
 #: cards:1
 msgid "Textual Reference"
@@ -6660,6 +6737,9 @@ msgid ""
 "Group, Activity, and Historical Event.  Actors receive their 'names' from "
 "the Appellation branch."
 msgstr ""
+"Te ingoa o tētahi rauemi. Ka pā ki tētahi Rawa Tuku Iho, Rōpū Taonga Tuku "
+"Iho, Hohenga, Āhuatanga Tuku iho hoki.  Ka whiwhi ngā kaimahi i ō rātou "
+"'ingoa' i te pekanga Tapa Ingoa."
 
 #: cards:1
 msgid ""
@@ -6667,6 +6747,9 @@ msgid ""
 "Group, Activity, and Historical Event.  Actors receive their 'names' from "
 "the Appellation branch."
 msgstr ""
+"Ka pā te ingoa o tētahi rawa ki tētahi Rawa Tuku Iho, ki tētahi Rōpū Taonga "
+"Tuku Iho, Hohenga, Āhuatanga Tuku iho hoki. Ka whiwhi ngā kaimahi i ō rātou "
+"'ingoa' i te pekanga Tapa Ingoa."
 
 #: cards:1
 msgid "Threat Type"
@@ -6674,7 +6757,7 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Threats"
-msgstr ""
+msgstr "Ngā Mōrearea"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Tikanga  Metatype"
@@ -6686,15 +6769,15 @@ msgstr ""
 
 #: cards:1
 msgid "Tile Cache"
-msgstr ""
+msgstr "Keteroki Tāpa"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Tile Cache Config"
-msgstr ""
+msgstr "Whirihora Keteroki Tāpa"
 
 #: cards:1
 msgid "Time Settings"
-msgstr ""
+msgstr "Ngā Tautuhinga Wā"
 
 #: cards:1
 msgid "Timespan"
@@ -6702,11 +6785,11 @@ msgstr ""
 
 #: cards:1
 msgid "Timespan (date)"
-msgstr ""
+msgstr "Horanga Wā (te rā)"
 
 #: cards:1
 msgid "Timespan (edtf)"
-msgstr ""
+msgstr "Horanga wā (edtf)"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Timespan End"
@@ -6718,31 +6801,31 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "Title"
-msgstr ""
+msgstr "Taitara"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Title Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Taitara"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Title Name Type"
-msgstr ""
+msgstr "Momo Ingoa Taitara"
 
 #: cards_x_nodes_x_widgets:1
 msgid "To Date"
-msgstr ""
+msgstr "Ki Te Rā"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Town or City"
-msgstr ""
+msgstr "Tāone Tāone nui rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Town or City Metatype"
-msgstr ""
+msgstr "Momometa Tāone Tāone nui rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Town or City Type"
-msgstr ""
+msgstr "Momo Tāone Tāone nui rānei"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Transfered Custody Of"
@@ -6750,219 +6833,243 @@ msgstr ""
 
 #: cards:1
 msgid "Translation"
-msgstr ""
+msgstr "Whakamāoritanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Translation Language"
-msgstr ""
+msgstr "Reo Whakamāori"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Translation Language Metatype"
-msgstr ""
+msgstr "Momometa Reo Whakamāori"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Translation Text"
-msgstr ""
+msgstr "Kuputuhi Whakamāori"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Translation Text Metatype"
-msgstr ""
+msgstr "Kuputuhi Whakamāori"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Translation Text Type"
-msgstr ""
+msgstr "Momo Kuputuhi Whakamāori"
 
 #: cards:1
 msgid "Type"
-msgstr ""
+msgstr "Momo"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Type of Access"
-msgstr ""
+msgstr "Momo Urunga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Type of Rigging"
-msgstr ""
+msgstr "Te Momo Taura"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Type of Rigging Metatype"
-msgstr ""
+msgstr "Momo Raraungameta Taura"
 
 #: cards_x_nodes_x_widgets:1
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: cards_x_nodes_x_widgets:1
 msgid "URl"
-msgstr ""
+msgstr "URI"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Update Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Whakahou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Update Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Whakahou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Update End Date"
-msgstr ""
+msgstr "Rā Mutunga Whakahoutanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Update Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Whakahou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Update Start Date"
-msgstr ""
+msgstr "Rā Tīmata Whakahoutanga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name"
-msgstr ""
+msgstr "Ingoa Kaiwhakahou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name Currency"
-msgstr ""
+msgstr "Whāinga Mana Ingoa Kua whakahoutia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name Currency Metatype"
-msgstr ""
+msgstr "Momometa Whāinga Mana Ingoa Kua Whakahoutia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name Metatype"
-msgstr ""
+msgstr "Momometa Ingoa Kaiwhakahou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name Type"
-msgstr ""
+msgstr "Momo Ingoa Kaiwhakahou"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name Use Metatype"
-msgstr ""
+msgstr "Momometa Whakamahi Ingoa Kua Whakahoutia"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Updater Name Use Type"
-msgstr ""
+msgstr "Momo Whakamahi Ingoa Kaiwhakahou"
 
 #: cards:1
 msgid "Use Phase"
-msgstr ""
+msgstr "Whakaahua Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Description"
-msgstr ""
+msgstr "Whakaahua Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Desctiption Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Display Date"
-msgstr ""
+msgstr "Rā Whakaatu Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase End Date"
-msgstr ""
+msgstr "Rā Mutunga Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Period"
-msgstr ""
+msgstr "Wā Kaupae Whakamahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use Phase Start Date"
-msgstr ""
+msgstr "Rā Tīmata Kaupae Whakamahi"
 
 #: cards:1
 msgid "Use Phases"
-msgstr ""
+msgstr "Ngā Kaupae Whakamahi"
 
 #: cards:1
 msgid ""
 "Use to record People and other Organizations associated with the "
 "Organization"
 msgstr ""
+"Whakamahia hei hopu i ngā Tāngata me ērā atu Whakahaere pāhono ki te "
+"Whakahaere"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use to record a particular status associated with the Area"
-msgstr ""
+msgstr "Whakamahia hei hopu i tētahi tūnga motuhake e pāhono ana ki te Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use to record a particular status associated with the Area."
-msgstr ""
+msgstr "Whakamahia hei hopu i tētahi tūnga motuhake e pāhono ana ki te Rohe"
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Use to record a particular status associated with the "
 "Area/Artefact/Aircraft/Monument/Vessel."
 msgstr ""
+"Whakamahia hei hopu i tētahi tūnga motuhake e pā ana ki "
+"Rohe/Taonga/Rererangi/Hanganga/Waka."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use to record a particular status associated with the Asset."
-msgstr ""
+msgstr "Whakamahia hei tuhi i tētahi tūnga motuhake e pā ana ki te Rawa."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Use to record a particular status associated with the Historic Aircraft."
 msgstr ""
+"Whakamahia hei hopu i tētahi tūnga motuhake e pāhono ana ki te Rererangi "
+"Tawhito."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use to record a particular status associated with the Monument."
-msgstr ""
+msgstr "Whakamahia hei hopu i te tūnga motuhake e pāhono ana ki te Hanganga."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Use to record a particular status associated with the findspot where the "
 "artefact was discovered."
 msgstr ""
+"Whakamahia hei hopu i tētahi tūnga motuhake e pā ana ki te tauwāhi kitenga i"
+" kitea ai te taonga."
 
 #: cards:1
 msgid ""
 "Use to record any designation or protection regimes directly associated with"
 " the application area."
 msgstr ""
+"Whakamahia hei hopu i ngā ritenga tapa, wawao hoki e pāhono tika ana ki te "
+"rohe tono."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use to record any fixtures or fittings identified from the craft."
 msgstr ""
+"Whakamahia hei hopu i ētahi Wāhanga, Tāpiritanga rānei i tautohutia mai i te"
+" waka"
 
 #: cards:1
 msgid ""
 "Use to record changes of use for the Craft, eg. where a Liner has been "
 "requisitioned as a Troopship."
 msgstr ""
+"Whakamahia hei hopu i ngā panonitanga whakamahinga mō te Waka, hei tauira, "
+"mehemea kua tonoa he kaipuke pāhihi kia haere hei waka kawe hōia."
 
 #: cards:1
 msgid ""
 "Use to record details associated with the production or modification of the "
 "aircraft, including type, function, manufacturer and materials."
 msgstr ""
+"Whakamahia hei tuhi i ngā taipitopito e pāhono ana ki te hanganga, ki te "
+"whakarerekētanga rānei o te rererangi, tae atu ki te momo, ki te āheina, ki "
+"te kaihanga me ōna matū."
 
 #: cards:1
 msgid ""
 "Use to record details of Archive Items which relate to or reference the "
 "activity, eg. historic photographs of excavations."
 msgstr ""
+"Ka whakamahia hei tuhi i ngā taipitopito o ngā Tūemi Pūranga e pā ana, e "
+"whakakite ana rānei i te hohenga hei tauira, he whakaahua tawhito o ngā "
+"keringa."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Use to record details of any ordnance or weaponry carrried by the craft."
 msgstr ""
+"Whakamahia hei hopu i ngā taipitopito o ētahi rākau whawhai, o ētahi pū "
+"rānei e noho ana i te waka."
 
 #: cards:1
 msgid "Use to record details of applicants, owners and casework officers"
 msgstr ""
+"Whakamahia hei tuhi i ngā taipitopito o ngā kaitono, o ngā kaipupuru, me ngā"
+" āpiha mātai āhuatanga"
 
 #: cards:1
 msgid "Use to record the creation, extent and location of the archive source"
@@ -6970,26 +7077,32 @@ msgstr ""
 
 #: cards:1
 msgid "Use to record the nationality of the aircraft"
-msgstr ""
+msgstr "Ka whakamahia hei hopu i te piringa ā-whenua o te rererangi"
 
 #: cards:1
 msgid ""
 "Use to record the page reference for an article or chapter in a serial, "
 "journal or monograph."
 msgstr ""
+"Whakamahia hei hopu i te tohutoro whārangi mō tētahi tuhinga, mō tētahi "
+"upoko i tētahi hautaka rangatū, i tētahi tuhinga kaupapa tukutahi rānei."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Use to record the part number if a volume has more than one part"
 msgstr ""
+"Whakamahia hei hopu i te tau wāhanga mehemea neke atu i te kotahi wāhanga o "
+"te pukapuka"
 
 #: cards:1
 msgid ""
 "Use to record the type of period, eg. cultural, artistic, geological etc."
 msgstr ""
+"Ka whakamahia hei hopu i te momo o te wā, hei tauira, wā ahurea, wā mahi "
+"toi, wā matawhenua, te aha."
 
 #: cards_x_nodes_x_widgets:1
 msgid "Used by"
-msgstr ""
+msgstr "Kua Whakamahia e"
 
 #: cards:1
 msgid ""
@@ -7006,12 +7119,16 @@ msgstr ""
 #: cards:1
 msgid "Used to record alternative names and the dates the name was in use"
 msgstr ""
+"Ka whakamahia hei tuhi i ētahi ingoa tuarua me ngā rā i whakamahia ai te "
+"ingoa"
 
 #: cards:1
 msgid ""
 "Used to record any activities associated with, or affecting, the application"
 " area."
 msgstr ""
+"Ka whakamahia hei hopu i ētahi hohenga e pāhono ana, e pā ana rānei, ki te "
+"rohe tono."
 
 #: cards:1
 msgid "Used to record any additional notes associated with a resource."
@@ -7020,48 +7137,62 @@ msgstr ""
 #: cards:1
 msgid "Used to record any consultations associated with an application area."
 msgstr ""
+"Ka whakamahia hei tuhi i ngā torotoronga e pāhono ana ki tētahi rohe tono."
 
 #: cards:1
 msgid ""
 "Used to record buildings, areas, finds or historic craft associated with an "
 "application area."
 msgstr ""
+"Whakamahia hei hopu i ngā whare, i ngā rohe, i ngā kitenga, i ngā waka "
+"tawhito pānoho ki te rohe tono"
 
 #: cards:1
 msgid "Used to record offshore areas where an activity took place."
-msgstr ""
+msgstr "Ka whakamahia hei hopu i ngā wāhi o te moana i haere ai tētahi mahi."
 
 #: cards:1
 msgid "Used to record reference numbers associated with the consultation."
 msgstr ""
+"Ka whakamahia hei hopu i ngā tau tohutoro e pāhono ana ki te torotoronga"
 
 #: cards:1
 msgid ""
 "Used to record text descriptions associated with a resource. Where "
 "appropriate different types of description may be recorded."
 msgstr ""
+"Ka whakamahia hei tuhi whakaahua kuputuhi e pāhono ana ki tētahi rauemi Ina "
+"hāngai, ka taea ētahi momo whakaahua rerekē te hopu i konei."
 
 #: cards:1
 msgid ""
 "Used to record text descriptions associated with an application area. Where "
 "appropriate different types of description may be recorded."
 msgstr ""
+"Ka whakamahia hei tuhi i ngā whakaahua kuputuhi e pāhono ana ki tētahi rohe "
+"tono  E tuhia ai pea ētahi whakaahua momo rerekē e tika ana."
 
 #: cards:1
 msgid ""
 "Used to record text descriptions associated with an artefact. Where "
 "appropriate different types of description may be recorded."
 msgstr ""
+"Ka whakamahia hei hopu i ngā whakaahua kuputuhi e pāhono ana ki tētahi "
+"taonga. Ina hāngai, ka taea ētahi momo whakaahua rerekē te hopu i konei."
 
 #: cards:1
 msgid ""
 "Used to record the Latitude and Longitude for sites in the marine domain."
 msgstr ""
+"Ka whakamahia hei hopu i te Ahopae me te Ahopou mō ngā pae i roto i te ao "
+"moana."
 
 #: cards:1
 msgid ""
 "Used to record the OSGB Grid ReferenceDependencies:> bngcentrepoint datatype"
 msgstr ""
+"Ka whakamahia hei hopu i ngā OSGB Grid ReferenceDependencies:> "
+"bngcentrepoint datatype"
 
 #: cards:1
 msgid "Used to record the broad status of the site."
@@ -7072,14 +7203,18 @@ msgid ""
 "Used to record the date and place of death of an actor.Relates to an actor "
 "resource via P100."
 msgstr ""
+"Whakamahia hei tuhi i te rā me te wāhi o te matenga o tētahi kaimahi. Ka pā "
+"ki tētahi rauemi kaimahi mā Wh100."
 
 #: cards:1
 msgid "Used to record the details of any associated application areas."
-msgstr ""
+msgstr "Ka whakamahia hei hopu i ngā taipitopito o ngā rohe tono pāhono."
 
 #: cards:1
 msgid "Used to record the details of any flights undertaken by the aircraft"
 msgstr ""
+"Ka whakamahia hei hopu i ngā taipitopito o ētahi rerenga ahakoa he aha, o te"
+" rererangi."
 
 #: cards:1
 msgid ""
@@ -7087,40 +7222,56 @@ msgid ""
 "is the last known flight record the manner and date of loss and, where know,"
 " the associated crash site."
 msgstr ""
+"Whakamahia ai tēnei hei hopu i ngā taipitopito o ngā Haerenga o tētahi "
+"rererangi. Ina mōhiotia te pūkete whakamutunga o te rerenga, tuhia te āhua "
+"me te rā o te ngaromanga, ā, ina mōhiotia, tuhia hoki te pae tūtukitanga "
+"pāhono."
 
 #: cards:1
 msgid "Used to record the details of the last known Voyage of a vessel."
 msgstr ""
+"Whakamahia ai tēnei hei hopu i ngā taipitopito o tērā o ngā Haerenga e āta "
+"mōhiotia ana o tētahi waka."
 
 #: cards:1
 msgid "Used to record the details of the last known flight of an aircraft."
 msgstr ""
+"Whakamahia ai tēnei hei hopu i ngā taipitopito o tērā o ngā Haerenga e āta "
+"mōhiotia ana o tētahi rererangi."
 
 #: cards:1
 msgid ""
 "Used to record the nationality of a vessel or aircraft. Includes Flags of "
 "Convenience.Dependencies:> Nationality concept collection in the RDM"
 msgstr ""
+"Whakamahia ai hei hopu i te piringa ā-whenua o tētahi waka, o tētahi "
+"rererangi rānei. Ka uru ki konei ngā Haki Whakataruna.Ōna Kāwei:> Te kohinga"
+" ariā piringa ā-whenua i te RDM"
 
 #: cards:1
 msgid ""
 "Used to record the original dimensions of the aircraft and the actual "
 "dimensions of the associated wreck site for comparative purposes."
 msgstr ""
+"Ka whakamahia hei hopu i ngā rahinga taketake o te rererangi me ngā rahi ake"
+" o te pae tūtukitanga mō ngā kaupapa whakatairite."
 
 #: cards:1
 msgid ""
 "Used to record the original dimensions of the craft and the actual "
 "dimensions of the associated wreck site for comparative purposes."
 msgstr ""
+"Ka whakamahia hei hopu i ngā rahinga ake o te waka me ngā rahinga tūturu o "
+"te wāhi paenga o te waka, hei whakatairite."
 
 #: cards:1
 msgid "Used to record the postal address of a resource."
-msgstr ""
+msgstr "Ka whakamahia hei tuhi i te wāhi tuku reta o tētahi rauemi"
 
 #: cards:1
 msgid "Used to record the postal address relating to an Application Area."
 msgstr ""
+"Ka whakamahia hei hopu i te wāhi tuku reta e pā ana ki tētahi Rohe Tono."
 
 #: cards:1
 msgid ""
@@ -7136,70 +7287,74 @@ msgid ""
 "on facets within Historic Aircraft Type Thesaurus> Aircraft Type> AIrcraft "
 "Manufacturer"
 msgstr ""
+"Ka whakamahia hei hopu i te momo, te kaihanga, ngā kaihanga, ngā tikanga me "
+"ngā ritenga e pāhono ana ki tētahi Rererangi Tawhito.Ōna Kāwei:He kohinga "
+"ariā i takea mai i ngā āhuatanga whāiti i roto i te Punakupu ōrite Momo "
+"Rerenga Tawhito> Momo Rererangi>Kaihanga Rererangi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Validation"
-msgstr ""
+msgstr "Manatoko"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Validation Metatype"
-msgstr ""
+msgstr "Momometa Manatoko"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Volume Number"
-msgstr ""
+msgstr "Tau Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Volume Number Metatype"
-msgstr ""
+msgstr "Momometa Tau Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Volume Number Type"
-msgstr ""
+msgstr "Momo Tau Maha"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Volume Part"
-msgstr ""
+msgstr "Wāhanga Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Volume Part Metatype"
-msgstr ""
+msgstr "Momometa Wāhanga Rahi"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Volume Part Type"
-msgstr ""
+msgstr "Momo Wāhanga Pukapuka"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Voyage Description"
-msgstr ""
+msgstr "Whakaahua Haerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Voyage Description Metatype"
-msgstr ""
+msgstr "Momometa Whakaahua Haerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Voyage Description Type"
-msgstr ""
+msgstr "Momo Whakaahua Haerenga"
 
 #: cards:1
 msgid "Voyage Details"
-msgstr ""
+msgstr "Ngā Taipitopito Haerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Voyage Metatype"
-msgstr ""
+msgstr "Momometa Haerenga"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Voyage Type"
-msgstr ""
+msgstr "Momo Haerenga"
 
 #: cards:1
 msgid "Voyages"
-msgstr ""
+msgstr "Ngā Haerenga"
 
 #: cards:1
 msgid "Web Analytics"
-msgstr ""
+msgstr "Ngā Tātaritanga Tukutuku"
 
 #: cards:1
 msgid "Whakapapa Status Ascribed Ancestor"
@@ -7207,29 +7362,33 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "When Determined Date Qualifier"
-msgstr ""
+msgstr "Whakamārama Rā Mutunga Te Wā i Whakatauria"
 
 #: cards_x_nodes_x_widgets:1
 msgid "When Determined Date Qualifier Metatype"
-msgstr ""
+msgstr "Momometa Whakamārama Rā i Whakatauria ai"
 
 #: cards_x_nodes_x_widgets:1
 msgid "When Determined End Date"
-msgstr ""
+msgstr "Rā Mutunga Te Wā i Whakatauria"
 
 #: cards_x_nodes_x_widgets:1
 msgid "When Determined Start Date"
-msgstr ""
+msgstr "Rā tīmatanga Te Wā i Whakatauria"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Where known enter the specific Mark, or variant, of the aircraft."
 msgstr ""
+"Ina mōhiotia whakaurua te Tohu motuhake, te tauira whāiti rānei o te "
+"rererangi"
 
 #: cards:1
 msgid ""
 "Where known use to record details of the date of production of the artefact "
 "and the techniques and methods used."
 msgstr ""
+"Ina mōhiotia whakamahia hei hopu i ngā taipitopito o te rā hanganga o te "
+"taonga, o ngā tikanga mahi me ngā ritenga hoki i whakamahia ai."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
@@ -7237,26 +7396,32 @@ msgid ""
 " This may differ from the name of the organization or repository that owns "
 "the object."
 msgstr ""
+"Ki te mōhiotia, tāurua te ingoa o te whare e rokia ai te rawa. Ka rerekē pea"
+" tēnei i te ingoa o te whakahaere, o te whare pupuru rānei nāna te ahanoa."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Where known, enter the name of the storage area within the building, eg. Box"
 " 4, Shelf 3, Room 27"
 msgstr ""
+"Ina mōhiotia, tāurutia te ingoa o te wāhi rokiroki i roto i te whare, hei "
+"tauira, Pouaka 4, Papatū 3, Rūma 27"
 
 #: cards_x_nodes_x_widgets:1
 msgid "Where known, enter the primary type of propulsion."
-msgstr ""
+msgstr "Ina mōhiotia, tāurutia te momo tōkiri matua."
 
 #: cards_x_nodes_x_widgets:1
 msgid ""
 "Where known, use to record the name of the shipwright and/or shipyard "
 "responsible for building the craft."
 msgstr ""
+"Ina mōhiotia, whakamahia hei tuhi i te ingoa o te kaihanga poti, te iāri "
+"hanga poti hoki/rānei nāna te waka i tārei."
 
 #: cards:1
 msgid "Wreck_Event"
-msgstr ""
+msgstr "Wreck_Event"
 
 #: cards:1
 msgid ""
@@ -7264,6 +7429,10 @@ msgid ""
 "default values.  Zoom level 0 shows the whole world (and is the minimum zoom"
 " level).  Most map services support a maximum of 20 or so zoom levels"
 msgstr ""
+"Ka taea e koe te tautuhi i te whanonga topa o ō mapi mā te tautohu i ngā "
+"mōrahi/mōkito me ngā uara taunoa. Ko tā te Taumata Topa Zoom 0 he whakakite "
+"i te ao katoa, (ā, koia hoki te taumata Zoom mōkito rawa). E tautoko ana te "
+"nuinga o ngā ratonga mapi i te mōrahi o ngā taumata topa āhua 20."
 
 #: cards:1
 msgid "_label"
@@ -7271,7 +7440,7 @@ msgstr ""
 
 #: cards:1
 msgid "arc"
-msgstr ""
+msgstr "arc"
 
 #: cards:1
 msgid "declarative custody transfer generic actor receiving"
@@ -7287,11 +7456,11 @@ msgstr ""
 
 #: cards_x_nodes_x_widgets:1
 msgid "e.g.: 2"
-msgstr ""
+msgstr "hei tauira: 2"
 
 #: cards_x_nodes_x_widgets:1
 msgid "e.g.: 4"
-msgstr ""
+msgstr "hei tauira: 4"
 
 #: cards_x_nodes_x_widgets:1
 msgid "https://"
