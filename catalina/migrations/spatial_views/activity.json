@@ -1,0 +1,25 @@
+{
+    "attributenodes": [
+        {
+            "description": "activity_name",
+            "nodeid": "4a7be135-9938-11ea-b0e2-f875a44e0e11"
+        },
+        {
+            "description": "cross_reference",
+            "nodeid": "589d4dc7-edf9-11eb-9856-a87eeabdefba"
+        },
+        {
+            "description": "activity_type",
+            "nodeid": "394d15b8-8f7a-11ea-b4f5-f875a44e0e11"
+        },
+        {
+            "description": "display_date",
+            "nodeid": "4f5eeb27-993e-11ea-b9f7-f875a44e0e11"
+        }
+    ],
+    "description": "Activities",
+    "geometry_node_id": "a5419248-f121-11eb-86a9-a87eeabdefba",
+    "ismixedgeometrytypes": false,
+    "slug": "activity",
+    "spatialviewid": "440db097-a7f6-4c34-b650-14f993c8153b"
+}

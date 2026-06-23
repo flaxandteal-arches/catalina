@@ -1,0 +1,33 @@
+{
+    "attributenodes": [
+        {
+            "description": "name",
+            "nodeid": "4ad69684-951f-11ea-b5c3-f875a44e0e11"
+        },
+        {
+            "description": "log_date",
+            "nodeid": "40eff4cd-893a-11ea-b0cc-f875a44e0e11"
+        },
+        {
+            "description": "consultation_descriptions",
+            "nodeid": "82f8a166-951a-11ea-bdad-f875a44e0e11"
+        },
+        {
+            "description": "monitoring_frequency",
+            "nodeid": "8d41e4e3-a250-11e9-89d8-00224800b26d"
+        },
+        {
+            "description": "cross_reference",
+            "nodeid": "3b500558-eec2-11eb-98b3-a87eeabdefba"
+        },
+        {
+            "description": "resource_instance_id",
+            "nodeid": "b37552be-9527-11ea-9213-f875a44e0e11"
+        }
+    ],
+    "description": "Consultations",
+    "geometry_node_id": "b949053a-184f-11eb-ac4a-f875a44e0e11",
+    "ismixedgeometrytypes": false,
+    "slug": "consultation",
+    "spatialviewid": "a9053144-4127-4519-b0e4-d5572c7c6b24"
+}
