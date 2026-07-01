@@ -219,8 +219,11 @@ def unload_overlays(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
+    # Overlays only touch core MapLayer/MapSource, not any her graph nodes, so
+    # this depends on core models rather than the removed package-load migration.
+    # Spatial views moved to catalina/pkg/post_sql/add_spatial_views.sql.
     dependencies = [
-        ("catalina", "0002_add_spatial_views"),
+        ("models", "12586_tile_cardinality_check"),
     ]
 
     operations = [
