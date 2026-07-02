@@ -42,6 +42,11 @@ def _portal_geojson_url(slug, layer_index=0):
     return f"/overlays/{slug}/{layer_index}/query?where=1%3D1&outFields=*&f=geojson"
 
 
+# Vector overlays carry click/hover popup config as Mapbox layer
+# `metadata["arches:popup"]` ({"title": <prop>, "fields": [[label, prop], ...]}),
+# read client-side by the project map popup provider
+# (catalina/media/js/utils/map-popup-provider.js). 
+# Hover highlight requires the source's "generateId": True plus the feature-state paint cases.
 def load_overlays(apps, schema_editor):
     MapLayer = apps.get_model("models", "MapLayer")
     MapSource = apps.get_model("models", "MapSource")
@@ -92,12 +97,19 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-monument",
-            source={"type": "geojson", "data": _portal_geojson_url("nzaa")},
+            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("nzaa")},
             layers=[
                 {"id": "nzaa-fill", "source": "nzaa", "type": "fill",
-                 "paint": {"fill-color": "#7c3aed", "fill-opacity": 0.3}},
+                 "metadata": {"arches:popup": {
+                     "title": "site_name",
+                     "fields": [["Site", "site_name"], ["NZAA ID", "nzaa_id"],
+                                ["Type", "site_type"]],
+                 }},
+                 "paint": {"fill-color": "#7c3aed",
+                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.5, 0.3]}},
                 {"id": "nzaa-outline", "source": "nzaa", "type": "line",
-                 "paint": {"line-color": "#5b21b6", "line-width": 1}},
+                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#2e1065", "#5b21b6"],
+                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2, 1]}},
             ],
         )
 
@@ -113,12 +125,19 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-tree",
-            source={"type": "geojson", "data": _portal_geojson_url("cons_land")},
+            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("cons_land")},
             layers=[
                 {"id": "cons_land-fill", "source": "cons_land", "type": "fill",
-                 "paint": {"fill-color": "#22c55e", "fill-opacity": 0.25}},
+                 "metadata": {"arches:popup": {
+                     "title": "name",
+                     "fields": [["Type", "type"], ["Area (ha)", "area_ha"],
+                                ["Managed by", "managed_by"]],
+                 }},
+                 "paint": {"fill-color": "#22c55e",
+                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.5, 0.25]}},
                 {"id": "cons_land-outline", "source": "cons_land", "type": "line",
-                 "paint": {"line-color": "#15803d", "line-width": 0.5}},
+                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#052e16", "#15803d"],
+                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2, 0.5]}},
             ],
         )
 
@@ -133,12 +152,18 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-map",
-            source={"type": "geojson", "data": _portal_geojson_url("ops_regions")},
+            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("ops_regions")},
             layers=[
                 {"id": "ops_regions-fill", "source": "ops_regions", "type": "fill",
-                 "paint": {"fill-color": "#3b82f6", "fill-opacity": 0.15}},
+                 "metadata": {"arches:popup": {
+                     "title": "region",
+                     "fields": [["Region", "region"]],
+                 }},
+                 "paint": {"fill-color": "#3b82f6",
+                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.35, 0.15]}},
                 {"id": "ops_regions-outline", "source": "ops_regions", "type": "line",
-                 "paint": {"line-color": "#1d4ed8", "line-width": 1.2}},
+                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#172554", "#1d4ed8"],
+                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2.4, 1.2]}},
             ],
         )
 
@@ -153,12 +178,18 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-map-signs",
-            source={"type": "geojson", "data": _portal_geojson_url("ops_districts")},
+            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("ops_districts")},
             layers=[
                 {"id": "ops_districts-fill", "source": "ops_districts", "type": "fill",
-                 "paint": {"fill-color": "#f97316", "fill-opacity": 0.15}},
+                 "metadata": {"arches:popup": {
+                     "title": "district",
+                     "fields": [["District", "district"], ["Region", "region"]],
+                 }},
+                 "paint": {"fill-color": "#f97316",
+                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.35, 0.15]}},
                 {"id": "ops_districts-outline", "source": "ops_districts", "type": "line",
-                 "paint": {"line-color": "#c2410c", "line-width": 0.7}},
+                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#7c2d12", "#c2410c"],
+                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2, 0.7]}},
             ],
         )
 
