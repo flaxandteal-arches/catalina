@@ -101,9 +101,9 @@ def load_overlays(apps, schema_editor):
             layers=[
                 {"id": "nzaa-fill", "source": "nzaa", "type": "fill",
                  "metadata": {"arches:popup": {
-                     "title": "site_name",
-                     "fields": [["Site", "site_name"], ["NZAA ID", "nzaa_id"],
-                                ["Type", "site_type"]],
+                     "title": "name",
+                     "fields": [["Site", "name"], ["NZAA ID", "nzaa_id"],
+                                ["Features", "sitefeatures"], ["Period", "period"]],
                  }},
                  "paint": {"fill-color": "#7c3aed",
                            "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.5, 0.3]}},
@@ -130,8 +130,8 @@ def load_overlays(apps, schema_editor):
                 {"id": "cons_land-fill", "source": "cons_land", "type": "fill",
                  "metadata": {"arches:popup": {
                      "title": "name",
-                     "fields": [["Type", "type"], ["Area (ha)", "area_ha"],
-                                ["Managed by", "managed_by"]],
+                     "fields": [["Type", "type"], ["NaPALIS ID", "napalis_id"],
+                                ["Name", "name"], ["Recorded Area (ha)", "recorded_area"]],
                  }},
                  "paint": {"fill-color": "#22c55e",
                            "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.5, 0.25]}},
@@ -155,6 +155,11 @@ def load_overlays(apps, schema_editor):
             source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("ops_regions")},
             layers=[
                 {"id": "ops_regions-fill", "source": "ops_regions", "type": "fill",
+                 # TODO(UAT): "region" is the DEV service field name
+                 # (DOC_WebsiteRegions/FeatureServer). The prod/UAT service
+                 # (DOC_OperationsRegions_HFLr/FeatureServer) uses a different
+                 # attribute name.
+                 # Before deploying to UAT, edit these fields to be: [["Region", "regionname"], ["Code", "regioncode"]].
                  "metadata": {"arches:popup": {
                      "title": "region",
                      "fields": [["Region", "region"]],
@@ -182,8 +187,8 @@ def load_overlays(apps, schema_editor):
             layers=[
                 {"id": "ops_districts-fill", "source": "ops_districts", "type": "fill",
                  "metadata": {"arches:popup": {
-                     "title": "district",
-                     "fields": [["District", "district"], ["Region", "region"]],
+                     "title": "districtname",
+                     "fields": [["District Name", "districtname"], ["District Code", "districtcode"], ["Region Name", "regionname"], ["Region Code", "regioncode"] ],
                  }},
                  "paint": {"fill-color": "#f97316",
                            "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.35, 0.15]}},
