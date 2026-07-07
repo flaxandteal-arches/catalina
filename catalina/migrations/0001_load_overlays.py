@@ -46,7 +46,10 @@ def _portal_geojson_url(slug, layer_index=0):
 # `metadata["arches:popup"]` ({"title": <prop>, "fields": [[label, prop], ...]}),
 # read client-side by the project map popup provider
 # (catalina/media/js/utils/map-popup-provider.js). 
-# Hover highlight requires the source's "generateId": True plus the feature-state paint cases.
+# Hover highlight requires a stable, globally-unique feature id (so feature-state
+# is keyed consistently across the tiles a feature spans) plus the feature-state
+# paint cases. The source sets "promoteId": "objectid" to use the FeatureServer's
+# unique key as that id.
 def load_overlays(apps, schema_editor):
     MapLayer = apps.get_model("models", "MapLayer")
     MapSource = apps.get_model("models", "MapSource")
@@ -97,7 +100,7 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-monument",
-            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("nzaa")},
+            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("nzaa")},
             layers=[
                 {"id": "nzaa-fill", "source": "nzaa", "type": "fill",
                  "metadata": {"arches:popup": {
@@ -125,7 +128,7 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-tree",
-            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("cons_land")},
+            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("cons_land")},
             layers=[
                 {"id": "cons_land-fill", "source": "cons_land", "type": "fill",
                  "metadata": {"arches:popup": {
@@ -152,7 +155,7 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-map",
-            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("ops_regions")},
+            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("ops_regions")},
             layers=[
                 {"id": "ops_regions-fill", "source": "ops_regions", "type": "fill",
                  # TODO(UAT): "region" is the DEV service field name
@@ -183,7 +186,7 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-map-signs",
-            source={"type": "geojson", "generateId": True, "data": _portal_geojson_url("ops_districts")},
+            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("ops_districts")},
             layers=[
                 {"id": "ops_districts-fill", "source": "ops_districts", "type": "fill",
                  "metadata": {"arches:popup": {
