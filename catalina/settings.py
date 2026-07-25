@@ -46,6 +46,22 @@ FUNCTION_LOCATIONS.append("arches_her.functions")
 ETL_MODULE_LOCATIONS.append("catalina.etl_modules")
 SEARCH_COMPONENT_LOCATIONS.append("catalina.search_components")
 SEARCH_COMPONENT_LOCATIONS.append("arches_her.search.components")
+PERMISSION_LOCATIONS.append("catalina.permissions")
+
+# Blanket-role group names — override these to rename the roles without
+# touching the permission framework code or migration logic.
+BLANKET_FULL_ACCESS_GROUPS = ["Administrator"]  # view + change + delete on all
+BLANKET_READ_ACCESS_GROUPS = ["Editor"]          # view on all
+
+# Resource-instance permissions default to DENY via the stopgap blanket-role
+# framework (see catalina.permissions.blanket_roles). Set
+# CATALINA_BLANKET_ROLES=False to fall back to the Arches default-ALLOW
+# framework.
+#
+# SECURITY: under default-deny every active non-superuser NOT in a blanket group
+# loses default resource-instance access.
+if os.environ.get("CATALINA_BLANKET_ROLES", "True").lower() in ("true", "1", "yes"):
+    PERMISSION_FRAMEWORK = "blanket_roles.BlanketRoleDenyFramework"
 
 LOCALE_PATHS.insert(0, os.path.join(APP_ROOT, "locale"))
 
