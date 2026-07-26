@@ -7,7 +7,7 @@
 -- keeps this idempotent across re-runs without touching other spatial views, so
 -- the file can simply be edited and re-run against the DB.
 
--- Heritage sites (monument)
+-- Heritage places (monument)
 DELETE FROM public.spatial_views WHERE spatialviewid = '27318c10-adc4-421c-9e93-9c007ceee035';
 
 INSERT INTO public.spatial_views (
@@ -25,7 +25,7 @@ VALUES (
     '27318c10-adc4-421c-9e93-9c007ceee035',
     'public',
     'monument',
-    'Heritage sites',
+    'Heritage places',
     false,
     '[
         {"nodeid":"676d47ff-9c1c-11ea-b07f-f875a44e0e11","description":"monument_name"},
