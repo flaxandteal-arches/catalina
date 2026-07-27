@@ -5,8 +5,7 @@
 -- public.<slug>_point, public.<slug>_linestring and public.<slug>_polygon, each
 -- already exposing gid, tileid, nodeid, resourceinstanceid, geom and the
 -- attribute columns. These wrappers just SELECT from those and rename columns
--- with AS -- no geojson_geometries join, geometry-node UUID or ST_GeometryType
--- filter needed. The underlying <slug>_<geom> views remain and are the source.
+-- with AS statements.
 --
 -- Runs in the load_package post_sql step. It MUST run after add_spatial_views.sql
 -- (which registers the spatial views and triggers creation of the <slug>_<geom>
@@ -18,9 +17,9 @@
 --
 -- NOTE ON COLUMN NAMES: the source columns (left of AS) are the slugified node
 -- names Arches exposes in each <slug>_<geom> view. Those derive from the node
--- *name*, not the attributenodes description, so they must be reconciled against
--- the dev deployment (\d public.monument_point, \d public.area_polygon, etc.).
--- The aliases (right of AS) are the intended output names.
+-- name alias, not the attributenodes description, so they must be reconciled against
+-- the deployed models.
+-- The aliases to the right of AS are the intended output names.
 
 
 -- ============================================================================
