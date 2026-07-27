@@ -32,9 +32,9 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
         tileid,
         nodeid,
         resourceinstanceid,
-        monument_name,           AS heritage_place_name
-        area_name,               AS district
-        monument_type,           AS heritage_place_type
+        monument_name            AS heritage_place_name,
+        area_name                AS district,
+        monument_type            AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
         resourceid               AS resourceid,
@@ -47,9 +47,9 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
         tileid,
         nodeid,
         resourceinstanceid,
-        monument_name,           AS heritage_place_name
-        area_name,               AS district
-        monument_type,           AS heritage_place_type
+        monument_name            AS heritage_place_name,
+        area_name                AS district,
+        monument_type            AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
         resourceid               AS resourceid,
@@ -62,9 +62,9 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
         tileid,
         nodeid,
         resourceinstanceid,
-        monument_name,           AS heritage_place_name
-        area_name,               AS district
-        monument_type,           AS heritage_place_type
+        monument_name            AS heritage_place_name,
+        area_name                AS district,
+        monument_type            AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
         resourceid               AS resourceid,
@@ -83,7 +83,7 @@ CREATE OR REPLACE VIEW public.areas_polygons AS
         nodeid,
         resourceinstanceid,
         area_name  AS area,
-        legacy_id, AS amis_floc_id
+        legacy_id  AS amis_floc_id,
         resourceid AS resourceid,
         geom
     FROM public.area_polygon;
@@ -100,7 +100,7 @@ CREATE OR REPLACE VIEW public.assessment_points AS
         nodeid,
         resourceinstanceid,
         consultation_name        AS asset_name,
-        log_date,                AS date_of_assessment
+        log_date                 AS date_of_assessment,
         consultation_description AS assessment_of_condition,
         planning_outcome         AS monitoring_frequency,
         external_cross_reference AS global_id,
@@ -115,7 +115,7 @@ CREATE OR REPLACE VIEW public.assessment_lines AS
         nodeid,
         resourceinstanceid,
         consultation_name        AS asset_name,
-        log_date,                AS date_of_assessment
+        log_date                 AS date_of_assessment,
         consultation_description AS assessment_of_condition,
         planning_outcome         AS monitoring_frequency,
         external_cross_reference AS global_id,
@@ -130,7 +130,7 @@ CREATE OR REPLACE VIEW public.assessment_polygons AS
         nodeid,
         resourceinstanceid,
         consultation_name        AS asset_name,
-        log_date,                AS date_of_assessment
+        log_date                 AS date_of_assessment,
         consultation_description AS assessment_of_condition,
         planning_outcome         AS monitoring_frequency,
         external_cross_reference AS global_id,
