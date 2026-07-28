@@ -37,7 +37,6 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
         monument_type            AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
-        resourceid               AS resourceid,
         geom
     FROM public.monument_point;
 
@@ -52,7 +51,6 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
         monument_type            AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
-        resourceid               AS resourceid,
         geom
     FROM public.monument_linestring;
 
@@ -67,7 +65,6 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
         monument_type            AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
-        resourceid               AS resourceid,
         geom
     FROM public.monument_polygon;
 
@@ -84,7 +81,6 @@ CREATE OR REPLACE VIEW public.areas_polygons AS
         resourceinstanceid,
         area_name_n1 AS area,
         legacy_id  AS amis_floc_id,
-        resourceid AS resourceid,
         geom
     FROM public.area_polygon;
 
@@ -104,7 +100,6 @@ CREATE OR REPLACE VIEW public.assessment_points AS
         consultation_description AS assessment_of_condition,
         planning_outcome         AS monitoring_frequency,
         external_cross_reference AS global_id,
-        resourceid               AS resourceid,
         geom
     FROM public.consultation_point;
 
@@ -119,7 +114,6 @@ CREATE OR REPLACE VIEW public.assessment_lines AS
         consultation_description AS assessment_of_condition,
         planning_outcome         AS monitoring_frequency,
         external_cross_reference AS global_id,
-        resourceid               AS resourceid,
         geom
     FROM public.consultation_linestring;
 
@@ -134,6 +128,5 @@ CREATE OR REPLACE VIEW public.assessment_polygons AS
         consultation_description AS assessment_of_condition,
         planning_outcome         AS monitoring_frequency,
         external_cross_reference AS global_id,
-        resourceid               AS resourceid,
         geom
     FROM public.consultation_polygon;
