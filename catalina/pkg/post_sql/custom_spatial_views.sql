@@ -82,7 +82,7 @@ CREATE OR REPLACE VIEW public.areas_polygons AS
         tileid,
         nodeid,
         resourceinstanceid,
-        area_name  AS area,
+        area_name_n1 AS area,
         legacy_id  AS amis_floc_id,
         resourceid AS resourceid,
         geom
