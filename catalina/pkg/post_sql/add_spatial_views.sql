@@ -47,10 +47,13 @@ VALUES (
     'monument',
     'Heritage places',
     false,
+    -- Two nodes are deliberately absent, both `reference` datatype, which Arches
+    -- renders as raw serialized tiledata; custom_spatial_views.sql resolves them
+    -- via __catalina_reference_label instead:
+    --   area_name     87d3c3ea-f44f-11eb-b532-a87eeabdefba  -> district
+    --   monument_type 77e90834-efdc-11eb-b2b9-a87eeabdefba  -> heritage_place_type
     '[
         {"nodeid":"676d47ff-9c1c-11ea-b07f-f875a44e0e11","description":"monument_name"},
-        {"nodeid":"87d3c3ea-f44f-11eb-b532-a87eeabdefba","description":"area_name"},
-        {"nodeid":"77e90834-efdc-11eb-b2b9-a87eeabdefba","description":"monument_type"},
         {"nodeid":"c27deb60-a464-50e1-9add-8de94ee95e57","description":"source_id_value"},
         {"nodeid":"f17f6584-efc7-11eb-81f1-a87eeabdefba","description":"external_cross_reference"}
     ]',

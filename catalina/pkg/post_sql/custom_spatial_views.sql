@@ -23,6 +23,63 @@
 
 
 -- ============================================================================
+-- `reference` datatype support
+-- ============================================================================
+--
+-- Arches cannot render `reference` nodes (the arches_controlled_lists datatype)
+-- into a spatial view column. The attribute columns of the <slug>_<geom> views
+-- are built by __arches_get_node_display_value, whose `case` over datatypes has
+-- no `reference` branch, so those nodes fall through to its catch-all and emit
+-- the raw serialized tiledata:
+--
+--   [{"uri": "urn:uuid:a2164b0e-...", "labels": [{"value": "AKL",
+--     "language_id": "en", "valuetype_id": "prefLabel", ...}], "list_id": "..."}]
+--
+-- rather than "AKL". Patching __arches_get_node_display_value would fix it at
+-- source, but it is an Arches core function recreated by core migrations, so the
+-- branch would silently vanish on upgrade and the columns would quietly revert to
+-- raw JSON. Instead we bypass the display-value machinery for these nodes and
+-- read the tile directly here — additive, and nothing core is redefined.
+--
+-- Nodes resolved this way must be left OUT of the attributenodes list in
+-- add_spatial_views.sql; they are not read from the <slug>_<geom> view at all.
+--
+-- Returns the prefLabel of the FIRST reference on the FIRST tile: these node
+-- groups are cardinality-n (a heritage place can carry several admin areas), but
+-- the consuming GIS layers want a single value. Compare the Arches behaviour,
+-- which concatenates every tile's value with ', '.
+CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
+    in_resourceinstanceid text,
+    in_nodeid uuid,
+    language_id text DEFAULT 'en')
+    RETURNS text
+    LANGUAGE 'sql'
+    STABLE PARALLEL SAFE
+AS $BODY$
+    SELECT coalesce(
+               -- prefLabel in the requested language, then any prefLabel, then any label
+               jsonb_path_query_first(
+                   t.tiledata -> in_nodeid::text,
+                   '$[0].labels[*] ? (@.valuetype_id == "prefLabel" && @.language_id == $lang).value',
+                   jsonb_build_object('lang', language_id)),
+               jsonb_path_query_first(
+                   t.tiledata -> in_nodeid::text,
+                   '$[0].labels[*] ? (@.valuetype_id == "prefLabel").value'),
+               jsonb_path_query_first(
+                   t.tiledata -> in_nodeid::text,
+                   '$[0].labels[0].value')
+           ) #>> '{}'
+    FROM tiles t
+    WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n WHERE n.nodeid = in_nodeid)
+      AND t.resourceinstanceid = in_resourceinstanceid::uuid
+      AND jsonb_typeof(t.tiledata -> in_nodeid::text) = 'array'
+      AND jsonb_array_length(t.tiledata -> in_nodeid::text) > 0
+    ORDER BY t.sortorder NULLS LAST, t.tileid
+    LIMIT 1;
+$BODY$;
+
+
+-- ============================================================================
 -- Heritage places  <-  public.monument_point / _linestring / _polygon
 -- ============================================================================
 
@@ -33,8 +90,12 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
         nodeid,
         resourceinstanceid,
         monument_name            AS heritage_place_name,
-        area_name                AS district,
-        monument_type            AS heritage_place_type,
+        __catalina_reference_label(resourceinstanceid,
+            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')
+                                 AS district,
+        __catalina_reference_label(resourceinstanceid,
+            '77e90834-efdc-11eb-b2b9-a87eeabdefba')
+                                 AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
         geom
@@ -47,8 +108,12 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
         nodeid,
         resourceinstanceid,
         monument_name            AS heritage_place_name,
-        area_name                AS district,
-        monument_type            AS heritage_place_type,
+        __catalina_reference_label(resourceinstanceid,
+            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')
+                                 AS district,
+        __catalina_reference_label(resourceinstanceid,
+            '77e90834-efdc-11eb-b2b9-a87eeabdefba')
+                                 AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
         geom
@@ -61,8 +126,12 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
         nodeid,
         resourceinstanceid,
         monument_name            AS heritage_place_name,
-        area_name                AS district,
-        monument_type            AS heritage_place_type,
+        __catalina_reference_label(resourceinstanceid,
+            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')
+                                 AS district,
+        __catalina_reference_label(resourceinstanceid,
+            '77e90834-efdc-11eb-b2b9-a87eeabdefba')
+                                 AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
         external_cross_reference AS global_id,
         geom
