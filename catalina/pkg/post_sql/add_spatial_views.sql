@@ -6,6 +6,26 @@
 -- The targeted DELETE (by spatialviewid, not a blanket wipe) before each INSERT
 -- keeps this idempotent across re-runs without touching other spatial views, so
 -- the file can simply be edited and re-run against the DB.
+--
+-- ...but only on its own. The wrapper views in custom_spatial_views.sql SELECT
+-- from the <slug>_<geom> views that the trigger drops, and the trigger's drop is
+-- RESTRICT (the SQL default), so on any re-run the DELETEs below fail with
+-- "cannot drop view monument_point because other objects depend on it" unless the
+-- dependants are gone first. Clearing them here is what makes the add_ -> custom_
+-- sequence idempotent as a *pair*; custom_spatial_views.sql recreates the wrappers
+-- immediately afterwards.
+--
+-- Drop views and any dependent views downstream
+
+DROP VIEW IF EXISTS public.monument_point CASCADE;
+DROP VIEW IF EXISTS public.monument_linestring CASCADE;
+DROP VIEW IF EXISTS public.monument_polygon CASCADE;
+DROP VIEW IF EXISTS public.area_point CASCADE;
+DROP VIEW IF EXISTS public.area_linestring CASCADE;
+DROP VIEW IF EXISTS public.area_polygon CASCADE;
+DROP VIEW IF EXISTS public.consultation_point CASCADE;
+DROP VIEW IF EXISTS public.consultation_linestring CASCADE;
+DROP VIEW IF EXISTS public.consultation_polygon CASCADE;
 
 -- Heritage places (monument)
 DELETE FROM public.spatial_views WHERE spatialviewid = '27318c10-adc4-421c-9e93-9c007ceee035';
