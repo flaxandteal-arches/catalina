@@ -20,6 +20,11 @@
 -- name alias, not the attributenodes description, so they must be reconciled against
 -- the deployed models.
 -- The aliases to the right of AS are the intended output names.
+--
+-- Some columns are not read from the <slug>_<geom> view at all but resolved from
+-- the tile by a helper (see below), which identifies its node by uuid rather than
+-- by name. Those calls carry a trailing "-- node alias: <alias>" so the column
+-- still reads against the deployed models like the others.
 
 
 -- ============================================================================
@@ -80,6 +85,45 @@ $BODY$;
 
 
 -- ============================================================================
+-- Picking one value out of a cardinality-n string node
+-- ============================================================================
+--
+-- Arches renders `string` nodes correctly, but a spatial view column aggregates
+-- every tile in the node group into one comma-joined cell:
+--
+--   {9F965097-66B7-4287-940C-27025F551725}, A-HS-40-1000010083, CA/6
+--
+-- external_cross_reference holds identifiers from several source systems, and
+-- global_id wants exactly one of them. Rather than take a positional guess, match
+-- on the shape of the identifier: an ArcGIS GlobalID is a GUID in braces, which no
+-- other cross-reference scheme in use here looks like.
+--
+-- Returns NULL when nothing matches.
+CREATE OR REPLACE FUNCTION public.__catalina_string_value(
+    in_resourceinstanceid text,
+    in_nodeid uuid,
+    match_pattern text DEFAULT NULL,
+    language_id text DEFAULT 'en')
+    RETURNS text
+    LANGUAGE 'sql'
+    STABLE PARALLEL SAFE
+AS $BODY$
+    SELECT v.value
+    FROM tiles t
+    CROSS JOIN LATERAL (
+        SELECT ((t.tiledata -> in_nodeid::text) -> language_id) ->> 'value' AS value
+    ) v
+    WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n WHERE n.nodeid = in_nodeid)
+      AND t.resourceinstanceid = in_resourceinstanceid::uuid
+      AND v.value IS NOT NULL
+      AND v.value <> ''
+      AND (match_pattern IS NULL OR v.value ~ match_pattern)
+    ORDER BY t.sortorder NULLS LAST, t.tileid
+    LIMIT 1;
+$BODY$;
+
+
+-- ============================================================================
 -- Heritage places  <-  public.monument_point / _linestring / _polygon
 -- ============================================================================
 
@@ -91,13 +135,15 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
         resourceinstanceid,
         monument_name            AS heritage_place_name,
         __catalina_reference_label(resourceinstanceid,
-            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')
+            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')  -- node alias: area_name
                                  AS district,
         __catalina_reference_label(resourceinstanceid,
-            '77e90834-efdc-11eb-b2b9-a87eeabdefba')
+            '77e90834-efdc-11eb-b2b9-a87eeabdefba')  -- node alias: monument_type
                                  AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
-        external_cross_reference AS global_id,
+        __catalina_string_value(resourceinstanceid,
+            'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
+                                 AS global_id,
         geom
     FROM public.monument_point;
 
@@ -109,13 +155,15 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
         resourceinstanceid,
         monument_name            AS heritage_place_name,
         __catalina_reference_label(resourceinstanceid,
-            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')
+            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')  -- node alias: area_name
                                  AS district,
         __catalina_reference_label(resourceinstanceid,
-            '77e90834-efdc-11eb-b2b9-a87eeabdefba')
+            '77e90834-efdc-11eb-b2b9-a87eeabdefba')  -- node alias: monument_type
                                  AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
-        external_cross_reference AS global_id,
+        __catalina_string_value(resourceinstanceid,
+            'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
+                                 AS global_id,
         geom
     FROM public.monument_linestring;
 
@@ -127,13 +175,15 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
         resourceinstanceid,
         monument_name            AS heritage_place_name,
         __catalina_reference_label(resourceinstanceid,
-            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')
+            '87d3c3ea-f44f-11eb-b532-a87eeabdefba')  -- node alias: area_name
                                  AS district,
         __catalina_reference_label(resourceinstanceid,
-            '77e90834-efdc-11eb-b2b9-a87eeabdefba')
+            '77e90834-efdc-11eb-b2b9-a87eeabdefba')  -- node alias: monument_type
                                  AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
-        external_cross_reference AS global_id,
+        __catalina_string_value(resourceinstanceid,
+            'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
+                                 AS global_id,
         geom
     FROM public.monument_polygon;
 
