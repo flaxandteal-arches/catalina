@@ -160,6 +160,7 @@ DATABASES = {
 SEARCH_THUMBNAILS = False
 
 INSTALLED_APPS = (
+    "catalina",
     "webpack_loader",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -235,7 +236,6 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "arches.app.utils.middleware.ModifyAuthorizationHeader",
-    "oauth2_provider.middleware.OAuth2TokenMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",

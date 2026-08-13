@@ -6,6 +6,8 @@ from django.urls import include, path, re_path
 from . import views_azure
 from .overlays.proxy import ArcGISPortalProxyView
 
+from . import views_azure
+
 urlpatterns = [
 ]
 
