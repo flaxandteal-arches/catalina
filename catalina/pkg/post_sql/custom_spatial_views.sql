@@ -49,10 +49,18 @@
 -- Nodes resolved this way must be left OUT of the attributenodes list in
 -- add_spatial_views.sql; they are not read from the <slug>_<geom> view at all.
 --
--- Returns the prefLabel of the FIRST reference on the FIRST tile: these node
--- groups are cardinality-n (a heritage place can carry several admin areas), but
--- the consuming GIS layers want a single value. Compare the Arches behaviour,
--- which concatenates every tile's value with ', '.
+-- Returns the prefLabel of the first reference on the first tile that yields one:
+-- these node groups are cardinality-n (a heritage place can carry several admin
+-- areas), but the consuming GIS layers want a single value. Compare the Arches
+-- behaviour, which concatenates every tile's value with ', '.
+--
+-- Tiles are selected by the label they produce rather than by the shape of their
+-- tiledata, so one carrying no usable label falls through to the next. A node left
+-- blank in an otherwise-populated tile is stored as JSON null, so the value at
+-- in_nodeid is often a scalar rather than an array; jsonb_path_query_first tolerates
+-- that in lax mode, whereas jsonb_array_length raises on it, and a preceding
+-- jsonb_typeof test is no guard since WHERE conditions have no guaranteed
+-- evaluation order.
 CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     in_resourceinstanceid text,
     in_nodeid uuid,
@@ -61,24 +69,27 @@ CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     LANGUAGE 'sql'
     STABLE PARALLEL SAFE
 AS $BODY$
-    SELECT coalesce(
-               -- prefLabel in the requested language, then any prefLabel, then any label
-               jsonb_path_query_first(
-                   t.tiledata -> in_nodeid::text,
-                   '$[0].labels[*] ? (@.valuetype_id == "prefLabel" && @.language_id == $lang).value',
-                   jsonb_build_object('lang', language_id)),
-               jsonb_path_query_first(
-                   t.tiledata -> in_nodeid::text,
-                   '$[0].labels[*] ? (@.valuetype_id == "prefLabel").value'),
-               jsonb_path_query_first(
-                   t.tiledata -> in_nodeid::text,
-                   '$[0].labels[0].value')
-           ) #>> '{}'
+    SELECT v.label
     FROM tiles t
+    CROSS JOIN LATERAL (
+        SELECT coalesce(
+                   -- prefLabel in the requested language, then any prefLabel, then any label
+                   jsonb_path_query_first(
+                       t.tiledata -> in_nodeid::text,
+                       '$[0].labels[*] ? (@.valuetype_id == "prefLabel" && @.language_id == $lang).value',
+                       jsonb_build_object('lang', language_id)),
+                   jsonb_path_query_first(
+                       t.tiledata -> in_nodeid::text,
+                       '$[0].labels[*] ? (@.valuetype_id == "prefLabel").value'),
+                   jsonb_path_query_first(
+                       t.tiledata -> in_nodeid::text,
+                       '$[0].labels[0].value')
+               ) #>> '{}' AS label
+    ) v
     WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n WHERE n.nodeid = in_nodeid)
       AND t.resourceinstanceid = in_resourceinstanceid::uuid
-      AND jsonb_typeof(t.tiledata -> in_nodeid::text) = 'array'
-      AND jsonb_array_length(t.tiledata -> in_nodeid::text) > 0
+      AND v.label IS NOT NULL
+      AND v.label <> ''
     ORDER BY t.sortorder NULLS LAST, t.tileid
     LIMIT 1;
 $BODY$;
