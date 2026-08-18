@@ -61,6 +61,11 @@
 -- that in lax mode, whereas jsonb_array_length raises on it, and a preceding
 -- jsonb_typeof test is no guard since WHERE conditions have no guaranteed
 -- evaluation order.
+-- SECURITY DEFINER because the consuming GIS role holds SELECT on the wrapper views
+-- and nothing else. A view's own FROM is checked against the view owner, but a
+-- function body is checked against the caller, so as SECURITY INVOKER this is denied
+-- on tiles. search_path is pinned, as it must be whenever a function runs as its
+-- owner. Applies equally to __catalina_string_value below.
 CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     in_resourceinstanceid text,
     in_nodeid uuid,
@@ -68,6 +73,8 @@ CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     RETURNS text
     LANGUAGE 'sql'
     STABLE PARALLEL SAFE
+    SECURITY DEFINER
+    SET search_path = pg_catalog, public
 AS $BODY$
     SELECT v.label
     FROM tiles t
@@ -118,6 +125,8 @@ CREATE OR REPLACE FUNCTION public.__catalina_string_value(
     RETURNS text
     LANGUAGE 'sql'
     STABLE PARALLEL SAFE
+    SECURITY DEFINER
+    SET search_path = pg_catalog, public
 AS $BODY$
     SELECT v.value
     FROM tiles t
