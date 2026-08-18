@@ -146,6 +146,13 @@ $BODY$;
 -- ============================================================================
 -- Heritage places  <-  public.monument_point / _linestring / _polygon
 -- ============================================================================
+--
+-- A recreated view is a new object and inherits none of its predecessor's grants,
+-- so each wrapper is granted here or it would be unreadable after every run.
+-- arches_spatial_views is the group role the Arches trigger grants its own
+-- <slug>_<geom> views to, so following that convention keeps this environment
+-- agnostic: a consuming role needs membership of it, granted once per environment,
+-- rather than a grant naming that role reissued from here.
 
 DROP VIEW IF EXISTS public.heritage_places_points;
 CREATE OR REPLACE VIEW public.heritage_places_points AS
@@ -166,6 +173,7 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
                                  AS global_id,
         geom
     FROM public.monument_point;
+GRANT SELECT ON public.heritage_places_points TO arches_spatial_views;
 
 DROP VIEW IF EXISTS public.heritage_places_lines;
 CREATE OR REPLACE VIEW public.heritage_places_lines AS
@@ -186,6 +194,7 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
                                  AS global_id,
         geom
     FROM public.monument_linestring;
+GRANT SELECT ON public.heritage_places_lines TO arches_spatial_views;
 
 DROP VIEW IF EXISTS public.heritage_places_polygons;
 CREATE OR REPLACE VIEW public.heritage_places_polygons AS
@@ -206,3 +215,4 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
                                  AS global_id,
         geom
     FROM public.monument_polygon;
+GRANT SELECT ON public.heritage_places_polygons TO arches_spatial_views;
