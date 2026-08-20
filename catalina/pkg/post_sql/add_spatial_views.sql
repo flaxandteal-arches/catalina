@@ -58,3 +58,11 @@ VALUES (
     '87d3d7dc-f44f-11eb-bee9-a87eeabdefba'::UUID,
     'en'
 );
+
+
+-- The trigger that materializes the <slug>_<geom> views is DEFERRABLE INITIALLY
+-- DEFERRED, so the INSERT above creates nothing until commit — and load_package runs
+-- every post_sql file in one transaction, committing only after custom_spatial_views.sql
+-- has already tried to SELECT from those views. Firing the pending trigger here creates
+-- them before that file is read. ALL, because pgtrigger's constraint name is hashed.
+SET CONSTRAINTS ALL IMMEDIATE;
