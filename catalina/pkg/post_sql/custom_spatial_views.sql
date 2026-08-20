@@ -101,6 +101,15 @@ AS $BODY$
     LIMIT 1;
 $BODY$;
 
+-- A newly created function is EXECUTE-able by PUBLIC by default, whereas CREATE OR
+-- REPLACE over an existing one keeps the ACL it already has. Left implicit, the first
+-- run of this file would hand every role that can connect a SECURITY DEFINER reader of
+-- tiles, callable for any nodeid and resourceinstanceid — which is precisely what the
+-- wrapper views below are grant-controlled to prevent. Setting the ACL explicitly is
+-- idempotent and covers both cases. Applies equally to __catalina_string_value below.
+REVOKE EXECUTE ON FUNCTION public.__catalina_reference_label(text, uuid, text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.__catalina_reference_label(text, uuid, text) TO arches_spatial_views;
+
 
 -- ============================================================================
 -- Picking one value out of a cardinality-n string node
@@ -141,6 +150,9 @@ AS $BODY$
     ORDER BY t.sortorder NULLS LAST, t.tileid
     LIMIT 1;
 $BODY$;
+
+REVOKE EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text) TO arches_spatial_views;
 
 
 -- ============================================================================
