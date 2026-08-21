@@ -49,10 +49,23 @@
 -- Nodes resolved this way must be left OUT of the attributenodes list in
 -- add_spatial_views.sql; they are not read from the <slug>_<geom> view at all.
 --
--- Returns the prefLabel of the FIRST reference on the FIRST tile: these node
--- groups are cardinality-n (a heritage place can carry several admin areas), but
--- the consuming GIS layers want a single value. Compare the Arches behaviour,
--- which concatenates every tile's value with ', '.
+-- Returns the prefLabel of the first reference on the first tile that yields one:
+-- these node groups are cardinality-n (a heritage place can carry several admin
+-- areas), but the consuming GIS layers want a single value. Compare the Arches
+-- behaviour, which concatenates every tile's value with ', '.
+--
+-- Tiles are selected by the label they produce rather than by the shape of their
+-- tiledata, so one carrying no usable label falls through to the next. A node left
+-- blank in an otherwise-populated tile is stored as JSON null, so the value at
+-- in_nodeid is often a scalar rather than an array; jsonb_path_query_first tolerates
+-- that in lax mode, whereas jsonb_array_length raises on it, and a preceding
+-- jsonb_typeof test is no guard since WHERE conditions have no guaranteed
+-- evaluation order.
+-- SECURITY DEFINER because the consuming GIS role holds SELECT on the wrapper views
+-- and nothing else. A view's own FROM is checked against the view owner, but a
+-- function body is checked against the caller, so as SECURITY INVOKER this is denied
+-- on tiles. search_path is pinned, as it must be whenever a function runs as its
+-- owner. Applies equally to __catalina_string_value below.
 CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     in_resourceinstanceid text,
     in_nodeid uuid,
@@ -60,28 +73,42 @@ CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     RETURNS text
     LANGUAGE 'sql'
     STABLE PARALLEL SAFE
+    SECURITY DEFINER
+    SET search_path = pg_catalog, public
 AS $BODY$
-    SELECT coalesce(
-               -- prefLabel in the requested language, then any prefLabel, then any label
-               jsonb_path_query_first(
-                   t.tiledata -> in_nodeid::text,
-                   '$[0].labels[*] ? (@.valuetype_id == "prefLabel" && @.language_id == $lang).value',
-                   jsonb_build_object('lang', language_id)),
-               jsonb_path_query_first(
-                   t.tiledata -> in_nodeid::text,
-                   '$[0].labels[*] ? (@.valuetype_id == "prefLabel").value'),
-               jsonb_path_query_first(
-                   t.tiledata -> in_nodeid::text,
-                   '$[0].labels[0].value')
-           ) #>> '{}'
+    SELECT v.label
     FROM tiles t
+    CROSS JOIN LATERAL (
+        SELECT coalesce(
+                   -- prefLabel in the requested language, then any prefLabel, then any label
+                   jsonb_path_query_first(
+                       t.tiledata -> in_nodeid::text,
+                       '$[0].labels[*] ? (@.valuetype_id == "prefLabel" && @.language_id == $lang).value',
+                       jsonb_build_object('lang', language_id)),
+                   jsonb_path_query_first(
+                       t.tiledata -> in_nodeid::text,
+                       '$[0].labels[*] ? (@.valuetype_id == "prefLabel").value'),
+                   jsonb_path_query_first(
+                       t.tiledata -> in_nodeid::text,
+                       '$[0].labels[0].value')
+               ) #>> '{}' AS label
+    ) v
     WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n WHERE n.nodeid = in_nodeid)
       AND t.resourceinstanceid = in_resourceinstanceid::uuid
-      AND jsonb_typeof(t.tiledata -> in_nodeid::text) = 'array'
-      AND jsonb_array_length(t.tiledata -> in_nodeid::text) > 0
+      AND v.label IS NOT NULL
+      AND v.label <> ''
     ORDER BY t.sortorder NULLS LAST, t.tileid
     LIMIT 1;
 $BODY$;
+
+-- A newly created function is EXECUTE-able by PUBLIC by default, whereas CREATE OR
+-- REPLACE over an existing one keeps the ACL it already has. Left implicit, the first
+-- run of this file would hand every role that can connect a SECURITY DEFINER reader of
+-- tiles, callable for any nodeid and resourceinstanceid — which is precisely what the
+-- wrapper views below are grant-controlled to prevent. Setting the ACL explicitly is
+-- idempotent and covers both cases. Applies equally to __catalina_string_value below.
+REVOKE EXECUTE ON FUNCTION public.__catalina_reference_label(text, uuid, text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.__catalina_reference_label(text, uuid, text) TO arches_spatial_views;
 
 
 -- ============================================================================
@@ -107,6 +134,8 @@ CREATE OR REPLACE FUNCTION public.__catalina_string_value(
     RETURNS text
     LANGUAGE 'sql'
     STABLE PARALLEL SAFE
+    SECURITY DEFINER
+    SET search_path = pg_catalog, public
 AS $BODY$
     SELECT v.value
     FROM tiles t
@@ -122,10 +151,20 @@ AS $BODY$
     LIMIT 1;
 $BODY$;
 
+REVOKE EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text) TO arches_spatial_views;
+
 
 -- ============================================================================
 -- Heritage places  <-  public.monument_point / _linestring / _polygon
 -- ============================================================================
+--
+-- A recreated view is a new object and inherits none of its predecessor's grants,
+-- so each wrapper is granted here or it would be unreadable after every run.
+-- arches_spatial_views is the group role the Arches trigger grants its own
+-- <slug>_<geom> views to, so following that convention keeps this environment
+-- agnostic: a consuming role needs membership of it, granted once per environment,
+-- rather than a grant naming that role reissued from here.
 
 DROP VIEW IF EXISTS public.heritage_places_points;
 CREATE OR REPLACE VIEW public.heritage_places_points AS
@@ -146,6 +185,7 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
                                  AS global_id,
         geom
     FROM public.monument_point;
+GRANT SELECT ON public.heritage_places_points TO arches_spatial_views;
 
 DROP VIEW IF EXISTS public.heritage_places_lines;
 CREATE OR REPLACE VIEW public.heritage_places_lines AS
@@ -166,6 +206,7 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
                                  AS global_id,
         geom
     FROM public.monument_linestring;
+GRANT SELECT ON public.heritage_places_lines TO arches_spatial_views;
 
 DROP VIEW IF EXISTS public.heritage_places_polygons;
 CREATE OR REPLACE VIEW public.heritage_places_polygons AS
@@ -186,3 +227,4 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
                                  AS global_id,
         geom
     FROM public.monument_polygon;
+GRANT SELECT ON public.heritage_places_polygons TO arches_spatial_views;
