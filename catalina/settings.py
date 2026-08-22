@@ -276,7 +276,7 @@ MIDDLEWARE.append(  # this must resolve last MIDDLEWARE entry
 )
 
 # Security headers
-SECURE_SSL_REDIRECT = not DEBUG
+SECURE_SSL_REDIRECT = not DEBUG and not bool(os.environ.get("SECURE_SSL_OVERRIDE", False))
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SECURE_HSTS_SECONDS = 31536000  # 1 year
