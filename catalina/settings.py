@@ -96,7 +96,7 @@ AWS_S3_ADDRESSING_STYLE = "path"
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
 
-if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME:
+if AWS_STORAGE_BUCKET_NAME:
     INSTALLED_APPS = (*INSTALLED_APPS, "storages")
     STORAGES = {
         "default": {
@@ -112,7 +112,7 @@ if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME:
 SECRET_KEY = "django-insecure-uakb+p1m4%)vx2)6!r&q0*ff@j90ih^35(j0xb#0j-)o_f)y)b"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get("DJANGO_DEBUG", False))
 
 ROOT_URLCONF = "catalina.urls"
 ROOT_HOSTCONF = "catalina.hosts"
@@ -276,7 +276,7 @@ MIDDLEWARE.append(  # this must resolve last MIDDLEWARE entry
 )
 
 # Security headers
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = not DEBUG
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SECURE_HSTS_SECONDS = 31536000  # 1 year
