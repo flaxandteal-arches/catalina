@@ -22,15 +22,13 @@ const initialize = function (element, valueAccessor, allBindings) {
     var options = { bodyId: 'ckeditor' };
     const languageList = [];
 
-    for (const lang of Object.keys(arches.languages)) {
-        languageList.push(`${lang}:${arches.languages[lang]}`);
+    for (const lang of arches.languages) {
+        languageList.push(`${lang.code}:${lang.name}`);
     }
 
-    // Register any project languages that CKEditor doesn't ship with,
-    // so lang.load() knows they have a file to fetch.
-    for (const lang of Object.keys(arches.languages)) {
-        if (!CKEDITOR.lang.languages[lang]) {
-            CKEDITOR.lang.languages[lang] = 1;
+    for (const lang of arches.languages) {
+        if (!CKEDITOR.lang.languages[lang.code]) {
+            CKEDITOR.lang.languages[lang.code] = 1;
         }
     }
 
