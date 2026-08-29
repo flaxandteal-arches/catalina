@@ -17,7 +17,8 @@
         "ts:check": "vue-tsc --noEmit",
         "ts:watch": "vue-tsc --watch --noEmit",
         "start": "cross-env webpack serve --config ./webpack/webpack.config.dev.js",
-        "vitest": "vitest --run --coverage"
+        "vitest": "vitest --run --coverage",
+        "postinstall": "cp -f catalina/media/packages/ckeditor4/lang/mi.js node_modules/ckeditor4/lang/mi.js 2>/dev/null || true"
     },
     "dependencies": {
         "arches": "archesproject/arches#dev/8.1.x",
