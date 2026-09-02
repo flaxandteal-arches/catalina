@@ -183,6 +183,7 @@ DATABASES = {
 SEARCH_THUMBNAILS = False
 
 INSTALLED_APPS = (
+    "catalina",
     "webpack_loader",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -214,7 +215,6 @@ INSTALLED_APPS += (
     "django.contrib.admin",
     "django.contrib.postgres",
     "arches_her",
-    "catalina",
 )
 
 REFERENCES_INDEX_NAME = "references"
