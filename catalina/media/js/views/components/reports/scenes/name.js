@@ -34,7 +34,7 @@ export default ko.components.register("views/components/reports/scenes/name", {
 
         self.systemReferenceNumbersTableConfig = {
             ...self.defaultTableConfig,
-            columns: Array(5).fill(null),
+            columns: Array(6).fill(null),
         };
 
         self.dataConfig = {
@@ -220,8 +220,14 @@ export default ko.components.register("views/components/reports/scenes/name", {
             systemRef.legacyId = self.getNodeValue(
                 systemRefData,
                 "legacyid",
-                "amis floc id"
+                "legacy id"
             );
+            systemRef.amisFlocId = self.getNodeValue(systemRefData, {
+                testPaths: [
+                    ["legacyid", "amis floc id"],
+                    ["legacy_id", "amis floc id"],
+                ],
+            });
             systemRef.primaryReferenceNumber = self.getNodeValue(
                 systemRefData,
                 "primaryreferencenumber",
