@@ -642,5 +642,233 @@
         <!-- /ko -->
     </div>
 </div>
+<!-- Function Status -->
+<div class="aher-report-section" data-bind="if: functionStatusExists">
+    <h2 class="aher-report-section-title"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.functionStatus)}, onReportSectionToggleAria: visible.functionStatus, sectionName: '{% trans "Function Status" %}'" class="fa toggle"></i> {% trans "Function Status" %}</h2>
+    <a class="aher-report-a" data-bind="{if: cards.functionStatus, click: function(){editTile(fsTileid(), cards.functionStatus)}}"><i class="fa fa-mail-reply"></i> {% trans "Edit Function Status" %}</a>
+
+    <!-- Collapsible content -->
+    <div data-bind="visible: visible.functionStatus" class="aher-report-collapsible-container pad-lft">
+
+        <div class="aher-report-subsection">
+            <div class="firstchild-container">
+                <div class="aher-report-subsection-item flex column-order pad-btm">
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Type" %}: </span>
+                        <div data-bind="text: fsType" class="aher-block-value"></div>
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Function Status" %}: </span>
+                        <div data-bind="text: fsFunctionStatus" class="aher-block-value"></div>
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Context Type" %}: </span>
+                        <div data-bind="text: fsContextType" class="aher-block-value"></div>
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Ascribed Relation" %}: </span>
+                        <div data-bind="text: fsRelation" class="aher-block-value"></div>
+                    </div>
+                </div>
+                <div class="aher-report-subsection-item flex column-order pad-btm">
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Initiating Act" %}: </span>
+                        <!-- ko if: fsInitiatingAct() && fsInitiatingAct().link -->
+                        <a data-bind="text: fsInitiatingAct().text, attr: {href: fsInitiatingAct().link}" class="aher-table-link"></a>
+                        <!-- /ko -->
+                        <!-- ko ifnot: fsInitiatingAct() && fsInitiatingAct().link -->
+                        <div data-bind="text: fsInitiatingAct() ? fsInitiatingAct().text : '--'" class="aher-block-value"></div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Terminating Act" %}: </span>
+                        <!-- ko if: fsTerminatingAct() && fsTerminatingAct().link -->
+                        <a data-bind="text: fsTerminatingAct().text, attr: {href: fsTerminatingAct().link}" class="aher-table-link"></a>
+                        <!-- /ko -->
+                        <!-- ko ifnot: fsTerminatingAct() && fsTerminatingAct().link -->
+                        <div data-bind="text: fsTerminatingAct() ? fsTerminatingAct().text : '--'" class="aher-block-value"></div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+
+                <!-- Holds For / Context -->
+                <div class="aher-report-subsection-item flex column-order pad-btm">
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Holds For" %}: </span>
+                        <!-- ko ifnot: fsHoldsFor().length -->
+                        <div class="aher-block-value">--</div>
+                        <!-- /ko -->
+                        <!-- ko foreach: fsHoldsFor -->
+                        <div>
+                            <!-- ko if: link -->
+                            <a data-bind="text: text, attr: {href: link}" class="aher-table-link"></a>
+                            <!-- /ko -->
+                            <!-- ko ifnot: link -->
+                            <span data-bind="text: text"></span>
+                            <!-- /ko -->
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Context" %}: </span>
+                        <!-- ko ifnot: fsContext().length -->
+                        <div class="aher-block-value">--</div>
+                        <!-- /ko -->
+                        <!-- ko foreach: fsContext -->
+                        <div>
+                            <!-- ko if: link -->
+                            <a data-bind="text: text, attr: {href: link}" class="aher-table-link"></a>
+                            <!-- /ko -->
+                            <!-- ko ifnot: link -->
+                            <span data-bind="text: text"></span>
+                            <!-- /ko -->
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statement / Notes -->
+            <div class="firstchild-container">
+                <!-- ko ifnot: fsNotes().length -->
+                <div class="aher-nodata-note">{% trans "No notes for this record" %}</div>
+                <!-- /ko -->
+                <!-- ko if: fsNotes().length -->
+                <div class="aher-table pad-btm">
+                    <table class="table table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr class="aher-table-header">
+                                <th>{% trans "Note" %}</th>
+                                <th>{% trans "Type" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: fsNotes">
+                            <tr>
+                                <td data-bind="text: description"></td>
+                                <td data-bind="text: type"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Classificatory Status -->
+<div class="aher-report-section" data-bind="if: classificatoryStatusExists">
+    <h2 class="aher-report-section-title"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.classificatoryStatus)}, onReportSectionToggleAria: visible.classificatoryStatus, sectionName: '{% trans "Classificatory Status" %}'" class="fa toggle"></i> {% trans "Classificatory Status" %}</h2>
+    <a class="aher-report-a" data-bind="{if: cards.classificatoryStatus, click: function(){editTile(csTileid(), cards.classificatoryStatus)}}"><i class="fa fa-mail-reply"></i> {% trans "Edit Classificatory Status" %}</a>
+
+    <!-- Collapsible content -->
+    <div data-bind="visible: visible.classificatoryStatus" class="aher-report-collapsible-container pad-lft">
+
+        <div class="aher-report-subsection">
+            <div class="firstchild-container">
+                <div class="aher-report-subsection-item flex column-order pad-btm">
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Type" %}: </span>
+                        <div data-bind="text: csType" class="aher-block-value"></div>
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Classification" %}: </span>
+                        <div data-bind="text: csClassification" class="aher-block-value"></div>
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Context Type" %}: </span>
+                        <div data-bind="text: csContextType" class="aher-block-value"></div>
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Ascribed Relation" %}: </span>
+                        <div data-bind="text: csRelation" class="aher-block-value"></div>
+                    </div>
+                </div>
+                <div class="aher-report-subsection-item flex column-order pad-btm">
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Initiating Act" %}: </span>
+                        <!-- ko if: csInitiatingAct() && csInitiatingAct().link -->
+                        <a data-bind="text: csInitiatingAct().text, attr: {href: csInitiatingAct().link}" class="aher-table-link"></a>
+                        <!-- /ko -->
+                        <!-- ko ifnot: csInitiatingAct() && csInitiatingAct().link -->
+                        <div data-bind="text: csInitiatingAct() ? csInitiatingAct().text : '--'" class="aher-block-value"></div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Terminating Act" %}: </span>
+                        <!-- ko if: csTerminatingAct() && csTerminatingAct().link -->
+                        <a data-bind="text: csTerminatingAct().text, attr: {href: csTerminatingAct().link}" class="aher-table-link"></a>
+                        <!-- /ko -->
+                        <!-- ko ifnot: csTerminatingAct() && csTerminatingAct().link -->
+                        <div data-bind="text: csTerminatingAct() ? csTerminatingAct().text : '--'" class="aher-block-value"></div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+
+                <!-- Holds For / Context -->
+                <div class="aher-report-subsection-item flex column-order pad-btm">
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Holds For" %}: </span>
+                        <!-- ko ifnot: csHoldsFor().length -->
+                        <div class="aher-block-value">--</div>
+                        <!-- /ko -->
+                        <!-- ko foreach: csHoldsFor -->
+                        <div>
+                            <!-- ko if: link -->
+                            <a data-bind="text: text, attr: {href: link}" class="aher-table-link"></a>
+                            <!-- /ko -->
+                            <!-- ko ifnot: link -->
+                            <span data-bind="text: text"></span>
+                            <!-- /ko -->
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="aher-block-attributes">
+                        <span class="aher-block-key compressed">{% trans "Context" %}: </span>
+                        <!-- ko ifnot: csContext().length -->
+                        <div class="aher-block-value">--</div>
+                        <!-- /ko -->
+                        <!-- ko foreach: csContext -->
+                        <div>
+                            <!-- ko if: link -->
+                            <a data-bind="text: text, attr: {href: link}" class="aher-table-link"></a>
+                            <!-- /ko -->
+                            <!-- ko ifnot: link -->
+                            <span data-bind="text: text"></span>
+                            <!-- /ko -->
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statement / Notes -->
+            <div class="firstchild-container">
+                <!-- ko ifnot: csNotes().length -->
+                <div class="aher-nodata-note">{% trans "No notes for this record" %}</div>
+                <!-- /ko -->
+                <!-- ko if: csNotes().length -->
+                <div class="aher-table pad-btm">
+                    <table class="table table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr class="aher-table-header">
+                                <th>{% trans "Note" %}</th>
+                                <th>{% trans "Type" %}</th>
+                                <th>{% trans "Language" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: csNotes">
+                            <tr>
+                                <td data-bind="text: description"></td>
+                                <td data-bind="text: type"></td>
+                                <td data-bind="text: language"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock body %}
 {% endblock report %}
