@@ -81,6 +81,8 @@ export default ko.components.register(
                 hlcPhase: undefined,
                 organizationCurrency: undefined,
                 organizationFormation: undefined,
+                functionStatus: "function status",
+                classificatoryStatus: "classification",
             };
 
             self.cards = Object.assign({}, params.cards);
@@ -103,7 +105,33 @@ export default ko.components.register(
                 dimensions: ko.observable(true),
                 dates: ko.observable(true),
                 organizationFormation: ko.observable(true),
+                functionStatus: ko.observable(true),
+                classificatoryStatus: ko.observable(true),
             };
+
+            self.functionStatusExists = ko.observable(false);
+            self.fsTileid = ko.observable();
+            self.fsType = ko.observable("--");
+            self.fsFunctionStatus = ko.observable("--");
+            self.fsContextType = ko.observable("--");
+            self.fsRelation = ko.observable("--");
+            self.fsInitiatingAct = ko.observable();
+            self.fsTerminatingAct = ko.observable();
+            self.fsHoldsFor = ko.observableArray();
+            self.fsContext = ko.observableArray();
+            self.fsNotes = ko.observableArray();
+
+            self.classificatoryStatusExists = ko.observable(false);
+            self.csTileid = ko.observable();
+            self.csType = ko.observable("--");
+            self.csClassification = ko.observable("--");
+            self.csContextType = ko.observable("--");
+            self.csRelation = ko.observable("--");
+            self.csInitiatingAct = ko.observable();
+            self.csTerminatingAct = ko.observable();
+            self.csHoldsFor = ko.observableArray();
+            self.csContext = ko.observableArray();
+            self.csNotes = ko.observableArray();
             Object.assign(self.dataConfig, params.dataConfig || {});
 
             // if params.compiled is set and true, the user has compiled their own data.  Use as is.
@@ -900,6 +928,244 @@ export default ko.components.register(
                             tileid,
                         },
                     ]);
+                }
+
+                const fsAsArray = (rawValue) =>
+                    rawValue
+                        ? Array.isArray(rawValue)
+                            ? rawValue
+                            : [rawValue]
+                        : [];
+
+                const functionStatusNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.functionStatus
+                );
+                if (functionStatusNode) {
+                    self.functionStatusExists(true);
+                    self.fsTileid(self.getTileId(functionStatusNode));
+
+                    const typeValues = fsAsArray(
+                        self.getRawNodeValue(
+                            functionStatusNode,
+                            "function status type"
+                        )
+                    )
+                        .map((x) => self.getNodeValue(x))
+                        .filter((v) => v && v !== "--");
+                    self.fsType(typeValues.length ? typeValues.join(", ") : "--");
+
+                    const statusValues = fsAsArray(
+                        self.getRawNodeValue(
+                            functionStatusNode,
+                            "function status"
+                        )
+                    )
+                        .map((x) => self.getNodeValue(x))
+                        .filter((v) => v && v !== "--");
+                    self.fsFunctionStatus(
+                        statusValues.length ? statusValues.join(", ") : "--"
+                    );
+
+                    self.fsContextType(
+                        self.getNodeValue(
+                            functionStatusNode,
+                            "function status context type"
+                        )
+                    );
+                    self.fsRelation(
+                        self.getNodeValue(
+                            functionStatusNode,
+                            "ascribed function relation"
+                        )
+                    );
+
+                    const initiatingActNode = self.getRawNodeValue(
+                        functionStatusNode,
+                        "function status initiating act"
+                    );
+                    self.fsInitiatingAct({
+                        text: self.getNodeValue(initiatingActNode),
+                        link: self.getResourceLink(initiatingActNode),
+                    });
+
+                    const terminatingActNode = self.getRawNodeValue(
+                        functionStatusNode,
+                        "function status terminating act"
+                    );
+                    self.fsTerminatingAct({
+                        text: self.getNodeValue(terminatingActNode),
+                        link: self.getResourceLink(terminatingActNode),
+                    });
+
+                    self.fsHoldsFor(
+                        fsAsArray(
+                            self.getRawNodeValue(
+                                functionStatusNode,
+                                "function status holds for"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.fsContext(
+                        fsAsArray(
+                            self.getRawNodeValue(
+                                functionStatusNode,
+                                "function status context"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.fsNotes(
+                        fsAsArray(
+                            self.getRawNodeValue(
+                                functionStatusNode,
+                                "function status statement"
+                            )
+                        )
+                            .map((x) => ({
+                                description: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description"
+                                ),
+                                type: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description type"
+                                ),
+                                tileid: self.getTileId(x),
+                            }))
+                            .filter(
+                                (note) =>
+                                    note.description && note.description !== "--"
+                            )
+                    );
+                }
+
+                const classificatoryStatusNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.classificatoryStatus
+                );
+                if (classificatoryStatusNode) {
+                    self.classificatoryStatusExists(true);
+                    self.csTileid(self.getTileId(classificatoryStatusNode));
+
+                    const typeValues = fsAsArray(
+                        self.getRawNodeValue(
+                            classificatoryStatusNode,
+                            "classificatory status type"
+                        )
+                    )
+                        .map((x) => self.getNodeValue(x))
+                        .filter((v) => v && v !== "--");
+                    self.csType(typeValues.length ? typeValues.join(", ") : "--");
+
+                    const classificationValues = fsAsArray(
+                        self.getRawNodeValue(
+                            classificatoryStatusNode,
+                            "classificatory status classification"
+                        )
+                    )
+                        .map((x) => self.getNodeValue(x))
+                        .filter((v) => v && v !== "--");
+                    self.csClassification(
+                        classificationValues.length
+                            ? classificationValues.join(", ")
+                            : "--"
+                    );
+
+                    self.csContextType(
+                        self.getNodeValue(
+                            classificatoryStatusNode,
+                            "classificatory status context type"
+                        )
+                    );
+                    self.csRelation(
+                        self.getNodeValue(
+                            classificatoryStatusNode,
+                            "ascribed classificatory status relation"
+                        )
+                    );
+
+                    const csInitiatingActNode = self.getRawNodeValue(
+                        classificatoryStatusNode,
+                        "classificatory status initiating act"
+                    );
+                    self.csInitiatingAct({
+                        text: self.getNodeValue(csInitiatingActNode),
+                        link: self.getResourceLink(csInitiatingActNode),
+                    });
+
+                    const csTerminatingActNode = self.getRawNodeValue(
+                        classificatoryStatusNode,
+                        "classificatory status terminating act"
+                    );
+                    self.csTerminatingAct({
+                        text: self.getNodeValue(csTerminatingActNode),
+                        link: self.getResourceLink(csTerminatingActNode),
+                    });
+
+                    self.csHoldsFor(
+                        fsAsArray(
+                            self.getRawNodeValue(
+                                classificatoryStatusNode,
+                                "classificatory status holds for"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.csContext(
+                        fsAsArray(
+                            self.getRawNodeValue(
+                                classificatoryStatusNode,
+                                "classificatory status event context"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.csNotes(
+                        fsAsArray(
+                            self.getRawNodeValue(
+                                classificatoryStatusNode,
+                                "classificatory status statement"
+                            )
+                        )
+                            .map((x) => ({
+                                description: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description"
+                                ),
+                                type: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description type"
+                                ),
+                                language: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description language"
+                                ),
+                                tileid: self.getTileId(x),
+                            }))
+                            .filter(
+                                (note) =>
+                                    note.description && note.description !== "--"
+                            )
+                    );
                 }
             }
         },
