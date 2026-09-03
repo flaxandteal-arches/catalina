@@ -27,7 +27,7 @@ export default ko.components.register(
                 ...self.defaultTableConfig,
                 paging: true,
                 searching: true,
-                columns: Array(4).fill(null),
+                columns: Array(5).fill(null),
             };
 
             //Related Resource 3 column table configuration
@@ -190,7 +190,11 @@ export default ko.components.register(
                             var reference;
                             var title;
                             var tileid;
-                            var holders;
+                            var rawHolders;
+                            const association = self.getNodeValue(
+                                x,
+                                "association type"
+                            );
                             if (key) {
                                 reference = self.getNodeValue(
                                     x,
@@ -205,11 +209,10 @@ export default ko.components.register(
                                     "archive object title"
                                 );
                                 tileid = self.getTileId(x);
-                                holders = self.getRawNodeValue(
+                                rawHolders = self.getRawNodeValue(
                                     x,
                                     key,
-                                    "archive holder",
-                                    "instance_details"
+                                    "archive holder"
                                 );
                             } else {
                                 reference = self.getNodeValue(
@@ -223,19 +226,29 @@ export default ko.components.register(
                                     "archive object title"
                                 );
                                 tileid = self.getTileId(x);
-                                holders = self.getRawNodeValue(
+                                rawHolders = self.getRawNodeValue(
                                     x,
-                                    "archive holder",
-                                    "instance_details"
+                                    "archive holder"
                                 );
                             }
-                            holders?.forEach((element) => {
+                            const holders = rawHolders
+                                ? Array.isArray(rawHolders)
+                                    ? rawHolders
+                                    : [rawHolders]
+                                : [];
+                            holders.forEach((element) => {
                                 archiveHolders.push({
                                     holder: self.getNodeValue(element),
                                     holderLink: self.getResourceLink(element),
                                 });
                             });
-                            return { archiveHolders, reference, title, tileid };
+                            return {
+                                archiveHolders,
+                                association,
+                                reference,
+                                title,
+                                tileid,
+                            };
                         })
                     );
                 }
@@ -274,6 +287,7 @@ export default ko.components.register(
                             "Monument, Area or Artefact",
                             "Associated Monument, Area or Artefact",
                             "Heritage Place, Area or Artefact",
+                            "Associated Heritage Place, Area or Artefact",
                         ];
                         const key = keyCandidates.find(
                             (candidate) => candidate in associatedArtifactsNode[0]
