@@ -125,22 +125,21 @@ export default ko.components.register(
                     );
                 }
 
-                const associatedConsultationsNode = self.getRawNodeValue(
+                const rawAssociatedConsultationsNode = self.getRawNodeValue(
                     params.data(),
-                    self.dataConfig.consultations,
-                    "instance_details"
+                    self.dataConfig.consultations
                 );
-                if (Array.isArray(associatedConsultationsNode)) {
-                    const tileid = self.getTileId(
-                        self.getRawNodeValue(
-                            params.data(),
-                            self.dataConfig.consultations
-                        )
-                    );
+                const associatedConsultationsNode = rawAssociatedConsultationsNode
+                    ? Array.isArray(rawAssociatedConsultationsNode)
+                        ? rawAssociatedConsultationsNode
+                        : [rawAssociatedConsultationsNode]
+                    : [];
+                if (associatedConsultationsNode.length) {
                     self.consultations(
                         associatedConsultationsNode.map((x) => {
                             const consultation = self.getNodeValue(x);
                             const resourceUrl = self.getResourceLink(x);
+                            const tileid = self.getTileId(x);
                             return { consultation, resourceUrl, tileid };
                         })
                     );
