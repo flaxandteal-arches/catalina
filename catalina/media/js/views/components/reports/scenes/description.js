@@ -23,7 +23,7 @@ export default ko.components.register(
 
             self.descriptionTableConfig = {
                 ...self.defaultTableConfig,
-                columns: [{ width: "70%" }, { width: "20%" }, null],
+                columns: [{ width: "70%" }, { width: "20%" }, null, null],
             };
 
             self.citationTableConfig = {
@@ -111,9 +111,19 @@ export default ko.components.register(
                                     ],
                                 ],
                             });
+                            const language = self.getNodeValue(x, {
+                                testPaths: [
+                                    [
+                                        `${self.dataConfig.descriptions.slice(
+                                            0,
+                                            -1
+                                        )} language`,
+                                    ],
+                                ],
+                            });
 
                             const tileid = self.getTileId(x);
-                            return { type, content, tileid };
+                            return { type, content, language, tileid };
                         })
                     );
                 }
