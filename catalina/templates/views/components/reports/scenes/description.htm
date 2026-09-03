@@ -250,5 +250,52 @@
         <!-- /ko -->
     </div>
 </div>
+<!-- Source Reference Work section -->
+<div class="aher-report-section" data-bind="visible: !!dataConfig.sourceReferenceWork">
+    <h2 class="aher-report-section-title"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.sourceReferenceWork)}, onReportSectionToggleAria: visible.sourceReferenceWork, sectionName: '{% trans "Source Reference Work" %}'" class="fa toggle"></i> {% trans "Source Reference Work" %}</h2>
+    <span data-bind="if: cards.sourceReferenceWork && (!sourceReferenceWork().length || cards.sourceReferenceWork.cardinality == 'n')">
+        <a class="aher-report-a" data-bind="click: function(){add(cards.sourceReferenceWork)}"><i class="fa fa-mail-reply"></i> {% trans "Add Source Reference Work" %}</a>
+    </span>
+
+    <!-- Collapsible content -->
+    <div data-bind="visible: visible.sourceReferenceWork" class="aher-report-collapsible-container pad-lft">
+
+        <!-- ko ifnot: sourceReferenceWork().length -->
+        <div class="aher-nodata-note">No source reference work for this resource</div>
+        <!-- /ko -->
+
+        <!-- ko if: sourceReferenceWork().length -->
+        <div class="aher-report-subsection">
+            <div class="firstchild-container">
+                <div class="aher-table pad-btm">
+                    <table class="table table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr class="aher-table-header">
+                                <th>{% trans "Source" %}</th>
+                                <th class="aher-table-control all"></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="dataTablesForEach: { data: sourceReferenceWork, dataTableOptions: relatedResourceTwoColumnTableConfig }">
+                            <tr>
+                                <td><a class="aher-table-link" data-bind="attr: {href: link}, text: linkText"></a></td>
+                                <td class="aher-table-control">
+                                    <div data-bind="if: $parent.cards && $parent.cards.sourceReferenceWork">
+                                        <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.edit(tileid, $parent.cards.sourceReferenceWork)}">
+                                            <i class="fa fa-mail-reply"></i>
+                                        </a>
+                                        <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: $parent.delete.bind($data, tileid, $parent.cards.sourceReferenceWork)">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>
 {% endblock body %}
 {% endblock report %}
