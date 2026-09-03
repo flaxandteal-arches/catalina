@@ -65,12 +65,14 @@ export default ko.components.register(
             self.descriptions = ko.observableArray();
             self.audience = ko.observableArray();
             self.statements = ko.observableArray();
+            self.sourceReferenceWork = ko.observableArray();
             self.subjectData = ko.observable();
             self.visible = {
                 descriptions: ko.observable(true),
                 citation: ko.observable(true),
                 audience: ko.observable(true),
                 statement: ko.observable(true),
+                sourceReferenceWork: ko.observable(true),
             };
             Object.assign(self.dataConfig, params.dataConfig || {});
 
@@ -362,6 +364,26 @@ export default ko.components.register(
                                 names,
                                 creations,
                             };
+                        })
+                    );
+                }
+
+                const rawSourceReferenceWorkNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.sourceReferenceWork
+                );
+                const sourceReferenceWorkData = rawSourceReferenceWorkNode
+                    ? Array.isArray(rawSourceReferenceWorkNode)
+                        ? rawSourceReferenceWorkNode
+                        : [rawSourceReferenceWorkNode]
+                    : undefined;
+                if (sourceReferenceWorkData) {
+                    self.sourceReferenceWork(
+                        sourceReferenceWorkData.map((x) => {
+                            const link = self.getResourceLink(x);
+                            const linkText = self.getNodeValue(x);
+                            const tileid = self.getTileId(x);
+                            return { link, linkText, tileid };
                         })
                     );
                 }
