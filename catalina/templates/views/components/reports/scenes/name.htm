@@ -145,6 +145,7 @@
                         <thead>
                             <tr class="aher-table-header">
                                 <th>{% trans "Resource ID" %}</th>
+                                <th>{% trans "Legacy ID" %}</th>
                                 <th>{% trans "AMIS FLOC ID" %}</th>
                                 <th>{% trans "Primary Reference Number" %}</th>
                                 <th class="none">{% trans "Source ID" %}</th>
@@ -155,6 +156,7 @@
                             <tr>
                                 <td data-bind="text: srn.resourceId"></td>
                                 <td data-bind="text: srn.legacyId"></td>
+                                <td data-bind="text: srn.amisFlocId"></td>
                                 <td data-bind="text: srn.primaryReferenceNumber"></td>
                                 <td>
                                     <!-- ko ifnot: $parent.sourceIds().length -->
