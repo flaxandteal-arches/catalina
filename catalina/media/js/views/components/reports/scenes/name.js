@@ -43,6 +43,8 @@ export default ko.components.register("views/components/reports/scenes/name", {
             systemRef: "system reference numbers",
             parent: undefined,
             recordStatus: undefined,
+            appellativeStatus: "appellative status",
+            whakapapaStatus: "whakapapa status",
         };
 
         self.hideNames = ko.observable(params.hideNames ?? false);
@@ -65,7 +67,28 @@ export default ko.components.register("views/components/reports/scenes/name", {
             names: ko.observable(true),
             crossReferences: ko.observable(true),
             systemReferenceNumbers: ko.observable(true),
+            appellativeStatus: ko.observable(true),
+            whakapapaStatus: ko.observable(true),
         };
+
+        self.appellativeStatusExists = ko.observable(false);
+        self.asTileid = ko.observable();
+        self.asType = ko.observable("--");
+        self.asContextType = ko.observable("--");
+        self.asRelation = ko.observable("--");
+        self.asInitiatingAct = ko.observable();
+        self.asTerminatingAct = ko.observable();
+        self.asHoldsFor = ko.observableArray();
+        self.asContext = ko.observableArray();
+        self.asNotes = ko.observableArray();
+        self.asNames = ko.observableArray();
+
+        self.whakapapaStatusExists = ko.observable(false);
+        self.wsTileid = ko.observable();
+        self.wsAncestors = ko.observableArray();
+        self.wsStartDate = ko.observable("--");
+        self.wsEndDate = ko.observable("--");
+        self.wsDisplayDate = ko.observable("--");
         Object.assign(self.dataConfig, params.dataConfig || {});
 
         // if params.compiled is set and true, the user has compiled their own data.  Use as is.
@@ -197,7 +220,7 @@ export default ko.components.register("views/components/reports/scenes/name", {
             systemRef.legacyId = self.getNodeValue(
                 systemRefData,
                 "legacyid",
-                "legacy id"
+                "amis floc id"
             );
             systemRef.primaryReferenceNumber = self.getNodeValue(
                 systemRefData,
@@ -225,6 +248,180 @@ export default ko.components.register("views/components/reports/scenes/name", {
                     })
                 );
             }
+        }
+
+        const asAsArray = (rawValue) =>
+            rawValue ? (Array.isArray(rawValue) ? rawValue : [rawValue]) : [];
+
+        const appellativeStatusNode = self.getRawNodeValue(
+            params.data(),
+            self.dataConfig.appellativeStatus
+        );
+        if (appellativeStatusNode) {
+            self.appellativeStatusExists(true);
+            self.asTileid(self.getTileId(appellativeStatusNode));
+
+            const typeValues = asAsArray(
+                self.getRawNodeValue(
+                    appellativeStatusNode,
+                    "appellative status type"
+                )
+            )
+                .map((x) => self.getNodeValue(x))
+                .filter((v) => v && v !== "--");
+            self.asType(typeValues.length ? typeValues.join(", ") : "--");
+
+            self.asContextType(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status context type"
+                )
+            );
+            self.asRelation(
+                self.getNodeValue(appellativeStatusNode, "appellative relation")
+            );
+
+            const initiatingActNode = self.getRawNodeValue(
+                appellativeStatusNode,
+                "appellative status initiating act"
+            );
+            self.asInitiatingAct({
+                text: self.getNodeValue(initiatingActNode),
+                link: self.getResourceLink(initiatingActNode),
+            });
+
+            const terminatingActNode = self.getRawNodeValue(
+                appellativeStatusNode,
+                "appellative status terminating act"
+            );
+            self.asTerminatingAct({
+                text: self.getNodeValue(terminatingActNode),
+                link: self.getResourceLink(terminatingActNode),
+            });
+
+            self.asHoldsFor(
+                asAsArray(
+                    self.getRawNodeValue(
+                        appellativeStatusNode,
+                        "appellative status holds for"
+                    )
+                ).map((x) => ({
+                    text: self.getNodeValue(x),
+                    link: self.getResourceLink(x),
+                }))
+            );
+
+            self.asContext(
+                asAsArray(
+                    self.getRawNodeValue(
+                        appellativeStatusNode,
+                        "appellative status context"
+                    )
+                ).map((x) => ({
+                    text: self.getNodeValue(x),
+                    link: self.getResourceLink(x),
+                }))
+            );
+
+            self.asNames(
+                asAsArray(
+                    self.getRawNodeValue(appellativeStatusNode, "appellation")
+                ).flatMap((appellation) =>
+                    asAsArray(
+                        self.getRawNodeValue(appellation, "names")
+                    ).map((x) => {
+                        const name = self.getNodeValue(x, "name");
+                        const nameType = self.getNodeValue(x, "name type");
+                        const nameUseType = self.getNodeValue(
+                            x,
+                            "name use type"
+                        );
+                        const currency = self.getNodeValue(
+                            x,
+                            "name currency"
+                        );
+                        const tileid = self.getTileId(x);
+                        return {
+                            name,
+                            nameType,
+                            nameUseType,
+                            currency,
+                            tileid,
+                        };
+                    })
+                )
+            );
+
+            self.asNotes(
+                asAsArray(
+                    self.getRawNodeValue(
+                        appellativeStatusNode,
+                        "appellative status statement"
+                    )
+                )
+                    .map((x) => ({
+                        description: self.getNodeValue(
+                            x,
+                            "descriptions",
+                            "description"
+                        ),
+                        type: self.getNodeValue(
+                            x,
+                            "descriptions",
+                            "description type"
+                        ),
+                        tileid: self.getTileId(x),
+                    }))
+                    .filter(
+                        (note) => note.description && note.description !== "--"
+                    )
+            );
+        }
+
+        const whakapapaStatusNode = self.getRawNodeValue(
+            params.data(),
+            self.dataConfig.whakapapaStatus
+        );
+        if (whakapapaStatusNode) {
+            self.whakapapaStatusExists(true);
+            self.wsTileid(self.getTileId(whakapapaStatusNode));
+
+            self.wsAncestors(
+                asAsArray(
+                    self.getRawNodeValue(
+                        whakapapaStatusNode,
+                        "whakapapa status ascribed ancestor"
+                    )
+                ).map((x) => ({
+                    text: self.getNodeValue(x),
+                    link: self.getResourceLink(x),
+                }))
+            );
+
+            self.wsStartDate(
+                self.getNodeValue(
+                    whakapapaStatusNode,
+                    "whakapapa status timespan",
+                    "timespan (date)",
+                    "start date"
+                )
+            );
+            self.wsEndDate(
+                self.getNodeValue(
+                    whakapapaStatusNode,
+                    "whakapapa status timespan",
+                    "timespan (date)",
+                    "end date"
+                )
+            );
+            self.wsDisplayDate(
+                self.getNodeValue(
+                    whakapapaStatusNode,
+                    "whakapapa status timespan",
+                    "timespan (date)",
+                    "display date"
+                )
+            );
         }
 
         if (self.dataConfig.parent) {
