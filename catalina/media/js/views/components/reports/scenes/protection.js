@@ -19,6 +19,8 @@ export default ko.components.register(
                 protection: "designation and protection assignment",
                 landUse: "land use classification assignment",
                 areaAssignment: ["area assignments", "area assignment"],
+                recordRegistryMembership: "record and registry membership",
+                custodialStatus: "custodial status",
             };
 
             self.cards = params.cards || {};
@@ -32,7 +34,23 @@ export default ko.components.register(
                 map: ko.observable(true),
                 areaAssignment: ko.observable(true),
                 landUse: ko.observable(true),
+                recordRegistryMembership: ko.observable(true),
+                custodialStatus: ko.observable(true),
             };
+
+            self.recordRegistryMemberships = ko.observableArray();
+
+            self.custodialStatusExists = ko.observable(false);
+            self.csTileid = ko.observable();
+            self.csType = ko.observable("--");
+            self.csContextType = ko.observable("--");
+            self.csRelation = ko.observable("--");
+            self.csInitiatingTransfer = ko.observable();
+            self.csTerminatingTransfer = ko.observable();
+            self.csCustodians = ko.observableArray();
+            self.csHoldsFor = ko.observableArray();
+            self.csContext = ko.observableArray();
+            self.csNotes = ko.observableArray();
             Object.assign(self.dataConfig, params.dataConfig || {});
 
             self.designationSectionTitle = ko.observable(
@@ -68,6 +86,9 @@ export default ko.components.register(
             self.areaAssignment = ko.observableArray();
             self.landUseClassification = ko.observableArray();
             self.designations = ko.observableArray();
+
+            const asArray = (rawValue) =>
+                rawValue ? (Array.isArray(rawValue) ? rawValue : [rawValue]) : [];
 
             // utitility function - checks whether at least one observable (or array object)
             // has a set value (used to determine whether a section is visible)
@@ -136,7 +157,7 @@ export default ko.components.register(
                             const name = self.getNodeValue(
                                 x,
                                 "designation names",
-                                "designation name type"
+                                "designation name"
                             );
                             const scheduleInfo = self.getNodeValue(
                                 x,
@@ -378,6 +399,249 @@ export default ko.components.register(
                                 tileid,
                             };
                         })
+                    );
+                }
+
+                const recordRegistryMembershipNode = asArray(
+                    self.getRawNodeValue(
+                        params.data(),
+                        self.dataConfig.recordRegistryMembership
+                    )
+                );
+                if (recordRegistryMembershipNode.length) {
+                    self.recordRegistryMemberships(
+                        recordRegistryMembershipNode.map((entry) => {
+                            const membership = self.getRawNodeValue(
+                                entry,
+                                "record and registry membership"
+                            );
+                            const tileid = self.getTileId(entry);
+
+                            const registryNode = self.getRawNodeValue(
+                                membership,
+                                "record or registry"
+                            );
+                            const registry = {
+                                text: self.getNodeValue(registryNode),
+                                link: self.getResourceLink(registryNode),
+                            };
+
+                            const crossReferences = asArray(
+                                self.getRawNodeValue(
+                                    membership,
+                                    "external cross references"
+                                )
+                            ).map((x) => {
+                                const number = self.getNodeValue(
+                                    x,
+                                    "external cross reference number"
+                                );
+                                const source = self.getNodeValue(
+                                    x,
+                                    "external cross reference source"
+                                );
+                                const description = self.getNodeValue(
+                                    x,
+                                    "external cross reference notes",
+                                    "external cross reference description"
+                                );
+                                const urlJson = self.getNodeValue(x, "url");
+                                const url =
+                                    urlJson && urlJson !== "--"
+                                        ? JSON.parse(urlJson)
+                                        : undefined;
+                                return {
+                                    number,
+                                    source,
+                                    description,
+                                    url,
+                                    tileid: self.getTileId(x),
+                                };
+                            });
+
+                            const periods = asArray(
+                                self.getRawNodeValue(
+                                    membership,
+                                    "period of membership"
+                                )
+                            ).map((x) => ({
+                                startDate: self.getNodeValue(x, "start date"),
+                                endDate: self.getNodeValue(x, "end date"),
+                                displayDate: self.getNodeValue(
+                                    x,
+                                    "display date"
+                                ),
+                                tileid: self.getTileId(x),
+                            }));
+
+                            const signOffs = asArray(
+                                self.getRawNodeValue(membership, "sign off")
+                            ).map((x) => {
+                                const approvedByNode = self.getRawNodeValue(
+                                    x,
+                                    "approved by",
+                                    "approved by value"
+                                );
+                                const inputByNode = self.getRawNodeValue(
+                                    x,
+                                    "input by",
+                                    "input by value"
+                                );
+                                const statusType = self.getNodeValue(
+                                    x,
+                                    "status type"
+                                );
+                                const approvedBy = {
+                                    text: self.getNodeValue(approvedByNode),
+                                    link: self.getResourceLink(approvedByNode),
+                                };
+                                const approvedDate = self.getNodeValue(
+                                    x,
+                                    "approved date",
+                                    "approved date value"
+                                );
+                                const inputBy = {
+                                    text: self.getNodeValue(inputByNode),
+                                    link: self.getResourceLink(inputByNode),
+                                };
+                                const inputDate = self.getNodeValue(
+                                    x,
+                                    "input date",
+                                    "input date value"
+                                );
+                                const referenceNumber = self.getNodeValue(
+                                    x,
+                                    "references",
+                                    "reference number"
+                                );
+                                return {
+                                    statusType,
+                                    approvedBy,
+                                    approvedDate,
+                                    inputBy,
+                                    inputDate,
+                                    referenceNumber,
+                                    tileid: self.getTileId(x),
+                                };
+                            });
+
+                            return {
+                                registry,
+                                crossReferences,
+                                periods,
+                                signOffs,
+                                tileid,
+                            };
+                        })
+                    );
+                }
+
+                const custodialStatusNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.custodialStatus
+                );
+                if (custodialStatusNode) {
+                    self.custodialStatusExists(true);
+                    self.csTileid(self.getTileId(custodialStatusNode));
+
+                    const typeValues = asArray(
+                        self.getRawNodeValue(
+                            custodialStatusNode,
+                            "custodial status type"
+                        )
+                    )
+                        .map((x) => self.getNodeValue(x))
+                        .filter((v) => v && v !== "--");
+                    self.csType(typeValues.length ? typeValues.join(", ") : "--");
+
+                    self.csContextType(
+                        self.getNodeValue(
+                            custodialStatusNode,
+                            "custodial context type"
+                        )
+                    );
+                    self.csRelation(
+                        self.getNodeValue(
+                            custodialStatusNode,
+                            "custodial relation"
+                        )
+                    );
+
+                    const initiatingTransferNode = self.getRawNodeValue(
+                        custodialStatusNode,
+                        "custodial initiating declarative transfer"
+                    );
+                    self.csInitiatingTransfer({
+                        text: self.getNodeValue(initiatingTransferNode),
+                        link: self.getResourceLink(initiatingTransferNode),
+                    });
+
+                    const terminatingTransferNode = self.getRawNodeValue(
+                        custodialStatusNode,
+                        "custodial terminating declarative transfer"
+                    );
+                    self.csTerminatingTransfer({
+                        text: self.getNodeValue(terminatingTransferNode),
+                        link: self.getResourceLink(terminatingTransferNode),
+                    });
+
+                    self.csCustodians(
+                        asArray(
+                            self.getRawNodeValue(custodialStatusNode, "custodian")
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.csHoldsFor(
+                        asArray(
+                            self.getRawNodeValue(
+                                custodialStatusNode,
+                                "custodial status holds for"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.csContext(
+                        asArray(
+                            self.getRawNodeValue(
+                                custodialStatusNode,
+                                "custodial event context"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.csNotes(
+                        asArray(
+                            self.getRawNodeValue(
+                                custodialStatusNode,
+                                "custodial status statement"
+                            )
+                        )
+                            .map((x) => ({
+                                description: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description"
+                                ),
+                                type: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description type"
+                                ),
+                                tileid: self.getTileId(x),
+                            }))
+                            .filter(
+                                (note) =>
+                                    note.description && note.description !== "--"
+                            )
                     );
                 }
             }
