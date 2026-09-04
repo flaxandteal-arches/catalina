@@ -346,6 +346,7 @@ export default ko.components.register(
                             "Associated Monument, Area or Artefact",
                             "Heritage Place, Area or Artefact",
                             "Associated Heritage Place, Area or Artefact",
+                            "Associated Resource",
                         ];
                         const key = keyCandidates.find(
                             (candidate) => candidate in associatedArtifactsNode[0]
