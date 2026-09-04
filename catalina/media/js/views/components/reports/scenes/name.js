@@ -240,7 +240,11 @@ export default ko.components.register("views/components/reports/scenes/name", {
             self.systemReferenceNumbers(systemRef);
 
             const rawSourceIds = self.getRawNodeValue(systemRefData, {
-                testPaths: [["source id"], ["eam tech object id"]],
+                testPaths: [
+                    ["source id"],
+                    ["eam tech object id"],
+                    ["eam equipment id"],
+                ],
             });
             const sourceIdTiles = rawSourceIds
                 ? Array.isArray(rawSourceIds)
