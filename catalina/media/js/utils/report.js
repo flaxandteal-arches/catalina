@@ -92,7 +92,9 @@ const processRawNodeValue = (rawValue) => {
         return "--";
     }
     const nodeValue =
-        rawValue?.["@display_value"] || rawValue?.["display_value"];
+        rawValue?.["@display_value"] ||
+        rawValue?.["display_value"] ||
+        rawValue?.["@value"];
     const geojson = rawValue?.geojson;
     if (geojson) {
         return geojson;
