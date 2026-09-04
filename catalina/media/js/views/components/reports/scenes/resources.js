@@ -425,6 +425,29 @@ export default ko.components.register(
                                     };
                                 })
                             );
+                        } else {
+                            // Single-value resource-instance-list nodes serialize
+                            // as a plain value (string, or object with
+                            // @display_value/resourceId) rather than an array.
+                            const tileid = self.getTileId(
+                                associatedArtifactsNode
+                            );
+                            self.assets([
+                                {
+                                    resource: [
+                                        {
+                                            resourceName: self.getNodeValue(
+                                                associatedArtifactsNode
+                                            ),
+                                            resourceUrl: self.getResourceLink(
+                                                associatedArtifactsNode
+                                            ),
+                                        },
+                                    ],
+                                    association: "--",
+                                    tileid,
+                                },
+                            ]);
                         }
                     }
                 }
