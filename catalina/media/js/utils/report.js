@@ -245,7 +245,7 @@ export default {
             return;
         }
         const dictionary = {};
-        for (card of cards) {
+        for (const card of cards) {
             dictionary[card.model.name()] = card;
         }
         standardizeNode(dictionary);
