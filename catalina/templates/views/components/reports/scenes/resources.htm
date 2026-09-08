@@ -249,11 +249,11 @@
     </div>
 </div>
 
-<!-- Associated Monuments section -->
+<!-- Associated Heritage Places section -->
 <div class="aher-report-section" data-bind="visible: !!dataConfig.assets">
     <h2 class="aher-report-section-title">
-        <i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.assets)}, onReportSectionToggleAria: visible.assets, sectionName: '{% trans "Associated Monuments/Areas/Artefacts" %}'" class="fa toggle"></i>
-        {% trans "Associated Monuments/Areas/Artefacts" %}
+        <i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.assets)}, onReportSectionToggleAria: visible.assets, sectionName: '{% trans "Associated Heritage Places/Areas/Artefacts" %}'" class="fa toggle"></i>
+        {% trans "Associated Heritage Places/Areas/Artefacts" %}
     </h2>
     <!-- ko if: cards.assets -->
     <a href="#" data-bind="click: function(){addNewTile(cards.assets)}" class="aher-report-a"><i class="fa fa-mail-reply"></i> {% trans "Add Resource" %}</a>
@@ -263,14 +263,14 @@
     <div data-bind="visible: visible.assets" class="aher-report-collapsible-container pad-lft">
 
         <!-- ko ifnot: assets().length -->
-        <div class="aher-nodata-note">No heritage assets/areas/artefacts for this resource</div>
+        <div class="aher-nodata-note">No heritage places/areas/artefacts for this resource</div>
         <!-- /ko -->
 
         <!-- ko if: assets().length -->
         <div class="aher-report-subsection">
             <div class="firstchild-container">
                 <div class="aher-table" data-bind="">
-                    <p class="aher-table-aria-describedby" id="associated-monument-table_info">Associated monument/area/artefact table.</p>
+                    <p class="aher-table-aria-describedby" id="associated-monument-table_info">Associated heritage place/area/artefact table.</p>
                     <table id="associated-monument-table" class="table table-striped" cellspacing="0" width="100%">
                         <thead>
                             <tr class="aher-table-header">
