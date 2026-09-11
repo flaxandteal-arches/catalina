@@ -156,6 +156,59 @@ GRANT EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text)
 
 
 -- ============================================================================
+-- Reading the Arches views without depending on them
+-- ============================================================================
+--
+-- Every ETL import ends with SELECT __arches_refresh_spatial_views(), which
+-- drops and recreates the <slug>_<geom> views with a plain DROP VIEW (RESTRICT).
+-- A wrapper that selects straight FROM public.monument_point therefore aborts the
+-- refresh, and with it the whole import, after the tiles are already committed:
+--
+--   cannot drop view monument_point because other objects depend on it
+--   DETAIL:  view heritage_places_points depends on view monument_point
+--
+-- A LANGUAGE sql function with a QUOTED STRING body records no pg_depend entry on
+-- what it reads, so routing the wrapper through one leaves it holding no dependency
+-- on the Arches view and the refresh succeeds. The names resolve again at run time
+-- once the refresh recreates them.
+--
+-- Three constraints are load-bearing:
+--   * RETURNS TABLE, never RETURNS SETOF public.monument_point — a composite return
+--     type DOES record a dependency and would defeat the whole thing.
+--   * SECURITY INVOKER, and no SET clause: inline_set_returning_function refuses
+--     prosecdef or proconfig, and an un-inlined function materialises the entire
+--     view on every query, destroying bbox reads. Unlike the two helpers above this
+--     needs no definer rights — the consuming GIS role already holds SELECT on the
+--     <slug>_<geom> views, which the Arches trigger grants to arches_spatial_views.
+--   * The column list repeats the attributenodes in add_spatial_views.sql. The two
+--     move together.
+
+CREATE OR REPLACE FUNCTION public.__catalina_monument_point()
+    RETURNS TABLE (gid bigint, tileid text, nodeid text, geom geometry(Geometry, 3857),
+                   resourceinstanceid text, monument_name text, source_id_value text)
+    LANGUAGE 'sql'
+    STABLE
+AS 'SELECT gid, tileid, nodeid, geom, resourceinstanceid, monument_name, source_id_value
+      FROM public.monument_point';
+
+CREATE OR REPLACE FUNCTION public.__catalina_monument_linestring()
+    RETURNS TABLE (gid bigint, tileid text, nodeid text, geom geometry(Geometry, 3857),
+                   resourceinstanceid text, monument_name text, source_id_value text)
+    LANGUAGE 'sql'
+    STABLE
+AS 'SELECT gid, tileid, nodeid, geom, resourceinstanceid, monument_name, source_id_value
+      FROM public.monument_linestring';
+
+CREATE OR REPLACE FUNCTION public.__catalina_monument_polygon()
+    RETURNS TABLE (gid bigint, tileid text, nodeid text, geom geometry(Geometry, 3857),
+                   resourceinstanceid text, monument_name text, source_id_value text)
+    LANGUAGE 'sql'
+    STABLE
+AS 'SELECT gid, tileid, nodeid, geom, resourceinstanceid, monument_name, source_id_value
+      FROM public.monument_polygon';
+
+
+-- ============================================================================
 -- Heritage places  <-  public.monument_point / _linestring / _polygon
 -- ============================================================================
 --
@@ -184,7 +237,7 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
             'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
                                  AS global_id,
         geom
-    FROM public.monument_point;
+    FROM public.__catalina_monument_point();
 GRANT SELECT ON public.heritage_places_points TO arches_spatial_views;
 
 DROP VIEW IF EXISTS public.heritage_places_lines;
@@ -205,7 +258,7 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
             'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
                                  AS global_id,
         geom
-    FROM public.monument_linestring;
+    FROM public.__catalina_monument_linestring();
 GRANT SELECT ON public.heritage_places_lines TO arches_spatial_views;
 
 DROP VIEW IF EXISTS public.heritage_places_polygons;
@@ -226,5 +279,5 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
             'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
                                  AS global_id,
         geom
-    FROM public.monument_polygon;
+    FROM public.__catalina_monument_polygon();
 GRANT SELECT ON public.heritage_places_polygons TO arches_spatial_views;
