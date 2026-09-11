@@ -124,6 +124,11 @@ export default ko.components.register("views/components/reports/scenes/name", {
                                     `${self.dataConfig.nameChildren} name use type`,
                                 ],
                                 [`${self.dataConfig.nameChildren} use type`],
+                                // Field Assessment's "Name" child node was
+                                // renamed from "Consultation Name" but its
+                                // sibling Type/Use Type/Currency nodes were
+                                // not, so they still carry the old prefix.
+                                ["consultation name use type"],
                             ],
                         });
                         const name = self.getNodeValue(x, {
@@ -142,6 +147,8 @@ export default ko.components.register("views/components/reports/scenes/name", {
                                     `${self.dataConfig.nameChildren} name currency`,
                                 ],
                                 [`${self.dataConfig.nameChildren} currency`],
+                                // see nameUseType above for why this is here
+                                ["consultation name currency"],
                             ],
                         });
 
