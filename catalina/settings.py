@@ -65,6 +65,8 @@ if os.environ.get("CATALINA_BLANKET_ROLES", "True").lower() in ("true", "1", "ye
 
 LOCALE_PATHS.insert(0, os.path.join(APP_ROOT, "locale"))
 
+MAPBOX_API_KEY = os.environ.get("MAPBOX_API_KEY", "")
+
 FILE_TYPE_CHECKING = "lenient"
 FILE_TYPES = [
     "bmp",
@@ -206,6 +208,7 @@ INSTALLED_APPS = (
     "django_migrate_sql",
     "pgtrigger",
     "azure_auth",  # Django Azure Auth for Microsoft Entra ID
+    "arches_json_importer",
     # "silk",
 )
 

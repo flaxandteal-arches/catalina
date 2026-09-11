@@ -31,6 +31,7 @@ dependencies = [
     "django-storages[s3]",
     "uvicorn[standard]",
     "redis",
+    "arches_json_importer @ git+https://github.com/flaxandteal/arches-json-importer.git@main",
 ]
 
 version = "0.0.1"
