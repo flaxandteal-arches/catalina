@@ -95,14 +95,32 @@ export default ko.components.register(
                         : [rawAssociatedActivitiesNode]
                     : [];
                 if (associatedActivitiesNode.length) {
-                    const tileid = self.getTileId(
-                        rawAssociatedActivitiesNode
-                    );
                     self.activities(
                         associatedActivitiesNode.map((x) => {
-                            const activity = self.getNodeValue(x);
-                            const resourceUrl = self.getResourceLink(x);
-                            return { activity, resourceUrl, tileid };
+                            const tileid = self.getTileId(x);
+                            const rawInstances = self.getRawNodeValue(
+                                x,
+                                "instance_details"
+                            );
+                            const instances = rawInstances
+                                ? Array.isArray(rawInstances)
+                                    ? rawInstances
+                                    : [rawInstances]
+                                : [];
+                            const activityInstances = instances.length
+                                ? instances.map((element) => ({
+                                      activity: self.getNodeValue(element),
+                                      resourceUrl:
+                                          self.getResourceLink(element),
+                                  }))
+                                : [
+                                      {
+                                          activity: self.getNodeValue(x),
+                                          resourceUrl:
+                                              self.getResourceLink(x),
+                                      },
+                                  ];
+                            return { activityInstances, tileid };
                         })
                     );
                 }
@@ -236,11 +254,32 @@ export default ko.components.register(
                                     ? rawHolders
                                     : [rawHolders]
                                 : [];
-                            holders.forEach((element) => {
-                                archiveHolders.push({
-                                    holder: self.getNodeValue(element),
-                                    holderLink: self.getResourceLink(element),
-                                });
+                            holders.forEach((holderNode) => {
+                                const rawHolderInstances =
+                                    self.getRawNodeValue(
+                                        holderNode,
+                                        "instance_details"
+                                    );
+                                const holderInstances = rawHolderInstances
+                                    ? Array.isArray(rawHolderInstances)
+                                        ? rawHolderInstances
+                                        : [rawHolderInstances]
+                                    : [];
+                                if (holderInstances.length) {
+                                    holderInstances.forEach((element) => {
+                                        archiveHolders.push({
+                                            holder: self.getNodeValue(element),
+                                            holderLink:
+                                                self.getResourceLink(element),
+                                        });
+                                    });
+                                } else {
+                                    archiveHolders.push({
+                                        holder: self.getNodeValue(holderNode),
+                                        holderLink:
+                                            self.getResourceLink(holderNode),
+                                    });
+                                }
                             });
                             return {
                                 archiveHolders,
@@ -263,12 +302,32 @@ export default ko.components.register(
                         : [rawAssociatedFilesNode]
                     : [];
                 if (associatedFilesNode.length) {
-                    const tileid = self.getTileId(rawAssociatedFilesNode);
                     self.files(
                         associatedFilesNode.map((x) => {
-                            const file = self.getNodeValue(x);
-                            const resourceUrl = self.getResourceLink(x);
-                            return { file, resourceUrl, tileid };
+                            const tileid = self.getTileId(x);
+                            const rawInstances = self.getRawNodeValue(
+                                x,
+                                "instance_details"
+                            );
+                            const instances = rawInstances
+                                ? Array.isArray(rawInstances)
+                                    ? rawInstances
+                                    : [rawInstances]
+                                : [];
+                            const fileInstances = instances.length
+                                ? instances.map((element) => ({
+                                      file: self.getNodeValue(element),
+                                      resourceUrl:
+                                          self.getResourceLink(element),
+                                  }))
+                                : [
+                                      {
+                                          file: self.getNodeValue(x),
+                                          resourceUrl:
+                                              self.getResourceLink(x),
+                                      },
+                                  ];
+                            return { fileInstances, tileid };
                         })
                     );
                 }
@@ -300,13 +359,42 @@ export default ko.components.register(
                                         ? rawAsset
                                         : [rawAsset]
                                     : [];
-                                const resource = assetTiles.map(
-                                    (element) => ({
-                                        resourceName:
-                                            self.getNodeValue(element),
-                                        resourceUrl:
-                                            self.getResourceLink(element),
-                                    })
+                                const resource = assetTiles.flatMap(
+                                    (element) => {
+                                        const rawInstances =
+                                            self.getRawNodeValue(
+                                                element,
+                                                "instance_details"
+                                            );
+                                        const instances = rawInstances
+                                            ? Array.isArray(rawInstances)
+                                                ? rawInstances
+                                                : [rawInstances]
+                                            : [];
+                                        return instances.length
+                                            ? instances.map((instance) => ({
+                                                  resourceName:
+                                                      self.getNodeValue(
+                                                          instance
+                                                      ),
+                                                  resourceUrl:
+                                                      self.getResourceLink(
+                                                          instance
+                                                      ),
+                                              }))
+                                            : [
+                                                  {
+                                                      resourceName:
+                                                          self.getNodeValue(
+                                                              element
+                                                          ),
+                                                      resourceUrl:
+                                                          self.getResourceLink(
+                                                              element
+                                                          ),
+                                                  },
+                                              ];
+                                    }
                                 );
                                 const association = self.getNodeValue(
                                     x,

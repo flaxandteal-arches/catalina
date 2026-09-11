@@ -34,14 +34,14 @@
                         </thead>
                         <tbody data-bind="dataTablesForEach: { data: activities, dataTableOptions: relatedResourceTwoColumnTableConfig}">
                             <tr>
-                                <td>
+                                <td data-bind="foreach: activityInstances">
+                                    <span data-bind="visible: $index() > 0">, </span>
                                     <!-- ko if: resourceUrl -->
                                     <a data-bind="text: activity, attr: {href: resourceUrl}" class="aher-table-link"></a>
                                     <!-- /ko -->
                                     <!-- ko ifnot: resourceUrl -->
-                                    <span data-bind="text:activity"></span>
+                                    <span data-bind="text: activity"></span>
                                     <!-- /ko -->
-
                                 </td>
                                 <td class="aher-table-control">
                                     <div data-bind="if: $parent.cards.activities">
@@ -221,12 +221,13 @@
                         </thead>
                         <tbody data-bind="dataTablesForEach: { data: files, dataTableOptions: relatedResourceTwoColumnTableConfig}">
                             <tr>
-                                <td>
+                                <td data-bind="foreach: fileInstances">
+                                    <span data-bind="visible: $index() > 0">, </span>
                                     <!-- ko if: resourceUrl -->
                                     <a data-bind="text: file, attr: {href: resourceUrl}" class="aher-table-link"></a>
                                     <!-- /ko -->
                                     <!-- ko ifnot: resourceUrl -->
-                                    <span data-bind="text:file"></span>
+                                    <span data-bind="text: file"></span>
                                     <!-- /ko -->
                                 </td>
                                 <td class="aher-table-control">
