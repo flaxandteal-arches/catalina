@@ -82,6 +82,9 @@ export default ko.components.register("views/components/reports/scenes/name", {
         self.asContext = ko.observableArray();
         self.asNotes = ko.observableArray();
         self.asNames = ko.observableArray();
+        self.asStartDate = ko.observable("--");
+        self.asEndDate = ko.observable("--");
+        self.asDisplayDate = ko.observable("--");
 
         self.whakapapaStatusExists = ko.observable(false);
         self.wsTileid = ko.observable();
@@ -304,6 +307,31 @@ export default ko.components.register("views/components/reports/scenes/name", {
                 text: self.getNodeValue(terminatingActNode),
                 link: self.getResourceLink(terminatingActNode),
             });
+
+            self.asStartDate(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status timespan",
+                    "timespan (date)",
+                    "start date"
+                )
+            );
+            self.asEndDate(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status timespan",
+                    "timespan (date)",
+                    "end date"
+                )
+            );
+            self.asDisplayDate(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status timespan",
+                    "timespan (date)",
+                    "display date"
+                )
+            );
 
             self.asHoldsFor(
                 asAsArray(
