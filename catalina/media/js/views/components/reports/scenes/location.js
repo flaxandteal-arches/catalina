@@ -130,6 +130,9 @@ export default ko.components.register(
             self.plsHoldsFor = ko.observableArray();
             self.plsEventContext = ko.observableArray();
             self.plsNotes = ko.observableArray();
+            self.plsStartDate = ko.observable("--");
+            self.plsEndDate = ko.observable("--");
+            self.plsDisplayDate = ko.observable("--");
 
             // utitility function - checks whether at least one observable (or array object)
             // has a set value (used to determine whether a section is visible)
@@ -226,6 +229,157 @@ export default ko.components.register(
                 self.locationRoot = self.cardConfig?.location?.card;
 
                 setupCards(self.getTileId(locationNode));
+
+                // Physical Locative Status is its own root-level card (not
+                // nested under Location Data in the graph), so it's read
+                // directly off the resource rather than off locationNode,
+                // and needs to run even when locationNode is missing.
+                const asArray = (rawValue) =>
+                    rawValue
+                        ? Array.isArray(rawValue)
+                            ? rawValue
+                            : [rawValue]
+                        : [];
+
+                const physicalLocativeStatusNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.physicalLocativeStatus
+                );
+                if (physicalLocativeStatusNode) {
+                    self.physicalLocativeStatusExists(true);
+                    self.plsTileid(
+                        self.getTileId(physicalLocativeStatusNode)
+                    );
+
+                    const typeNodes = asArray(
+                        self.getRawNodeValue(
+                            physicalLocativeStatusNode,
+                            "physical locative status type"
+                        )
+                    );
+                    const typeValues = typeNodes
+                        .map((x) => self.getNodeValue(x))
+                        .filter((v) => v && v !== "--");
+                    self.plsType(
+                        typeValues.length ? typeValues.join(", ") : "--"
+                    );
+
+                    self.plsContextType(
+                        self.getNodeValue(
+                            physicalLocativeStatusNode,
+                            "physical locative status context type"
+                        )
+                    );
+                    self.plsRelation(
+                        self.getNodeValue(
+                            physicalLocativeStatusNode,
+                            "ascribed physical locative relation"
+                        )
+                    );
+
+                    self.plsStartDate(
+                        self.getNodeValue(
+                            physicalLocativeStatusNode,
+                            "physical locative status timespan",
+                            "timespan (date)",
+                            "start date"
+                        )
+                    );
+                    self.plsEndDate(
+                        self.getNodeValue(
+                            physicalLocativeStatusNode,
+                            "physical locative status timespan",
+                            "timespan (date)",
+                            "end date"
+                        )
+                    );
+                    self.plsDisplayDate(
+                        self.getNodeValue(
+                            physicalLocativeStatusNode,
+                            "physical locative status timespan",
+                            "timespan (date)",
+                            "display date"
+                        )
+                    );
+
+                    const ascribedPlaceNode = self.getRawNodeValue(
+                        physicalLocativeStatusNode,
+                        "ascribed place"
+                    );
+                    self.plsAscribedPlace({
+                        text: self.getNodeValue(ascribedPlaceNode),
+                        link: self.getResourceLink(ascribedPlaceNode),
+                    });
+
+                    const initiatingActNode = self.getRawNodeValue(
+                        physicalLocativeStatusNode,
+                        "physical locative status initiating act"
+                    );
+                    self.plsInitiatingAct({
+                        text: self.getNodeValue(initiatingActNode),
+                        link: self.getResourceLink(initiatingActNode),
+                    });
+
+                    const terminatingActNode = self.getRawNodeValue(
+                        physicalLocativeStatusNode,
+                        "physical locative status terminating act"
+                    );
+                    self.plsTerminatingAct({
+                        text: self.getNodeValue(terminatingActNode),
+                        link: self.getResourceLink(terminatingActNode),
+                    });
+
+                    self.plsHoldsFor(
+                        asArray(
+                            self.getRawNodeValue(
+                                physicalLocativeStatusNode,
+                                "physical locative status holds for"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.plsEventContext(
+                        asArray(
+                            self.getRawNodeValue(
+                                physicalLocativeStatusNode,
+                                "physical locative status event context"
+                            )
+                        ).map((x) => ({
+                            text: self.getNodeValue(x),
+                            link: self.getResourceLink(x),
+                        }))
+                    );
+
+                    self.plsNotes(
+                        asArray(
+                            self.getRawNodeValue(
+                                physicalLocativeStatusNode,
+                                "physical locative status statement"
+                            )
+                        )
+                            .map((x) => ({
+                                description: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description"
+                                ),
+                                type: self.getNodeValue(
+                                    x,
+                                    "descriptions",
+                                    "description type"
+                                ),
+                                tileid: self.getTileId(x),
+                            }))
+                            .filter(
+                                (note) =>
+                                    note.description &&
+                                    note.description !== "--"
+                            )
+                    );
+                }
 
                 if (!locationNode) {
                     return;
@@ -570,131 +724,6 @@ export default ko.components.register(
                         namedLocationNode
                     );
                     self.namedLocations([{ placename, resourceUrl, tileid }]);
-                }
-
-                // Physical Locative Status is its own root-level card (not
-                // nested under Location Data in the graph), so it's read
-                // directly off the resource rather than off locationNode.
-                const asArray = (rawValue) =>
-                    rawValue
-                        ? Array.isArray(rawValue)
-                            ? rawValue
-                            : [rawValue]
-                        : [];
-
-                const physicalLocativeStatusNode = self.getRawNodeValue(
-                    params.data(),
-                    self.dataConfig.physicalLocativeStatus
-                );
-                if (physicalLocativeStatusNode) {
-                    self.physicalLocativeStatusExists(true);
-                    self.plsTileid(
-                        self.getTileId(physicalLocativeStatusNode)
-                    );
-
-                    const typeNodes = asArray(
-                        self.getRawNodeValue(
-                            physicalLocativeStatusNode,
-                            "physical locative status type"
-                        )
-                    );
-                    const typeValues = typeNodes
-                        .map((x) => self.getNodeValue(x))
-                        .filter((v) => v && v !== "--");
-                    self.plsType(
-                        typeValues.length ? typeValues.join(", ") : "--"
-                    );
-
-                    self.plsContextType(
-                        self.getNodeValue(
-                            physicalLocativeStatusNode,
-                            "physical locative status context type"
-                        )
-                    );
-                    self.plsRelation(
-                        self.getNodeValue(
-                            physicalLocativeStatusNode,
-                            "ascribed physical locative relation"
-                        )
-                    );
-
-                    const ascribedPlaceNode = self.getRawNodeValue(
-                        physicalLocativeStatusNode,
-                        "ascribed place"
-                    );
-                    self.plsAscribedPlace({
-                        text: self.getNodeValue(ascribedPlaceNode),
-                        link: self.getResourceLink(ascribedPlaceNode),
-                    });
-
-                    const initiatingActNode = self.getRawNodeValue(
-                        physicalLocativeStatusNode,
-                        "physical locative status initiating act"
-                    );
-                    self.plsInitiatingAct({
-                        text: self.getNodeValue(initiatingActNode),
-                        link: self.getResourceLink(initiatingActNode),
-                    });
-
-                    const terminatingActNode = self.getRawNodeValue(
-                        physicalLocativeStatusNode,
-                        "physical locative status terminating act"
-                    );
-                    self.plsTerminatingAct({
-                        text: self.getNodeValue(terminatingActNode),
-                        link: self.getResourceLink(terminatingActNode),
-                    });
-
-                    self.plsHoldsFor(
-                        asArray(
-                            self.getRawNodeValue(
-                                physicalLocativeStatusNode,
-                                "physical locative status holds for"
-                            )
-                        ).map((x) => ({
-                            text: self.getNodeValue(x),
-                            link: self.getResourceLink(x),
-                        }))
-                    );
-
-                    self.plsEventContext(
-                        asArray(
-                            self.getRawNodeValue(
-                                physicalLocativeStatusNode,
-                                "physical locative status event context"
-                            )
-                        ).map((x) => ({
-                            text: self.getNodeValue(x),
-                            link: self.getResourceLink(x),
-                        }))
-                    );
-
-                    self.plsNotes(
-                        asArray(
-                            self.getRawNodeValue(
-                                physicalLocativeStatusNode,
-                                "physical locative status statement"
-                            )
-                        )
-                            .map((x) => ({
-                                description: self.getNodeValue(
-                                    x,
-                                    "descriptions",
-                                    "description"
-                                ),
-                                type: self.getNodeValue(
-                                    x,
-                                    "descriptions",
-                                    "description type"
-                                ),
-                                tileid: self.getTileId(x),
-                            }))
-                            .filter(
-                                (note) =>
-                                    note.description &&
-                                    note.description !== "--"
-                            )
-                    );
                 }
             }
         },
