@@ -1,0 +1,522 @@
+import _ from "underscore";
+import ko from "knockout";
+import arches from "arches";
+import reportUtils from "utils/report";
+import NameTemplate from "templates/views/components/reports/scenes/name.htm";
+import "bindings/datatable";
+import "bindings/reports";
+
+export default ko.components.register("views/components/reports/scenes/name", {
+    viewModel: function (params) {
+        var self = this;
+        Object.assign(self, reportUtils);
+
+        self.nameTableConfig = {
+            ...self.defaultTableConfig,
+            columns: [
+                { width: "50%" },
+                { width: "20%" },
+                { width: "20%" },
+                null,
+            ],
+        };
+
+        this.crossReferenceTableConfig = {
+            ...this.defaultTableConfig,
+            columns: [
+                { width: "20%" },
+                { width: "20%" },
+                { width: "50%" },
+                { width: "10%" },
+                null,
+            ],
+        };
+
+        self.systemReferenceNumbersTableConfig = {
+            ...self.defaultTableConfig,
+            columns: Array(6).fill(null),
+        };
+
+        self.dataConfig = {
+            name: "names",
+            xref: "external cross references",
+            systemRef: "system reference numbers",
+            parent: undefined,
+            recordStatus: undefined,
+            appellativeStatus: "appellative status",
+            whakapapaStatus: "whakapapa status",
+        };
+
+        self.hideNames = ko.observable(params.hideNames ?? false);
+        self.cards = Object.assign({}, params.cards);
+        self.resource = params?.data || undefined;
+        self.edit = params.editTile || self.editTile;
+        self.delete = params.deleteTile || self.deleteTile;
+        self.add = params.addTile || self.addNewTile;
+        self.names = ko.observableArray();
+        self.hideCrossReferences = ko.observable(
+            params.hideCrossReferences ?? false
+        );
+        self.crossReferences = ko.observableArray();
+        self.systemReferenceNumbers = ko.observable();
+        self.sourceIds = ko.observableArray();
+        self.parentData = ko.observable();
+        self.recordStatusData = ko.observable();
+        self.summary = params.summary || false;
+        self.visible = {
+            names: ko.observable(true),
+            crossReferences: ko.observable(true),
+            systemReferenceNumbers: ko.observable(true),
+            appellativeStatus: ko.observable(true),
+            whakapapaStatus: ko.observable(true),
+        };
+
+        self.appellativeStatusExists = ko.observable(false);
+        self.asTileid = ko.observable();
+        self.asType = ko.observable("--");
+        self.asContextType = ko.observable("--");
+        self.asRelation = ko.observable("--");
+        self.asInitiatingAct = ko.observable();
+        self.asTerminatingAct = ko.observable();
+        self.asHoldsFor = ko.observableArray();
+        self.asContext = ko.observableArray();
+        self.asNotes = ko.observableArray();
+        self.asNames = ko.observableArray();
+        self.asStartDate = ko.observable("--");
+        self.asEndDate = ko.observable("--");
+        self.asDisplayDate = ko.observable("--");
+
+        self.whakapapaStatusExists = ko.observable(false);
+        self.wsTileid = ko.observable();
+        self.wsAncestors = ko.observableArray();
+        self.wsStartDate = ko.observable("--");
+        self.wsEndDate = ko.observable("--");
+        self.wsDisplayDate = ko.observable("--");
+        Object.assign(self.dataConfig, params.dataConfig || {});
+
+        // if params.compiled is set and true, the user has compiled their own data.  Use as is.
+        if (params?.compiled) {
+            self.names(params.data.names);
+            self.crossReferences(params.data.crossReferences);
+            self.systemReferenceNumbers(params.data.referenceNumbers);
+        } else {
+            const rawNameData = self.getRawNodeValue(params.data(), {
+                testPaths: [
+                    ["names"],
+                    [self.dataConfig.name],
+                    [`${self.dataConfig.name} names`],
+                ],
+            });
+            const nameData = rawNameData
+                ? Array.isArray(rawNameData)
+                    ? rawNameData
+                    : [rawNameData]
+                : undefined;
+
+            if (nameData) {
+                self.names(
+                    nameData.map((x) => {
+                        const nameUseType = self.getNodeValue(x, {
+                            testPaths: [
+                                ["name use type"],
+                                [`${self.dataConfig.name} name use type`],
+                                [
+                                    `${self.dataConfig.nameChildren} name use type`,
+                                ],
+                                [`${self.dataConfig.nameChildren} use type`],
+                                // Field Assessment's "Name" child node was
+                                // renamed from "Consultation Name" but its
+                                // sibling Type/Use Type/Currency nodes were
+                                // not, so they still carry the old prefix.
+                                ["consultation name use type"],
+                            ],
+                        });
+                        const name = self.getNodeValue(x, {
+                            testPaths: [
+                                ["name"],
+                                [`${self.dataConfig.name} name`],
+                                [`${self.dataConfig.nameChildren} name`],
+                                [`${self.dataConfig.nameChildren}`],
+                            ],
+                        });
+                        const currency = self.getNodeValue(x, {
+                            testPaths: [
+                                ["name currency"],
+                                [`${self.dataConfig.name} name currency`],
+                                [
+                                    `${self.dataConfig.nameChildren} name currency`,
+                                ],
+                                [`${self.dataConfig.nameChildren} currency`],
+                                // see nameUseType above for why this is here
+                                ["consultation name currency"],
+                            ],
+                        });
+
+                        const tileid = self.getTileId(x);
+                        return { name, nameUseType, currency, tileid };
+                    })
+                );
+            }
+
+            const rawXrefData = self.getRawNodeValue(params.data(), {
+                testPaths: [["external cross references"]],
+            });
+            const xrefData = rawXrefData
+                ? Array.isArray(rawXrefData)
+                    ? rawXrefData
+                    : [rawXrefData]
+                : undefined;
+
+            if (xrefData) {
+                self.crossReferences(
+                    xrefData.map((x) => {
+                        const name = self.getNodeValue(x, {
+                            testPaths: [
+                                ["external cross reference", "@display_value"],
+                                ["external cross reference"],
+                            ],
+                        });
+                        const description = self.getNodeValue(x, {
+                            testPaths: [
+                                [
+                                    "external cross reference notes",
+                                    "external cross reference description",
+                                    "@display_value",
+                                ],
+                                [
+                                    "external cross reference notes",
+                                    "external cross reference description",
+                                ],
+                            ],
+                        });
+
+                        const source = self.getNodeValue(x, {
+                            testPaths: [
+                                [
+                                    "external cross reference source",
+                                    "@display_value",
+                                ],
+                                ["external cross reference source"],
+                            ],
+                        });
+
+                        const urlJson = self.getNodeValue(x, {
+                            testPaths: [["url"]],
+                        });
+
+                        const url =
+                            urlJson && urlJson != "--"
+                                ? JSON.parse(urlJson)
+                                : undefined;
+
+                        const tileid = self.getTileId(x);
+                        return { name, description, source, url, tileid };
+                    })
+                );
+            }
+        }
+
+        const systemRefData = self.getRawNodeValue(params.data(), {
+            testPaths: [["system reference numbers"]],
+        });
+
+        if (systemRefData) {
+            const systemRef = {};
+            systemRef.resourceId = self.getNodeValue(
+                systemRefData,
+                "uuid",
+                "resourceid"
+            );
+            systemRef.legacyId = self.getNodeValue(
+                systemRefData,
+                "legacyid",
+                "legacy id"
+            );
+            systemRef.amisFlocId = self.getNodeValue(systemRefData, {
+                testPaths: [
+                    ["legacyid", "amis floc id"],
+                    ["legacy_id", "amis floc id"],
+                ],
+            });
+            systemRef.primaryReferenceNumber = self.getNodeValue(
+                systemRefData,
+                "primaryreferencenumber",
+                "primary reference number"
+            );
+            systemRef.tileid = self.getTileId(systemRefData);
+            self.systemReferenceNumbers(systemRef);
+
+            const rawSourceIds = self.getRawNodeValue(systemRefData, {
+                testPaths: [
+                    ["source id"],
+                    ["eam tech object id"],
+                    ["eam equipment id"],
+                ],
+            });
+            const sourceIdTiles = rawSourceIds
+                ? Array.isArray(rawSourceIds)
+                    ? rawSourceIds
+                    : [rawSourceIds]
+                : undefined;
+            if (sourceIdTiles) {
+                self.sourceIds(
+                    sourceIdTiles.map((x) => {
+                        const value = self.getNodeValue(x, "source id value");
+                        const type = self.getNodeValue(x, "source id type");
+                        const tileid = self.getTileId(x);
+                        return { value, type, tileid };
+                    })
+                );
+            }
+        }
+
+        const asAsArray = (rawValue) =>
+            rawValue ? (Array.isArray(rawValue) ? rawValue : [rawValue]) : [];
+
+        const appellativeStatusNode = self.getRawNodeValue(
+            params.data(),
+            self.dataConfig.appellativeStatus
+        );
+        if (appellativeStatusNode) {
+            self.appellativeStatusExists(true);
+            self.asTileid(self.getTileId(appellativeStatusNode));
+
+            const typeValues = asAsArray(
+                self.getRawNodeValue(
+                    appellativeStatusNode,
+                    "appellative status type"
+                )
+            )
+                .map((x) => self.getNodeValue(x))
+                .filter((v) => v && v !== "--");
+            self.asType(typeValues.length ? typeValues.join(", ") : "--");
+
+            self.asContextType(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status context type"
+                )
+            );
+            self.asRelation(
+                self.getNodeValue(appellativeStatusNode, "appellative relation")
+            );
+
+            const initiatingActNode = self.getRawNodeValue(
+                appellativeStatusNode,
+                "appellative status initiating act"
+            );
+            self.asInitiatingAct({
+                text: self.getNodeValue(initiatingActNode),
+                link: self.getResourceLink(initiatingActNode),
+            });
+
+            const terminatingActNode = self.getRawNodeValue(
+                appellativeStatusNode,
+                "appellative status terminating act"
+            );
+            self.asTerminatingAct({
+                text: self.getNodeValue(terminatingActNode),
+                link: self.getResourceLink(terminatingActNode),
+            });
+
+            self.asStartDate(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status timespan",
+                    "timespan (date)",
+                    "start date"
+                )
+            );
+            self.asEndDate(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status timespan",
+                    "timespan (date)",
+                    "end date"
+                )
+            );
+            self.asDisplayDate(
+                self.getNodeValue(
+                    appellativeStatusNode,
+                    "appellative status timespan",
+                    "timespan (date)",
+                    "display date"
+                )
+            );
+
+            self.asHoldsFor(
+                asAsArray(
+                    self.getRawNodeValue(
+                        appellativeStatusNode,
+                        "appellative status holds for"
+                    )
+                ).map((x) => ({
+                    text: self.getNodeValue(x),
+                    link: self.getResourceLink(x),
+                }))
+            );
+
+            self.asContext(
+                asAsArray(
+                    self.getRawNodeValue(
+                        appellativeStatusNode,
+                        "appellative status context"
+                    )
+                ).map((x) => ({
+                    text: self.getNodeValue(x),
+                    link: self.getResourceLink(x),
+                }))
+            );
+
+            self.asNames(
+                asAsArray(
+                    self.getRawNodeValue(appellativeStatusNode, "appellation")
+                ).flatMap((appellation) =>
+                    asAsArray(
+                        self.getRawNodeValue(appellation, "names")
+                    ).map((x) => {
+                        const name = self.getNodeValue(x, "name");
+                        const nameType = self.getNodeValue(x, "name type");
+                        const nameUseType = self.getNodeValue(
+                            x,
+                            "name use type"
+                        );
+                        const currency = self.getNodeValue(
+                            x,
+                            "name currency"
+                        );
+                        const tileid = self.getTileId(x);
+                        return {
+                            name,
+                            nameType,
+                            nameUseType,
+                            currency,
+                            tileid,
+                        };
+                    })
+                )
+            );
+
+            self.asNotes(
+                asAsArray(
+                    self.getRawNodeValue(
+                        appellativeStatusNode,
+                        "appellative status statement"
+                    )
+                )
+                    .map((x) => ({
+                        description: self.getNodeValue(
+                            x,
+                            "descriptions",
+                            "description"
+                        ),
+                        type: self.getNodeValue(
+                            x,
+                            "descriptions",
+                            "description type"
+                        ),
+                        tileid: self.getTileId(x),
+                    }))
+                    .filter(
+                        (note) => note.description && note.description !== "--"
+                    )
+            );
+        }
+
+        const whakapapaStatusNode = self.getRawNodeValue(
+            params.data(),
+            self.dataConfig.whakapapaStatus
+        );
+        if (whakapapaStatusNode) {
+            self.whakapapaStatusExists(true);
+            self.wsTileid(self.getTileId(whakapapaStatusNode));
+
+            self.wsAncestors(
+                asAsArray(
+                    self.getRawNodeValue(
+                        whakapapaStatusNode,
+                        "whakapapa status ascribed ancestor"
+                    )
+                ).map((x) => ({
+                    text: self.getNodeValue(x),
+                    link: self.getResourceLink(x),
+                }))
+            );
+
+            self.wsStartDate(
+                self.getNodeValue(
+                    whakapapaStatusNode,
+                    "whakapapa status timespan",
+                    "timespan (date)",
+                    "start date"
+                )
+            );
+            self.wsEndDate(
+                self.getNodeValue(
+                    whakapapaStatusNode,
+                    "whakapapa status timespan",
+                    "timespan (date)",
+                    "end date"
+                )
+            );
+            self.wsDisplayDate(
+                self.getNodeValue(
+                    whakapapaStatusNode,
+                    "whakapapa status timespan",
+                    "timespan (date)",
+                    "display date"
+                )
+            );
+        }
+
+        if (self.dataConfig.parent) {
+            self.parentData = ko.observable({
+                sections: [
+                    {
+                        title: "Relationships",
+                        tileid: self.getTileId(
+                            self.getRawNodeValue(
+                                params.data(),
+                                self.dataConfig.parent
+                            )
+                        ),
+                        data: [
+                            {
+                                key: "Parent Resource",
+                                value: self.getRawNodeValue(
+                                    params.data(),
+                                    self.dataConfig.parent
+                                ),
+                                type: "resource",
+                                card: self.cards?.parent,
+                            },
+                        ],
+                    },
+                ],
+            });
+        }
+
+        if (self.dataConfig.recordStatus) {
+            self.recordStatusData = ko.observable({
+                sections: [
+                    {
+                        title: "Record Status",
+                        data: [
+                            {
+                                key: "Status",
+                                value: self.getNodeValue(
+                                    params.data(),
+                                    self.dataConfig.recordStatus,
+                                    "record status"
+                                ),
+                                type: "kv",
+                                card: self.cards?.recordStatus,
+                            },
+                        ],
+                    },
+                ],
+            });
+        }
+    },
+    template: NameTemplate,
+});

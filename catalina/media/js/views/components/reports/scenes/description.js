@@ -1,0 +1,415 @@
+import _ from "underscore";
+import ko from "knockout";
+import arches from "arches";
+import reportUtils from "utils/report";
+import DescriptionTemplate from "templates/views/components/reports/scenes/description.htm";
+import "bindings/datatable";
+import "bindings/reports";
+
+export default ko.components.register(
+    "views/components/reports/scenes/description",
+    {
+        viewModel: function (params) {
+            const self = this;
+            Object.assign(self, reportUtils);
+
+            //Related Resource 2 column table configuration
+            self.relatedResourceTwoColumnTableConfig = {
+                ...self.defaultTableConfig,
+                paging: true,
+                searching: true,
+                columns: Array(2).fill(null),
+            };
+
+            self.descriptionTableConfig = {
+                ...self.defaultTableConfig,
+                columns: [{ width: "70%" }, { width: "20%" }, null, null],
+            };
+
+            self.citationTableConfig = {
+                ...self.defaultTableConfig,
+                columns: [
+                    { width: "70%" },
+                    { width: "20%" },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                ],
+            };
+
+            self.statementTableConfig = {
+                ...self.defaultTableConfig,
+                columns: [
+                    { width: "25%" },
+                    { width: "10%" },
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                ],
+            };
+
+            self.dataConfig = {
+                descriptions: "descriptions",
+            };
+
+            self.cards = Object.assign({}, params.cards);
+            self.resource = params?.data || undefined;
+            self.edit = params.editTile || self.editTile;
+            self.delete = params.deleteTile || self.deleteTile;
+            self.add = params.addTile || self.addNewTile;
+            self.citations = ko.observableArray();
+            self.descriptions = ko.observableArray();
+            self.audience = ko.observableArray();
+            self.statements = ko.observableArray();
+            self.sourceReferenceWork = ko.observableArray();
+            self.subjectData = ko.observable();
+            self.visible = {
+                descriptions: ko.observable(true),
+                citation: ko.observable(true),
+                audience: ko.observable(true),
+                statement: ko.observable(true),
+                sourceReferenceWork: ko.observable(true),
+            };
+            Object.assign(self.dataConfig, params.dataConfig || {});
+
+            // if params.compiled is set and true, the user has compiled their own data.  Use as is.
+            if (params?.compiled) {
+                self.descriptions(params.data.descriptions);
+            } else {
+                const rawDescriptionData = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.descriptions
+                );
+                const descriptionData = rawDescriptionData
+                    ? Array.isArray(rawDescriptionData)
+                        ? rawDescriptionData
+                        : [rawDescriptionData]
+                    : undefined;
+                if (descriptionData) {
+                    self.descriptions(
+                        descriptionData.map((x) => {
+                            const type = self.getNodeValue(x, {
+                                testPaths: [
+                                    [
+                                        `${self.dataConfig.descriptions.slice(
+                                            0,
+                                            -1
+                                        )} type`,
+                                    ],
+                                ],
+                            });
+                            const content = self.getRawNodeValue(x, {
+                                testPaths: [
+                                    [
+                                        self.dataConfig.descriptions.slice(
+                                            0,
+                                            -1
+                                        ),
+                                        "@display_value",
+                                    ],
+                                ],
+                            });
+                            const language = self.getNodeValue(x, {
+                                testPaths: [
+                                    [
+                                        `${self.dataConfig.descriptions.slice(
+                                            0,
+                                            -1
+                                        )} language`,
+                                    ],
+                                ],
+                            });
+
+                            const tileid = self.getTileId(x);
+                            return { type, content, language, tileid };
+                        })
+                    );
+                }
+
+                const rawCitationData = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.citation
+                );
+                const citationData = rawCitationData
+                    ? Array.isArray(rawCitationData)
+                        ? rawCitationData
+                        : [rawCitationData]
+                    : undefined;
+                if (citationData) {
+                    self.citations(
+                        citationData.map((x) => {
+                            const link = self.getResourceLink(x);
+                            const linkText = self.getNodeValue(x);
+                            const sourceNumber = self.getNodeValue(
+                                x,
+                                "source number",
+                                "source number value"
+                            );
+                            const pages = self.getNodeValue(
+                                x,
+                                "pages",
+                                "page(s)"
+                            );
+                            const figures = self.getNodeValue(
+                                x,
+                                "figures",
+                                "figs."
+                            );
+                            const plates = self.getNodeValue(
+                                x,
+                                "plates",
+                                "plate(s)"
+                            );
+                            const comment = self.getNodeValue(
+                                x,
+                                "source comment",
+                                "comment"
+                            );
+                            const tileid = self.getTileId(x);
+                            return {
+                                link,
+                                linkText,
+                                sourceNumber,
+                                pages,
+                                figures,
+                                plates,
+                                comment,
+                                tileid,
+                            };
+                        })
+                    );
+                }
+
+                const rawAudienceTypeNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.audience
+                );
+                const audienceTypeNode = rawAudienceTypeNode
+                    ? Array.isArray(rawAudienceTypeNode)
+                        ? rawAudienceTypeNode
+                        : [rawAudienceTypeNode]
+                    : undefined;
+                if (audienceTypeNode) {
+                    self.audience(
+                        audienceTypeNode.map((x) => {
+                            const audienceTypeList = self.getRawNodeValue(
+                                x,
+                                "@display_value"
+                            );
+                            var audienceType = audienceTypeList.replace(
+                                /,/g,
+                                ", "
+                            );
+                            const tileid = self.getTileId(x);
+                            return { audienceType, tileid };
+                        })
+                    );
+                }
+
+                const rawStatementData = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.statement
+                );
+                const statementData = rawStatementData
+                    ? Array.isArray(rawStatementData)
+                        ? rawStatementData
+                        : [rawStatementData]
+                    : undefined;
+                if (statementData) {
+                    self.statements(
+                        statementData.map((x) => {
+                            const content = self.getNodeValue(
+                                x,
+                                "statement_content"
+                            );
+                            const label = self.getNodeValue(
+                                x,
+                                "statement_label"
+                            );
+                            const type = self.getNodeValue(
+                                x,
+                                "statement_type"
+                            );
+                            const language = self.getNodeValue(
+                                x,
+                                "statement_language"
+                            );
+                            const tileid = self.getTileId(x);
+
+                            // Statement_name and Statement_creation are nested,
+                            // separately-carded child nodegroups (cardinality n) under
+                            // Statement, not simple sibling fields.
+                            const rawNames = self.getRawNodeValue(
+                                x,
+                                "statement_name"
+                            );
+                            const names = (
+                                Array.isArray(rawNames)
+                                    ? rawNames
+                                    : rawNames
+                                      ? [rawNames]
+                                      : []
+                            ).map((n) => ({
+                                content: self.getNodeValue(
+                                    n,
+                                    "statement_name_content"
+                                ),
+                                label: self.getNodeValue(
+                                    n,
+                                    "statement_name_label"
+                                ),
+                                language: self.getNodeValue(
+                                    n,
+                                    "statement_name_language"
+                                ),
+                                type: self.getNodeValue(
+                                    n,
+                                    "statement_name_type"
+                                ),
+                                source: self.getResourceLink(
+                                    self.getRawNodeValue(
+                                        n,
+                                        "statement_name_source"
+                                    )
+                                ),
+                                sourceText: self.getNodeValue(
+                                    n,
+                                    "statement_name_source"
+                                ),
+                            }));
+
+                            const rawCreations = self.getRawNodeValue(
+                                x,
+                                "statement_creation"
+                            );
+                            const creations = (
+                                Array.isArray(rawCreations)
+                                    ? rawCreations
+                                    : rawCreations
+                                      ? [rawCreations]
+                                      : []
+                            ).map((c) => ({
+                                carriedOutBy: self.getNodeValue(
+                                    c,
+                                    "statement_creation_carried out by"
+                                ),
+                                carriedOutByLink: self.getResourceLink(
+                                    self.getRawNodeValue(
+                                        c,
+                                        "statement_creation_carried out by"
+                                    )
+                                ),
+                                digitalReference: self.getNodeValue(
+                                    c,
+                                    "statement_creation_digital reference"
+                                ),
+                                digitalReferenceLink: self.getResourceLink(
+                                    self.getRawNodeValue(
+                                        c,
+                                        "statement_creation_digital reference"
+                                    )
+                                ),
+                                textualReference: self.getNodeValue(
+                                    c,
+                                    "statement_creation_textual reference"
+                                ),
+                                textualReferenceLink: self.getResourceLink(
+                                    self.getRawNodeValue(
+                                        c,
+                                        "statement_creation_textual reference"
+                                    )
+                                ),
+                                timeBeginOfBegin: self.getNodeValue(
+                                    c,
+                                    "statement_creation_time",
+                                    "statement_creation_time_begin of the begin"
+                                ),
+                                timeBeginOfEnd: self.getNodeValue(
+                                    c,
+                                    "statement_creation_time",
+                                    "statement_creation_time_begin of the end"
+                                ),
+                                timeEndOfBegin: self.getNodeValue(
+                                    c,
+                                    "statement_creation_time",
+                                    "statement_creation_time_end of the begin"
+                                ),
+                                timeEndOfEnd: self.getNodeValue(
+                                    c,
+                                    "statement_creation_time",
+                                    "statement_creation_time_end of the end"
+                                ),
+                                timeLabel: self.getNodeValue(
+                                    c,
+                                    "statement_creation_time",
+                                    "statement_creation_time_label"
+                                ),
+                                timeType: self.getNodeValue(
+                                    c,
+                                    "statement_creation_time",
+                                    "statement_creation_time_type"
+                                ),
+                            }));
+
+                            return {
+                                content,
+                                label,
+                                type,
+                                language,
+                                tileid,
+                                names,
+                                creations,
+                            };
+                        })
+                    );
+                }
+
+                const rawSourceReferenceWorkNode = self.getRawNodeValue(
+                    params.data(),
+                    self.dataConfig.sourceReferenceWork
+                );
+                const sourceReferenceWorkData = rawSourceReferenceWorkNode
+                    ? Array.isArray(rawSourceReferenceWorkNode)
+                        ? rawSourceReferenceWorkNode
+                        : [rawSourceReferenceWorkNode]
+                    : undefined;
+                if (sourceReferenceWorkData) {
+                    self.sourceReferenceWork(
+                        sourceReferenceWorkData.map((x) => {
+                            const link = self.getResourceLink(x);
+                            const linkText = self.getNodeValue(x);
+                            const tileid = self.getTileId(x);
+                            return { link, linkText, tileid };
+                        })
+                    );
+                }
+
+                if (self.dataConfig.subject) {
+                    self.subjectData = ko.observable({
+                        sections: [
+                            {
+                                title: "Archive Subject",
+                                data: [
+                                    {
+                                        key: "Subject",
+                                        value: self.getRawNodeValue(
+                                            params.data(),
+                                            self.dataConfig.subject
+                                        ),
+                                        type: "kv",
+                                        card: self.cards?.subject,
+                                    },
+                                ],
+                            },
+                        ],
+                    });
+                }
+            }
+        },
+        template: DescriptionTemplate,
+    }
+);
