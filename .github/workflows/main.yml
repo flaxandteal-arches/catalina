@@ -63,7 +63,19 @@ jobs:
           ref: ${{ github.event.pull_request.base.ref }}
           path: .
 
+      - name: Check for build-and-test-branch action on target branch
+        id: check_target_action
+        shell: bash
+        run: |
+          if [ -f .github/actions/build-and-test-branch/action.yml ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Target branch does not have .github/actions/build-and-test-branch yet (likely the PR that introduces it); skipping target branch build/test."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build and test branch
+        if: steps.check_target_action.outputs.exists == 'true'
         uses: ./.github/actions/build-and-test-branch
         with:
           secrets: ${{ toJSON(secrets) }}
@@ -288,6 +300,7 @@ jobs:
           path: .
 
       - name: Download target branch Python coverage report artifact
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           name: target-branch-python-coverage-report
@@ -297,7 +310,13 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           feature_branch_python_coverage=$(cat feature_branch_python_coverage.json | grep -o '"totals": {[^}]*' | grep -o '"percent_covered": [0-9.]*' | awk -F ': ' '{print $2}')
-          target_branch_python_coverage=$(cat target_branch_python_coverage.json | grep -o '"totals": {[^}]*' | grep -o '"percent_covered": [0-9.]*' | awk -F ': ' '{print $2}')
+
+          if [ -f target_branch_python_coverage.json ]; then
+            target_branch_python_coverage=$(cat target_branch_python_coverage.json | grep -o '"totals": {[^}]*' | grep -o '"percent_covered": [0-9.]*' | awk -F ': ' '{print $2}')
+          else
+            echo "Target branch coverage not found. Defaulting to 0% coverage."
+            target_branch_python_coverage=0.0
+          fi
 
           # Compare feature coverage with target coverage using floating-point comparison
           if awk -v feature="$feature_branch_python_coverage" -v target="$target_branch_python_coverage" 'BEGIN { exit (feature < target) ? 0 : 1 }'; then
