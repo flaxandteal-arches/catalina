@@ -1,0 +1,800 @@
+{% extends "views/report-templates/default.htm" %}
+{% load i18n %}
+
+{% block report %}
+    {% block report_title_bar %}
+    <!-- Custom Template Report Title Bar -->
+    <div class="relative">
+
+        <!-- Title Block -->
+        <div class="aher-report-toolbar">
+            <h1 class="aher-report-toolbar-title"><span class="aher-report-name">{% trans "Heritage Place" %}:</span><span data-bind="text: displayname" class="aher-report-instance-name"></span></h1>
+        </div>
+
+    </div>
+    {% endblock report_title_bar %}
+
+
+    {% block body %}
+    <!-- Link nav -->
+    <div class="aher-report-anchor-container">
+        <ol class="aher-report-anchors breadcrumb">
+            <!-- ko foreach: {data: sections, as: 'section'} -->
+            <li tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function(){$parent.activeSection(section.id)},
+                css: {active: $parent.activeSection() === section.id},
+                text: section.title, attr: {'aria-controls': 'tabcontent_' + section.id, 'aria-expanded': $parent.activeSection() === section.id ? 'true' : 'false'}"
+                class="aher-report-a" aria-expanded="false" role="tab"></li>
+            <!-- /ko -->
+        </ol>
+    </div>
+    <div class="aher-tabbed-report">
+        <div class="aher-tabbed-report-content">
+            <!-- Names Tab -->
+            <div id="tabcontent_name" class="aher-report-page" data-bind="if: activeSection() === 'name'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/name',
+                    params: {
+                        data: resource,
+                        cards: nameCards,
+                        dataConfig: nameDataConfig
+                    }
+                }"></div>
+            </div>
+            <!-- Description Tab -->
+            <div id="tabcontent_description" class="aher-report-page" data-bind="if: activeSection() === 'description'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/default',
+                    params: {
+                        data: recordTypeData,
+                    }
+                }"></div>
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/default',
+                    params: {
+                        data: auditMetadataData,
+                    }
+                }"></div>
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/description',
+                    params: {
+                        data: resource,
+                        cards: descriptionCards,
+                        dataConfig: descriptionDataConfig
+                    }
+                }"></div>
+                <!-- Source Reference Work section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title" style="margin-bottom: 40px;"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.sourceReferenceWork)}, onReportSectionToggleAria: visible.sourceReferenceWork, sectionName: '{% trans "Source Reference Work" %}'" class="fa toggle"></i> {% trans "Source Reference Work" %}</h2>
+                    <span data-bind="if: cards['source reference work'] && (!sourceReferenceWorks().length || cards['source reference work'].cardinality == 'n')">
+                        <a class="aher-report-a" data-bind="click: function(){addNewTile(cards['source reference work'])}"><i class="fa fa-mail-reply"></i> {% trans "Add Source Reference Work" %}</a>
+                    </span>
+                    <div data-bind="visible: visible.sourceReferenceWork" class="aher-report-collapsible-container pad-lft">
+                        <!-- ko ifnot: sourceReferenceWorks().length -->
+                        <div class="aher-nodata-note">No source reference work for this resource</div>
+                        <!-- /ko -->
+                        <!-- ko if: sourceReferenceWorks().length -->
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Reference Work" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="dataTablesForEach: { data: sourceReferenceWorks, dataTableOptions: sourceReferenceWorkTableConfig }">
+                                        <tr>
+                                            <td><a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a></td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['source reference work']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(tileid, $parent.cards['source reference work'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: $parent.deleteTile.bind($data, tileid, $parent.cards['source reference work'], $parent.resource)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <!-- Record and Registry Membership section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.recordRegistry)}, onReportSectionToggleAria: visible.recordRegistry, sectionName: '{% trans "Record and Registry Membership" %}'" class="fa toggle"></i> {% trans "Record and Registry Membership" %}</h2>
+                    <span data-bind="if: cards['record and registry membership'] && (!recordRegistryMemberships().length || cards['record and registry membership'].cardinality == 'n')">
+                        <a class="aher-report-a" data-bind="click: function(){addNewTile(cards['record and registry membership'])}"><i class="fa fa-mail-reply"></i> {% trans "Add Record/Registry" %}</a>
+                    </span>
+                    <div data-bind="visible: visible.recordRegistry" class="aher-report-collapsible-container pad-lft">
+                        <!-- ko ifnot: recordRegistryMemberships().length -->
+                        <div class="aher-nodata-note">No record or registry membership for this resource</div>
+                        <!-- /ko -->
+                        <!-- ko if: recordRegistryMemberships().length -->
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Registry" %}</th>
+                                            <th class="none">{% trans "External Cross References" %}</th>
+                                            <th class="none">{% trans "Period of Membership" %}</th>
+                                            <th class="none">{% trans "Sign Off" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="dataTablesForEach: { data: recordRegistryMemberships, dataTableOptions: recordRegistryTableConfig }">
+                                        <tr>
+                                            <td><a class="aher-table-link" data-bind="attr: {href: registry}, text: registryText"></a></td>
+                                            <td>
+                                                <!-- ko ifnot: externalCrossReferences.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: externalCrossReferences">
+                                                    <div class="pad-btm-sm">
+                                                        <div data-bind="text: description"></div>
+                                                        <div><span class="aher-block-key">{% trans "Description Type" %}:</span> <span data-bind="text: descriptionType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Description Metatype" %}:</span> <span data-bind="text: descriptionMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Source" %}:</span> <span data-bind="text: source"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Number" %}:</span> <span data-bind="text: number"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "URL" %}:</span> <a data-bind="text: url, attr: {href: url, target: '_blank'}"></a></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: periodsOfMembership.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: periodsOfMembership">
+                                                    <div class="pad-btm-sm">
+                                                        <div data-bind="text: displayDate"></div>
+                                                        <div><span class="aher-block-key">{% trans "Start Date" %}:</span> <span data-bind="text: startDate"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "End Date" %}:</span> <span data-bind="text: endDate"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Date Qualifier" %}:</span> <span data-bind="text: dateQualifier"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Date Qualifier Metatype" %}:</span> <span data-bind="text: dateQualifierMetatype"></span></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: signOffs.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: signOffs">
+                                                    <div class="pad-btm-sm">
+                                                        <div><span class="aher-block-key">{% trans "Status Type" %}:</span> <span data-bind="text: statusType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Status Metatype" %}:</span> <span data-bind="text: statusMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Approved By Value" %}:</span> <a class="aher-table-link" data-bind="attr: {href: approvedByValueLink}, text: approvedByValue"></a></div>
+                                                        <div><span class="aher-block-key">{% trans "Approved By Role Type" %}:</span> <span data-bind="text: approvedByRoleType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Approved By Metatype" %}:</span> <span data-bind="text: approvedByMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Approved Date Value" %}:</span> <span data-bind="text: approvedDateValue"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Approved Date Qualifier" %}:</span> <span data-bind="text: approvedDateQualifier"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Approved Date Qualifier Metatype" %}:</span> <span data-bind="text: approvedDateQualifierMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Reference Number" %}:</span> <span data-bind="text: referenceNumber"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Reference Number Type" %}:</span> <span data-bind="text: referenceNumberType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Reference Number Metatype" %}:</span> <span data-bind="text: referenceNumberMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Input By Value" %}:</span> <a class="aher-table-link" data-bind="attr: {href: inputByValueLink}, text: inputByValue"></a></div>
+                                                        <div><span class="aher-block-key">{% trans "Input By Role Type" %}:</span> <span data-bind="text: inputByRoleType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Input By Role Metatype" %}:</span> <span data-bind="text: inputByRoleMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Input Date Value" %}:</span> <span data-bind="text: inputDateValue"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Input Date Qualifier" %}:</span> <span data-bind="text: inputDateQualifier"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Input Date Qualifier Metatype" %}:</span> <span data-bind="text: inputDateQualifierMetatype"></span></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['record and registry membership']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(tileid, $parent.cards['record and registry membership'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: $parent.deleteTile.bind($data, tileid, $parent.cards['record and registry membership'], $parent.resource)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <!-- Classification Tab -->
+            <div id="tabcontent_classifications" class="aher-report-page" data-bind="if: activeSection() === 'classifications'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/classifications',
+                    params: {
+                        data: resource,
+                        dataConfig: classificationDataConfig,
+                        cards: classificationCards
+                    }
+                }"></div>
+                <!-- Whakapapa Status section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title" style="margin-bottom: 40px;"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.whakapapaStatus)}, onReportSectionToggleAria: visible.whakapapaStatus, sectionName: '{% trans "Whakapapa Status" %}'" class="fa toggle"></i> {% trans "Whakapapa Status" %}</h2>
+                    <div data-bind="visible: visible.whakapapaStatus" class="aher-report-collapsible-container pad-lft">
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Display Date" %}</th>
+                                            <th>{% trans "Start Date" %}</th>
+                                            <th>{% trans "End Date" %}</th>
+                                            <th class="none">{% trans "Ascribed Ancestor" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="with: whakapapaStatus, as: 'ws'">
+                                        <tr>
+                                            <td data-bind="text: ws.displayDate"></td>
+                                            <td data-bind="text: ws.startDate"></td>
+                                            <td data-bind="text: ws.endDate"></td>
+                                            <td>
+                                                <!-- ko ifnot: ws.ancestors.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: ws.ancestors">
+                                                    <div class="pad-btm-sm">
+                                                        <a class="aher-table-link" data-bind="attr: {href: ancestor}, text: ancestorText"></a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['whakapapa status']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(ws.tileid, $parent.cards['whakapapa status'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Appellative Status section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title" style="margin-bottom: 40px;"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.appellativeStatus)}, onReportSectionToggleAria: visible.appellativeStatus, sectionName: '{% trans "Appellative Status" %}'" class="fa toggle"></i> {% trans "Appellative Status" %}</h2>
+                    <div data-bind="visible: visible.appellativeStatus" class="aher-report-collapsible-container pad-lft">
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Appellative Relation" %}</th>
+                                            <th class="none">{% trans "Timespan" %}</th>
+                                            <th class="none">{% trans "Context / Type" %}</th>
+                                            <th class="none">{% trans "Names" %}</th>
+                                            <th class="none">{% trans "Statement" %}</th>
+                                            <th class="none">{% trans "Related Resources" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="with: appellativeStatus, as: 'as_'">
+                                        <tr>
+                                            <td data-bind="text: as_.appellativeRelation"></td>
+                                            <td>
+                                                <div><span class="aher-block-key">{% trans "Display Date" %}:</span> <span data-bind="text: as_.displayDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "Start Date" %}:</span> <span data-bind="text: as_.startDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "End Date" %}:</span> <span data-bind="text: as_.endDate"></span></div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: as_.contextTypes.length || as_.types.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <!-- ko if: as_.contextTypes.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Context Type" %}:</span>
+                                                    <div data-bind="foreach: as_.contextTypes">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: as_.types.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Type" %}:</span>
+                                                    <div data-bind="foreach: as_.types">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: as_.names.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: as_.names">
+                                                    <div class="pad-btm-sm">
+                                                        <div data-bind="text: name"></div>
+                                                        <div><span class="aher-block-key">{% trans "Name Type" %}:</span> <span data-bind="text: nameType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Name Metatype" %}:</span> <span data-bind="text: nameMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Name Use Type" %}:</span> <span data-bind="text: nameUseType"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Name Use Metatype" %}:</span> <span data-bind="text: nameUseMetatype"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Name Currency" %}:</span> <span data-bind="text: nameCurrency"></span></div>
+                                                        <div><span class="aher-block-key">{% trans "Name Currency Metatype" %}:</span> <span data-bind="text: nameCurrencyMetatype"></span></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: as_.statements.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: as_.statements">
+                                                    <div data-bind="foreach: descriptions" class="pad-btm-sm">
+                                                        <div class="pad-btm-sm">
+                                                            <div data-bind="text: description"></div>
+                                                            <div><span class="aher-block-key">{% trans "Type" %}:</span> <span data-bind="text: descriptionType"></span></div>
+                                                            <div><span class="aher-block-key">{% trans "Language" %}:</span> <span data-bind="text: descriptionLanguage"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko if: as_.context -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Context" %}:</span> <a class="aher-table-link" data-bind="attr: {href: as_.context}, text: as_.contextText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: as_.initiatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Initiating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: as_.initiatingAct}, text: as_.initiatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: as_.terminatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Terminating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: as_.terminatingAct}, text: as_.terminatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: as_.holdsFor.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Holds For" %}:</span>
+                                                    <div data-bind="foreach: as_.holdsFor">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['appellative status']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(as_.tileid, $parent.cards['appellative status'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Classification section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title" style="margin-bottom: 40px;"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.classification)}, onReportSectionToggleAria: visible.classification, sectionName: '{% trans "Classification" %}'" class="fa toggle"></i> {% trans "Classification" %}</h2>
+                    <div data-bind="visible: visible.classification" class="aher-report-collapsible-container pad-lft">
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Ascribed Relation" %}</th>
+                                            <th class="none">{% trans "Timespan" %}</th>
+                                            <th class="none">{% trans "Classification / Context Type / Type" %}</th>
+                                            <th class="none">{% trans "Statement" %}</th>
+                                            <th class="none">{% trans "Related Resources" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="with: classification, as: 'cl'">
+                                        <tr>
+                                            <td data-bind="text: cl.ascribedRelation"></td>
+                                            <td>
+                                                <div><span class="aher-block-key">{% trans "Display Date" %}:</span> <span data-bind="text: cl.displayDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "Start Date" %}:</span> <span data-bind="text: cl.startDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "End Date" %}:</span> <span data-bind="text: cl.endDate"></span></div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: cl.classifications.length || cl.contextTypes.length || cl.types.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <!-- ko if: cl.classifications.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Classification" %}:</span>
+                                                    <div data-bind="foreach: cl.classifications">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cl.contextTypes.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Context Type" %}:</span>
+                                                    <div data-bind="foreach: cl.contextTypes">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cl.types.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Type" %}:</span>
+                                                    <div data-bind="foreach: cl.types">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: cl.statements.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: cl.statements">
+                                                    <div data-bind="foreach: descriptions" class="pad-btm-sm">
+                                                        <div class="pad-btm-sm">
+                                                            <div data-bind="text: description"></div>
+                                                            <div><span class="aher-block-key">{% trans "Type" %}:</span> <span data-bind="text: descriptionType"></span></div>
+                                                            <div><span class="aher-block-key">{% trans "Language" %}:</span> <span data-bind="text: descriptionLanguage"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko if: cl.initiatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Initiating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: cl.initiatingAct}, text: cl.initiatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cl.terminatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Terminating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: cl.terminatingAct}, text: cl.terminatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cl.holdsFor.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Holds For" %}:</span>
+                                                    <div data-bind="foreach: cl.holdsFor">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cl.eventContext.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Event Context" %}:</span>
+                                                    <div data-bind="foreach: cl.eventContext">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['classification']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(cl.tileid, $parent.cards['classification'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Function Status section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title" style="margin-bottom: 40px;"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.functionStatus)}, onReportSectionToggleAria: visible.functionStatus, sectionName: '{% trans "Function Status" %}'" class="fa toggle"></i> {% trans "Function Status" %}</h2>
+                    <div data-bind="visible: visible.functionStatus" class="aher-report-collapsible-container pad-lft">
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Ascribed Relation" %}</th>
+                                            <th class="none">{% trans "Timespan" %}</th>
+                                            <th class="none">{% trans "Function / Context Type / Type" %}</th>
+                                            <th class="none">{% trans "Statement" %}</th>
+                                            <th class="none">{% trans "Related Resources" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="with: functionStatus, as: 'fs'">
+                                        <tr>
+                                            <td data-bind="text: fs.ascribedRelation"></td>
+                                            <td>
+                                                <div><span class="aher-block-key">{% trans "Display Date" %}:</span> <span data-bind="text: fs.displayDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "Start Date" %}:</span> <span data-bind="text: fs.startDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "End Date" %}:</span> <span data-bind="text: fs.endDate"></span></div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: fs.values.length || fs.contextType || fs.types.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <!-- ko if: fs.values.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Function" %}:</span>
+                                                    <div data-bind="foreach: fs.values">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: fs.contextType -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Context Type" %}:</span> <span data-bind="text: fs.contextType"></span></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: fs.types.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Type" %}:</span>
+                                                    <div data-bind="foreach: fs.types">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: fs.statements.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: fs.statements">
+                                                    <div data-bind="foreach: descriptions" class="pad-btm-sm">
+                                                        <div class="pad-btm-sm">
+                                                            <div data-bind="text: description"></div>
+                                                            <div><span class="aher-block-key">{% trans "Type" %}:</span> <span data-bind="text: descriptionType"></span></div>
+                                                            <div><span class="aher-block-key">{% trans "Language" %}:</span> <span data-bind="text: descriptionLanguage"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko if: fs.initiatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Initiating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: fs.initiatingAct}, text: fs.initiatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: fs.terminatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Terminating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: fs.terminatingAct}, text: fs.terminatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: fs.holdsFor.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Holds For" %}:</span>
+                                                    <div data-bind="foreach: fs.holdsFor">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: fs.context.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Context" %}:</span>
+                                                    <div data-bind="foreach: fs.context">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['function status']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(fs.tileid, $parent.cards['function status'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Custodial Status section -->
+                <div class="aher-report-section">
+                    <h2 class="aher-report-section-title" style="margin-bottom: 40px;"><i tabindex="0" data-bind="onEnterkeyClick, onSpaceClick, click: function() {toggleVisibility(visible.custodialStatus)}, onReportSectionToggleAria: visible.custodialStatus, sectionName: '{% trans "Custodial Status" %}'" class="fa toggle"></i> {% trans "Custodial Status" %}</h2>
+                    <div data-bind="visible: visible.custodialStatus" class="aher-report-collapsible-container pad-lft">
+                        <div class="aher-report-subsection">
+                            <div class="aher-table pad-btm">
+                                <table class="table table-striped" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="aher-table-header">
+                                            <th>{% trans "Ascribed Relation" %}</th>
+                                            <th class="none">{% trans "Timespan" %}</th>
+                                            <th class="none">{% trans "Custodians / Context Type / Type" %}</th>
+                                            <th class="none">{% trans "Statement" %}</th>
+                                            <th class="none">{% trans "Related Resources" %}</th>
+                                            <th class="aher-table-control all"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="with: custodialStatus, as: 'cu'">
+                                        <tr>
+                                            <td data-bind="text: cu.ascribedRelation"></td>
+                                            <td>
+                                                <div><span class="aher-block-key">{% trans "Display Date" %}:</span> <span data-bind="text: cu.displayDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "Start Date" %}:</span> <span data-bind="text: cu.startDate"></span></div>
+                                                <div><span class="aher-block-key">{% trans "End Date" %}:</span> <span data-bind="text: cu.endDate"></span></div>
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: cu.custodians.length || cu.contextType || cu.types.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <!-- ko if: cu.custodians.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Custodian" %}:</span>
+                                                    <div data-bind="foreach: cu.custodians">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cu.contextType -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Context Type" %}:</span> <span data-bind="text: cu.contextType"></span></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cu.types.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Type" %}:</span>
+                                                    <div data-bind="foreach: cu.types">
+                                                        <div data-bind="text: value"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td>
+                                                <!-- ko ifnot: cu.statements.length -->
+                                                <span class="aher-nodata-note">--</span>
+                                                <!-- /ko -->
+                                                <div data-bind="foreach: cu.statements">
+                                                    <div data-bind="foreach: descriptions" class="pad-btm-sm">
+                                                        <div class="pad-btm-sm">
+                                                            <div data-bind="text: description"></div>
+                                                            <div><span class="aher-block-key">{% trans "Type" %}:</span> <span data-bind="text: descriptionType"></span></div>
+                                                            <div><span class="aher-block-key">{% trans "Language" %}:</span> <span data-bind="text: descriptionLanguage"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- ko if: cu.initiatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Initiating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: cu.initiatingAct}, text: cu.initiatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cu.terminatingAct -->
+                                                <div class="pad-btm-sm"><span class="aher-block-key">{% trans "Terminating Act" %}:</span> <a class="aher-table-link" data-bind="attr: {href: cu.terminatingAct}, text: cu.terminatingActText"></a></div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cu.holdsFor.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Holds For" %}:</span>
+                                                    <div data-bind="foreach: cu.holdsFor">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko if: cu.eventContext.length -->
+                                                <div class="pad-btm-sm">
+                                                    <span class="aher-block-key">{% trans "Event Context" %}:</span>
+                                                    <div data-bind="foreach: cu.eventContext">
+                                                        <a class="aher-table-link" data-bind="attr: {href: link}, text: text"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td class="aher-table-control">
+                                                <div data-bind="if: $parent.cards && $parent.cards['custodial status']">
+                                                    <a href="#" data-bind="onEnterkeyClick, onSpaceClick, click: function() {$parent.editTile(cu.tileid, $parent.cards['custodial status'])}">
+                                                        <i class="fa fa-mail-reply"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Location Tab -->
+            <div id="tabcontent_location" class="aher-report-page" data-bind="if: activeSection() === 'location'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/location',
+                    params: {
+                        data: resource,
+                        cards: locationCards
+                    }
+                }"></div>
+            </div>
+            <!-- Designation/Protection Tab -->
+            <div id="tabcontent_protection" class="aher-report-page" data-bind="if: activeSection() === 'protection'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/protection',
+                    params: {
+                        data: resource,
+                        cards: protectionCards,
+                        dataConfig: protectionDataConfig
+                    }
+                }"></div>
+            </div>
+            <!-- Assessments Tab -->
+            <div id="tabcontent_assessments" class="aher-report-page" data-bind="if: activeSection() === 'assessments'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/assessments',
+                    params: {
+                        data: resource,
+                        cards: assessmentCards
+                    }
+                }"></div>
+            </div>
+            <!-- Images Tab -->
+            <div id="tabcontent_images" class="aher-report-page" data-bind="if: activeSection() === 'images'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/images',
+                    params: {
+                        data: resource,
+                        cards: imagesCards
+                    }
+                }"></div>
+            </div>
+            <!-- People Tab -->
+            <div id="tabcontent_people" class="aher-report-page" data-bind="if: activeSection() === 'people'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/people',
+                    params: {
+                        data: resource,
+                        cards: peopleCards,
+                        dataConfig: peopleDataConfig
+                    }
+                }"></div>
+            </div>
+            <!-- Resources Tab -->
+            <div id="tabcontent_resources" class="aher-report-page" data-bind="if: activeSection() === 'resources'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/resources',
+                    params: {
+                        data: resource,
+                        cards: resourcesCards,
+                        dataConfig: resourceDataConfig
+                    }
+                }"></div>
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/default',
+                    params: {
+                        data: fieldAssessmentData,
+                    }
+                }"></div>
+            </div>
+             <!-- JSON Tab -->
+            <div id="tabcontent_json" class="aher-report-page aher-flex-col" data-bind="if: activeSection() === 'json'" aria-live="polite" role="tabpanel">
+                <div class="aher-flex-col" data-bind="component: {
+                    name: 'views/components/reports/scenes/json',
+                    params: {
+                        resourceInstanceId: reportMetadata().resourceinstanceid,
+                    }
+                }"></div>
+            </div>
+            <!-- Communication Tab -->
+            <div id="tabcontent_communication" class="aher-report-page" data-bind="if: activeSection() === 'communication'" aria-live="polite" role="tabpanel">
+                <div data-bind="component: {
+                    name: 'views/components/reports/scenes/communication',
+                    params: {
+                        data: resource,
+                        cards: communicationCards
+                    }
+                }"></div>
+            </div>
+        </div>
+    </div>
+    {% endblock body %}
+{% endblock report %}
+
+{% block summary %}
+<div class="aher-summary-report-header">
+    <h1 class="aher-summary-report-title"><span data-bind="text: displayname" class="aher-report-instance-name"></span><span class="aher-report-name pad-lft-sm">{% trans "(Heritage Place)" %}</span></h1>
+</div>
+<div class="model-summary-report">
+    <div class="aher-report-page">
+        <!-- Names -->
+        <div data-bind="component: {
+            name: 'views/components/reports/scenes/name',
+            params: {
+                data: resource,
+                cards: nameCards,
+                dataConfig: nameDataConfig
+            }
+        }"></div>
+        <!-- Description -->
+        <div data-bind="component: {
+            name: 'views/components/reports/scenes/description',
+            params: {
+                data: resource,
+                cards: descriptionCards,
+                dataConfig: descriptionDataConfig
+            }
+        }"></div>
+    </div>
+</div>
+
+{% endblock summary %}
