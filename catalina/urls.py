@@ -6,8 +6,7 @@ from django.urls import include, path, re_path
 from . import views_azure
 from .overlays.proxy import ArcGISPortalProxyView
 
-urlpatterns = [
-]
+urlpatterns = []
 
 handler400 = "arches.app.views.main.custom_400"
 handler403 = "arches.app.views.main.custom_403"
@@ -40,6 +39,7 @@ if settings.ROOT_URLCONF == __name__:
 if settings.DEBUG:
     from django.contrib.staticfiles import views
     from django.urls import re_path
+
     urlpatterns += [
-        re_path(r'^static/(?P<path>.*)$', views.serve),
+        re_path(r"^static/(?P<path>.*)$", views.serve),
     ]

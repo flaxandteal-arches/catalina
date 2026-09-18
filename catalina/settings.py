@@ -5,6 +5,7 @@ Django settings for catalina project.
 # Load environment variables from .env file if python-dotenv is available
 try:
     from dotenv import load_dotenv
+
     load_dotenv()
 except ImportError:
     # python-dotenv not installed, environment variables should be set externally
@@ -22,6 +23,7 @@ except ImportError:
     pass
 
 from django.conf.locale import LANG_INFO
+
 LANG_INFO["mi"] = {
     "bidi": False,
     "code": "mi",
@@ -51,7 +53,7 @@ PERMISSION_LOCATIONS.append("catalina.permissions")
 # Blanket-role group names — override these to rename the roles without
 # touching the permission framework code or migration logic.
 BLANKET_FULL_ACCESS_GROUPS = ["Administrator"]  # view + change + delete on all
-BLANKET_READ_ACCESS_GROUPS = ["Editor"]          # view on all
+BLANKET_READ_ACCESS_GROUPS = ["Editor"]  # view on all
 
 # Resource-instance permissions default to DENY via the stopgap blanket-role
 # framework (see catalina.permissions.blanket_roles). Set
@@ -279,7 +281,9 @@ MIDDLEWARE.append(  # this must resolve last MIDDLEWARE entry
 )
 
 # Security headers
-SECURE_SSL_REDIRECT = not DEBUG and not bool(os.environ.get("SECURE_SSL_OVERRIDE", False))
+SECURE_SSL_REDIRECT = not DEBUG and not bool(
+    os.environ.get("SECURE_SSL_OVERRIDE", False)
+)
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SECURE_HSTS_SECONDS = 31536000  # 1 year
@@ -289,7 +293,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 
 SECURE_REFERRER_POLICY = "same-origin"
-X_FRAME_OPTIONS = 'DENY'
+X_FRAME_OPTIONS = "DENY"
 
 # Cookie settings
 CSRF_COOKIE_HTTPONLY = False
@@ -386,9 +390,9 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 15728640
 
 # Unique session cookie ensures that logins are treated separately for each app
 SESSION_COOKIE_NAME = "catalina"
-SESSION_COOKIE_SAMESITE = 'Lax'  # Allow cookies to be sent with OAuth redirects
-SESSION_COOKIE_HTTPONLY = True   # Prevent JavaScript access to session cookie
-SESSION_COOKIE_SECURE = False    # Set to True in production with HTTPS
+SESSION_COOKIE_SAMESITE = "Lax"  # Allow cookies to be sent with OAuth redirects
+SESSION_COOKIE_HTTPONLY = True  # Prevent JavaScript access to session cookie
+SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
 
 # For more info on configuring your cache: https://docs.djangoproject.com/en/2.2/topics/cache/
 CACHES = {
@@ -573,46 +577,48 @@ SHOW_LANGUAGE_SWITCH = len(LANGUAGES) > 1
 # ============================================================================
 
 # Login/Logout redirect URLs
-LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
-LOGOUT_REDIRECT_URL = os.environ.get('LOGOUT_REDIRECT_URL', '/')
-OAUTH_CLIENT_ID = os.environ.get('OAUTH_CLIENT_ID', '')
+LOGIN_REDIRECT_URL = os.environ.get("LOGIN_REDIRECT_URL", "/")
+LOGOUT_REDIRECT_URL = os.environ.get("LOGOUT_REDIRECT_URL", "/")
+OAUTH_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID", "")
 
 AZURE_AUTH = {
     # Change with actual values needed
-    'CLIENT_ID': os.environ.get('CLIENT_ID', ''),
-    'CLIENT_SECRET': os.environ.get('AZURE_CLIENT_SECRET', ''),
-    "CLIENT_TYPE": os.environ.get('AZURE_CLIENT_TYPE', "public_client"),
-    'TENANT_ID': os.environ.get('AZURE_TENANT_ID', ''),
-    
-    'AUTHORITY': os.environ.get('AZURE_AUTHORITY', 'https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810'),
-    
-    'REDIRECT_URI': os.environ.get('AZURE_REDIRECT_URI', 'http://localhost:8000/azure_auth/callback'),
-    
-    'SCOPES': ['User.Read'],  # Only non-reserved scopes (openid, profile, email are added automatically)
+    "CLIENT_ID": os.environ.get("CLIENT_ID", ""),
+    "CLIENT_SECRET": os.environ.get("AZURE_CLIENT_SECRET", ""),
+    "CLIENT_TYPE": os.environ.get("AZURE_CLIENT_TYPE", "public_client"),
+    "TENANT_ID": os.environ.get("AZURE_TENANT_ID", ""),
+    "AUTHORITY": os.environ.get(
+        "AZURE_AUTHORITY",
+        "https://login.microsoftonline.com/c96bb5bc-ccef-481c-b886-6aa10e107810",
+    ),
+    "REDIRECT_URI": os.environ.get(
+        "AZURE_REDIRECT_URI", "http://localhost:8000/azure_auth/callback"
+    ),
+    "SCOPES": [
+        "User.Read"
+    ],  # Only non-reserved scopes (openid, profile, email are added automatically)
     "PROMPT": "select_account",
-    
-    'PUBLIC_URLS': [
-        'azure_auth:login', 
-        'azure_auth:callback',
+    "PUBLIC_URLS": [
+        "azure_auth:login",
+        "azure_auth:callback",
     ],
-    
     # User management
-    'USERNAME_ATTRIBUTE': 'mail',  
-    'SAVE_ID_TOKEN_CLAIMS': True,  # Store user claims in session
-    'AUTO_CREATE_USERS': True,  # Create Django users from Azure AD accounts
-    'AUTO_CREATE_UNKNOWN_USERS': True,  # Create users even if not in directory
+    "USERNAME_ATTRIBUTE": "mail",
+    "SAVE_ID_TOKEN_CLAIMS": True,  # Store user claims in session
+    "AUTO_CREATE_USERS": True,  # Create Django users from Azure AD accounts
+    "AUTO_CREATE_UNKNOWN_USERS": True,  # Create users even if not in directory
 }
 
 LOGIN_URL = "/azure_auth/login"
-LOGIN_REDIRECT_URL = "/"    # Or any other endpoint
+LOGIN_REDIRECT_URL = "/"  # Or any other endpoint
 
 AUTHENTICATION_BACKENDS = [
     # Do we need this? "arches.app.utils.email_auth_backend.EmailAuthenticationBackend",
-    'django.contrib.auth.backends.ModelBackend',
-    'oauth2_provider.backends.OAuth2Backend',
+    "django.contrib.auth.backends.ModelBackend",
+    "oauth2_provider.backends.OAuth2Backend",
     "arches.app.permissions.arches_permission_base.PermissionBackend",
     "arches.app.utils.external_oauth_backend.ExternalOauthAuthenticationBackend",
-    'azure_auth.backends.AzureBackend',
+    "azure_auth.backends.AzureBackend",
 ]
 
 # Portal host, with trailing /hosting suffix.
@@ -622,7 +628,9 @@ ARCGIS_PORTAL_PASSWORD = os.environ.get("ARCGIS_PORTAL_PASSWORD", "")
 
 # Optional. Defaults to <ARCGIS_PORTAL_URL>/portal/sharing/rest/generateToken.
 # Set this if the portal uses a non-standard web context name.
-ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get("ARCGIS_PORTAL_TOKEN_GENERATE_URL", "")
+ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get(
+    "ARCGIS_PORTAL_TOKEN_GENERATE_URL", ""
+)
 
 # Slug -> service path from the portal host root (no leading slash).
 # Defaults match prod portal naming; override per-env via ARCGIS_PORTAL_SERVICE_<SLUG>

@@ -15,9 +15,7 @@ from django.db import migrations
 
 GROUP_NAMES = list(
     getattr(settings, "BLANKET_FULL_ACCESS_GROUPS", ["Administrator"])
-) + list(
-    getattr(settings, "BLANKET_READ_ACCESS_GROUPS", ["Editor"])
-)
+) + list(getattr(settings, "BLANKET_READ_ACCESS_GROUPS", ["Editor"]))
 
 
 def forwards(apps, schema_editor):

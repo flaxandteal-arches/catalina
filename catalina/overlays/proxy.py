@@ -65,7 +65,9 @@ class ArcGISPortalProxyView(ProxyView):
                 self._token = get_token()
             except (RequestException, PortalTokenError) as e:
                 logger.warning(
-                    "ArcGIS token mint failed for slug=%s: %s", slug, e,
+                    "ArcGIS token mint failed for slug=%s: %s",
+                    slug,
+                    e,
                 )
                 return JsonResponse(
                     {"error": "ArcGIS portal unreachable"},
@@ -80,7 +82,8 @@ class ArcGISPortalProxyView(ProxyView):
             if attempt == 0:
                 logger.warning(
                     "ArcGIS proxy got %s for slug=%s; refreshing token and retrying",
-                    response.status_code, slug,
+                    response.status_code,
+                    slug,
                 )
                 invalidate_token()
 

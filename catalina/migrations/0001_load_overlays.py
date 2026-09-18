@@ -34,6 +34,7 @@ OVERLAY_SLUGS = [
     "topo",
 ]
 
+
 def _portal_geojson_url(slug, layer_index=0):
     # ArcGIS FeatureServer "?f=geojson&where=1=1" returns all features.
     # For the three large layers (cons_land, ops_regions, ops_districts) this
@@ -45,7 +46,7 @@ def _portal_geojson_url(slug, layer_index=0):
 # Vector overlays carry click/hover popup config as Mapbox layer
 # `metadata["arches:popup"]` ({"title": <prop>, "fields": [[label, prop], ...]}),
 # read client-side by the project map popup provider
-# (catalina/media/js/utils/map-popup-provider.js). 
+# (catalina/media/js/utils/map-popup-provider.js).
 # Hover highlight requires a stable, globally-unique feature id (so feature-state
 # is keyed consistently across the tiles a feature spans) plus the feature-state
 # paint cases. The source sets "promoteId": "objectid" to use the FeatureServer's
@@ -100,19 +101,56 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-monument",
-            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("nzaa")},
+            source={
+                "type": "geojson",
+                "promoteId": "objectid",
+                "data": _portal_geojson_url("nzaa"),
+            },
             layers=[
-                {"id": "nzaa-fill", "source": "nzaa", "type": "fill",
-                 "metadata": {"arches:popup": {
-                     "title": "name",
-                     "fields": [["Site", "name"], ["NZAA ID", "nzaa_id"],
-                                ["Features", "sitefeatures"], ["Period", "period"]],
-                 }},
-                 "paint": {"fill-color": "#7c3aed",
-                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.5, 0.3]}},
-                {"id": "nzaa-outline", "source": "nzaa", "type": "line",
-                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#2e1065", "#5b21b6"],
-                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2, 1]}},
+                {
+                    "id": "nzaa-fill",
+                    "source": "nzaa",
+                    "type": "fill",
+                    "metadata": {
+                        "arches:popup": {
+                            "title": "name",
+                            "fields": [
+                                ["Site", "name"],
+                                ["NZAA ID", "nzaa_id"],
+                                ["Features", "sitefeatures"],
+                                ["Period", "period"],
+                            ],
+                        }
+                    },
+                    "paint": {
+                        "fill-color": "#7c3aed",
+                        "fill-opacity": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            0.5,
+                            0.3,
+                        ],
+                    },
+                },
+                {
+                    "id": "nzaa-outline",
+                    "source": "nzaa",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            "#2e1065",
+                            "#5b21b6",
+                        ],
+                        "line-width": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            2,
+                            1,
+                        ],
+                    },
+                },
             ],
         )
 
@@ -128,19 +166,56 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-tree",
-            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("cons_land")},
+            source={
+                "type": "geojson",
+                "promoteId": "objectid",
+                "data": _portal_geojson_url("cons_land"),
+            },
             layers=[
-                {"id": "cons_land-fill", "source": "cons_land", "type": "fill",
-                 "metadata": {"arches:popup": {
-                     "title": "name",
-                     "fields": [["Type", "type"], ["NaPALIS ID", "napalis_id"],
-                                ["Name", "name"], ["Recorded Area (ha)", "recorded_area"]],
-                 }},
-                 "paint": {"fill-color": "#22c55e",
-                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.5, 0.25]}},
-                {"id": "cons_land-outline", "source": "cons_land", "type": "line",
-                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#052e16", "#15803d"],
-                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2, 0.5]}},
+                {
+                    "id": "cons_land-fill",
+                    "source": "cons_land",
+                    "type": "fill",
+                    "metadata": {
+                        "arches:popup": {
+                            "title": "name",
+                            "fields": [
+                                ["Type", "type"],
+                                ["NaPALIS ID", "napalis_id"],
+                                ["Name", "name"],
+                                ["Recorded Area (ha)", "recorded_area"],
+                            ],
+                        }
+                    },
+                    "paint": {
+                        "fill-color": "#22c55e",
+                        "fill-opacity": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            0.5,
+                            0.25,
+                        ],
+                    },
+                },
+                {
+                    "id": "cons_land-outline",
+                    "source": "cons_land",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            "#052e16",
+                            "#15803d",
+                        ],
+                        "line-width": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            2,
+                            0.5,
+                        ],
+                    },
+                },
             ],
         )
 
@@ -155,23 +230,56 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-map",
-            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("ops_regions")},
+            source={
+                "type": "geojson",
+                "promoteId": "objectid",
+                "data": _portal_geojson_url("ops_regions"),
+            },
             layers=[
-                {"id": "ops_regions-fill", "source": "ops_regions", "type": "fill",
-                 # TODO(UAT): "region" is the DEV service field name
-                 # (DOC_WebsiteRegions/FeatureServer). The prod/UAT service
-                 # (DOC_OperationsRegions_HFLr/FeatureServer) uses a different
-                 # attribute name.
-                 # Before deploying to UAT, edit these fields to be: [["Region", "regionname"], ["Code", "regioncode"]].
-                 "metadata": {"arches:popup": {
-                     "title": "region",
-                     "fields": [["Region", "region"]],
-                 }},
-                 "paint": {"fill-color": "#3b82f6",
-                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.35, 0.15]}},
-                {"id": "ops_regions-outline", "source": "ops_regions", "type": "line",
-                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#172554", "#1d4ed8"],
-                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2.4, 1.2]}},
+                {
+                    "id": "ops_regions-fill",
+                    "source": "ops_regions",
+                    "type": "fill",
+                    # TODO(UAT): "region" is the DEV service field name
+                    # (DOC_WebsiteRegions/FeatureServer). The prod/UAT service
+                    # (DOC_OperationsRegions_HFLr/FeatureServer) uses a different
+                    # attribute name.
+                    # Before deploying to UAT, edit these fields to be: [["Region", "regionname"], ["Code", "regioncode"]].
+                    "metadata": {
+                        "arches:popup": {
+                            "title": "region",
+                            "fields": [["Region", "region"]],
+                        }
+                    },
+                    "paint": {
+                        "fill-color": "#3b82f6",
+                        "fill-opacity": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            0.35,
+                            0.15,
+                        ],
+                    },
+                },
+                {
+                    "id": "ops_regions-outline",
+                    "source": "ops_regions",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            "#172554",
+                            "#1d4ed8",
+                        ],
+                        "line-width": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            2.4,
+                            1.2,
+                        ],
+                    },
+                },
             ],
         )
 
@@ -186,18 +294,56 @@ def load_overlays(apps, schema_editor):
             addtomap=False,
             ispublic=False,
             icon="fa fa-map-signs",
-            source={"type": "geojson", "promoteId": "objectid", "data": _portal_geojson_url("ops_districts")},
+            source={
+                "type": "geojson",
+                "promoteId": "objectid",
+                "data": _portal_geojson_url("ops_districts"),
+            },
             layers=[
-                {"id": "ops_districts-fill", "source": "ops_districts", "type": "fill",
-                 "metadata": {"arches:popup": {
-                     "title": "districtname",
-                     "fields": [["District Name", "districtname"], ["District Code", "districtcode"], ["Region Name", "regionname"], ["Region Code", "regioncode"] ],
-                 }},
-                 "paint": {"fill-color": "#f97316",
-                           "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], False], 0.35, 0.15]}},
-                {"id": "ops_districts-outline", "source": "ops_districts", "type": "line",
-                 "paint": {"line-color": ["case", ["boolean", ["feature-state", "hover"], False], "#7c2d12", "#c2410c"],
-                           "line-width": ["case", ["boolean", ["feature-state", "hover"], False], 2, 0.7]}},
+                {
+                    "id": "ops_districts-fill",
+                    "source": "ops_districts",
+                    "type": "fill",
+                    "metadata": {
+                        "arches:popup": {
+                            "title": "districtname",
+                            "fields": [
+                                ["District Name", "districtname"],
+                                ["District Code", "districtcode"],
+                                ["Region Name", "regionname"],
+                                ["Region Code", "regioncode"],
+                            ],
+                        }
+                    },
+                    "paint": {
+                        "fill-color": "#f97316",
+                        "fill-opacity": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            0.35,
+                            0.15,
+                        ],
+                    },
+                },
+                {
+                    "id": "ops_districts-outline",
+                    "source": "ops_districts",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            "#7c2d12",
+                            "#c2410c",
+                        ],
+                        "line-width": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], False],
+                            2,
+                            0.7,
+                        ],
+                    },
+                },
             ],
         )
 
