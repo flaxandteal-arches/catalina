@@ -199,6 +199,10 @@ INSTALLED_APPS = (
     "arches_controlled_lists",
     "arches_querysets",
     "arches_component_lab",
+    # Registered in etl_modules since 2026-09-16, so the frontend build compiles
+    # its component either way; listed here so webpack also resolves the app's
+    # own `viewmodels/` imports.
+    "arches_json_importer",
     "arches",
     "arches.app.models",
     "arches.management",
@@ -632,6 +636,10 @@ ARCGIS_PORTAL_SERVICES = {
     "nzaa": os.environ.get(
         "ARCGIS_PORTAL_SERVICE_NZAA",
         "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
+    ),
+    "nzaa_sites": os.environ.get(
+        "ARCGIS_PORTAL_SERVICE_NZAA_SITES",
+        "NZAA_ArchSites_HFLr/FeatureServer",
     ),
     "cons_land": os.environ.get(
         "ARCGIS_PORTAL_SERVICE_CONS_LAND",
