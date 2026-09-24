@@ -439,13 +439,21 @@ NOCAPTCHA = True
 # RECAPTCHA_PROXY = 'http://127.0.0.1:8000'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  #<-- Only need to uncomment this for testing without an actual email server
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = "xxxx@xxx.com"
-# EMAIL_HOST_PASSWORD = 'xxxxxxx'
-# EMAIL_PORT = 587
+# arches 8.2 moved email config to MAILERS; Django raises ImproperlyConfigured
+# if the legacy EMAIL_HOST_USER/EMAIL_HOST_PASSWORD/etc settings are set
+# alongside it, so overrides go through MAILERS now instead.
+MAILERS = {
+    "default": {
+        "OPTIONS": {
+            "use_tls": True,
+            # "host": "smtp.gmail.com",
+            "username": "xxxx@xxx.com",
+            # "password": "xxxxxxx",
+        },
+    },
+}
 
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = MAILERS["default"]["OPTIONS"]["username"]
 
 CELERY_BROKER_URL = ""  # RabbitMQ --> "amqp://guest:guest@localhost",  Redis --> "redis://localhost:6379/0"
 CELERY_ACCEPT_CONTENT = ["json"]
