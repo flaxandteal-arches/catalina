@@ -219,6 +219,7 @@ INSTALLED_APPS += (
     "django.contrib.admin",
     "django.contrib.postgres",
     "arches_her",
+    "arches_json_importer",
 )
 
 REFERENCES_INDEX_NAME = "references"
