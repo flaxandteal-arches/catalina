@@ -22,7 +22,8 @@ classifiers = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "arches>=8.2.0a1,<8.3",
+    "arches==8.2.0a4",
+    "Django<6.1",
     "arches_controlled_lists",
     "arches_her @ git+https://github.com/archesproject/arches-her.git@dev/2.0.x",
     "arches_json_importer @ git+https://github.com/flaxandteal/arches-json-importer.git",
