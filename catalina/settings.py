@@ -198,7 +198,7 @@ INSTALLED_APPS = (
     "django_hosts",
     "arches_controlled_lists",
     "arches_querysets",
-    "arches_vue_components",
+    "arches_component_lab",
     "arches",
     "arches.app.models",
     "arches.management",
