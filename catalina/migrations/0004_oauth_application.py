@@ -1,3 +1,13 @@
+"""Create the GIS OAuth2 application used for password-grant token requests.
+
+Registers a public django-oauth-toolkit Application.
+
+Notes: 
+The client_id comes from settings.OAUTH_CLIENT_ID, which must be set before migrating. 
+The grant and client type string literals match the constants on oauth2_provider.models.AbstractApplication.
+Reversing the migration deletes the application.
+"""
+
 from django.conf import settings
 from django.db import migrations
 
