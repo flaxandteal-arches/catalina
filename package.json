@@ -27,7 +27,7 @@
     },
     "devDependencies": {
         "arches-dev-dependencies": "archesproject/arches-dev-dependencies#dev/8.1.x",
-        "cypress": "^12.3.0",
+        "cypress": "^16.1.0",
         "wait-on": "^7"
     },
     "nodeModulesPaths": {
@@ -35,7 +35,11 @@
     "overrides": {
         "moment-timezone": "^0.5.45",
         "nomnom": "npm:@gerhobbelt/nomnom",
-        "rimraf": "^5.0.7", 
-        "underscore": "^1.13.6"
+        "rimraf": "^5.0.7",
+        "underscore": "^1.13.6",
+        "vitest": "^4.1.11",
+        "@vitest/coverage-v8": "^4.1.11",
+        "shell-quote": "^1.8.4",
+        "websocket-driver": "^0.7.5"
     }
 }

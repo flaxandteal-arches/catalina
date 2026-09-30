@@ -57,7 +57,7 @@ def load_nzaa_sites(apps, schema_editor=None):
     MapLayer.objects.update_or_create(
         maplayerid=NZAA_SITES_LAYER_ID,
         defaults={
-            "name": "NZAA Archaeological Sites",
+            "name": "NZAA Archaeological Sites (points)",
             "isoverlay": True,
             "sortorder": 5,
             "activated": True,
