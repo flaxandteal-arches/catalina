@@ -29,9 +29,7 @@ def sync_gis_oauth_application(using="default", **kwargs):
 
     client_id = settings.OAUTH_CLIENT_ID
     if not client_id:
-        logger.warning(
-            "OAUTH_CLIENT_ID is not set; skipping %s sync", APPLICATION_NAME
-        )
+        logger.warning("OAUTH_CLIENT_ID is not set; skipping %s sync", APPLICATION_NAME)
         return
 
     Application = get_application_model()
