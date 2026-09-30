@@ -11,10 +11,12 @@ from catalina.overlays.loaders import run_loaders
 logger = logging.getLogger(__name__)
 
 NZAA_BUFFER_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000001")
+NZAA_SITES_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000007")
 LINZ_TOPO_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000006")
 
 BUFFER_LABEL_BEFORE = "NZAA Archaeological Sites"
 BUFFER_LABEL_AFTER = "NZAA Site Buffers (200m)"
+SITES_LABEL_AFTER = "NZAA Archaeological Sites"
 
 # export, not an {z}/{x}/{y} template: the cache is NZTM2000 and only export
 # reprojects. png8 is ~60KB a tile against png32's ~185KB, and looks the same.
@@ -78,6 +80,9 @@ def update_installed_overlays(apps, schema_editor=None):
     _set_ops_districts_layer_index(apps, 1)
     MapLayer.objects.filter(maplayerid=NZAA_BUFFER_LAYER_ID).update(
         name=BUFFER_LABEL_AFTER
+    )
+    MapLayer.objects.filter(maplayerid=NZAA_SITES_LAYER_ID).update(
+        name=SITES_LABEL_AFTER
     )
 
 
