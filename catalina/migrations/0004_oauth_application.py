@@ -2,8 +2,8 @@
 
 Registers a public django-oauth-toolkit Application.
 
-Notes: 
-The client_id comes from settings.OAUTH_CLIENT_ID, which must be set before migrating. 
+Notes:
+The client_id comes from settings.OAUTH_CLIENT_ID, which must be set before migrating.
 The grant and client type string literals match the constants on oauth2_provider.models.AbstractApplication.
 Reversing the migration deletes the application.
 """
@@ -23,7 +23,9 @@ class Migration(migrations.Migration):
 
     def forwards(apps, schema_editor):
         if not settings.OAUTH_CLIENT_ID:
-            raise RuntimeError("OAUTH_CLIENT_ID must be set before running catalina 0004")
+            raise RuntimeError(
+                "OAUTH_CLIENT_ID must be set before running catalina 0004"
+            )
 
         db_alias = schema_editor.connection.alias
 
