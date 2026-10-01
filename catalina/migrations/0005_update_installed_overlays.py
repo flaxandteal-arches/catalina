@@ -72,12 +72,13 @@ def update_installed_overlays(apps, schema_editor=None):
         NZAA_SITES_LAYER_ID,
         {"url": "/overlays/nzaa/7/query", "minzoom": 10},
     )
-    # ~11k features against a maxRecordCount of 1000.
+    # ~11k features against a maxRecordCount of 1000. Simplified to zoom 6 the
+    # whole layer is ~10 MB, so 12 pages lets a national view load untruncated.
     _set_bbox_fetch(
         apps,
         "cons_land",
         CONS_LAND_LAYER_ID,
-        {"url": "/overlays/cons_land/0/query", "minzoom": 10},
+        {"url": "/overlays/cons_land/0/query", "minzoom": 6, "maxpages": 12},
     )
 
 

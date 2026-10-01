@@ -25,6 +25,7 @@ import arches from 'arches';
  */
 
 const DEFAULT_MAXPAGES = 5;
+const MAX_PARALLEL = 6;
 const DEBOUNCE_MS = 250;
 const EMPTY = { type: 'FeatureCollection', features: [] };
 const DEBUG_KEY = 'catalina:overlay-debug';
@@ -75,31 +76,36 @@ function boundsParam(map) {
     ].map(value => value.toFixed(5)).join(',');
 }
 
-// ArcGIS caps each response at the service's maxRecordCount and flags the
-// cut-off with exceededTransferLimit (top level or under `properties`,
-// depending on server version), so follow resultOffset until it clears.
+// ArcGIS caps each response at the service's maxRecordCount, so a busy view
+// takes several resultOffset pages. The first page and the view's total count
+// are requested together; the first page's length is the page size, and the
+// remaining pages then go out in parallel, at most MAX_PARALLEL at a time to
+// spare the portal.
 async function fetchFeatures(config, bbox, idField, simplifyDegrees, signal, log) {
-    const features = [];
-    const maxpages = config.maxpages || DEFAULT_MAXPAGES;
-    for (let page = 0; page < maxpages; page++) {
+    const filter = {
+        where: '1=1',
+        geometry: bbox,
+        geometryType: 'esriGeometryEnvelope',
+        inSR: '4326',
+        spatialRel: 'esriSpatialRelIntersects',
+    };
+    const pageParams = function(offset) {
         const params = new URLSearchParams({
-            where: '1=1',
-            geometry: bbox,
-            geometryType: 'esriGeometryEnvelope',
-            inSR: '4326',
-            spatialRel: 'esriSpatialRelIntersects',
+            ...filter,
             outSR: '4326',
             outFields: config.outFields || '*',
             geometryPrecision: '6',
             // Drop vertices closer together than a screen pixel; polygon
             // payloads shrink many times over at low zooms.
             maxAllowableOffset: String(simplifyDegrees),
-            resultOffset: String(features.length),
+            resultOffset: String(offset),
             f: 'geojson',
         });
         // Stable ordering so pages don't overlap or skip.
         if (idField) params.set('orderByFields', idField);
-
+        return params;
+    };
+    const fetchJson = async function(params, label) {
         const started = performance.now();
         const response = await fetch(`${absoluteUrl(config.url)}?${params}`, {
             credentials: 'same-origin',
@@ -110,18 +116,40 @@ async function fetchFeatures(config, bbox, idField, simplifyDegrees, signal, log
         const body = JSON.parse(text);
         // ArcGIS reports most failures as HTTP 200 with an error body.
         if (body.error) throw new Error(`${config.url}: ${JSON.stringify(body.error)}`);
-
-        const pageFeatures = body.features || [];
+        const detail = body.features ? `${body.features.length} features` : `count ${body.count}`;
         log(
-            `page ${page}: ${pageFeatures.length} features,`,
+            `${label}: ${detail},`,
             `${Math.round(text.length / 1024)} KB, ${Math.round(performance.now() - started)} ms`
         );
-        features.push(...pageFeatures);
-        const truncated = body.exceededTransferLimit
-            || (body.properties && body.properties.exceededTransferLimit);
-        if (!truncated || !pageFeatures.length) return { features, truncated: false };
-    }
-    return { features, truncated: true };
+        return body;
+    };
+
+    const [firstPage, countBody] = await Promise.all([
+        fetchJson(pageParams(0), 'page 0'),
+        fetchJson(new URLSearchParams({ ...filter, returnCountOnly: 'true', f: 'json' }), 'count'),
+    ]);
+    const features = firstPage.features || [];
+    const pageSize = features.length;
+    const count = countBody.count || 0;
+    if (!pageSize || count <= pageSize) return { features, count, truncated: false };
+
+    const maxpages = config.maxpages || DEFAULT_MAXPAGES;
+    const pages = Math.min(maxpages, Math.ceil(count / pageSize));
+    const offsets = [];
+    for (let page = 1; page < pages; page++) offsets.push(page * pageSize);
+
+    // A pool of workers, each taking the next offset until none are left.
+    const bodies = new Array(offsets.length);
+    let next = 0;
+    const worker = async function() {
+        while (next < offsets.length) {
+            const index = next++;
+            bodies[index] = await fetchJson(pageParams(offsets[index]), `page ${index + 1}`);
+        }
+    };
+    await Promise.all(Array.from({ length: Math.min(MAX_PARALLEL, offsets.length) }, worker));
+    bodies.forEach(body => features.push(...(body.features || [])));
+    return { features, count, truncated: count > pages * pageSize };
 }
 
 function setupBboxFetch(map) {
@@ -175,7 +203,7 @@ function setupBboxFetch(map) {
                     if (current) current.setData({ type: 'FeatureCollection', features: result.features });
                     loadedView.set(sourceId, view);
                     log(
-                        `done: ${result.features.length} features in`,
+                        `done: ${result.features.length} of ${result.count} features in`,
                         `${Math.round(performance.now() - started)} ms${result.truncated ? ' (truncated)' : ''}`
                     );
                 })
