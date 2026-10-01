@@ -36,10 +36,9 @@ OVERLAY_SLUGS = [
 
 
 def _portal_geojson_url(slug, layer_index=0):
-    # ArcGIS FeatureServer "?f=geojson&where=1=1" returns all features.
-    # For the three large layers (cons_land, ops_regions, ops_districts) this
-    # source is a placeholder — a client-side bbox-scoped fetcher will need to
-    # replace source.data via setData() at render time.
+    # ArcGIS FeatureServer "?f=geojson&where=1=1" returns at most the service's
+    # maxRecordCount features. Layers past that (nzaa, cons_land) are switched
+    # by 0005 to per-view fetching (catalina/media/js/utils/map-configurator.js).
     return f"/overlays/{slug}/{layer_index}/query?where=1%3D1&outFields=*&f=geojson"
 
 
@@ -89,8 +88,8 @@ def load_overlays(apps, schema_editor):
         settings.PORTAL_OVERLAYS_AVAILABLE if portal_configured else set()
     )
 
-    # NZAA archaeological site buffers (2,550 features) — small enough for a
-    # single GeoJSON fetch via the login-gated proxy.
+    # NZAA archaeological sites (~80k features). The slug's service is set in
+    # settings.ARCGIS_PORTAL_SERVICES; 0005 switches it to per-view fetching.
     if "nzaa" in portal_available:
         upsert(
             slug="nzaa",
@@ -154,8 +153,8 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-    # Conservation Land (~21k features) — too large for one-shot GeoJSON.
-    # Source URL is provisional; client-side dynamic fetcher TBD.
+    # Conservation Land (~11k features, maxRecordCount 1000); 0005 switches it
+    # to per-view fetching.
     if "cons_land" in portal_available:
         upsert(
             slug="cons_land",
@@ -219,7 +218,7 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-    # DOC Operations Regions (~20k features) — same dynamic-fetcher caveat.
+    # DOC Operations Regions (11 features; one request).
     if "ops_regions" in portal_available:
         upsert(
             slug="ops_regions",
@@ -283,7 +282,7 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-    # DOC Operations Districts (~19k features) — same dynamic-fetcher caveat.
+    # DOC Operations Districts (46 features; one request).
     if "ops_districts" in portal_available:
         upsert(
             slug="ops_districts",

@@ -1,4 +1,4 @@
-"""Corrections to the overlays 0001 installed: ops_districts layer index, nzaa per-view fetch, buffer label."""
+"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land."""
 
 import logging
 import uuid
@@ -10,6 +10,7 @@ from catalina.overlays.loaders import run_loaders
 logger = logging.getLogger(__name__)
 
 NZAA_SITES_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000001")
+CONS_LAND_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000002")
 
 
 def _set_layer_index(apps, slug, layer_index):
@@ -32,7 +33,7 @@ def _set_layer_index(apps, slug, layer_index):
 def _set_bbox_fetch(apps, slug, layer_id, fetch_config):
     """Empty the source and let the project map configurator fill it per view.
 
-    For layers past the portal's 2000-record cap; see
+    For layers past their service's maxRecordCount; see
     catalina/media/js/utils/map-configurator.js. The config goes on the first
     layer definition, or is removed from it when fetch_config is None.
     """
@@ -71,6 +72,13 @@ def update_installed_overlays(apps, schema_editor=None):
         NZAA_SITES_LAYER_ID,
         {"url": "/overlays/nzaa/7/query", "minzoom": 10},
     )
+    # ~11k features against a maxRecordCount of 1000.
+    _set_bbox_fetch(
+        apps,
+        "cons_land",
+        CONS_LAND_LAYER_ID,
+        {"url": "/overlays/cons_land/0/query", "minzoom": 10},
+    )
 
 
 def load_all_overlays(apps, schema_editor):
@@ -84,6 +92,8 @@ def restore_installed_overlays(apps, schema_editor):
     _set_layer_index(apps, "ops_districts", 0)
     _set_layer_index(apps, "nzaa", 0)
     _set_bbox_fetch(apps, "nzaa", NZAA_SITES_LAYER_ID, None)
+    _set_layer_index(apps, "cons_land", 0)
+    _set_bbox_fetch(apps, "cons_land", CONS_LAND_LAYER_ID, None)
 
 
 class Migration(migrations.Migration):
