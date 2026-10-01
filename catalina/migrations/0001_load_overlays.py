@@ -239,11 +239,9 @@ def load_overlays(apps, schema_editor):
                     "id": "ops_regions-fill",
                     "source": "ops_regions",
                     "type": "fill",
-                    # TODO(UAT): "region" is the DEV service field name
-                    # (DOC_WebsiteRegions/FeatureServer). The prod/UAT service
-                    # (DOC_OperationsRegions_HFLr/FeatureServer) uses a different
-                    # attribute name.
-                    # Before deploying to UAT, edit these fields to be: [["Region", "regionname"], ["Code", "regioncode"]].
+                    # "region" is the DOC_WebsiteRegions/FeatureServer field
+                    # name. 0005 switches this popup to the regionname /
+                    # regioncode fields of DOC_OperationsRegions_HFLr/FeatureServer.
                     "metadata": {
                         "arches:popup": {
                             "title": "region",

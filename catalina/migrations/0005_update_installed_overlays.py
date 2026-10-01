@@ -1,4 +1,4 @@
-"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land, nzaa popup title."""
+"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land, nzaa and ops_regions popups."""
 
 import logging
 import uuid
@@ -11,6 +11,15 @@ logger = logging.getLogger(__name__)
 
 NZAA_SITES_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000001")
 CONS_LAND_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000002")
+OPS_REGIONS_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000003")
+
+# 0001 used the DOC_WebsiteRegions field; the default ops_regions service,
+# DOC_OperationsRegions_HFLr, names its fields regionname and regioncode.
+OPS_REGIONS_POPUP_BEFORE = {"title": "region", "fields": [["Region", "region"]]}
+OPS_REGIONS_POPUP_AFTER = {
+    "title": "regionname",
+    "fields": [["Region", "regionname"], ["Code", "regioncode"]],
+}
 
 # name is often null, so the popup title uses the always-populated nzaa_id.
 NZAA_POPUP_BEFORE = {
@@ -114,6 +123,7 @@ def update_installed_overlays(apps, schema_editor=None):
         },
     )
     _set_popup(apps, NZAA_SITES_LAYER_ID, NZAA_POPUP_AFTER)
+    _set_popup(apps, OPS_REGIONS_LAYER_ID, OPS_REGIONS_POPUP_AFTER)
     # ~11k features against a maxRecordCount of 1000. Simplified to zoom 6 the
     # whole layer is ~10 MB, so 12 pages lets a national view load untruncated.
     _set_bbox_fetch(
@@ -142,6 +152,7 @@ def restore_installed_overlays(apps, schema_editor):
     _set_layer_index(apps, "nzaa", 0)
     _set_bbox_fetch(apps, "nzaa", NZAA_SITES_LAYER_ID, None)
     _set_popup(apps, NZAA_SITES_LAYER_ID, NZAA_POPUP_BEFORE)
+    _set_popup(apps, OPS_REGIONS_LAYER_ID, OPS_REGIONS_POPUP_BEFORE)
     _set_layer_index(apps, "cons_land", 0)
     _set_bbox_fetch(apps, "cons_land", CONS_LAND_LAYER_ID, None)
 
