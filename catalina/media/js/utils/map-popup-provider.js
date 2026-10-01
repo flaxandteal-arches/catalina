@@ -46,6 +46,12 @@ function popupConfigForFeature(maplibreMap, feature) {
     return null;
 }
 
+// Mapbox GL stringifies non-primitive property values when it serialises
+// GeoJSON in its worker, so a null attribute arrives here as the string "null".
+function isEmptyValue(value) {
+    return value === undefined || value === null || value === '' || value === 'null';
+}
+
 const provider = {
     isFeatureClickable: function(feature, map) {
         // core: disabled while a draw tool or feature selection is active
@@ -78,10 +84,15 @@ const provider = {
             if (!config) return;
 
             const properties = popupFeature.feature.properties || {};
-            popupFeature.displayname = ko.observable(properties[config.title] || '');
+            const title = properties[config.title];
+            popupFeature.displayname = ko.observable(isEmptyValue(title) ? '' : title);
+            // Every configured field gets a row, with a dash when unpopulated, so
+            // an empty value reads as missing data rather than a missing field.
             popupFeature.attributes = (config.fields || [])
-                .filter(([, key]) => properties[key] !== undefined && properties[key] !== null && properties[key] !== '')
-                .map(([label, key]) => ({ label: label, value: String(properties[key]) }));
+                .map(([label, key]) => ({
+                    label: label,
+                    value: isEmptyValue(properties[key]) ? '—' : String(properties[key]),
+                }));
         });
         return popupData;
     },

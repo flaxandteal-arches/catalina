@@ -1,4 +1,4 @@
-"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land."""
+"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land, nzaa popup title."""
 
 import logging
 import uuid
@@ -11,6 +11,26 @@ logger = logging.getLogger(__name__)
 
 NZAA_SITES_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000001")
 CONS_LAND_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000002")
+
+# name is often null, so the popup title uses the always-populated nzaa_id.
+NZAA_POPUP_BEFORE = {
+    "title": "name",
+    "fields": [
+        ["Site", "name"],
+        ["NZAA ID", "nzaa_id"],
+        ["Features", "sitefeatures"],
+        ["Period", "period"],
+    ],
+}
+NZAA_POPUP_AFTER = {
+    "title": "nzaa_id",
+    "fields": [
+        ["Name", "name"],
+        ["NZAA ID", "nzaa_id"],
+        ["Features", "sitefeatures"],
+        ["Period", "period"],
+    ],
+}
 
 
 def _set_layer_index(apps, slug, layer_index):
@@ -62,6 +82,21 @@ def _set_bbox_fetch(apps, slug, layer_id, fetch_config):
     MapLayer.objects.filter(maplayerid=layer_id).update(layerdefinitions=layers)
 
 
+def _set_popup(apps, layer_id, popup):
+    """Replace the arches:popup config on every layer definition that has one."""
+    MapLayer = apps.get_model("models", "MapLayer")
+
+    layer_row = MapLayer.objects.filter(maplayerid=layer_id).first()
+    if layer_row is None:
+        return
+
+    layers = [dict(layer) for layer in layer_row.layerdefinitions]
+    for layer in layers:
+        if "arches:popup" in (layer.get("metadata") or {}):
+            layer["metadata"] = {**layer["metadata"], "arches:popup": popup}
+    MapLayer.objects.filter(maplayerid=layer_id).update(layerdefinitions=layers)
+
+
 def update_installed_overlays(apps, schema_editor=None):
 
     _set_layer_index(apps, "ops_districts", 1)
@@ -78,6 +113,7 @@ def update_installed_overlays(apps, schema_editor=None):
             "outFields": "objectid,name,nzaa_id,sitefeatures,period",
         },
     )
+    _set_popup(apps, NZAA_SITES_LAYER_ID, NZAA_POPUP_AFTER)
     # ~11k features against a maxRecordCount of 1000. Simplified to zoom 6 the
     # whole layer is ~10 MB, so 12 pages lets a national view load untruncated.
     _set_bbox_fetch(
@@ -105,6 +141,7 @@ def restore_installed_overlays(apps, schema_editor):
     _set_layer_index(apps, "ops_districts", 0)
     _set_layer_index(apps, "nzaa", 0)
     _set_bbox_fetch(apps, "nzaa", NZAA_SITES_LAYER_ID, None)
+    _set_popup(apps, NZAA_SITES_LAYER_ID, NZAA_POPUP_BEFORE)
     _set_layer_index(apps, "cons_land", 0)
     _set_bbox_fetch(apps, "cons_land", CONS_LAND_LAYER_ID, None)
 

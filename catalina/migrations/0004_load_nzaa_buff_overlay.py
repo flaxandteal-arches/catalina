@@ -57,9 +57,10 @@ def load_nzaa_buffered(apps, schema_editor=None):
     # absent one rather than erroring.
     popup = {
         "arches:popup": {
-            "title": "name",
+            # nzaa_id is always populated; name is often null.
+            "title": "nzaa_id",
             "fields": [
-                ["Site", "name"],
+                ["Name", "name"],
                 ["NZAA ID", "nzaa_id"],
                 ["Features", "sitefeatures"],
                 ["Period", "period"],
