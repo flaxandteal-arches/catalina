@@ -8,7 +8,11 @@ import arches from 'arches';
  * What it adds over core:
  *   - GeoJSON overlays too large for one request are fetched per map view:
  *     each moveend (and each overlay toggle) queries the ArcGIS proxy for the
- *     features intersecting the current bounds, then setData()s the source.
+ *     features intersecting the current bounds, simplified to the current
+ *     pixel size, then setData()s the source.
+ *
+ * To trace fetches in the console:
+ *     localStorage.setItem('catalina:overlay-debug', '1')
  *
  * Opt-in lives on one of the overlay's map layers as Mapbox
  * `metadata["arches:bbox-fetch"]`, set in the overlay migrations, shape:
@@ -23,6 +27,24 @@ import arches from 'arches';
 const DEFAULT_MAXPAGES = 5;
 const DEBOUNCE_MS = 250;
 const EMPTY = { type: 'FeatureCollection', features: [] };
+const DEBUG_KEY = 'catalina:overlay-debug';
+
+function debugEnabled() {
+    try {
+        return window.localStorage.getItem(DEBUG_KEY) === '1';
+    } catch (e) {
+        return false;
+    }
+}
+
+function debugLog(sourceId, ...args) {
+    if (debugEnabled()) console.log(`[overlay ${sourceId}]`, ...args);
+}
+
+// Degrees of longitude per screen pixel at the map's zoom (512px tiles).
+function pixelDegrees(map) {
+    return Number((360 / (512 * Math.pow(2, map.getZoom()))).toPrecision(3));
+}
 
 // Map each source id to the bbox-fetch config of a layer currently in the
 // style. Inactive overlays have no layers in the style, so they're skipped.
@@ -56,7 +78,7 @@ function boundsParam(map) {
 // ArcGIS caps each response at the service's maxRecordCount and flags the
 // cut-off with exceededTransferLimit (top level or under `properties`,
 // depending on server version), so follow resultOffset until it clears.
-async function fetchFeatures(config, bbox, idField, signal) {
+async function fetchFeatures(config, bbox, idField, simplifyDegrees, signal, log) {
     const features = [];
     const maxpages = config.maxpages || DEFAULT_MAXPAGES;
     for (let page = 0; page < maxpages; page++) {
@@ -69,22 +91,31 @@ async function fetchFeatures(config, bbox, idField, signal) {
             outSR: '4326',
             outFields: config.outFields || '*',
             geometryPrecision: '6',
+            // Drop vertices closer together than a screen pixel; polygon
+            // payloads shrink many times over at low zooms.
+            maxAllowableOffset: String(simplifyDegrees),
             resultOffset: String(features.length),
             f: 'geojson',
         });
         // Stable ordering so pages don't overlap or skip.
         if (idField) params.set('orderByFields', idField);
 
+        const started = performance.now();
         const response = await fetch(`${absoluteUrl(config.url)}?${params}`, {
             credentials: 'same-origin',
             signal: signal,
         });
         if (!response.ok) throw new Error(`${response.status} from ${config.url}`);
-        const body = await response.json();
+        const text = await response.text();
+        const body = JSON.parse(text);
         // ArcGIS reports most failures as HTTP 200 with an error body.
         if (body.error) throw new Error(`${config.url}: ${JSON.stringify(body.error)}`);
 
         const pageFeatures = body.features || [];
+        log(
+            `page ${page}: ${pageFeatures.length} features,`,
+            `${Math.round(text.length / 1024)} KB, ${Math.round(performance.now() - started)} ms`
+        );
         features.push(...pageFeatures);
         const truncated = body.exceededTransferLimit
             || (body.properties && body.properties.exceededTransferLimit);
@@ -108,23 +139,31 @@ function setupBboxFetch(map) {
             const source = map.getSource(sourceId);
             if (!source) return;
 
+            const log = (...args) => debugLog(sourceId, ...args);
             const view = zoom < config.minzoom ? 'below-minzoom' : bbox;
             if (loadedView.get(sourceId) === view) return;
 
-            if (inFlight.has(sourceId)) inFlight.get(sourceId).abort();
+            if (inFlight.has(sourceId)) {
+                inFlight.get(sourceId).abort();
+                log('cancelled the in-flight fetch for the previous view');
+            }
             inFlight.delete(sourceId);
 
             if (view === 'below-minzoom') {
                 source.setData(EMPTY);
                 loadedView.set(sourceId, view);
+                log(`zoom ${zoom.toFixed(2)} is below minzoom ${config.minzoom}; cleared`);
                 return;
             }
 
             const controller = new AbortController();
             inFlight.set(sourceId, controller);
             const idField = map.getStyle().sources[sourceId].promoteId;
+            const simplifyDegrees = pixelDegrees(map);
+            const started = performance.now();
+            log(`fetching at zoom ${zoom.toFixed(2)}, bbox ${bbox}, simplify ${simplifyDegrees}°`);
 
-            fetchFeatures(config, bbox, idField, controller.signal)
+            fetchFeatures(config, bbox, idField, simplifyDegrees, controller.signal, log)
                 .then(function(result) {
                     if (result.truncated) {
                         console.warn(
@@ -135,6 +174,10 @@ function setupBboxFetch(map) {
                     const current = map.getSource(sourceId);
                     if (current) current.setData({ type: 'FeatureCollection', features: result.features });
                     loadedView.set(sourceId, view);
+                    log(
+                        `done: ${result.features.length} features in`,
+                        `${Math.round(performance.now() - started)} ms${result.truncated ? ' (truncated)' : ''}`
+                    );
                 })
                 .catch(function(error) {
                     if (error.name !== 'AbortError') console.error(`Overlay ${sourceId}:`, error);
