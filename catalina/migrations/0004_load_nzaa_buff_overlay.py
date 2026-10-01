@@ -8,10 +8,10 @@ from django.db import migrations
 
 logger = logging.getLogger(__name__)
 
-NZAA_SITES_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000007")
+NZAA_BUFF_LAYER_ID = uuid.UUID("a7d0e8b1-3000-4001-8000-000000000007")
 
 
-def load_nzaa_sites(apps, schema_editor=None):
+def load_nzaa_buffered(apps, schema_editor=None):
     MapLayer = apps.get_model("models", "MapLayer")
     MapSource = apps.get_model("models", "MapSource")
 
@@ -20,23 +20,29 @@ def load_nzaa_sites(apps, schema_editor=None):
         and settings.ARCGIS_PORTAL_USERNAME
         and settings.ARCGIS_PORTAL_PASSWORD
     )
-    if not portal_configured or "nzaa_sites" not in settings.PORTAL_OVERLAYS_AVAILABLE:
+    if not portal_configured or "nzaa_buff" not in settings.PORTAL_OVERLAYS_AVAILABLE:
         logger.warning(
             "Skipping the NZAA sites overlay: portal env incomplete or "
-            "'nzaa_sites' absent from PORTAL_OVERLAYS_AVAILABLE."
+            "'nzaa_buff' absent from PORTAL_OVERLAYS_AVAILABLE."
         )
         return
 
+    # ~80k features, far past the portal's 2000-record cap, so the source
+    # starts empty and the project map configurator
+    # (catalina/media/js/utils/map-configurator.js) fills it per map view.
     MapSource.objects.update_or_create(
-        name="nzaa_sites",
+        name="nzaa_buff",
         defaults={
             "source": {
                 "type": "geojson",
                 "promoteId": "objectid",
-                "data": "/overlays/nzaa_sites/0/query?where=1%3D1&outFields=*&f=geojson",
+                "data": {"type": "FeatureCollection", "features": []},
             }
         },
     )
+    bbox_fetch = {
+        "arches:bbox-fetch": {"url": "/overlays/nzaa_buff/6/query", "minzoom": 10}
+    }
 
     # Circle and fill/line both registered: the service needs a token to
     # inspect, so its geometry is unconfirmed. Mapbox GL draws nothing for the
@@ -55,9 +61,9 @@ def load_nzaa_sites(apps, schema_editor=None):
     hovered = ["boolean", ["feature-state", "hover"], False]
 
     MapLayer.objects.update_or_create(
-        maplayerid=NZAA_SITES_LAYER_ID,
+        maplayerid=NZAA_BUFF_LAYER_ID,
         defaults={
-            "name": "NZAA Archaeological Sites (points)",
+            "name": "NZAA Archaeological Buffered (200m)",
             "isoverlay": True,
             "sortorder": 5,
             "activated": True,
@@ -66,18 +72,18 @@ def load_nzaa_sites(apps, schema_editor=None):
             "icon": "fa fa-monument",
             "layerdefinitions": [
                 {
-                    "id": "nzaa_sites-fill",
-                    "source": "nzaa_sites",
+                    "id": "nzaa_buff-fill",
+                    "source": "nzaa_buff",
                     "type": "fill",
-                    "metadata": popup,
+                    "metadata": {**popup, **bbox_fetch},
                     "paint": {
                         "fill-color": "#be123c",
                         "fill-opacity": ["case", hovered, 0.6, 0.4],
                     },
                 },
                 {
-                    "id": "nzaa_sites-outline",
-                    "source": "nzaa_sites",
+                    "id": "nzaa_buff-outline",
+                    "source": "nzaa_buff",
                     "type": "line",
                     "paint": {
                         "line-color": ["case", hovered, "#4c0519", "#9f1239"],
@@ -85,8 +91,8 @@ def load_nzaa_sites(apps, schema_editor=None):
                     },
                 },
                 {
-                    "id": "nzaa_sites-point",
-                    "source": "nzaa_sites",
+                    "id": "nzaa_buff-point",
+                    "source": "nzaa_buff",
                     "type": "circle",
                     "metadata": popup,
                     "paint": {
@@ -102,11 +108,11 @@ def load_nzaa_sites(apps, schema_editor=None):
     )
 
 
-def unload_nzaa_sites(apps, schema_editor):
+def unload_nzaa_buffered(apps, schema_editor):
     MapLayer = apps.get_model("models", "MapLayer")
     MapSource = apps.get_model("models", "MapSource")
-    MapLayer.objects.filter(maplayerid=NZAA_SITES_LAYER_ID).delete()
-    MapSource.objects.filter(name="nzaa_sites").delete()
+    MapLayer.objects.filter(maplayerid=NZAA_BUFF_LAYER_ID).delete()
+    MapSource.objects.filter(name="nzaa_buff").delete()
 
 
 class Migration(migrations.Migration):
@@ -115,5 +121,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(load_nzaa_sites, unload_nzaa_sites),
+        migrations.RunPython(load_nzaa_buffered, unload_nzaa_buffered),
     ]

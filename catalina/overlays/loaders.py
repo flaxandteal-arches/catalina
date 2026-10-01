@@ -9,7 +9,7 @@ from importlib import import_module
 
 LOADERS = [
     ("catalina.migrations.0001_load_overlays", "load_overlays"),
-    ("catalina.migrations.0004_load_nzaa_sites_overlay", "load_nzaa_sites"),
+    ("catalina.migrations.0004_load_nzaa_buff_overlay", "load_nzaa_buffered"),
     (
         "catalina.migrations.0005_update_installed_overlays",
         "update_installed_overlays",

@@ -642,12 +642,12 @@ ARCGIS_PORTAL_TOKEN_GENERATE_URL = os.environ.get(
 # enable dev portals that expose a corresponding service under different names.
 ARCGIS_PORTAL_SERVICES = {
     "nzaa": os.environ.get(
-        "ARCGIS_PORTAL_SERVICE_NZAA",
-        "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
-    ),
-    "nzaa_sites": os.environ.get(
         "ARCGIS_PORTAL_SERVICE_NZAA_SITES",
         "NZAA_ArchSites_HFLr/FeatureServer",
+    ),
+    "nzaa_buff": os.environ.get(
+        "ARCGIS_PORTAL_SERVICE_NZAA_BUFFERED",
+        "NZAA_ArchSiteBuffer_HFLr/FeatureServer",
     ),
     "cons_land": os.environ.get(
         "ARCGIS_PORTAL_SERVICE_CONS_LAND",
