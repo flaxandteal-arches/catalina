@@ -40,8 +40,16 @@ def load_nzaa_buffered(apps, schema_editor=None):
             }
         },
     )
+    # A zoom-9 view of Auckland, the densest area, holds ~13k sites: 7 pages of
+    # 2000. outFields keeps objectid (promoteId) and the popup fields, which
+    # halves the payload against "*".
     bbox_fetch = {
-        "arches:bbox-fetch": {"url": "/overlays/nzaa_buff/6/query", "minzoom": 10}
+        "arches:bbox-fetch": {
+            "url": "/overlays/nzaa_buff/6/query",
+            "minzoom": 9,
+            "maxpages": 8,
+            "outFields": "objectid,name,nzaa_id,sitefeatures,period",
+        }
     }
 
     # Circle and fill/line both registered: the service needs a token to

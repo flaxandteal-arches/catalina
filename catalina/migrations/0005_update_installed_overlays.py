@@ -70,7 +70,13 @@ def update_installed_overlays(apps, schema_editor=None):
         apps,
         "nzaa",
         NZAA_SITES_LAYER_ID,
-        {"url": "/overlays/nzaa/7/query", "minzoom": 10},
+        # Same sizing as nzaa_buff in 0004: ~13k sites in a zoom-9 Auckland view.
+        {
+            "url": "/overlays/nzaa/7/query",
+            "minzoom": 9,
+            "maxpages": 8,
+            "outFields": "objectid,name,nzaa_id,sitefeatures,period",
+        },
     )
     # ~11k features against a maxRecordCount of 1000. Simplified to zoom 6 the
     # whole layer is ~10 MB, so 12 pages lets a national view load untruncated.
@@ -78,7 +84,13 @@ def update_installed_overlays(apps, schema_editor=None):
         apps,
         "cons_land",
         CONS_LAND_LAYER_ID,
-        {"url": "/overlays/cons_land/0/query", "minzoom": 6, "maxpages": 12},
+        {
+            "url": "/overlays/cons_land/0/query",
+            "minzoom": 6,
+            "maxpages": 12,
+            # objectid (promoteId) and the popup fields from 0001.
+            "outFields": "objectid,type,napalis_id,name,recorded_area",
+        },
     )
 
 
