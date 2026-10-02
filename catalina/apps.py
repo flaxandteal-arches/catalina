@@ -1,4 +1,4 @@
-from django.apps import AppConfig, apps
+from django.apps import AppConfig
 from django.db.models.signals import post_migrate
 
 
@@ -15,20 +15,17 @@ class CatalinaConfig(AppConfig):
     def ready(self):
         from catalina.oauth_application import sync_gis_oauth_application
 
-        # Every migrate, including each deploy's, writes the overlay registry.
-        # post_migrate is only sent for apps with a models module, which this
-        # app lacks, so listen for Arches' core models app, the one that owns
-        # MapLayer/MapSource. All migrations have run by the time it's sent.
-        post_migrate.connect(
-            _apply_overlays,
-            sender=apps.get_app_config("models"),
-            dispatch_uid="catalina.apply_overlays",
-        )
-
         # post_migrate is only sent for apps with a models module, which catalina
-        # lacks, so listen for the app whose table we write to instead.
+        # lacks, so each handler listens for the app whose table it writes to.
         post_migrate.connect(
             sync_gis_oauth_application,
             sender=self.apps.get_app_config("oauth2_provider"),
             dispatch_uid="catalina.sync_gis_oauth_application",
+        )
+        # Every migrate, including each deploy's, writes the overlay registry
+        # (MapLayer/MapSource belong to Arches' core models app).
+        post_migrate.connect(
+            _apply_overlays,
+            sender=self.apps.get_app_config("models"),
+            dispatch_uid="catalina.apply_overlays",
         )
