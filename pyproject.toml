@@ -22,7 +22,7 @@ classifiers = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "arches==8.2.0a4",
+    "arches==8.2.0a8",
     "Django<6.1",
     "arches_controlled_lists>=1.2.0a0,<1.4",
     "arches_her @ git+https://github.com/flaxandteal/arches-her.git@fix/2.0.x-controlled-list-update",
@@ -38,7 +38,7 @@ version = "0.0.1"
 
 [dependency-groups]
 dev = [
-    "black==24.4.2",
+    "black==26.3.1",
     "coverage",
     "django-silk==5.1.0",
     "livereload",
