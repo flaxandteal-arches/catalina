@@ -1,3 +1,10 @@
+"""Superseded: overlays are now defined in catalina/overlays/registry.py.
+
+The registry is applied after every migrate and rewrites these rows by the same
+fixed ids, so what this migration writes on a fresh database is short-lived.
+Kept as applied history.
+"""
+
 import logging
 import uuid
 
@@ -37,8 +44,8 @@ OVERLAY_SLUGS = [
 
 def _portal_geojson_url(slug, layer_index=0):
     # ArcGIS FeatureServer "?f=geojson&where=1=1" returns at most the service's
-    # maxRecordCount features. Layers past that (nzaa, cons_land) are switched
-    # by 0005 to per-view fetching (catalina/media/js/utils/map-configurator.js).
+    # maxRecordCount features. Layers past that (nzaa, cons_land) are fetched
+    # per view in the registry (catalina/media/js/utils/map-configurator.js).
     return f"/overlays/{slug}/{layer_index}/query?where=1%3D1&outFields=*&f=geojson"
 
 
@@ -89,7 +96,7 @@ def load_overlays(apps, schema_editor):
     )
 
     # NZAA archaeological sites (~80k features). The slug's service is set in
-    # settings.ARCGIS_PORTAL_SERVICES; 0005 switches it to per-view fetching.
+    # settings.ARCGIS_PORTAL_SERVICES; the registry fetches it per view.
     if "nzaa" in portal_available:
         upsert(
             slug="nzaa",
@@ -153,8 +160,8 @@ def load_overlays(apps, schema_editor):
             ],
         )
 
-    # Conservation Land (~11k features, maxRecordCount 1000); 0005 switches it
-    # to per-view fetching.
+    # Conservation Land (~11k features, maxRecordCount 1000); the registry
+    # fetches it per view.
     if "cons_land" in portal_available:
         upsert(
             slug="cons_land",
@@ -240,7 +247,7 @@ def load_overlays(apps, schema_editor):
                     "source": "ops_regions",
                     "type": "fill",
                     # "region" is the DOC_WebsiteRegions/FeatureServer field
-                    # name. 0005 switches this popup to the regionname /
+                    # name. The registry switches this popup to the regionname /
                     # regioncode fields of DOC_OperationsRegions_HFLr/FeatureServer.
                     "metadata": {
                         "arches:popup": {

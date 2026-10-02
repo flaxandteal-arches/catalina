@@ -18,7 +18,7 @@ import overlayPopupTemplate from 'templates/views/components/external-overlay-po
  *
  * Per-overlay popup config is NOT hardcoded here. It lives on each map layer
  * as Mapbox `metadata["arches:popup"]`, set in the overlay-loading migration
- * (catalina/migrations/0001_load_overlays.py, 0004_load_nzaa_buff_overlay.py), shape:
+ * (catalina/overlays/registry.py), shape:
  *     { "title": "<property name used as the popup heading>",
  *       "fields": [["<label>", "<property name>"], ...] }
  */

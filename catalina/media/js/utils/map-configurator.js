@@ -15,7 +15,7 @@ import arches from 'arches';
  *     localStorage.setItem('catalina:overlay-debug', '1')
  *
  * Opt-in lives on one of the overlay's map layers as Mapbox
- * `metadata["arches:bbox-fetch"]`, set in the overlay migrations, shape:
+ * `metadata["arches:bbox-fetch"]`, set in catalina/overlays/registry.py, shape:
  *     { "url": "/overlays/<slug>/<layer index>/query",
  *       "minzoom": <below this the source is emptied and nothing is fetched>,
  *       "maxpages": <optional, pages of maxRecordCount to follow; default 5>,
