@@ -1,4 +1,4 @@
-"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land, nzaa and ops_regions popups."""
+"""Corrections to the overlays 0001 installed: ops_districts layer index, per-view fetch for nzaa and cons_land, DOC symbology for cons_land, popups."""
 
 import logging
 import uuid
@@ -38,6 +38,121 @@ NZAA_POPUP_AFTER = {
         ["NZAA ID", "nzaa_id"],
         ["Features", "sitefeatures"],
         ["Period", "period"],
+    ],
+}
+
+HOVERED = ["boolean", ["feature-state", "hover"], False]
+
+# DOC's own symbology for this layer, from the "Public Conservation Land" layer
+# item (568e551c7ce94807821b097201015fbe) on the portal: a unique-value
+# renderer on `section`, grouped into the classes its legend shows.
+CONS_LAND_CLASSES = [
+    (
+        "National Park",
+        "#ffff00",
+        ["S4_NATIONAL_PARK", "S9_2_LAND_HELD_FOR_NATIONAL_PARK_PURPOSES"],
+    ),
+    ("Conservation Park", "#38a800", ["S19_CONSERVATION_PARK"]),
+    (
+        "Specially Protected Area",
+        "#b2b2b2",
+        [
+            "S21_ECOLOGICAL_AREA",
+            "S23A_AMENITY_AREA",
+            "S22_SANCTUARY_AREA",
+            "S14A_WILDLIFE_MANAGEMENT_RESERVE",
+            "20_WILDERNESS_AREA",
+        ],
+    ),
+    ("Conservation Area", "#eba554", ["S7_CONSERVATION_PURPOSES"]),
+    (
+        "Reserve",
+        "#73b2ff",
+        [
+            "17_RECREATION_RESERVE",
+            "S18_HISTORIC_RESERVE",
+            "S19_1_B_SCENIC_RESERVE",
+            "S21_SCIENTIFIC_RESERVE",
+            "S20_NATURE_RESERVE",
+            "S19_1_A_SCENIC_RESERVE",
+            "S22_GOVERNMENT_PURPOSE_RESERVE",
+            "S23_LOCAL_PURPOSE_RESERVE",
+        ],
+    ),
+    ("Stewardship Area", "#55ff00", ["S25_STEWARDSHIP_AREA"]),
+    (
+        "Marginal Strip",
+        "#895a44",
+        ["S24_3_FIXED_MARGINAL_STRIP", "S24_1_2_MOVEABLE_MARGINAL_STRIP"],
+    ),
+    ("Wildlife Management Area", "#ff0000", ["S23B_WILDLIFE_MANAGEMENT_AREA"]),
+    ("Waitangi Endowment Forest", "#aa66cd", ["S2_WAITANGI_ENDOWMENT_FOREST"]),
+]
+# Sections DOC adds later, which its renderer doesn't classify either.
+CONS_LAND_UNCLASSIFIED = ("Other", "#ffffff")
+CONS_LAND_OUTLINE = "#6e6e6e"
+
+
+def _cons_land_fill_color():
+    expression = ["match", ["get", "section"]]
+    for _label, colour, sections in CONS_LAND_CLASSES:
+        expression += [sections, colour]
+    return expression + [CONS_LAND_UNCLASSIFIED[1]]
+
+
+def _cons_land_legend():
+    swatch = (
+        '<div style="display: flex; align-items: center; gap: 6px; margin: 2px 0;">'
+        '<span style="display: inline-block; width: 14px; height: 10px; '
+        f'background: {{colour}}; border: 1px solid {CONS_LAND_OUTLINE};"></span>'
+        "{label}</div>"
+    )
+    entries = [(label, colour) for label, colour, _sections in CONS_LAND_CLASSES]
+    entries.append(CONS_LAND_UNCLASSIFIED)
+    return "".join(
+        swatch.format(label=label, colour=colour) for label, colour in entries
+    )
+
+
+CONS_LAND_PAINT_BEFORE = {
+    "cons_land-fill": {
+        "fill-color": "#22c55e",
+        "fill-opacity": ["case", HOVERED, 0.5, 0.25],
+    },
+    "cons_land-outline": {
+        "line-color": ["case", HOVERED, "#052e16", "#15803d"],
+        "line-width": ["case", HOVERED, 2, 0.5],
+    },
+}
+CONS_LAND_PAINT_AFTER = {
+    "cons_land-fill": {
+        "fill-color": _cons_land_fill_color(),
+        # A little above 0001's 0.25: DOC's pale yellows and blues wash out.
+        "fill-opacity": ["case", HOVERED, 0.6, 0.35],
+    },
+    "cons_land-outline": {
+        "line-color": ["case", HOVERED, "#1f2937", CONS_LAND_OUTLINE],
+        "line-width": ["case", HOVERED, 2, 1],
+    },
+}
+
+CONS_LAND_POPUP_BEFORE = {
+    "title": "name",
+    "fields": [
+        ["Type", "type"],
+        ["NaPALIS ID", "napalis_id"],
+        ["Name", "name"],
+        ["Recorded Area (ha)", "recorded_area"],
+    ],
+}
+CONS_LAND_POPUP_AFTER = {
+    "title": "name",
+    "fields": [
+        ["Type", "type"],
+        ["Section", "section"],
+        ["NaPALIS ID", "napalis_id"],
+        ["Name", "name"],
+        ["Recorded Area (ha)", "recorded_area"],
     ],
 }
 
@@ -106,6 +221,27 @@ def _set_popup(apps, layer_id, popup):
     MapLayer.objects.filter(maplayerid=layer_id).update(layerdefinitions=layers)
 
 
+def _set_style(apps, layer_id, paints, legend):
+    """Replace the paint of the named layer definitions, and the layer's legend.
+
+    paints maps a layer definition id to its new paint. The legend is HTML,
+    shown under the overlay's name in the map's legend panel.
+    """
+    MapLayer = apps.get_model("models", "MapLayer")
+
+    layer_row = MapLayer.objects.filter(maplayerid=layer_id).first()
+    if layer_row is None:
+        return
+
+    layers = [dict(layer) for layer in layer_row.layerdefinitions]
+    for layer in layers:
+        if layer.get("id") in paints:
+            layer["paint"] = paints[layer["id"]]
+    MapLayer.objects.filter(maplayerid=layer_id).update(
+        layerdefinitions=layers, legend=legend
+    )
+
+
 def update_installed_overlays(apps, schema_editor=None):
 
     _set_layer_index(apps, "ops_districts", 1)
@@ -134,10 +270,12 @@ def update_installed_overlays(apps, schema_editor=None):
             "url": "/overlays/cons_land/0/query",
             "minzoom": 6,
             "maxpages": 12,
-            # objectid (promoteId) and the popup fields from 0001.
-            "outFields": "objectid,type,napalis_id,name,recorded_area",
+            # objectid (promoteId), section (symbology) and the popup fields.
+            "outFields": "objectid,type,section,napalis_id,name,recorded_area",
         },
     )
+    _set_style(apps, CONS_LAND_LAYER_ID, CONS_LAND_PAINT_AFTER, _cons_land_legend())
+    _set_popup(apps, CONS_LAND_LAYER_ID, CONS_LAND_POPUP_AFTER)
 
 
 def load_all_overlays(apps, schema_editor):
@@ -155,6 +293,9 @@ def restore_installed_overlays(apps, schema_editor):
     _set_popup(apps, OPS_REGIONS_LAYER_ID, OPS_REGIONS_POPUP_BEFORE)
     _set_layer_index(apps, "cons_land", 0)
     _set_bbox_fetch(apps, "cons_land", CONS_LAND_LAYER_ID, None)
+    # 0001 set no legend.
+    _set_style(apps, CONS_LAND_LAYER_ID, CONS_LAND_PAINT_BEFORE, None)
+    _set_popup(apps, CONS_LAND_LAYER_ID, CONS_LAND_POPUP_BEFORE)
 
 
 class Migration(migrations.Migration):
