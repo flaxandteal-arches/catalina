@@ -65,7 +65,7 @@
 -- and nothing else. A view's own FROM is checked against the view owner, but a
 -- function body is checked against the caller, so as SECURITY INVOKER this is denied
 -- on tiles. search_path is pinned, as it must be whenever a function runs as its
--- owner. Applies equally to __catalina_string_value below.
+-- owner. Applies equally to the string helpers below.
 CREATE OR REPLACE FUNCTION public.__catalina_reference_label(
     in_resourceinstanceid text,
     in_nodeid uuid,
@@ -106,26 +106,25 @@ $BODY$;
 -- run of this file would hand every role that can connect a SECURITY DEFINER reader of
 -- tiles, callable for any nodeid and resourceinstanceid — which is precisely what the
 -- wrapper views below are grant-controlled to prevent. Setting the ACL explicitly is
--- idempotent and covers both cases. Applies equally to __catalina_string_value below.
+-- idempotent and covers both cases. Applies equally to the string helpers below.
 REVOKE EXECUTE ON FUNCTION public.__catalina_reference_label(text, uuid, text) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.__catalina_reference_label(text, uuid, text) TO arches_spatial_views;
 
 
 -- ============================================================================
--- Picking one value out of a cardinality-n string node
+-- Picking one value out of a string node
 -- ============================================================================
 --
 -- Arches renders `string` nodes correctly, but a spatial view column aggregates
--- every tile in the node group into one comma-joined cell:
+-- every tile in the node group into one comma-joined cell, and offers no way to
+-- pick a value out of free text. These read the tile directly and, given
+-- match_pattern, return only the part of the value that matches it (substring
+-- semantics: the first parenthesised group if the pattern has one, else the whole
+-- match). Both return NULL when nothing matches.
 --
---   {9F965097-66B7-4287-940C-27025F551725}, A-HS-40-1000010083, CA/6
---
--- external_cross_reference holds identifiers from several source systems, and
--- global_id wants exactly one of them. Rather than take a positional guess, match
--- on the shape of the identifier: an ArcGIS GlobalID is a GUID in braces, which no
--- other cross-reference scheme in use here looks like.
---
--- Returns NULL when nothing matches.
+-- __catalina_string_value takes the first match across all of a resource's tiles in
+-- the node group. __catalina_child_string_value is scoped to the child tiles of one
+-- parent tile instead, for values that belong to a single feature (see below).
 CREATE OR REPLACE FUNCTION public.__catalina_string_value(
     in_resourceinstanceid text,
     in_nodeid uuid,
@@ -140,19 +139,83 @@ AS $BODY$
     SELECT v.value
     FROM tiles t
     CROSS JOIN LATERAL (
-        SELECT ((t.tiledata -> in_nodeid::text) -> language_id) ->> 'value' AS value
+        SELECT ((t.tiledata -> in_nodeid::text) -> language_id) ->> 'value' AS raw
+    ) r
+    CROSS JOIN LATERAL (
+        SELECT CASE WHEN match_pattern IS NULL THEN r.raw
+                    ELSE substring(r.raw FROM match_pattern)
+               END AS value
     ) v
     WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n WHERE n.nodeid = in_nodeid)
       AND t.resourceinstanceid = in_resourceinstanceid::uuid
       AND v.value IS NOT NULL
       AND v.value <> ''
-      AND (match_pattern IS NULL OR v.value ~ match_pattern)
     ORDER BY t.sortorder NULLS LAST, t.tileid
     LIMIT 1;
 $BODY$;
 
 REVOKE EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text) TO arches_spatial_views;
+
+
+-- ============================================================================
+-- Per-feature values: global_id
+-- ============================================================================
+--
+-- Each row of a <slug>_<geom> view is one geojson_geometries record, i.e. one
+-- single-part geometry. Arches stores a multipart feature as separate single-part
+-- features in the same tile when it is imported (check_geojson_value in the
+-- geojson-feature-collection datatype), and ST_Dump in refresh_geojson_geometries
+-- splits any that remain. Each row's tileid is the Geometry tile it came from.
+-- Arches' own attribute columns are joined per resource, so they cannot carry a
+-- per-feature value.
+--
+-- In the Heritage Place model Geometry is cardinality-n, and each Geometry tile has
+-- one child Spatial Metadata Descriptions tile (cardinality 1) whose parenttileid is
+-- that Geometry tile. global_id is read from Spatial Metadata Notes in that child.
+-- One Geometry tile holds one ArcGIS feature, so the tile is what groups the parts
+-- of a multipart feature, and global_id follows the tile:
+--   * a single geometry          -> one tile, 1 row
+--   * a multipart geometry       -> one tile, 1 row per part, all with the same global_id
+--   * several ArcGIS features    -> one tile each, each with its own global_id
+--
+-- The notes hold the ArcGIS GlobalID (a GUID in braces). The pattern is unanchored
+-- because the stored value takes two shapes:
+--   * imported:    {9F965097-66B7-4287-940C-27025F551725}
+--     (the ETL stores the text verbatim)
+--   * hand-edited: <p>{9F965097-66B7-4287-940C-27025F551725}</p>
+--     (the node uses the rich-text widget, and CKEditor saves HTML)
+CREATE OR REPLACE FUNCTION public.__catalina_child_string_value(
+    in_parenttileid text,
+    in_nodeid uuid,
+    match_pattern text DEFAULT NULL,
+    language_id text DEFAULT 'en')
+    RETURNS text
+    LANGUAGE 'sql'
+    STABLE PARALLEL SAFE
+    SECURITY DEFINER
+    SET search_path = pg_catalog, public
+AS $BODY$
+    SELECT v.value
+    FROM tiles t
+    CROSS JOIN LATERAL (
+        SELECT ((t.tiledata -> in_nodeid::text) -> language_id) ->> 'value' AS raw
+    ) r
+    CROSS JOIN LATERAL (
+        SELECT CASE WHEN match_pattern IS NULL THEN r.raw
+                    ELSE substring(r.raw FROM match_pattern)
+               END AS value
+    ) v
+    WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n WHERE n.nodeid = in_nodeid)
+      AND t.parenttileid = in_parenttileid::uuid
+      AND v.value IS NOT NULL
+      AND v.value <> ''
+    ORDER BY t.sortorder NULLS LAST, t.tileid
+    LIMIT 1;
+$BODY$;
+
+REVOKE EXECUTE ON FUNCTION public.__catalina_child_string_value(text, uuid, text, text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.__catalina_child_string_value(text, uuid, text, text) TO arches_spatial_views;
 
 
 -- ============================================================================
@@ -177,7 +240,7 @@ GRANT EXECUTE ON FUNCTION public.__catalina_string_value(text, uuid, text, text)
 --     type DOES record a dependency and would defeat the whole thing.
 --   * SECURITY INVOKER, and no SET clause: inline_set_returning_function refuses
 --     prosecdef or proconfig, and an un-inlined function materialises the entire
---     view on every query, destroying bbox reads. Unlike the two helpers above this
+--     view on every query, destroying bbox reads. Unlike the helpers above this
 --     needs no definer rights — the consuming GIS role already holds SELECT on the
 --     <slug>_<geom> views, which the Arches trigger grants to arches_spatial_views.
 --   * The column list repeats the attributenodes in add_spatial_views.sql. The two
@@ -212,6 +275,9 @@ AS 'SELECT gid, tileid, nodeid, geom, resourceinstanceid, monument_name, source_
 -- Heritage places  <-  public.monument_point / _linestring / _polygon
 -- ============================================================================
 --
+-- The graph is Heritage Place (catalina-graphs' mutation of arches_her's Monument);
+-- the spatial view keeps arches_her's `monument` slug and spatialviewid.
+--
 -- A recreated view is a new object and inherits none of its predecessor's grants,
 -- so each wrapper is granted here or it would be unreadable after every run.
 -- arches_spatial_views is the group role the Arches trigger grants its own
@@ -233,8 +299,9 @@ CREATE OR REPLACE VIEW public.heritage_places_points AS
             '77e90834-efdc-11eb-b2b9-a87eeabdefba')  -- node alias: monument_type
                                  AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
-        __catalina_string_value(resourceinstanceid,
-            'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
+        __catalina_child_string_value(tileid,
+            '87d39b32-f44f-11eb-a11e-a87eeabdefba',
+            '\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}')  -- node alias: spatial_metadata_notes
                                  AS global_id,
         geom
     FROM public.__catalina_monument_point();
@@ -254,8 +321,9 @@ CREATE OR REPLACE VIEW public.heritage_places_lines AS
             '77e90834-efdc-11eb-b2b9-a87eeabdefba')  -- node alias: monument_type
                                  AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
-        __catalina_string_value(resourceinstanceid,
-            'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
+        __catalina_child_string_value(tileid,
+            '87d39b32-f44f-11eb-a11e-a87eeabdefba',
+            '\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}')  -- node alias: spatial_metadata_notes
                                  AS global_id,
         geom
     FROM public.__catalina_monument_linestring();
@@ -275,9 +343,80 @@ CREATE OR REPLACE VIEW public.heritage_places_polygons AS
             '77e90834-efdc-11eb-b2b9-a87eeabdefba')  -- node alias: monument_type
                                  AS heritage_place_type,
         source_id_value          AS eam_tech_object_id,
-        __catalina_string_value(resourceinstanceid,
-            'f17f6584-efc7-11eb-81f1-a87eeabdefba', '^\{.+\}$')  -- node alias: external_cross_reference
+        __catalina_child_string_value(tileid,
+            '87d39b32-f44f-11eb-a11e-a87eeabdefba',
+            '\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}')  -- node alias: spatial_metadata_notes
                                  AS global_id,
         geom
     FROM public.__catalina_monument_polygon();
 GRANT SELECT ON public.heritage_places_polygons TO arches_spatial_views;
+
+
+
+-- ============================================================================
+-- Checking global_id: public.catalina_global_id_issues
+-- ============================================================================
+--
+-- A wrong or missing global_id raises no error; it only shows up as a wrong or NULL
+-- value in the layers. This view lists the Heritage Place Geometry tiles where that
+-- happens, one row per problem, and is empty when all is well. Query it after each
+-- import:
+--
+--   SELECT * FROM public.catalina_global_id_issues;
+--
+-- Two problems are reported:
+--   * a Geometry tile with features but no GlobalID in its Spatial Metadata Notes:
+--     global_id is NULL on all its rows.
+--   * the same GlobalID on more than one Geometry tile: one ArcGIS feature is one
+--     tile, so this is a copied or mistyped note. Every tile carrying it is listed.
+--     Compared case-insensitively, since a hand edit may change the case.
+-- Several features in one tile is not a problem: that is how Arches stores the parts
+-- of a multipart feature (see "Per-feature values" above).
+--
+-- It reads tiles directly, not the Arches views, so an import's spatial-view refresh
+-- does not touch it. It is for administrators and is deliberately not granted to
+-- arches_spatial_views. Querying it needs EXECUTE on __catalina_child_string_value,
+-- which the database owner has.
+--
+-- The feature count is guarded with CASE rather than a WHERE test on jsonb_typeof:
+-- jsonb_array_length raises on a non-array, and WHERE conditions have no guaranteed
+-- evaluation order.
+
+DROP VIEW IF EXISTS public.catalina_global_id_issues;
+CREATE OR REPLACE VIEW public.catalina_global_id_issues AS
+    WITH geometry_tiles AS (
+        SELECT t.resourceinstanceid,
+            t.tileid,
+            jsonb_array_length(
+                CASE WHEN jsonb_typeof(
+                              t.tiledata -> '87d3d7dc-f44f-11eb-bee9-a87eeabdefba' -> 'features')
+                          = 'array'
+                     THEN t.tiledata -> '87d3d7dc-f44f-11eb-bee9-a87eeabdefba' -> 'features'
+                END)  -- node alias: geospatial_coordinates
+                AS feature_count,
+            __catalina_child_string_value(t.tileid::text,
+                '87d39b32-f44f-11eb-a11e-a87eeabdefba',
+                '\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}')  -- node alias: spatial_metadata_notes
+                AS global_id
+        FROM tiles t
+        WHERE t.nodegroupid = (SELECT n.nodegroupid FROM nodes n
+                               WHERE n.nodeid = '87d3d7dc-f44f-11eb-bee9-a87eeabdefba')
+    )
+    SELECT resourceinstanceid,
+        tileid,
+        'no GlobalID in Spatial Metadata Notes' AS issue,
+        global_id
+    FROM geometry_tiles
+    WHERE feature_count > 0
+      AND global_id IS NULL
+    UNION ALL
+    SELECT resourceinstanceid,
+        tileid,
+        'GlobalID on more than one Geometry tile' AS issue,
+        global_id
+    FROM (
+        SELECT *, count(*) OVER (PARTITION BY upper(global_id)) AS tiles_with_id
+        FROM geometry_tiles
+        WHERE global_id IS NOT NULL
+    ) d
+    WHERE tiles_with_id > 1;
