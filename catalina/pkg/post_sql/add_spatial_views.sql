@@ -21,7 +21,7 @@ DROP VIEW IF EXISTS public.monument_point CASCADE;
 DROP VIEW IF EXISTS public.monument_linestring CASCADE;
 DROP VIEW IF EXISTS public.monument_polygon CASCADE;
 
--- Heritage places (monument)
+-- Heritage places: the Heritage Place graph, under arches_her's `monument` slug
 DELETE FROM public.spatial_views WHERE spatialviewid = '27318c10-adc4-421c-9e93-9c007ceee035';
 
 INSERT INTO public.spatial_views (
@@ -47,9 +47,10 @@ VALUES (
     -- via __catalina_reference_label instead:
     --   area_name     87d3c3ea-f44f-11eb-b532-a87eeabdefba  -> district
     --   monument_type 77e90834-efdc-11eb-b2b9-a87eeabdefba  -> heritage_place_type
-    -- Another node is cardinality-n, for which Arches joins every tile into a single cell (comma separated) 
-    -- custom_spatial_views.sql selects the desired value with the helper __catalina_string_value.
-    --   external_cross_reference (f17f6584-efc7-11eb-81f1-a87eeabdefba -> global_id)
+    -- Another node holds a per-feature value, which Arches cannot express since it
+    -- joins attributes per resource; custom_spatial_views.sql reads it from each
+    -- row's Geometry tile with __catalina_child_string_value instead:
+    --   spatial_metadata_notes 87d39b32-f44f-11eb-a11e-a87eeabdefba -> global_id
     '[
         {"nodeid":"676d47ff-9c1c-11ea-b07f-f875a44e0e11","description":"monument_name"},
         {"nodeid":"c27deb60-a464-50e1-9add-8de94ee95e57","description":"source_id_value"}
