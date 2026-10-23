@@ -195,6 +195,25 @@ class LookupTests(SimpleTestCase):
             self.assertEqual(pe.get_referenced_person_ids(), {"p1", "p2"})
             instance.objects.filter.assert_called_once_with(graph_id=pe.PERSON_GRAPH_ID)
 
+    def test_get_referenced_person_ids_filters_by_state(self):
+        with mock.patch("arches.app.models.models.ResourceInstance") as instance:
+            qs = instance.objects.filter.return_value
+            qs.filter.return_value.values_list.return_value = ["p1"]
+            self.assertEqual(pe.get_referenced_person_ids(["Active"]), {"p1"})
+            qs.filter.assert_called_once_with(
+                resource_instance_lifecycle_state__name__in=["Active"]
+            )
+
+    def test_filter_ids_by_state_returns_matching_ids_as_strings(self):
+        rid = uuid.UUID(int=3)
+        with mock.patch("arches.app.models.models.ResourceInstance") as instance:
+            instance.objects.filter.return_value.values_list.return_value = [rid]
+            self.assertEqual(pe.filter_ids_by_state([rid], ["Active"]), {str(rid)})
+            instance.objects.filter.assert_called_once_with(
+                resourceinstanceid__in=[rid],
+                resource_instance_lifecycle_state__name__in=["Active"],
+            )
+
     def test_get_all_period_ids(self):
         with mock.patch("arches.app.models.models.ResourceInstance") as instance:
             instance.objects.filter.return_value.values_list.return_value = ["x"]
@@ -507,7 +526,9 @@ class RunPipelineTests(SimpleTestCase):
         rid = uuid.UUID(int=7)
         result, select, export = self._run([rid], ("/out", {"k": 1}), states=["Active"])
         select.assert_called_once_with(["Active"])
-        export.assert_called_once_with([rid], output_dir="/out", user=None, indent=2)
+        export.assert_called_once_with(
+            [rid], output_dir="/out", user=None, indent=2, states=["Active"]
+        )
         self.assertEqual(result["result"], "/out")
         self.assertEqual(result["export_ids"], [str(rid)])
         self.assertEqual(result["diagnostics"], {"k": 1})

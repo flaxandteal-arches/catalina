@@ -121,8 +121,8 @@ def get_user_filtered_nodegroups(resource_ids, user):
     )
 
 
-def get_referenced_person_ids(heritage_item_ids=None):
-    """Return the IDs of every Person resource.
+def get_referenced_person_ids(states=None):
+    """Return the IDs of Person resources, optionally only those in ``states``.
 
     Persons are written to their own t_person.json file rather than
     into the main resource file.
@@ -131,11 +131,23 @@ def get_referenced_person_ids(heritage_item_ids=None):
     """
     from arches.app.models.models import ResourceInstance
 
-    return set(
-        ResourceInstance.objects.filter(
-            graph_id=PERSON_GRAPH_ID,
+    qs = ResourceInstance.objects.filter(graph_id=PERSON_GRAPH_ID)
+    if states:
+        qs = qs.filter(resource_instance_lifecycle_state__name__in=states)
+    return set(qs.values_list("resourceinstanceid", flat=True))
+
+
+def filter_ids_by_state(resource_ids, states):
+    """Return the subset of ``resource_ids`` (as strings) whose lifecycle state is in ``states``."""
+    from arches.app.models.models import ResourceInstance
+
+    return {
+        str(rid)
+        for rid in ResourceInstance.objects.filter(
+            resourceinstanceid__in=resource_ids,
+            resource_instance_lifecycle_state__name__in=states,
         ).values_list("resourceinstanceid", flat=True)
-    )
+    }
 
 
 def get_all_period_ids():
@@ -152,8 +164,8 @@ def get_all_period_ids():
 def get_outbound_relations(resource_ids, permitted_nodegroups=None):
     """Get tile-backed outbound relations from the given resources.
 
-    Targets are included whatever their lifecycle state, so Draft resources that
-    a resource points at are exported with it.
+    Targets are returned whatever their lifecycle state; the caller drops the
+    ones that are not being exported.
 
     Args:
         resource_ids: list of source resource instance IDs
@@ -616,6 +628,7 @@ def export_resources(
     output_dir,
     user=None,
     indent=2,
+    states=None,
 ):
     """Export resources as a pkg-style directory with business_data, graphs, and reference_data.
 
@@ -637,6 +650,9 @@ def export_resources(
         output_dir: directory path to write the package to
         user: optional User for permission-based nodegroup filtering
         indent: JSON indentation level (None for compact)
+        states: optional lifecycle state names. When given, Persons and related
+            resources are limited to these states too, and relations to
+            resources left out are dropped. Periods are always exported.
 
     resource_ids may be empty, in which case only the graphs, controlled lists
     and always-exported reference resources are written (a structure-only package).
@@ -681,7 +697,8 @@ def export_resources(
 
         # Pre-compute exported Person IDs so we can strip associated_actor
         # tiles that reference Persons not in the export.
-        person_ids = get_referenced_person_ids()
+        person_ids = get_referenced_person_ids(states)
+        period_ids = get_all_period_ids()
 
         def _write_resource(resource_data):
             nonlocal resource_count, actor_tiles_filtered_count
@@ -734,11 +751,24 @@ def export_resources(
         if resource_count == 0:
             logger.warning("No resources to export, writing structure only")
 
-        # Get outbound relations (targets are exported whatever their state)
+        # Get outbound relations
         relations, diagnostics, target_ids = get_outbound_relations(
             resource_ids,
             permitted_nodegroups=exported_nodegroups or None,
         )
+
+        # With a state filter, related resources must be in an allowed state too.
+        # Drop the others and any relation that would point at them.
+        if states:
+            target_ids = filter_ids_by_state(target_ids, states)
+            kept_ids = {
+                *(str(r) for r in resource_ids),
+                *(str(p) for p in person_ids),
+                *(str(p) for p in period_ids),
+                *target_ids,
+            }
+            relations = [rel for rel in relations if rel["to_resource"] in kept_ids]
+            diagnostics["candidate_relations"] = len(relations)
 
         # Second pass: related resources (Digital Objects etc.)
         target_ids = {str(t) for t in target_ids} - {
@@ -787,7 +817,6 @@ def export_resources(
         graph_ids.add(PERSON_GRAPH_ID)
 
     # Export all Period resources
-    period_ids = get_all_period_ids()
     diagnostics["period_resources"] = len(period_ids)
     if period_ids:
         _write_reference_resources(
@@ -965,8 +994,8 @@ def run_export_pipeline(
 
     Selects every resource (or only those in ``states``) and writes the pkg-style export to
     ``output_dir`` via export_resources (honouring ``user`` nodegroup
-    permissions). Related resources are exported whatever their lifecycle
-    state, and graphs in ALWAYS_VISIBLE_GRAPH_IDS are always exported. With no
+    permissions). With ``states``, Persons and related resources are limited to
+    those states as well. Graphs in ALWAYS_VISIBLE_GRAPH_IDS are always exported. With no
     matching resources the package contains graphs and reference data only.
 
     Returns a dict:
@@ -1000,6 +1029,7 @@ def run_export_pipeline(
         output_dir=output_dir,
         user=user,
         indent=indent,
+        states=states,
     )
     if not result:
         msg.append(("error", "Export produced no output."))
