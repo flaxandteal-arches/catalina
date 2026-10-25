@@ -9,12 +9,24 @@ minted (``uuid5(scheme, label)`` is case-sensitive, so "Male" never collided wit
 no longer possible, so this fixes the live data.
 
 What it does, per normalised (trimmed, lower-cased) prefLabel:
-  * keep ONE survivor — preferring an already-lower-case label, then the most
-    tile-referenced, then the lowest sortorder (so "male" wins over "Male");
+  * keep ONE survivor — the entry from the ORIGINAL seeding, i.e. the
+    random-ID (non-``uuid5``) import rather than the ``from_labels`` copy; then,
+    defensively, an already-lower-case label, the most tile-referenced, and the
+    lowest sortorder;
   * repoint every reference-datatype tile that points at a losing item onto the
     survivor (the reference value is a denormalised snapshot — uri + list_id +
     labels[] — with no FK back to the item, so it is rewritten in place);
   * delete the losing items and their prefLabel values.
+
+Why "original seeding" and not just "lower case": the list was seeded twice. The
+canonical set is the AAT import with random (version-4) UUIDs — this is exactly
+the committed package/prebuild list. A later ``alizarin`` ``from_labels`` pass
+re-minted the same terms with DETERMINISTIC ``uuid5(scheme, label)`` (version-5)
+IDs, plus the stray capitalised "Male"/"Female". Keeping the version-4 originals
+means the live list converges to the package's own IDs, so a future package
+reload/rebuild stays idempotent instead of re-duplicating those terms. (``uuid5``
+always stamps version 5, so the version nibble cleanly distinguishes the
+``from_labels`` copies from the originals.)
 
 The full vocabulary is preserved: only duplicates are removed, not the unused but
 valid options (agender, two-spirit, gender-fluid, ...).
@@ -76,17 +88,20 @@ BEGIN
     CREATE TEMP TABLE _g_refsum ON COMMIT DROP AS
     SELECT uri, sum(n)::int AS n FROM _g_refs GROUP BY uri;
 
-    -- 2. rank items within each normalised label:
-    --    already-lower-case first, then most-referenced, then lowest sortorder
+    -- 2. rank items within each normalised label. Prefer the ORIGINAL seeding:
+    --    a non-uuid5 id (version nibble <> '5') is the random-id import / package
+    --    entry; a version-5 id is the from_labels copy. Then, defensively,
+    --    already-lower-case, then most-referenced, then lowest sortorder.
     CREATE TEMP TABLE _g_ranked ON COMMIT DROP AS
     SELECT li.id, li.uri, li.sortorder, liv.value,
            lower(btrim(liv.value)) AS norm,
            COALESCE(rs.n, 0)       AS refs,
            row_number() OVER (
                PARTITION BY lower(btrim(liv.value))
-               ORDER BY (liv.value = lower(liv.value)) DESC,
-                        COALESCE(rs.n, 0)              DESC,
-                        li.sortorder                   ASC
+               ORDER BY (substring(li.id::text FROM 15 FOR 1) <> '5') DESC,
+                        (liv.value = lower(liv.value))                DESC,
+                        COALESCE(rs.n, 0)                             DESC,
+                        li.sortorder                                  ASC
            ) AS rn
     FROM arches_controlled_lists_listitem li
     JOIN arches_controlled_lists_listitemvalue liv
