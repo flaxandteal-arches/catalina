@@ -432,7 +432,8 @@ DATE_IMPORT_EXPORT_FORMAT = (
 
 # This is used to indicate whether the data in the CSV and SHP exports should be
 # ordered as seen in the resource cards or not.
-EXPORT_DATA_FIELDS_IN_CARD_ORDER = False
+# Set to True with the benefit that semantic nodes (carrying no data) are skipped from export.
+EXPORT_DATA_FIELDS_IN_CARD_ORDER = True
 
 # Identify the usernames and duration (seconds) for which you want to cache the time wheel
 CACHE_BY_USER = {"default": 3600 * 24, "anonymous": 3600 * 24}  # 24hrs  # 24hrs
