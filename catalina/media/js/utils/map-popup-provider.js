@@ -26,8 +26,7 @@ import overlayPopupTemplate from 'templates/views/components/external-overlay-po
 
 // Synchronous fetch, matching core's getPopupTemplate. Template imports are
 // relative paths, so without the root they only resolve on single-segment pages
-// like /search, and 404 on /resource/<id>. Throwing on a failed fetch means no
-// popup opens, rather than one showing the error page.
+// like /search, and 404 on /resource/<id>. 
 function fetchTemplate(path) {
     const request = new XMLHttpRequest();
     request.open('GET', arches.urls.root + path, false);
