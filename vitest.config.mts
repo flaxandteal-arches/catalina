@@ -7,6 +7,20 @@ import { defineConfig } from 'vitest/config';
 
 import type { ViteUserConfig } from 'vitest/config';
 
+// Webpack turns a `templates/*.htm` import into its relative path string (see
+// the .htm rule in webpack/webpack.common.js). Do the same here, so that specs
+// can import the Knockout-era modules that use them.
+const htmTemplatePaths = {
+    name: 'htm-template-paths',
+    enforce: 'pre' as const,
+    resolveId(id: string) {
+        return id.startsWith('templates/') && id.endsWith('.htm') ? `\0${id}` : null;
+    },
+    load(id: string) {
+        return id.startsWith('\0templates/') ? `export default ${JSON.stringify(id.slice(1))};` : null;
+    },
+};
+
 function generateConfig(): Promise<ViteUserConfig> {
     return new Promise((resolve, reject) => {
         const filePath = path.dirname(fileURLToPath(import.meta.url));
@@ -41,7 +55,7 @@ function generateConfig(): Promise<ViteUserConfig> {
         }
 
         resolve({
-            plugins: [vue() as any],
+            plugins: [vue() as any, htmTemplatePaths],
             test: {
                 alias: alias,
                 coverage: {
