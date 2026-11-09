@@ -1,3 +1,4 @@
+import arches from 'arches';
 import ko from 'knockout';
 import corePopupTemplate from 'templates/views/components/map-popup.htm';
 import overlayPopupTemplate from 'templates/views/components/external-overlay-popup.htm';
@@ -23,11 +24,16 @@ import overlayPopupTemplate from 'templates/views/components/external-overlay-po
  *       "fields": [["<label>", "<property name>"], ...] }
  */
 
-// Synchronous fetch, matching core's getPopupTemplate.
-function fetchTemplate(url) {
+// Synchronous fetch, matching core's getPopupTemplate. Template imports are
+// relative paths, so without the root they only resolve on single-segment pages
+// like /search, and 404 on /resource/<id>. 
+function fetchTemplate(path) {
     const request = new XMLHttpRequest();
-    request.open('GET', url, false);
+    request.open('GET', arches.urls.root + path, false);
     request.send();
+    if (request.status !== 200) {
+        throw new Error(`Popup template ${path}: HTTP ${request.status}`);
+    }
     return request.responseText;
 }
 
