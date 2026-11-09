@@ -1,5 +1,6 @@
 """Tests for the repairs that run after a graph is published."""
 
+import os
 from unittest import mock
 
 from django.test import SimpleTestCase, override_settings
@@ -49,7 +50,9 @@ class RunPostPublishTests(SimpleTestCase):
         names = (
             "migrate_stale_instances",
             "rebuild_geometries",
+            "refresh_all_geometries",
             "rebuild_relationships",
+            "rebuild_spatial_views",
             "clear_tile_cache",
         )
         patches = {n: mock.Mock(return_value=n) for n in names}
@@ -75,7 +78,9 @@ class RunPostPublishTests(SimpleTestCase):
             [
                 "migrate_stale_instances",
                 "rebuild_geometries",
+                "refresh_all_geometries",
                 "rebuild_relationships",
+                "rebuild_spatial_views",
                 "clear_tile_cache",
             ],
         )
@@ -100,7 +105,15 @@ class RunPostPublishTests(SimpleTestCase):
         patches = self._patched(rebuild_geometries=failing)
         results, calls = self._run(patches, migrate=False)
         self.assertIsInstance(results["rebuild_geometries"], RuntimeError)
-        self.assertEqual(calls, ["rebuild_relationships", "clear_tile_cache"])
+        self.assertEqual(
+            calls,
+            [
+                "refresh_all_geometries",
+                "rebuild_relationships",
+                "rebuild_spatial_views",
+                "clear_tile_cache",
+            ],
+        )
 
 
 class MigrateStaleInstancesStepTests(SimpleTestCase):
@@ -122,6 +135,83 @@ class MigrateStaleInstancesStepTests(SimpleTestCase):
         self.assertEqual(args[0], "migrate_stale_instances")
         self.assertIn("--apply", args)
         self.assertEqual(args[args.index("--graph-id") + 1], "g1")
+
+
+class FakeCursor:
+    """Stands in for a DB cursor and records what was executed."""
+
+    def __init__(self, row=None):
+        self.executed = []
+        self.row = row
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def execute(self, sql, params=None):
+        self.executed.append((sql, params))
+
+    def fetchone(self):
+        return self.row
+
+
+def _connection(cursor):
+    """A stand-in for django.db.connection. Patching the module's name, not the
+    real connection's cursor, keeps SimpleTestCase's own DB guard intact."""
+    return mock.Mock(cursor=mock.Mock(return_value=cursor))
+
+
+class RefreshAllGeometriesTests(SimpleTestCase):
+    def test_calls_the_refresh_function_and_returns_its_result(self):
+        cursor = FakeCursor(row=("done",))
+        with mock.patch.object(post_publish, "connection", _connection(cursor)):
+            self.assertEqual(post_publish.refresh_all_geometries(), "done")
+        self.assertEqual(
+            cursor.executed, [("SELECT refresh_geojson_geometries()", None)]
+        )
+
+
+class RebuildSpatialViewsTests(SimpleTestCase):
+    def _run(self, cursor, opener=None):
+        with (
+            mock.patch.object(post_publish, "connection", _connection(cursor)),
+            mock.patch.object(post_publish.transaction, "atomic") as atomic,
+            mock.patch("builtins.open", opener or open),
+        ):
+            result = post_publish.rebuild_spatial_views()
+        return result, atomic
+
+    def test_runs_constraints_then_both_files_in_order_in_a_transaction(self):
+        cursor = FakeCursor()
+        result, atomic = self._run(cursor)
+        atomic.assert_called_once_with()
+        self.assertEqual(result, list(post_publish.SPATIAL_VIEW_SQL_FILES))
+        statements = [sql for sql, _ in cursor.executed]
+        self.assertEqual(statements[0], "SET CONSTRAINTS ALL IMMEDIATE")
+        self.assertEqual(len(statements), 3)
+        self.assertIn("public.monument_point", statements[1])
+        self.assertTrue(all(params is None for _, params in cursor.executed))
+
+    def test_files_are_read_from_the_package_post_sql_directory(self):
+        cursor = FakeCursor()
+        opened = mock.mock_open(read_data="SELECT 1")
+        self._run(cursor, opener=opened)
+        paths = [call.args[0] for call in opened.call_args_list]
+        self.assertEqual(
+            [os.path.basename(p) for p in paths],
+            list(post_publish.SPATIAL_VIEW_SQL_FILES),
+        )
+        for path in paths:
+            self.assertEqual(os.path.basename(os.path.dirname(path)), "post_sql")
+
+    def test_the_sql_files_exist_in_the_package(self):
+        directory = os.path.join(
+            os.path.dirname(post_publish.__file__), "pkg", "post_sql"
+        )
+        for name in post_publish.SPATIAL_VIEW_SQL_FILES:
+            self.assertTrue(os.path.isfile(os.path.join(directory, name)), name)
 
 
 class DataUpdateRunningTests(SimpleTestCase):
